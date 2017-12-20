@@ -43,3 +43,18 @@ ul.posts {
 ul.posts li {
     list-style: none;
 }
+
+# Table
+
+#table-body {
+    width: 100%;
+    display: table;
+}
+
+.table-row {
+    display: table-row;
+}
+
+.table-body-cell {
+    display: table-cell;
+}
