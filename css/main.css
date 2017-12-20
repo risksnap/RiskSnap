@@ -67,3 +67,8 @@ ul.posts li {
   height: 100%;
   vertical-align: middle;
 }
+
+.image-center-cell img {
+  height: 100%;
+  width: 100%;
+}
