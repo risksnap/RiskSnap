@@ -22,13 +22,16 @@ a:hover {
     text-decoration: underline;
 }
 h1 {
-    font-size: 3em;
+    font-size: 3rem;
     font-family:'Helvetica', 'Arial', 'Sans-Serif';
 }
-p {font-size:1.33333333em;
+
+p{line-height:1.67;color:#666;clear:left;margin-top:1em;letter-spacing:-.02em}
+
+/*p {font-size:1.33333333em;
    line-height:1.38em;
    color: #333;
-}
+}*/
 footer {
     border-top: 1px solid #d5d5d5;
     font-size: .8em;
