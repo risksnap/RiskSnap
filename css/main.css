@@ -44,11 +44,14 @@ ul.posts li {
     list-style: none;
 }
 
-# Table
+#table {
+    width: 100%;
+    display: table;
+}
 
 #table-body {
     width: 100%;
-    display: table;
+    display: table-row-group;
 }
 
 .table-row {
