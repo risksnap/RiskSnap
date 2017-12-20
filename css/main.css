@@ -60,6 +60,8 @@ ul.posts li {
 
 .table-body-cell {
     display: table-cell;
+    height: 100%;
+    vertical-align: top;
 }
 
 .image-center-cell {
