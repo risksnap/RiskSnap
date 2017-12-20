@@ -4,6 +4,7 @@
 		<title>{{page.title}}</title>
 		<!-- link to main stylesheet -->
 		<link rel="stylesheet" type="text/css" href="/css/main.css">
+        <link rel="stylesheet" href="/css/font-awesome.min.css">
 	</head>
 	<body>
         <img alt="risksnap-icon" src="/images/RiskSnap.png" />
@@ -19,9 +20,10 @@
             {{ content }}
 	    </div><!-- /.container -->
 		<footer>
-    		<ul>
-        		<li><a href="mailto:team@risksnap.com">team@risksnap.com</a></li>
-			</ul>
+    		<div>
+                 <span class="input-group-addon"><i class="fa fa-envelope-o fa-fw"></i></span>
+        		<span><a href="mailto:team@risksnap.com">team@risksnap.com</a></span>
+			</div>
 		</footer>
 	</body>
 </html>
