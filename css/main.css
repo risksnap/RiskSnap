@@ -25,10 +25,10 @@ h1 {
     font-size: 3em;
     font-family:'Helvetica', 'Arial', 'Sans-Serif';
 }
-p {
-    font-size: 1.333em;
-    line-height: 1.4em;
-    color: #333;
+p {font-size:1.33333333em;
+   line-height:.75em;
+   vertical-align:-15%;
+   color: #333;
 }
 footer {
     border-top: 1px solid #d5d5d5;
