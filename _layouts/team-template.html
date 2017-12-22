@@ -1,28 +1,11 @@
-<!DOCTYPE html>
-<html>
-	<head>
-		<title>{{page.title}}</title>
-		<!-- link to main stylesheet -->
-        <link rel="stylesheet" type="text/css" href="/css/fontawesome.min.css">
-		<link rel="stylesheet" type="text/css" href="/css/main.css">
-	</head>
-	<body>
-        <img alt="risksnap-icon" src="/images/RiskSnap.png" />
-		<nav>
-    		<ul>
-        		<li><a class="menufont" href="/">Home</a></li>
-        		<li><a class="menufont" href="/services">Services</a></li>
-	        	<li><a class="menufont" href="/resources">Resources</a></li>
-        		<li><a class="menufont" href="/team">Team</a></li>
-    		</ul>
-		</nav>
-		<div class="container">
-            {{ content }}
-	    </div><!-- /.container -->
-		<footer>
-        <div>
-                <a href="mailto:team@risksnap.com">team@risksnap.com</a>
-        </div>
-		</footer>
-	</body>
-</html>
+---
+layout: default
+---
+<div class="layout">
+	<H1>Team</H1>
+
+    <div class="table">
+           {{ content }}
+    </div>
+</div><!-- /.blurb -->
+
