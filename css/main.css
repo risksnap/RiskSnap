@@ -25,6 +25,10 @@ h1 {
     font-size: 3rem;
     font-family:'Helvetica', 'Arial', 'Sans-Serif';
 }
+h2 {
+    font-size: 2.423rem;
+    font-family:'Helvetica', 'Arial', 'Sans-Serif';
+}
 
 p{line-height:1.67;color:#666;clear:left;margin-top:1em;letter-spacing:-.02em}
 
