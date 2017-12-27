@@ -7,9 +7,16 @@ layout: default-template
     <div class="table">
         <div class="table-row">
             <div class="table-body-text-cell">
-                <!-- a alt="Test" title="Test" href="file:///_articles/This%20is%20a%20pdf.pdf">Test</a -->
-<iframe src="http://docs.google.com/gview?url=file:///_articles/This%20is%20a%20pdf.pdf&embedded=true" 
-style="width:600px; height:500px;" frameborder="0"></iframe>            
+                <a alt="Test" title="Test" href="file:///_articles/This%20is%20a%20pdf.pdf">Test</a>
+            
+            </div>
+        </div>
+        <div class="table-row">
+            <div class="table-body-text-cell">
+<object data="file:///_articles/This%20is%20a%20pdf.pdf" type="application/pdf" width="100%" height="100%">
+   <p><b>Example fallback content</b>: This browser does not support PDFs. Please download the PDF to view it: <a href="file:///_articles/This%20is%20a%20pdf.pdf">Download PDF</a>.</p>
+</object>
+            
             </div>
         </div>
     </div>
