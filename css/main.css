@@ -7,7 +7,7 @@ body {
     width: 70%;
 }
 nav ul, footer ul {
-    font-family:'Helvetica', 'Arial', 'Sans-Serif';
+    font-family:"Chronicle Deck",Georgia,Times,"Times New Roman",serif;color:#00306e;
     padding: 0px;
     list-style: none;
     font-weight: bold;
@@ -43,7 +43,8 @@ h5 {
     font-size: 1.125rem;
 }
 
-p{line-height:1.67;color:#666;clear:left;margin-top:1em;letter-spacing:-.02em}
+p{font-family:"Chronicle Deck",Georgia,Times,"Times New Roman",serif;color:#00306e;
+  line-height:1.67;color:#666;clear:left;margin-top:1em;letter-spacing:-.02em}
 
 /*p {font-size:1.33333333em;
    line-height:1.38em;
