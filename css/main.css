@@ -23,6 +23,7 @@ a {
 a:hover {
     text-decoration: underline;
 }
+h1,h2,h3,h4,h5,h6{font-family:"Chronicle Deck",Georgia,Times,"Times New Roman",serif;color:#00306e;margin:0;padding:0;line-height:1.1em}
 h1 {
     font-size: 2.5rem;
     font-family:'Helvetica', 'Arial', 'Sans-Serif';
