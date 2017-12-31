@@ -26,23 +26,18 @@ a:hover {
 h1,h2,h3,h4,h5,h6{font-family:"Chronicle Deck",Georgia,Times,"Times New Roman",serif;color:#00306e;margin:0;padding:0;line-height:1.1em}
 h1 {
     font-size: 2.5rem;
-    font-family:'Helvetica', 'Arial', 'Sans-Serif';
 }
 h2 {
     font-size: 1.875rem;
-    font-family:'Helvetica', 'Arial', 'Sans-Serif';
 }
 h3 {
     font-size: 1.5625rem;
-    font-family:'Helvetica', 'Arial', 'Sans-Serif';
 }
 h4 {
     font-size: 1.25rem;
-    font-family:'Helvetica', 'Arial', 'Sans-Serif';
 }
 h5 {
     font-size: 1.125rem;
-    font-family:'Helvetica', 'Arial', 'Sans-Serif';
 }
 
 p{line-height:1.67;color:#666;clear:left;margin-top:1em;letter-spacing:-.02em}
