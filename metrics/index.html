@@ -2,29 +2,48 @@
 layout: metrics-template
 ---
 <div class="blurb">
+•	<a href=”#Procyclicality”> Procyclicality</a>
+<p>
+•	<a href=”#HoldingPeriod"> Holding Period</a>
+<p>
+•	<a href=”#ObservationPeriod"> Observation Period</a>
+<p>
 
 
-<p>Procyclic in context of market data as described here, is a condition of positive correlation between an action in the market place and the market price of an asset.  For example, as the price of an asset increases there is a tendency for the asset price to increase as more buyers enter the market.  Ad the price decreases there is a tendency for more sellers to enter the market further depressing the price of the asset.
-<br>
+	<a name="Procyclicality"></a>
+
+
+
+<p>Procyclic in context of market data as described here, is a condition of positive correlation between an action in the market place and the market price of an asset.  For example, as the price of an asset increases there is a tendency for the asset price to increase as more buyers enter the market.  As the price decreases there is a tendency for more sellers to enter the market further depressing the price of the asset.
+<p>
 This action increases the volatility of prices when panic buying or panic selling sets in.  The action can be exacerbated by holders of margin collateral increasing the required collateral forcing participants to abandon positions as requests for more collateral cannot be met.   
-<br>
+<p>
 Conversely, if the volatility is low, both buyers/sellers may view the perceived lower risk as an opportunity to “load up” on positions, running the risk of a volatile movement that would force liquidation.
  
-<br>
+<p>
 
 </p>
+
 <img class="figure" alt="" src="./images/Runningman.png"/>
-<a href="https://openclipart.org/detail/292225/running-man-2">running-man-2</a>
+<p ALIGN=RIGHT>
+<a href="https://openclipart.org/detail/292225/running-man-2">clip art sources: running-man-2</a>
+<a href="https://openclipart.org/detail/268174/guy-with-veggies">guy-with-veggies</a>
+</p>
 
 <p>Weighting factors can be used to reduce this source of volatility by reducing volatility when volatility is high and increasing volatility when volatility is low. 
-<br>
+<p>
 The Exponentially Weighted Moving Average (EWMA) is a method that assigns weightings such that current volatility movements are ameliorated.  In addition, use of a filtered scaling will decrease volatility as volatility increases and vice versa.
-<br>
+<p>
 “The margining model developed by CME Clearing is based on a Historical Value at Risk (HVaR) methodology with Exponentially Weighted Moving Average (EWMA) volatility re-scaling” – cmegroup.com website.   Other authorities and exchanges reference EWMA models as means of addressing procyclicality.
-The following graph illustrates for the S&P 500 index, volatility at various decay factors with 1 being equal to no weighting.  The smaller the factor, the greater the smoothing.
+The following graph illustrates for the S&P 500 index, volatility at various decay factors with 1 being equal to no weighting.  The smaller the factor, the greater the smoothing.  (Data Source:  this is example data not intended for resale)
 
 </p>
 <img class="figure" alt="" src="./images/GSPC_EWMA.png"/>
-
+<p>
+	<a name="HoldingPeriod"></a>
+</p>
+<p>
+	<a name="ObservationPeriod"></a>
+</p>
 </div><!-- /.blurb -->
 
