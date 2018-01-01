@@ -7,6 +7,9 @@
     font-size: 1.5625rem;
     margin-top:1.55556em;
 }
+.sub-nav:hover {
+    text-decoration: underline;
+}
 
 body {
     margin: 60px auto;
@@ -28,7 +31,7 @@ a {
 a:hover {
     text-decoration: underline;
 }
-sub-nav,h1,h2,h3,h4,h5,h6{font-family:"Chronicle Deck",Georgia,Times,"Times New Roman",serif;color:#00306e;margin:0;padding:0;line-height:1.1em}
+.sub-nav,h1,h2,h3,h4,h5,h6{font-family:"Chronicle Deck",Georgia,Times,"Times New Roman",serif;color:#00306e;margin:0;padding:0;line-height:1.1em}
 h1 {
     font-size: 2.5rem;
     line_height: 42px;
