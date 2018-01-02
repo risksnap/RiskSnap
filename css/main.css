@@ -8,9 +8,7 @@
     line-height:1.5rem;
 }
 
-cite {
-    /* right: 0; */
-    /* bottom: -25px; */
+.right-justify {
     float: right;
 }
 
