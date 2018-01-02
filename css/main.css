@@ -2,6 +2,12 @@
 
 .figure{max-width:100%;height:auto;border:0}
 
+.smalltext
+{
+    font-size:.875rem;
+    line-height:1.5rem;
+}
+
 .sub-nav {
     text-decoration: none;
     font-size: 1.5625rem;
