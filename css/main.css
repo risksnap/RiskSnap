@@ -8,8 +8,8 @@
     line-height:1.5rem;
 }
 
-q {
-    right: 0;
+blockquote {
+    /* right: 0; */
     /* bottom: -25px; */
     float: right;
 }
