@@ -9,8 +9,9 @@
 }
 
 cite {
-     right: 0;
-     bottom: -25px;
+    right: 0;
+    bottom: -25px;
+    float: right;
 }
 
 .sub-nav {
