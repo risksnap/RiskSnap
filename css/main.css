@@ -2,10 +2,14 @@
 
 .figure{max-width:100%;height:auto;border:0}
 
-.smalltext{font-size:.875rem;line-height:1.5rem}
+.smalltext
+{
+    font-size:.875rem;
+    line-height:1.5rem;
+    text-align: right;
+}
 
 cite {
-     /*position: absolute;*/
      right: 0;
      bottom: -25px;
      text-align: right;
