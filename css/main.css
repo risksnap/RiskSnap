@@ -6,13 +6,12 @@
 {
     font-size:.875rem;
     line-height:1.5rem;
-    text-align: right;
 }
 
 cite {
      right: 0;
      bottom: -25px;
-     text-align: right;
+     align: right;
 }
 
 .sub-nav {
