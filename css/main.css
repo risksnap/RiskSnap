@@ -33,6 +33,14 @@ nav ul, footer ul {
     list-style: none;
     font-weight: bold;
 }
+footer div a {
+    font-family:"Chronicle Deck",Georgia,Times,"Times New Roman",serif;color: #3a5fcd;
+    padding: 0px;
+    font-weight: 900;
+}
+footer div span {
+    font-weight: 900;
+}
 nav ul li, footer ul li {
     display: inline;
     margin-right: 20px;
