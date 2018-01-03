@@ -54,7 +54,7 @@ clip art source:
 <p>Supervisory requirements for bank minimum capital or market risk using expected shortfall, require liquidity horizons of 10 days for interest rate risk in specified currencies, 10 days for equity prices of large cap instruments, 20 days for small cap equity, 10 days for FX rates in specified currency pairs, and a range of 20 to 120 days for commodities. (Ref: BCBS, Minimum capital requirements for market risk, Jan 2016).
 <p>Holding periods are used in financial models to extend the daily risk into term risk where volatility increases proportional to the square roof of time.  If a daily volatility is observed, then the annualized volatility is a multiplication factor of the square root of 252 (trading days).  In HVar, it is possible to observe 2-day changes to obtain risk over a 2-day holding period, however this tends to breakdown with longer time horizons due to lack of data.  For example, a method is to take the standard deviation of daily changes in a value of an instrument and multiply by the SQRT of 5, if the time horizon is 5 business days.
 <p>Holding periods thus impact the amount of collateral/initial margin required by the counterparty to a trade and has been a source of determining whether a counterparty wishes to do a tailored OTC transaction or a standardized exchange traded transaction, since typically, a listed transaction holding period could be 2-days. A similar OTC trade could have a holding period of 5 days.
-<p>    Synonyms for holding period: Margin Period of Risk (MPOR), Close-out Period, Liquidity Horizon 
+<p>    Synonyms for holding period: Margin Period of Risk (MPOR), Close-out Period, Liquidity Horizon, Liquidation Time 
 </p>
 
 <span id="ObservationPeriod"/>
