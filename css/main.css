@@ -1,4 +1,4 @@
-.menufont {font-family:"Chronicle Deck",Georgia,Times,"Times New Roman",serif;color:#00306e; font-size: 10pt; COLOR:#424242; }
+.menufont {font-family:"Chronicle Deck",Georgia,Times,"Times New Roman",serif;/*color:#00306e;*/ font-size: 10pt; COLOR:#424242; }
 
 .figure{max-width:100%;height:auto;border:0}
 
@@ -6,6 +6,12 @@
 {
     font-size:.875rem;
     line-height:1.5rem;
+}
+
+.ext-nav {
+    color:#00adef;
+    font-weight:400;
+    text-decoration: none;
 }
 
 .sub-nav {
