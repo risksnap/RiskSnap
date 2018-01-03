@@ -8,6 +8,15 @@
     line-height:1.5rem;
 }
 
+.cta{background-color:#f6f6f6;padding:25px 65px 25px 25px;color:#207aa2;font-weight:400}.up.-filled .cta.-arrow:after{top:25px;right:25px}.up.-filled .cta.-arrow:hover:after{right:15px}.up-filled{background-color:#eff3f7;display:inline-block;min-width:100%;clear:both;padding-top:40px;padding-bottom:40px}@media screen and (min-width:73.75em){.up-filled{padding-top:60px;padding-bottom:60px}}.two-up
+
+.ack-nav {
+    background-color:#f6f6f6;
+    color:#207aa2;
+    font-weight:400;
+    text-decoration: none;
+}
+
 .sub-nav {
     text-decoration: none;
     font-size: 1.5625rem;
