@@ -26,20 +26,12 @@
 .article-title {
 
     border-bottom: 1px solid #F6F6F6;
-
     width: 165px; 
-
     height: 18px; 
-
     float: left;
-
     text-align: left;
-
-    font-size: 1.3rem;
-
+    font-size: 1rem;
     color:#00adef;
-    font-weight:400;
-    text-decoration: none;
 }
 
 body {
