@@ -23,7 +23,7 @@
     text-decoration: underline;
 }
 
-.article {
+.article-title {
     border-bottom: 1px solid #F6F6F6;
     width: 265px; 
     height: 18px; 
@@ -33,11 +33,8 @@
     color:#00306e;
 }
 
-.article-title {
-    font-size: 1rem;
-}
-
 .article-author {
+    float: left;
     font-size: 0.75rem;
 }
 
