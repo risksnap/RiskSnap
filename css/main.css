@@ -23,7 +23,7 @@
     text-decoration: underline;
 }
 
-.article-title {
+.article {
     border-bottom: 1px solid #F6F6F6;
     width: 265px; 
     height: 18px; 
@@ -31,6 +31,10 @@
     text-align: left;
     font-size: 1rem;
     color:#00306e;
+}
+
+.article-title {
+    font-size: 1rem;
 }
 
 .article-author {
