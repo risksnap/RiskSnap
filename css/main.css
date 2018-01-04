@@ -25,16 +25,16 @@
 
 .article-title {
     border-bottom: 1px solid #F6F6F6;
-    width: 265px; 
+    /*width: 265px; 
     height: 18px; 
-    float: left;
+    float: left;*/
     text-align: left;
     font-size: 1rem;
     color:#00306e;
 }
 
 .article-author {
-    float: left;
+    text-align: left;
     font-size: 0.75rem;
 }
 
