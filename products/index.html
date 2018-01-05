@@ -15,9 +15,9 @@ layout: products-template
 The system also calculates risk on collateral, both fixed income and equities, to determine how the value of collateral could be affected during volatile times.  The results of the collateral haircuts are netted to cash balances, market value and and liquidation risk of the trades to determine breaches and collateral deficits/excesses.  For market risk purposes users can supply market limits in order to view market limit excesses/breachs.
 <p>
 Antithetic Var permits for viewing the risk from the counterparties point of view since they are not the same.  Thus, it is possible to view both collateral required by the trader to manage the trade, and also the collateral that the trader should request from the counterparty.
-<p>  RiskSpan also allows for netting sets, each netting set with its own parameters on percentiles, observation date ranges, and choice of whether HVaR or Expected shortfall will be used.  This would be particularly helpful where cash trades are hedged by options, thus reducing risk and the need to tie up cash in collateral..
+<p>  RiskSpan also allows for netting sets, each netting set with its own parameters on percentiles, observation date ranges, and choice of whether HVaR or Expected shortfall will be used.  This would be particularly helpful where cash trades are hedged by options, thus reducing risk and the need to tie up cash in collateral.
 <p>  Holding periods are at the transaction level and can be adjusted if a particular transaction appears to be difficult to liquidate due to characteristic specific to that trade.
-<p>  RiskSpan calculates the shocked rates using EWMA with flexibility on the weightings.  Clients can submit their own shocked rates if preferable.
+<p>  RiskSpan calculates the shocked rates using EWMA, in order to reduce procyclicality, with flexibility on the weightings.  Clients can submit their own shocked rates if preferable.
 
 <p>Some of the features are listed below:
 
