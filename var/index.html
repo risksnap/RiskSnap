@@ -1,36 +1,27 @@
 ---
-layout: var-template
+layout: default-template
 ---
 <div class="page-content">
-<P><H3>HVaR - Historical Value at Risk</H3>
+	
+    <p>RiskSnap was founded in August 2017 by a small, passionate team that first worked together on risk projects ten years earlier. 
+       Financial risk is very much in our DNA, we have a strong foundation in current regulatory risk methodologies
+       and building financial risk software. We have set out to produce best-in-class financial risk software for banks, exchanges, corporate hedgers, 
+       investors, asset managers, custodians, insurance firms, and pension fund administrators. 
+       </p>
+	   
+	   <img class="figure" alt="" src="./images/TOSkyline.PNG"/>
+       <H3>HVaR - Historical Value at Risk</H3>
 	   <p>Value at risk (VaR) expresses the expected maximum loss that could occur over a defined time horizon and within a specific time interval.  VaR is one of the most popular tools used in financial risk management and is incorporated within the Basel Accord for banking supervision.  VaR is used by central counterparties (CCPs) for purposes of determining initial margin for listed products such as futures and securities.
 	   <p>The methodology was given a public push in the 1994 when JP Morgan published RiskMetrics over the internet to a wide audience.
 	   <p>VaR can be measured in a number of ways, with the following three methods most commonly used:
-<A class="sub-nav" href="#VarianceCovariance"> &#8226; Variance-Covariance Approach</A><BR>
-<A class="sub-nav" href="#HVaR"> &#8226; Historical Simulation Approach (HsVaR or HvaR)</A><BR>
-<A class="sub-nav" href="#MonteCarlo"> &#8226; Monte Carlo Simulation</A>
-</P>
-
-
-	<span id="VarianceCovariance"/>
-<H3> Variance-Covariance Approach</H3>
- 
-<p>This method measures the standard deviation of historic returns of the risk factors with the assumption that risk factors are normally distributed.  Multipliers provide the desired confidence interval.   This “standardized” approach utilizes Variance-Covariance in order to determine hair-cuts.  The advantage to this analytical method is simplicity, ease of usage and fast execution.   The disadvantage is that the assumption that asset returns are normally distributed is rarely true.
-
-</p>
-
-<span id="HVaR"/>
-<H3>Historical Simulation Approach (HsVaR or HvaR)</H3>
-
-<p>This approach assumes that future asset returns will be the same as the past.  The method consists of applying past shifts in risk factors to the current market values and measuring the change in market value.  Using a 99th percentile measurement, the amount at risk is expected to occur 1/100 times.  The risk factors can be all of the market factors used to price the instrument, for example, each point in the yield curve.  A full valuation technique can be used, or in a less granular approach, the “greeks” or the delta, vega, gammas can be subjected to the past shifts.  The advantage is that the method is straight-forward.  The disadvantage is that rare events, “tail events” are not captured and the banking regulators now require Expected Shortfall (ES) as a measurement of market risk.  The data preparation is the same as for HvaR with the exception, that rather than a percentile, generally, the average of the tail is selected.
-<p>    Synonyms for holding period: Margin Period of Risk (MPOR), Close-out Period, Liquidity Horizon, Liquidation Time 
-</p>
-
-<span id="MonteCarlo"/>
-<H3>Monte Carlo Simulation</H3>
-<p>This methodology requires a set of standard deviations and correlations among risk factors in order to produce distributions of possible forecasted outcomes.  Assets are then valued using those distributions, and the changes in market value are measured in percentiles.  The disadvantage to Monte Carlo is in execution time since the simulation requires many iterations.   In addition, the model is not as straight-forward as the other two methods, and consequently is less used in financial risk management.
-<p>
-Regulators for banking and for systemically significant derivatives clearing organizations, have tightened up controls on market risk.  The focus is on data used for the VaR methodologies.  The earlier issues related to holding periods, ie. The amount of time needed to liquidate or hedge a failing position, particularly for over-the-counter (OTC) products, and to period of observation of historical rates.   A stress period was required, but a current period was also needed to observe recent volatility.  A concern was raised with procyclicality, the tendency for a market event to cascade further events, and in the case of listed instruments, a weighting is required to address this.  During the financial crisis of 2008, several extreme events took place in one week following the failure of Lehman Brothers.  Banking regulators now require Expected Shortfall as the measure of the market risk.  Most recently, Banking regulators are concerned with the quality of data.  Risk factors must be based on real verifiable prices, with a minimum frequency of observable prices, creating some difficulties with OTC and non-linear instruments.
-</p>
+	   <p>
+	   <p>  &#8226;	<b>Variance-Covariance Approach.</b>  This method measures the standard deviation of historic returns of the risk factors with the assumption that risk factors are normally distributed.  Multipliers provide the desired confidence interval.   This “standardized” approach utilizes Variance-Covariance in order to determine hair-cuts.  The advantage to this analytical method is simplicity, ease of usage and fast execution.   The disadvantage is that the assumption that asset returns are normally distributed is rarely true.
+	   <p>  &#8226;	<b>Historical Simulation Approach (HsVaR or HvaR).</b>  This approach assumes that future asset returns will be the same as the past.  The method consists of applying past shifts in risk factors to the current market values and measuring the change in market value.  Using a 99th percentile measurement, the amount at risk is expected to occur 1/100 times.  The risk factors can be all of the market factors used to price the instrument, for example, each point in the yield curve.  A full valuation technique can be used, or in a less granular approach, the “greeks” or the delta, vega, gammas can be subjected to the past shifts.  The advantage is that the method is straight-forward.  The disadvantage is that rare events, “tail events” are not captured and the banking regulators now require Expected Shortfall (ES) as a measurement of market risk.  The data preparation is the same as for HvaR with the exception, that rather than a percentile, generally, the average of the tail is selected.
+	   <p>  &#8226; <b>Monte Carlo Simulation.</b>  This methodology requires a set of standard deviations and correlations among risk factors in order to produce distributions of possible forecasted outcomes.  Assets are then valued using those distributions, and the changes in market value are measured in percentiles.  The disadvantage to Monte Carlo is in execution time since the simulation requires many iterations.   In addition, the model is not as straight-forward as the other two methods, and consequently is less used in financial risk management.
+	   <p>
+	   <H3>HVaR - Data Requirements</H3>
+	   <p>Regulators for banking and for systemically significant derivatives clearing organizations, have tightened up controls on market risk.  The focus is on the data used for the VaR methodologies.  The earlier issues related to holding periods, ie. The amount of time needed to liquidate or hedge a failing position, particularly for over-the-counter (OTC) products, and to period of observation of historical rates.   A stress period was required, but a current period was also needed to observe recent volatility.  A concern was raised with procyclicality, the tendency for a market event to cascade further events, and in the case of listed instruments, a weighting is required to address this.  During the financial crisis of 2008, several extreme events took place in one week following the failure of Lehman Brothers.  Banking regulators now require Expected Shortfall as the measure of the market risk.  Most recently, Banking regulators are concerned with the quality of data.  Risk factors must be based on real verifiable prices, with a minimum frequency of observable prices, creating some difficulties with OTC and non-linear instruments.
+	   </p>
+    
 </div><!-- /.page-content -->
 
