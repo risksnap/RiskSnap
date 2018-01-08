@@ -1,7 +1,6 @@
 /* Dropdown Button */
 .dropbtn {
     font-family:"Chronicle Deck",Georgia,Times,"Times New Roman",serif; font-size: 12pt; color:#424242; 
-    /*padding-right: 16px;*/
     border: none;
     cursor: pointer;
     background-color: white;
