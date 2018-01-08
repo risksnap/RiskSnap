@@ -150,8 +150,9 @@ ul.posts li {
     list-style: none;
 }
 
-.layout {
+.page-content {
     width: 100%;
+    display: table;
 }
 
 .table {
