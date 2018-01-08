@@ -150,6 +150,10 @@ ul.posts li {
     list-style: none;
 }
 
+.layout {
+    width: 100%;
+}
+
 .table {
     width: 100%;
     display: table;
