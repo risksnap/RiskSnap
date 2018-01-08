@@ -1,6 +1,6 @@
 /* Dropdown Button */
 .dropbtn {
-    font-family:"Chronicle Deck",Georgia,Times,"Times New Roman",serif; /*font-size: 12pt;*/ color:#424242; 
+    font-family:"Chronicle Deck",Georgia,Times,"Times New Roman",serif; font-size: 0.75em; color:#424242; 
     border: none;
     cursor: pointer;
     background-color: white;
@@ -44,7 +44,7 @@
     /* background-color: #3e8e41;  */
 }
 
-.menufont {font-family:"Chronicle Deck",Georgia,Times,"Times New Roman",serif; font-size: 12pt; color:#424242; }
+.menufont {font-family:"Chronicle Deck",Georgia,Times,"Times New Roman",serif; font-size: 0.75em; color:#424242; }
 
 .figure{max-width:100%;height:auto;border:0}
 
