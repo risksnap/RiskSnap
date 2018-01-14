@@ -36,6 +36,12 @@ body {
     display: table;
     clear: both;
 }
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+@media (max-width: 600px) {
+    .column {
+        width: 100%;
+    }
+}
 </style>
 </head>
 <body>
@@ -44,7 +50,7 @@ body {
 <div class="row">
   <div class="column" style="background-color:#aaa;">
     <h2>The Company</h2>
-    <p>RiskSnap was founded in August 2017 by a small, highly motivated team that first worked together on risk projects ten years earlier. Financial risk is very much in our DNA, we have a strong foundation in current regulatory risk methodologies and building financial risk software.</p>
+    <p>RiskSnap was founded in August 2017 by a small, highly motivated team that first worked together on risk projects ten years earlier. Financial risk is very much in our DNA, we have a strong foundation in current regulatory risk methodologies and building financial risk software</p>
   </div>
   <div class="column" style="background-color:#bbb;">
     <h2>Goal</h2>
