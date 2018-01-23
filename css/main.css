@@ -205,7 +205,8 @@ body.home li.home, body.tech li.tech {font-weight:bold; }
 }
 
 .main-copy {
-    width: 81.4%
+    left-margin: 3%;
+    width: 81;
 }
 
 body {
