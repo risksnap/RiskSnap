@@ -204,6 +204,10 @@ body.home li.home, body.tech li.tech {font-weight:bold; }
     font-size: 0.75rem;
 }
 
+.main-copy {
+    width: 81.4%
+}
+
 body {
     margin: 0 auto;
     width: 100%;
