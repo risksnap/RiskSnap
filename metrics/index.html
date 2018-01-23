@@ -1,35 +1,34 @@
 ---
 layout: metrics-template
 ---
-<P>
-<A class="sub-nav" href="#Procyclicality"> &#8226; Procyclicality</A><BR>
-<A class="sub-nav" href="#HoldingPeriod"> &#8226; Holding Period</A><BR>
-<A class="sub-nav" href="#ObservationPeriod"> &#8226; Observation Period</A>
-</P>
 
+<div class="text-section">
+    <P>
+    <A class="sub-nav" href="#Procyclicality"> &#8226; Procyclicality</A><BR>
+    <A class="sub-nav" href="#HoldingPeriod"> &#8226; Holding Period</A><BR>
+    <A class="sub-nav" href="#ObservationPeriod"> &#8226; Observation Period</A>
+    </P>
+    <span id="Procyclicality"/>
+    <H3>Procyclicality</H3>
+     
+    <p>Procyclic in context of market data as described here, is a condition of positive correlation between an action in the market place and the market price of an asset.  For example, as the price of an asset increases there is a tendency for the asset price to increase as more buyers enter the market.  As the price decreases there is a tendency for more sellers to enter the market further depressing the price of the asset.
+    <p>
+    This action increases the volatility of prices when panic buying or panic selling sets in.  The action can be exacerbated by holders of margin collateral increasing the required collateral forcing participants to abandon positions as requests for more collateral cannot be met.   
+    <p>
+    Conversely, if the volatility is low, both buyers/sellers may view the perceived lower risk as an opportunity to “load up” on positions, running the risk of a volatile movement that would force liquidation.
+     
+    <p>Weighting factors can be used to reduce this source of volatility by reducing volatility when volatility is high and increasing volatility when volatility is low. 
+    <p>
+    The Exponentially Weighted Moving Average (EWMA) is a method that assigns weightings such that current volatility movements are ameliorated.  In addition, use of a filtered scaling will decrease volatility as volatility increases and vice versa.
+    <p>
+    “The margining model developed by CME Clearing is based on a Historical Value at Risk (HVaR) methodology with Exponentially Weighted Moving Average (EWMA) volatility re-scaling” – cmegroup.com website.   Other authorities and exchanges reference EWMA models as means of addressing procyclicality.
+    The following graph illustrates for the S&P 500 index, volatility at various decay factors with 1 being equal to no weighting.  The smaller the factor, the greater the smoothing.  (Data Source:  this is example data not intended for resale)
+    </p>
+</div> <!-- text-section -->
 
-	<span id="Procyclicality"/>
-<H3>Procyclicality</H3>
- 
-<p>Procyclic in context of market data as described here, is a condition of positive correlation between an action in the market place and the market price of an asset.  For example, as the price of an asset increases there is a tendency for the asset price to increase as more buyers enter the market.  As the price decreases there is a tendency for more sellers to enter the market further depressing the price of the asset.
-<p>
-This action increases the volatility of prices when panic buying or panic selling sets in.  The action can be exacerbated by holders of margin collateral increasing the required collateral forcing participants to abandon positions as requests for more collateral cannot be met.   
-<p>
-Conversely, if the volatility is low, both buyers/sellers may view the perceived lower risk as an opportunity to “load up” on positions, running the risk of a volatile movement that would force liquidation.
- 
-<p>
-
-</p>
-
-<p>Weighting factors can be used to reduce this source of volatility by reducing volatility when volatility is high and increasing volatility when volatility is low. 
-<p>
-The Exponentially Weighted Moving Average (EWMA) is a method that assigns weightings such that current volatility movements are ameliorated.  In addition, use of a filtered scaling will decrease volatility as volatility increases and vice versa.
-<p>
-“The margining model developed by CME Clearing is based on a Historical Value at Risk (HVaR) methodology with Exponentially Weighted Moving Average (EWMA) volatility re-scaling” – cmegroup.com website.   Other authorities and exchanges reference EWMA models as means of addressing procyclicality.
-The following graph illustrates for the S&P 500 index, volatility at various decay factors with 1 being equal to no weighting.  The smaller the factor, the greater the smoothing.  (Data Source:  this is example data not intended for resale)
-
-</p>
 <img class="figure" alt="" src="./images/GSPC_EWMA.png"/>
+
+<div class="text-section">
 <p>The EWMA variance is,</p>
 <img class="figure" alt="" src="./images/EWMAEquation.png"/>
 <p>where mu(i) is the change in the risk factor price, in the above case shown as a daily relative change.  Log changes and absolute changes can be used also.  Lambda is the decay factor which can be .97 as was used by J.P. Morgan.  A value of 1 means that there is no decay factor.
@@ -49,10 +48,12 @@ The following graph illustrates for the S&P 500 index, volatility at various dec
 
 <span id="ObservationPeriod"/>
 <H3>Observation Period</H3>
-<p>
+</div> <!-- text-section -->
 <img class="figure" alt="" src="./images/ObservationPeriod1.png"/>
-<p>The observation period is the period over which the historical prices are observed.  Basel’s Principles for Market Infrastructures, PFMI, and the standard to which Central Counterparties (CCP) who wish to be PFMI compliant must adhere to, expects that a CCP include peak historic price volatilities as well as scenarios in light of current and evolving market conditions. Historical scenarios should not be excluded purely on account of passage of time. (BIS: Resilience and recovery of central counterparties (CCPs):  Further guidance on the PFMI, Aug 2016, d149.pdf)
-<p>
-Basel's Minimum Capital Requirements for Market Risk require that for measures based on current observations banks must update their data sets at least once a month or when the market is subject to material changes.  For the stressed period banks must identify the 12 month period of stress over the observation horizon in which the portfolio experiences the largest loss.  This horizon must, at a minimum span back to and include 2007.  Observations within this period must be equally weighted (e.g. not subject to EWMA).  Banks must update the 12-month stressed periods no less than monthly. (BIS: Minimum capital requirements for market risk Jan 2016, bcbs352).
-</p>
+<div class="text-section">
+    <p>The observation period is the period over which the historical prices are observed.  Basel’s Principles for Market Infrastructures, PFMI, and the standard to which Central Counterparties (CCP) who wish to be PFMI compliant must adhere to, expects that a CCP include peak historic price volatilities as well as scenarios in light of current and evolving market conditions. Historical scenarios should not be excluded purely on account of passage of time. (BIS: Resilience and recovery of central counterparties (CCPs):  Further guidance on the PFMI, Aug 2016, d149.pdf)
+    <p>
+    Basel's Minimum Capital Requirements for Market Risk require that for measures based on current observations banks must update their data sets at least once a month or when the market is subject to material changes.  For the stressed period banks must identify the 12 month period of stress over the observation horizon in which the portfolio experiences the largest loss.  This horizon must, at a minimum span back to and include 2007.  Observations within this period must be equally weighted (e.g. not subject to EWMA).  Banks must update the 12-month stressed periods no less than monthly. (BIS: Minimum capital requirements for market risk Jan 2016, bcbs352).
+    </p>
+</div>
 
