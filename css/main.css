@@ -205,12 +205,12 @@ body.home li.home, body.tech li.tech {font-weight:bold; }
 }
 
 .main-copy {
-    left-margin: 3%;
+    margin-left: 3%;
     width: 81%;
 }
 
 body {
-    margin: 0 auto;
+    margin-left: 0 auto;
     width: 100%;
 }
 nav ul, footer ul {
@@ -258,7 +258,7 @@ h5 {
 }
 
 p{font-family:"Chronicle Deck",Georgia,Times,"Times New Roman",serif;color:#00306e;
-  line-height:1.67;color:#666;/*clear:left;*/margin-top:1em;letter-spacing:-.02em}
+  line-height:1.67;color:#666;clear:left;margin-top:1em;letter-spacing:-.02em}
 
 /*p {font-size:1.33333333em;
    line-height:1.38em;
