@@ -206,7 +206,7 @@ body.home li.home, body.tech li.tech {font-weight:bold; }
 
 body {
     margin: 60px auto;
-    width: 70%;
+    width: 100%;
 }
 nav ul, footer ul {
     font-family:"Chronicle Deck",Georgia,Times,"Times New Roman",serif;color:#00306e;
