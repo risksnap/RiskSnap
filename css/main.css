@@ -45,6 +45,21 @@
     /* background-color: #3e8e41;  */
 }
 
+body {
+    margin: 0 auto;
+    width: 100%;
+}
+
+.page-content {
+    width: 100%;
+    display: table;
+}
+
+.text-section {
+    margin: 3% auto;
+    width: 81%;
+}
+
 .menufont {font-family:"Chronicle Deck",Georgia,Times,"Times New Roman",serif; font-size: 12pt; color:#424242; }
 
 .figure{max-width:100%;height:auto;border:0}
@@ -82,15 +97,6 @@
     font-size: 0.75rem;
 }
 
-.text-section {
-    margin-left: 3%;
-    width: 81%;
-}
-
-body {
-    margin-left: 0 auto;
-    width: 100%;
-}
 nav ul, footer ul {
     font-family:"Chronicle Deck",Georgia,Times,"Times New Roman",serif;color:#00306e;
     padding: 0px;
@@ -154,11 +160,6 @@ ul.posts {
 
 ul.posts li {
     list-style: none;
-}
-
-.page-content {
-    width: 100%;
-    display: table;
 }
 
 .table {
