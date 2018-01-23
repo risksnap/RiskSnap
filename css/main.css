@@ -59,6 +59,12 @@ body {
     width: 81%;
 }
 
+.image-section {
+    margin-left: 0%;
+    width: 100%;
+    margin-top:1.55556em;
+}
+
 .page-header {
     margin-left: 3%;
     width: 81%;
