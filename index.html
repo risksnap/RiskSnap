@@ -2,10 +2,50 @@
 layout: default-template
 ---
 <div class ="image-section">
-    <img class="figure" alt="" src="./images/TOSkyline.PNG" style="width:100%;" />
+   
+
+!DOCTYPE html>
+<html>
+<head>
+<script type="text/javascript">
+<!-->
+var image1=new Image()
+image1.src="./images/TOSkyline.PNG"
+var image2=new Image()
+image2.src="./images/TO3.PNG"
+var image3=new Image()
+image3.src="./images/TO4.PNG"
+//-->
+</script>
+</head>
+<body>
+<img src="./images/TOSkyline.PNG" name="slide" width="400" height="400">
+<script type="text/javascript">
+<!--
+var step=1
+function slideit(){
+document.images.slide.src=eval("image"+step+".src")
+if(step<3)
+step++
+else
+step=1
+setTimeout("slideit()",2500)
+}
+slideit()
+//-->
+</script>
+</body>
+</html> 
+
+
 </div>
        
 <div class="text-section">
+
+
+
+
+
 <h3>Our Team</h3>
 <p class="paragraph">RiskSnap was founded in August 2017 by a small, highly motivated team that first worked together on risk projects ten years earlier. Financial risk is very much in our DNA, we have a strong foundation in current regulatory risk methodologies and building financial risk software.
 
