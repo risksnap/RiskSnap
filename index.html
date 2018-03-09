@@ -46,7 +46,12 @@ slideit()
 <h3 class="three-col-header">VaR as a Risk Measure</h3>
 <p class="paragraph">VaR is one of the most popular tools used in risk management and is incorporated within the Basel Accord for banking supervision.  VaR is used by central counterparties (CCPs) for purposes of determining initial margin. Our core solution is VaR.
 <p>
-<p>Risk is calculated below for various asset classes and sectors as at March 1, 2018.  Equity risk is based on 100 shares, futures risk is based on futures contract size, foreign exchange risk on the currency amounts for futures contracts, and interest rate risk on 100,000.  Risk is based on tail risk of HVar, or expected shortfall.  For example, the expected loss on a position of 1 bit coin futures contract (representing 5 coins) is shown under the Risk Amount column.  The risk period observed is 500 days ending one week prior, February 23.  In most cases the risk amount is from the identified stress period, however in this example, the risk occurred in the current period.  A positive amount in the change column indicates that risk is declining, negative, that risk is increasing.
+<p>Risk is calculated below for various asset classes and sectors.  The Risk is the amount using expected shortfall, that is, the average of the worst 1% of the losses over a stated period of time.  The losses are for long positions in the number of units shown.  The Antithetic loss is for a short position.   In many cases, the expected losses are greater in short positions.
+<p>
+The day over day values are the changes in the expected loss.  Trends can indicate if expected losses are increasing or decreasing.
+<p>
+Clicking on the last column will provide a chart of the losses over 2 periods, a stress period and the current period.  HvaR or percentile losses can be roughly checked.  For example, at a 99 Percentile with 1000 observations, there should be about 10 points below the HvaR line.
+.
 </p>
 <p style="color:red;">(Click on Risk Amount for Graph)</p>
 
