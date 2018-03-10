@@ -11,7 +11,12 @@ body {
 <body onload="window.resizeTo(1430, 500);">
 <body>
 <H3>AAPL  Apple Inc .</H3>
-<a href="#" data-rel="back" data-icon="arrow-1" data-iconpos="notext"></a>
+<button onclick="goBack()">Go Back</button>
+<script>
+function goBack() {
+    window.history.back();
+}
+</script>
 <p>
 <div class ="Image - section">
 <img src="./AAPL.png" / alt = "AAPL" width = "1410" height="486">
