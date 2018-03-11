@@ -165,10 +165,42 @@ Clicking on the last column will provide a chart of the losses over 2 periods, a
   <td>(2)</td>
   <td>(32)</td>
   <td>
-<div class="daily_gold_chart">
-					<a href="javascript:NewWindow('/charts/popup/BDX.html','Au30Days','top=50,left=200,width=1100,height=880,scrollbars=yes');"><img src="/images/BDX.png?random=0.389434814453125" id="BDX.png" width="262" height="130" alt="24 hr gold chart" /></a>
-					<center><a class="BDX link" href="javascript:NewWindow('/charts/popup/BDX.html','BDX Var','top=50,left=200,width=1100,height=880,scrollbars=yes');">Click to Enlarge</a></center>
-				</div>
+<h2>Image Modal</h2>
+<p>In this example, we use CSS to create a modal (dialog box) that is hidden by default.</p>
+<p>We use JavaScript to trigger the modal and to display the current image inside the modal when it is clicked on. Also note that we use the value from the image's "alt" attribute as an image caption text inside the modal.</p>
+
+<img id="myImg" src="BDX.png" alt="Trolltunga, Norway" width="300" height="200">
+
+<!-- The Modal -->
+<div id="myModal" class="modal">
+  <span class="close">&times;</span>
+  <img class="modal-content" id="img01">
+  <div id="caption"></div>
+</div>
+
+<script>
+// Get the modal
+var modal = document.getElementById('myModal');
+
+// Get the image and insert it inside the modal - use its "alt" text as a caption
+var img = document.getElementById('myImg');
+var modalImg = document.getElementById("img01");
+var captionText = document.getElementById("caption");
+img.onclick = function(){
+    modal.style.display = "block";
+    modalImg.src = this.src;
+    captionText.innerHTML = this.alt;
+}
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() { 
+    modal.style.display = "none";
+}
+</script>
+
 
   
   
