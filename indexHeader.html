@@ -1,0 +1,169 @@
+---
+layout: default-template
+---
+<div class ="image-section">
+   
+<html>
+<head>
+<script type="text/javascript">
+<!-->
+var image1=new Image()
+image1.src="./images/TOSkyline.PNG"
+var image2=new Image()
+image2.src="./images/TO3.PNG"
+var image3=new Image()
+image3.src="./images/TO4.PNG"
+//-->
+</script>
+
+</head>
+<body>
+<img src="./images/TOSkyline.PNG" name="slide" style="width:100%;" />
+<script type="text/javascript">
+<!--
+var step=1
+function slideit(){
+document.images.slide.src=eval("image"+step+".src")
+if(step<3)
+step++
+else
+step=1
+setTimeout("slideit()",8000)
+}
+slideit()
+//-->
+</script>
+<!-- new -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {font-family: Arial, Helvetica, sans-serif;}
+
+#myImg {
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#myImg:hover {opacity: 0.7;}
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(243,228,218); /* Fallback color */
+   <-- background-color: rgba(0,0,0,0.9); /* Black w/ opacity */ -->
+}
+
+/* Modal Content (image) */
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 1500px;
+}
+
+/* Caption of Modal Image */
+#caption {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    text-align: center;
+    color: #ccc;
+    padding: 10px 0;
+    height: 150px;
+}
+
+
+
+/* The Close Button */
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #0F5499;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* 100% Image Width on Smaller Screens */
+@media only screen and (max-width: 700px){
+    .modal-content {
+        width: 100%;
+    }
+}
+</style>
+<!-- end new -->
+
+
+
+
+</body>
+</html> 
+
+
+</div>
+       
+<div class="text-section">
+
+<h3 class="three-col-header">VaR as a Risk Measure</h3>
+<p class="paragraph">VaR is one of the most popular tools used in risk management and is incorporated within the Basel Accord for banking supervision.  VaR is used by central counterparties (CCPs) for purposes of determining initial margin.
+<p> Our core solution is VaR.
+<p>
+<p>Risk is calculated below for long positions in various asset classes and sectors using HVaR (antithetic HVaR applies to short positions).  These values are similar to initial margins required by exchanges/brokers/banks and vary according to HVaR parameters and discretionary factors.  
+
+Parameters used for this model can be viewed by clicking on the graph icons.  For example, a 99th percentile indicates that 1% of the observations will be below the HVaR line.  Stress VaR, required by banking regulators is also shown on the graph.
+</p>
+
+
+<p>
+
+<p>
+</p>
+
+
+<head>
+<style>
+#customers {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+#customers td, #customers th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+#customers tr:nth-child(even){background-color: #f2f2f2;}
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #3A5FCD;
+    color: white;
+}
+</style>
+</head>
+
+<body>
+<table id="customers">
+

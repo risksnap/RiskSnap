@@ -122,12 +122,13 @@ body {font-family: Arial, Helvetica, sans-serif;}
 <div class="text-section">
 
 <h3 class="three-col-header">VaR as a Risk Measure</h3>
-<p class="paragraph">VaR is one of the most popular tools used in risk management and is incorporated within the Basel Accord for banking supervision.  VaR is used by central counterparties (CCPs) for purposes of determining initial margin.
-<p> Our core solution is VaR.
+<p class="paragraph">VaR is one of the most popular tools used in risk management and is incorporated within the Basel Accord for banking supervision.  VaR is used by central counterparties (CCPs) for purposes of determining initial margin. Our core solution is VaR.
 <p>
-<p>Risk is calculated below for long positions in various asset classes and sectors using HVaR (antithetic HVaR applies to short positions).  These values are similar to initial margins required by exchanges/brokers/banks and vary according to HVaR parameters and discretionary factors.  
+<p>Risk is calculated below for various asset classes and sectors.  The Risk is the amount using expected shortfall, that is, the average of the worst 1% of the losses over a stated period of time.  The losses are for long positions in the number of units shown.  The Antithetic loss is for a short position.   In many cases, the expected losses are greater in short positions.
+The day over day values are the changes in the expected loss.  Trends can indicate if expected losses are increasing or decreasing. The risk observation period ends 2 business days prior to the risk date.
+<p>
+Click on chart inset to view risk over the stress period and the current period.  HvaR or percentile losses can be roughly checked.  For example, at a 99 Percentile with 1000 observations, there should be about 10 points below the HvaR line.
 
-Parameters used for this model can be viewed by clicking on the graph icons.  For example, a 99th percentile indicates that 1% of the observations will be below the HVaR line.  Stress VaR, required by banking regulators is also shown on the graph.
 </p>
 
 
@@ -176,7 +177,6 @@ Parameters used for this model can be viewed by clicking on the graph icons.  Fo
   <th>Market</th>
   <th>Gain/(Loss)</th>
   <th>Antithetic</th>
-  <th>Mar-02/Mar-01</th>
   <th>Mar-05/Mar-02</th>
   <th>Mar-06/Mar-05</th>
   <th>Mar-07/Mar-06</th>
@@ -192,7 +192,6 @@ Parameters used for this model can be viewed by clicking on the graph icons.  Fo
   <td>3.13%</td>
   <td>545</td>
   <td>(2,945)</td>
-  <td>39</td>
   <td>11</td>
   <td>(14)</td>
   <td>(6)</td>
@@ -236,7 +235,6 @@ span.onclick = function() {
   <td>3.13%</td>
   <td>(41)</td>
   <td>(271)</td>
-  <td>(3)</td>
   <td>2</td>
   <td>(2)</td>
   <td></td>
@@ -280,7 +278,6 @@ span.onclick = function() {
   <td>176.94</td>
   <td>191</td>
   <td>(1,057)</td>
-  <td>(1)</td>
   <td>2</td>
   <td>(1)</td>
   <td>10</td>
@@ -324,7 +321,6 @@ span.onclick = function() {
   <td>223.44</td>
   <td>509</td>
   <td>(948)</td>
-  <td>11</td>
   <td>4</td>
   <td>(1)</td>
   <td>(2)</td>
@@ -368,7 +364,6 @@ span.onclick = function() {
   <td>68.36</td>
   <td>85</td>
   <td>(431)</td>
-  <td>1</td>
   <td>(5)</td>
   <td>8</td>
   <td>4</td>
@@ -412,7 +407,6 @@ span.onclick = function() {
   <td>43.59</td>
   <td>14</td>
   <td>(188)</td>
-  <td></td>
   <td>(6)</td>
   <td>(6)</td>
   <td>1</td>
@@ -456,7 +450,6 @@ span.onclick = function() {
   <td>1126.</td>
   <td>1,636</td>
   <td>(5,590)</td>
-  <td>(125)</td>
   <td>(77)</td>
   <td>(186)</td>
   <td>(83)</td>
@@ -500,7 +493,6 @@ span.onclick = function() {
   <td>132.06</td>
   <td>302</td>
   <td>(533)</td>
-  <td>(7)</td>
   <td>(8)</td>
   <td>5</td>
   <td>(5)</td>
@@ -544,7 +536,6 @@ span.onclick = function() {
   <td>16.01</td>
   <td>(4)</td>
   <td>(80)</td>
-  <td></td>
   <td>(1)</td>
   <td>1</td>
   <td>1</td>
@@ -588,7 +579,6 @@ span.onclick = function() {
   <td>58.66</td>
   <td>(63)</td>
   <td>(390)</td>
-  <td>(5)</td>
   <td>(6)</td>
   <td>(5)</td>
   <td>1</td>
@@ -632,7 +622,6 @@ span.onclick = function() {
   <td>86.16</td>
   <td>5</td>
   <td>(651)</td>
-  <td>12</td>
   <td>(50)</td>
   <td>(6)</td>
   <td>2</td>
@@ -676,7 +665,6 @@ span.onclick = function() {
   <td>94.43</td>
   <td>57</td>
   <td>(542)</td>
-  <td></td>
   <td>(1)</td>
   <td>4</td>
   <td></td>
@@ -720,7 +708,6 @@ span.onclick = function() {
   <td>3001.73</td>
   <td>1,271</td>
   <td>(20,857)</td>
-  <td>(297)</td>
   <td>86</td>
   <td>(546)</td>
   <td>(151)</td>
@@ -764,7 +751,6 @@ span.onclick = function() {
   <td>41.83</td>
   <td>24</td>
   <td>(153)</td>
-  <td>(15)</td>
   <td>(9)</td>
   <td>1</td>
   <td>(3)</td>
@@ -808,7 +794,6 @@ span.onclick = function() {
   <td>131.26</td>
   <td>33</td>
   <td>(634)</td>
-  <td>6</td>
   <td>481</td>
   <td>(15)</td>
   <td>7</td>
@@ -852,7 +837,6 @@ span.onclick = function() {
   <td>74.12</td>
   <td>(14)</td>
   <td>(304)</td>
-  <td>(10)</td>
   <td>(12)</td>
   <td>3</td>
   <td>18</td>
@@ -896,7 +880,6 @@ span.onclick = function() {
   <td>2738.97</td>
   <td>1,217</td>
   <td>(7,445)</td>
-  <td>(129)</td>
   <td>(186)</td>
   <td>(106)</td>
   <td>72</td>
@@ -940,7 +923,6 @@ span.onclick = function() {
   <td>9450.</td>
   <td>(1,975)</td>
   <td>(15,153)</td>
-  <td>35</td>
   <td>(789)</td>
   <td>1,537</td>
   <td>1,377</td>
@@ -984,7 +966,6 @@ span.onclick = function() {
   <td>59.64</td>
   <td>(730)</td>
   <td>(2,906)</td>
-  <td>(18)</td>
   <td>(98)</td>
   <td>(4)</td>
   <td>78</td>
@@ -1028,7 +1009,6 @@ span.onclick = function() {
   <td>1.86</td>
   <td>(739)</td>
   <td>(4,090)</td>
-  <td>(29)</td>
   <td>(141)</td>
   <td>(9)</td>
   <td>76</td>
@@ -1072,7 +1052,6 @@ span.onclick = function() {
   <td>1.88</td>
   <td>(1,495)</td>
   <td>(4,312)</td>
-  <td>3</td>
   <td>(151)</td>
   <td>(7)</td>
   <td>72</td>
@@ -1116,7 +1095,6 @@ span.onclick = function() {
   <td>1.2927</td>
   <td>118</td>
   <td>(887)</td>
-  <td>3</td>
   <td>5</td>
   <td>(3)</td>
   <td>251</td>
@@ -1160,7 +1138,6 @@ span.onclick = function() {
   <td>1.2421</td>
   <td>43</td>
   <td>(1,942)</td>
-  <td>(14)</td>
   <td>7</td>
   <td>(6)</td>
   <td>(18)</td>
@@ -1204,7 +1181,6 @@ span.onclick = function() {
   <td>1.383</td>
   <td>(327)</td>
   <td>(1,214)</td>
-  <td>(2)</td>
   <td>(11)</td>
   <td>(3)</td>
   <td>2</td>
