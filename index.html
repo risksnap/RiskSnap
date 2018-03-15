@@ -127,7 +127,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
 <p>
 <p>Risk is calculated below for long positions in various asset classes and sectors using HVaR (antithetic HVaR applies to short positions).  These values are similar to initial margins required by exchanges/brokers/banks and vary according to HVaR parameters and discretionary factors.  
 
-Parameters used for this model can be viewed by clicking on the graph icons.  For example, a 99th percentile indicates that 1% of the observations will be below the HVaR line.  Stress VaR, required by banking regulators is also shown on the graph.
+Parameters used for this model can be viewed by clicking on the graph icons.  For example, a 99th percentile indicates that 1% of the observations will be below the HVaR line.  Stress VaR, required by banking regulators is also shown.
 </p>
 
 
@@ -174,14 +174,16 @@ Parameters used for this model can be viewed by clicking on the graph icons.  Fo
   <th>Type</th>
   <th>Industry</th>
   <th>Market</th>
-  <th>Gain/(Loss)</th>
+  <th>Daily Gain/(loss)</th>
   <th>Antithetic</th>
-  <th>Mar-02/Mar-01</th>
-  <th>Mar-05/Mar-02</th>
-  <th>Mar-06/Mar-05</th>
+  <th>HP</th>
+  <th>Stress ES</th>
   <th>Mar-07/Mar-06</th>
   <th>Mar-08/Mar-07</th>
-  <th>Risk Mar-08</th>
+  <th>Mar-09/Mar-08</th>
+  <th>Mar-12/Mar-09</th>
+  <th>Mar-13/Mar-12</th>
+  <th>Curr Risk Mar-13</th>
 </tr>
 <tr>
   <td>USTreasuryLT</td>
@@ -189,14 +191,16 @@ Parameters used for this model can be viewed by clicking on the graph icons.  Fo
   <td>100,000</td>
   <td>Bond</td>
   <td></td>
-  <td>3.13%</td>
-  <td>545</td>
-  <td>(2,945)</td>
-  <td>39</td>
-  <td>11</td>
-  <td>(14)</td>
-  <td>(6)</td>
+  <td>3.1%</td>
+  <td>629</td>
+  <td>(1,984)</td>
+  <td>1</td>
+  <td>(4,725)</td>
   <td>(4)</td>
+  <td>12</td>
+  <td>22</td>
+  <td>(4)</td>
+  <td>(5)</td>
 <td>
   <img id="myImg" src="./images/USTreasuryLT.png" alt = "17-Dec-2044" width = "50" height = "20">
 <!-- The Modal -->
@@ -224,7 +228,7 @@ span.onclick = function() {
     modal.style.display = "none";
 }
 </script>
-(2,865)
+(2,012)
   </td>
 </tr>
 <tr>
@@ -233,13 +237,15 @@ span.onclick = function() {
   <td>100,000</td>
   <td>Bond</td>
   <td></td>
-  <td>3.13%</td>
-  <td>(41)</td>
-  <td>(271)</td>
-  <td>(3)</td>
-  <td>2</td>
-  <td>(2)</td>
+  <td>3.1%</td>
+  <td>32</td>
+  <td>(168)</td>
+  <td>1</td>
+  <td>(501)</td>
   <td></td>
+  <td>3</td>
+  <td>1</td>
+  <td>1</td>
   <td>1</td>
 <td>
   <img id="myImg1" src="./images/USTreasuryST.png" alt = "15-Sep-2020" width = "50" height = "20">
@@ -268,7 +274,7 @@ span.onclick = function() {
     modal.style.display = "none";
 }
 </script>
-(265)
+(138)
   </td>
 </tr>
 <tr>
@@ -277,14 +283,16 @@ span.onclick = function() {
   <td>100 Units</td>
   <td>Consumer Goods</td>
   <td>Electronic Equipment</td>
-  <td>176.94</td>
-  <td>191</td>
-  <td>(1,057)</td>
-  <td>(1)</td>
+  <td>179.97</td>
+  <td>(175)</td>
+  <td>(1,062)</td>
   <td>2</td>
-  <td>(1)</td>
+  <td>(2,168)</td>
   <td>10</td>
   <td>(4)</td>
+  <td>(8)</td>
+  <td>(5)</td>
+  <td>9</td>
 <td>
   <img id="myImg2" src="./images/AAPL.png" alt = "Apple Inc." width = "50" height = "20">
 <!-- The Modal -->
@@ -312,7 +320,7 @@ span.onclick = function() {
     modal.style.display = "none";
 }
 </script>
-(736)
+(740)
   </td>
 </tr>
 <tr>
@@ -321,14 +329,16 @@ span.onclick = function() {
   <td>100 Units</td>
   <td>Healthcare</td>
   <td>Medical Instruments & Supplies</td>
-  <td>223.44</td>
-  <td>509</td>
-  <td>(948)</td>
-  <td>11</td>
-  <td>4</td>
-  <td>(1)</td>
+  <td>223.85</td>
+  <td>(165)</td>
+  <td>(949)</td>
+  <td>2</td>
+  <td>(1,792)</td>
   <td>(2)</td>
   <td>(26)</td>
+  <td>(10)</td>
+  <td>8</td>
+  <td>17</td>
 <td>
   <img id="myImg3" src="./images/BDX.png" alt = "Becton, Dickinson and Company" width = "50" height = "20">
 <!-- The Modal -->
@@ -356,7 +366,7 @@ span.onclick = function() {
     modal.style.display = "none";
 }
 </script>
-(1,478)
+(1,463)
   </td>
 </tr>
 <tr>
@@ -365,14 +375,16 @@ span.onclick = function() {
   <td>100 Units</td>
   <td>HealthCare</td>
   <td>Health Care Plans</td>
-  <td>68.36</td>
-  <td>85</td>
-  <td>(431)</td>
-  <td>1</td>
-  <td>(5)</td>
-  <td>8</td>
+  <td>68.25</td>
+  <td>(76)</td>
+  <td>(408)</td>
+  <td>2</td>
+  <td>(824)</td>
   <td>4</td>
   <td>(6)</td>
+  <td>(5)</td>
+  <td>5</td>
+  <td>8</td>
 <td>
   <img id="myImg4" src="./images/CVS.png" alt = "CVS Health Corporation" width = "50" height = "20">
 <!-- The Modal -->
@@ -400,7 +412,7 @@ span.onclick = function() {
     modal.style.display = "none";
 }
 </script>
-(575)
+(568)
   </td>
 </tr>
 <tr>
@@ -409,14 +421,16 @@ span.onclick = function() {
   <td>100 Units</td>
   <td>Industrial Goods</td>
   <td>Residential Construction</td>
-  <td>43.59</td>
-  <td>14</td>
-  <td>(188)</td>
-  <td></td>
-  <td>(6)</td>
-  <td>(6)</td>
+  <td>44.76</td>
+  <td>42</td>
+  <td>(194)</td>
+  <td>2</td>
+  <td>(862)</td>
   <td>1</td>
   <td>1</td>
+  <td>(4)</td>
+  <td>(2)</td>
+  <td>(1)</td>
 <td>
   <img id="myImg5" src="./images/DHI.png" alt = "D.R. Horton, Inc." width = "50" height = "20">
 <!-- The Modal -->
@@ -444,7 +458,7 @@ span.onclick = function() {
     modal.style.display = "none";
 }
 </script>
-(257)
+(264)
   </td>
 </tr>
 <tr>
@@ -453,14 +467,16 @@ span.onclick = function() {
   <td>100 Units</td>
   <td>Technology</td>
   <td>Internet Information Products</td>
-  <td>1126.</td>
-  <td>1,636</td>
-  <td>(5,590)</td>
-  <td>(125)</td>
-  <td>(77)</td>
-  <td>(186)</td>
+  <td>1138.17</td>
+  <td>(2,633)</td>
+  <td>(5,666)</td>
+  <td>2</td>
+  <td>(12,788)</td>
   <td>(83)</td>
   <td>(106)</td>
+  <td>(226)</td>
+  <td>(20)</td>
+  <td>219</td>
 <td>
   <img id="myImg6" src="./images/GOOG.png" alt = "Alphabet Inc." width = "50" height = "20">
 <!-- The Modal -->
@@ -488,7 +504,7 @@ span.onclick = function() {
     modal.style.display = "none";
 }
 </script>
-(9,121)
+(9,148)
   </td>
 </tr>
 <tr>
@@ -497,14 +513,16 @@ span.onclick = function() {
   <td>100 Units</td>
   <td>Healthcare</td>
   <td>Drug Manufacturers - Major</td>
-  <td>132.06</td>
-  <td>302</td>
-  <td>(533)</td>
-  <td>(7)</td>
-  <td>(8)</td>
-  <td>5</td>
+  <td>134.35</td>
+  <td>172</td>
+  <td>(546)</td>
+  <td>2</td>
+  <td>(865)</td>
   <td>(5)</td>
   <td>(20)</td>
+  <td>(13)</td>
+  <td>14</td>
+  <td>(25)</td>
 <td>
   <img id="myImg7" src="./images/JNJ.png" alt = "Johnson & Johnson" width = "50" height = "20">
 <!-- The Modal -->
@@ -532,7 +550,7 @@ span.onclick = function() {
     modal.style.display = "none";
 }
 </script>
-(1,052)
+(1,076)
   </td>
 </tr>
 <tr>
@@ -541,13 +559,15 @@ span.onclick = function() {
   <td>100 Units</td>
   <td>Basic Materials</td>
   <td>Oil & Gas Pipelines</td>
-  <td>16.01</td>
-  <td>(4)</td>
-  <td>(80)</td>
-  <td></td>
+  <td>16.5</td>
+  <td>(5)</td>
+  <td>(81)</td>
+  <td>2</td>
+  <td>(177)</td>
+  <td>1</td>
+  <td>1</td>
   <td>(1)</td>
-  <td>1</td>
-  <td>1</td>
+  <td>(1)</td>
   <td>1</td>
 <td>
   <img id="myImg8" src="./images/KMI.png" alt = "Kinder Morgan" width = "50" height = "20">
@@ -576,7 +596,7 @@ span.onclick = function() {
     modal.style.display = "none";
 }
 </script>
-(75)
+(76)
   </td>
 </tr>
 <tr>
@@ -585,14 +605,16 @@ span.onclick = function() {
   <td>100 Units</td>
   <td>Industrial Goods</td>
   <td>Residential Construction</td>
-  <td>58.66</td>
-  <td>(63)</td>
-  <td>(390)</td>
-  <td>(5)</td>
-  <td>(6)</td>
-  <td>(5)</td>
+  <td>60.56</td>
+  <td>13</td>
+  <td>(399)</td>
+  <td>2</td>
+  <td>(1,406)</td>
   <td>1</td>
   <td>5</td>
+  <td>(7)</td>
+  <td>(2)</td>
+  <td></td>
 <td>
   <img id="myImg9" src="./images/LEN.png" alt = "Lennar Corporation" width = "50" height = "20">
 <!-- The Modal -->
@@ -620,7 +642,7 @@ span.onclick = function() {
     modal.style.display = "none";
 }
 </script>
-(395)
+(404)
   </td>
 </tr>
 <tr>
@@ -629,14 +651,16 @@ span.onclick = function() {
   <td>100 Units</td>
   <td>Services</td>
   <td>Home Improvement Services</td>
-  <td>86.16</td>
-  <td>5</td>
-  <td>(651)</td>
-  <td>12</td>
-  <td>(50)</td>
-  <td>(6)</td>
+  <td>86.14</td>
+  <td>(154)</td>
+  <td>(641)</td>
+  <td>2</td>
+  <td>(916)</td>
   <td>2</td>
   <td>2</td>
+  <td>(5)</td>
+  <td>(1)</td>
+  <td>15</td>
 <td>
   <img id="myImg10" src="./images/LOW.png" alt = "Lowe's Corporation" width = "50" height = "20">
 <!-- The Modal -->
@@ -664,7 +688,7 @@ span.onclick = function() {
     modal.style.display = "none";
 }
 </script>
-(648)
+(639)
   </td>
 </tr>
 <tr>
@@ -673,14 +697,16 @@ span.onclick = function() {
   <td>100 Units</td>
   <td>Technology</td>
   <td>Business Software & Services</td>
-  <td>94.43</td>
-  <td>57</td>
-  <td>(542)</td>
+  <td>94.41</td>
+  <td>(236)</td>
+  <td>(534)</td>
+  <td>2</td>
+  <td>(1,032)</td>
   <td></td>
   <td>(1)</td>
-  <td>4</td>
-  <td></td>
-  <td>(1)</td>
+  <td>(11)</td>
+  <td>2</td>
+  <td>19</td>
 <td>
   <img id="myImg11" src="./images/MSFT.png" alt = "Microsoft Corporation" width = "50" height = "20">
 <!-- The Modal -->
@@ -708,7 +734,7 @@ span.onclick = function() {
     modal.style.display = "none";
 }
 </script>
-(634)
+(624)
   </td>
 </tr>
 <tr>
@@ -717,14 +743,16 @@ span.onclick = function() {
   <td>100 Units</td>
   <td>Industrial Goods</td>
   <td>Residential Construction</td>
-  <td>3001.73</td>
-  <td>1,271</td>
-  <td>(20,857)</td>
-  <td>(297)</td>
-  <td>86</td>
-  <td>(546)</td>
+  <td>3131.2</td>
+  <td>4,120</td>
+  <td>(21,578)</td>
+  <td>2</td>
+  <td>(39,183)</td>
   <td>(151)</td>
   <td>25</td>
+  <td>(549)</td>
+  <td>(192)</td>
+  <td>(242)</td>
 <td>
   <img id="myImg12" src="./images/NVR.png" alt = "NVR, Inc." width = "50" height = "20">
 <!-- The Modal -->
@@ -752,7 +780,7 @@ span.onclick = function() {
     modal.style.display = "none";
 }
 </script>
-(28,338)
+(29,320)
   </td>
 </tr>
 <tr>
@@ -761,13 +789,15 @@ span.onclick = function() {
   <td>100 Units</td>
   <td>Basic Materials</td>
   <td>Major Integrated Oil & Gas</td>
-  <td>41.83</td>
-  <td>24</td>
+  <td>42.29</td>
+  <td>55</td>
   <td>(153)</td>
-  <td>(15)</td>
-  <td>(9)</td>
-  <td>1</td>
+  <td>2</td>
+  <td>(784)</td>
   <td>(3)</td>
+  <td>(2)</td>
+  <td>1</td>
+  <td>1</td>
   <td>(2)</td>
 <td>
   <img id="myImg13" src="./images/SU.TO.png" alt = "Suncor Energy, Inc" width = "50" height = "20">
@@ -805,14 +835,16 @@ span.onclick = function() {
   <td>100 Units</td>
   <td>Industrial Goods</td>
   <td>Aerospace/Defense Products & Services</td>
-  <td>131.26</td>
-  <td>33</td>
-  <td>(634)</td>
-  <td>6</td>
-  <td>481</td>
-  <td>(15)</td>
+  <td>130.15</td>
+  <td>(135)</td>
+  <td>(619)</td>
+  <td>2</td>
+  <td>(1,200)</td>
   <td>7</td>
   <td>(1)</td>
+  <td>(11)</td>
+  <td>17</td>
+  <td>11</td>
 <td>
   <img id="myImg14" src="./images/UTX.png" alt = "United Technologies Corp" width = "50" height = "20">
 <!-- The Modal -->
@@ -840,7 +872,7 @@ span.onclick = function() {
     modal.style.display = "none";
 }
 </script>
-(689)
+(673)
   </td>
 </tr>
 <tr>
@@ -849,14 +881,16 @@ span.onclick = function() {
   <td>100 Units</td>
   <td>Basic Materials"</td>
   <td>Major Integrated Oil & Gas</td>
-  <td>74.12</td>
-  <td>(14)</td>
-  <td>(304)</td>
-  <td>(10)</td>
-  <td>(12)</td>
-  <td>3</td>
+  <td>74.53</td>
+  <td>(71)</td>
+  <td>(308)</td>
+  <td>2</td>
+  <td>(819)</td>
   <td>18</td>
   <td>3</td>
+  <td>(6)</td>
+  <td>(14)</td>
+  <td>9</td>
 <td>
   <img id="myImg15" src="./images/XOM.png" alt = "Exxon Mobile Corporation" width = "50" height = "20">
 <!-- The Modal -->
@@ -884,7 +918,7 @@ span.onclick = function() {
     modal.style.display = "none";
 }
 </script>
-(588)
+(599)
   </td>
 </tr>
 <tr>
@@ -893,14 +927,16 @@ span.onclick = function() {
   <td>100 Units</td>
   <td>S&P 500 index</td>
   <td>500 large NYSE/NASDAQ co.</td>
-  <td>2738.97</td>
-  <td>1,217</td>
-  <td>(7,445)</td>
-  <td>(129)</td>
-  <td>(186)</td>
-  <td>(106)</td>
+  <td>2765.31</td>
+  <td>(1,771)</td>
+  <td>(7,397)</td>
+  <td>2</td>
+  <td>(26,925)</td>
   <td>72</td>
   <td>(84)</td>
+  <td>(186)</td>
+  <td>106</td>
+  <td>166</td>
 <td>
   <img id="myImg16" src="./images/^GSPC.png" alt = "S&P 500 index" width = "50" height = "20">
 <!-- The Modal -->
@@ -928,7 +964,7 @@ span.onclick = function() {
     modal.style.display = "none";
 }
 </script>
-(15,382)
+(15,295)
   </td>
 </tr>
 <tr>
@@ -937,14 +973,16 @@ span.onclick = function() {
   <td>5, Coins</td>
   <td>Futures</td>
   <td></td>
-  <td>9450.</td>
-  <td>(1,975)</td>
-  <td>(15,153)</td>
-  <td>35</td>
-  <td>(789)</td>
-  <td>1,537</td>
+  <td>9105.</td>
+  <td>725</td>
+  <td>(14,625)</td>
+  <td>2</td>
+  <td>(13,511)</td>
   <td>1,377</td>
   <td>610</td>
+  <td>539</td>
+  <td>121</td>
+  <td>(172)</td>
 <td>
   <img id="myImg17" src="./images/BTC.png" alt = "Bitcoin, CME" width = "50" height = "20">
 <!-- The Modal -->
@@ -972,7 +1010,7 @@ span.onclick = function() {
     modal.style.display = "none";
 }
 </script>
-(13,829)
+(13,341)
   </td>
 </tr>
 <tr>
@@ -981,14 +1019,16 @@ span.onclick = function() {
   <td>1000,  Barrel</td>
   <td>Futures</td>
   <td></td>
-  <td>59.64</td>
-  <td>(730)</td>
-  <td>(2,906)</td>
-  <td>(18)</td>
-  <td>(98)</td>
-  <td>(4)</td>
-  <td>78</td>
-  <td>18</td>
+  <td>60.41</td>
+  <td>(460)</td>
+  <td>(1,694)</td>
+  <td>1</td>
+  <td>(5,064)</td>
+  <td>42</td>
+  <td>9</td>
+  <td>(38)</td>
+  <td>(2)</td>
+  <td>14</td>
 <td>
   <img id="myImg18" src="./images/CL.png" alt = "Crude Oil, Nymex" width = "50" height = "20">
 <!-- The Modal -->
@@ -1016,7 +1056,7 @@ span.onclick = function() {
     modal.style.display = "none";
 }
 </script>
-(2,996)
+(1,642)
   </td>
 </tr>
 <tr>
@@ -1025,14 +1065,16 @@ span.onclick = function() {
   <td>42000,  Gallon</td>
   <td>Futures</td>
   <td></td>
-  <td>1.86</td>
-  <td>(739)</td>
-  <td>(4,090)</td>
-  <td>(29)</td>
-  <td>(141)</td>
-  <td>(9)</td>
-  <td>76</td>
-  <td>37</td>
+  <td>1.88</td>
+  <td>210</td>
+  <td>(2,192)</td>
+  <td>1</td>
+  <td>(5,865)</td>
+  <td>51</td>
+  <td>25</td>
+  <td>(28)</td>
+  <td>19</td>
+  <td>(1)</td>
 <td>
   <img id="myImg19" src="./images/HO.png" alt = "New York Harbour ULSD (Heating Oil), Nymex" width = "50" height = "20">
 <!-- The Modal -->
@@ -1060,7 +1102,7 @@ span.onclick = function() {
     modal.style.display = "none";
 }
 </script>
-(3,576)
+(2,444)
   </td>
 </tr>
 <tr>
@@ -1069,14 +1111,16 @@ span.onclick = function() {
   <td>42000,  Gallon</td>
   <td>Futures</td>
   <td></td>
-  <td>1.88</td>
-  <td>(1,495)</td>
-  <td>(4,312)</td>
-  <td>3</td>
-  <td>(151)</td>
-  <td>(7)</td>
-  <td>72</td>
-  <td>61</td>
+  <td>1.9</td>
+  <td>(336)</td>
+  <td>(1,852)</td>
+  <td>1</td>
+  <td>(6,616)</td>
+  <td>44</td>
+  <td>36</td>
+  <td>(33)</td>
+  <td>10</td>
+  <td>(3)</td>
 <td>
   <img id="myImg20" src="./images/RB.png" alt = "RBOB Gasoline, Nymex" width = "50" height = "20">
 <!-- The Modal -->
@@ -1104,7 +1148,7 @@ span.onclick = function() {
     modal.style.display = "none";
 }
 </script>
-(3,964)
+(2,382)
   </td>
 </tr>
 <tr>
@@ -1113,14 +1157,16 @@ span.onclick = function() {
   <td>100,000</td>
   <td>Foreign Exchange</td>
   <td></td>
-  <td>1.2927</td>
-  <td>118</td>
-  <td>(887)</td>
+  <td>1.2912</td>
+  <td>(496)</td>
+  <td>(772)</td>
+  <td>1</td>
+  <td>(2,104)</td>
   <td>3</td>
-  <td>5</td>
-  <td>(3)</td>
-  <td>251</td>
-  <td>(6)</td>
+  <td>(7)</td>
+  <td>(10)</td>
+  <td></td>
+  <td>8</td>
 <td>
   <img id="myImg21" src="./images/CADUSD.png" alt = "CAD" width = "50" height = "20">
 <!-- The Modal -->
@@ -1148,7 +1194,7 @@ span.onclick = function() {
     modal.style.display = "none";
 }
 </script>
-(686)
+(777)
   </td>
 </tr>
 <tr>
@@ -1157,14 +1203,16 @@ span.onclick = function() {
   <td>125,000</td>
   <td>Foreign Exchange</td>
   <td></td>
-  <td>1.2421</td>
-  <td>43</td>
-  <td>(1,942)</td>
-  <td>(14)</td>
+  <td>1.2369</td>
+  <td>817</td>
+  <td>(1,493)</td>
+  <td>1</td>
+  <td>(3,420)</td>
+  <td>(15)</td>
   <td>7</td>
-  <td>(6)</td>
-  <td>(18)</td>
-  <td>8</td>
+  <td>(2)</td>
+  <td>6</td>
+  <td>(112)</td>
 <td>
   <img id="myImg22" src="./images/EURUSD.png" alt = "EUR" width = "50" height = "20">
 <!-- The Modal -->
@@ -1192,7 +1240,7 @@ span.onclick = function() {
     modal.style.display = "none";
 }
 </script>
-(1,702)
+(1,561)
   </td>
 </tr>
 <tr>
@@ -1201,14 +1249,16 @@ span.onclick = function() {
   <td>62,500</td>
   <td>Foreign Exchange</td>
   <td></td>
-  <td>1.383</td>
-  <td>(327)</td>
-  <td>(1,214)</td>
-  <td>(2)</td>
-  <td>(11)</td>
-  <td>(3)</td>
+  <td>1.3987</td>
+  <td>544</td>
+  <td>(1,320)</td>
+  <td>1</td>
+  <td>(2,539)</td>
+  <td>3</td>
+  <td>3</td>
+  <td>1</td>
   <td>2</td>
-  <td>4</td>
+  <td>(4)</td>
 <td>
   <img id="myImg23" src="./images/GBPUSD.png" alt = "GBP" width = "50" height = "20">
 <!-- The Modal -->
@@ -1236,7 +1286,7 @@ span.onclick = function() {
     modal.style.display = "none";
 }
 </script>
-(1,166)
+(890)
   </td>
 </tr>
 </table>
