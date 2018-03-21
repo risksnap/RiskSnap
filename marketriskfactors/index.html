@@ -1,25 +1,184 @@
 ---
 layout: marketriskfactors-template
 ---
-<div class ="image-section">
-    <img class="figure" alt="" src="./images/YieldCurve.png"/>
-</div> <!-- image-section -->
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial;
+}
+
+/* The grid: Four equal columns that floats next to each other */
+.column {
+    float: left;
+    width: 25%;
+    padding: 10px;
+}
+
+/* Style the images inside the grid */
+.column img {
+    opacity: 0.8; 
+    cursor: pointer; 
+}
+
+.column img:hover {
+    opacity: 1;
+}
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* The expanding image container */
+.container {
+    position: relative;
+    display: none;
+}
+
+/* Expanding image text */
+#imgtext {
+    position: absolute;
+    bottom: 15px;
+    left: 15px;
+    color: red;
+    font-size: 20px;
+}
+
+/* Closable button inside the expanded image */
+.closebtn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    color: red;
+    font-size: 35px;
+    cursor: pointer;
+}
+</style>
+</head>
+<body>
+
+<div style="text-align:center">
+  <h2>Market Risk Factors - Yields</h2>
+  <p>Click Image to zoom:</p>
+</div>
+
+<!-- The four columns -->
+<div class="row">
+  <div class="column">
+    <img src="./images/Yields_CAD.png" alt="Yields CAD" style="width:100%" onclick="myFunction(this);">
+  </div>
+  <div class="column">
+    <img src="./images/Yields_EUR.png" alt="Yields EUR" style="width:100%" onclick="myFunction(this);">
+  </div>
+  <div class="column">
+    <img src="./images/Yields_GBP.png" alt="Yields GBP" style="width:100%" onclick="myFunction(this);">
+  </div>
+  <div class="column">
+    <img src="./images/Yields_USD.png" alt="Yields USD" style="width:100%" onclick="myFunction(this);">
+  </div>
+</div>
+
+<div class="container">
+  <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
+  <img id="expandedImg" style="width:100%">
+  <div id="imgtext"></div>
+</div>
+
+<script>
+function myFunction(imgs) {
+    var expandImg = document.getElementById("expandedImg");
+    var imgText = document.getElementById("imgtext");
+    expandImg.src = imgs.src;
+    imgText.innerHTML = imgs.alt;
+    expandImg.parentElement.style.display = "block";
+}
+</script>
+
+</body>
+</html>
+
+
+
+
+<body>
+
+<div style="text-align:center">
+  <h2>Market Risk Factors - Volatility</h2>
+  </div>
+
+<!-- The four columns -->
+<div class="row">
+  <div class="column">
+    <img src="./images/EquityVol_^GSPC.png" alt="Volatility Equity ^GSPC" style="width:100%" onclick="myFunction(this);">
+  </div>
+  <div class="column">
+    <img src="./images/FuturesVol_BTC.png" alt="Volatility Futures BTC" style="width:100%" onclick="myFunction(this);">
+  </div>
+  <div class="column">
+    <img src="./images/FuturesVol_RB.png" alt="Volatility Futures RB" style="width:100%" onclick="myFunction(this);">
+  </div>
+  <div class="column">
+    <img src="./images/FX_Vol_GBPUSD.png" alt="Volatility FX GBPUSD" style="width:100%" onclick="myFunction(this);">
+  </div>
+</div>
+
+<div class="container">
+  <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
+  <img id="expandedImg" style="width:100%">
+  <div id="imgtext"></div>
+</div>
+
+<script>
+function myFunction(imgs) {
+    var expandImg = document.getElementById("expandedImg");
+    var imgText = document.getElementById("imgtext");
+    expandImg.src = imgs.src;
+    imgText.innerHTML = imgs.alt;
+    expandImg.parentElement.style.display = "block";
+}
+</script>
+
+</body>
+</html>
+
 <div class="text-section">
-    <p>The US Treasury Yield curve currently has an interesting pattern based on 10 year data where there is definite flattening of the yield curve with one year rates rising rapidly.  Long term yields embed<sup>*</sup> future expectations of short term interest rates, suggesting that rates in the future will be low.  With short term rates rising currently, a straight-line projection should indicate that long term yields will rise also.  Since that is not happening, the counter-intuitive reasoning is possibly that current high rates will depress future economic growth.  (Data Source:  US Federal Reserve).  
+
+<p>
+<h3>Yields</h3>
+    <p>The Yield curves are graphed for central governments of Canada, Europe, U.K. and the U.S.(10 years of history, for 1, 2, 3, 5, 7, 10, 20, 30 yr tenors). There is a definite flattening in the Canadian and US curves, with similar trending in the Eur curve.  The U.K.  curve is relatively stable during the same period. Long term yields embed<sup>*</sup> future expectations of short term interest rates, suggesting that rates in the future will be low.  With short term rates rising currently, a straight-line projection should indicate that long term yields will rise also.  Since that is not happening, the counter-intuitive reasoning is possibly that current high rates will depress future economic growth.  
     <p>
-    <sup>*</sup>Bootstrapping of interest rates is a method used to price fixed rate and floating rate instruments consistently.  In this methodology the discounted sum of bond coupon payments equals the discounted sum of the expected short tem interest rates.    In fixed income analytics, using annual time periods,
+    <sup>*</sup>Bootstrapping of interest rates is a method used to price fixed rate and floating rate instruments consistently.  In this methodology the discounted sum of bond coupon payments equals the discounted sum of the expected short tem interest rates.    In fixed income analytics, a discount factor, d(t) = (1 - r(t)*sum of the discount facters up to t)/(1+r(t)).  From this the expected short term rate can be derived as  d(t-1)/d(t)-1.
     </p>
 
-<div class ="image-section">
-    <img class="figure" alt="" src="./images/BootstrapEquations.png"/>
-</div> <!-- image-section -->
-    <p>Where d(t) is the discount factor at time t,  r(t) is the annual coupon rate for a bond with t years to maturity, and f(t) is the expected future one year interest rate at time t.  
-    </p>
+</div>
+
+<!DOCTYPE html>
+<html>
+
+
+<div class="text-section">
+
+<p>
+<h3>Volatility</h3>
+<p>Volatility is the risk factor that distinguishes the pricing of options from pricing of their underlying assets.  The graphs above plot historical standard deviations for various time periods for the S&P Index (^GSPC), a cryptocurrency, bitcoin(BTC), gasoline futures (RB) and foreign exchange spot (GBPUSD).  Unlike many risk factors where highest risk was observed during the financial crisis of 2008, energy volatility is a function not only of economic/political factors, but of weather. At the end of August, wholesale gasoline jumped nearly 14% due to tropical storm Harvey. The pound sterling experienced high volatility following the Brexit vote in June 2016.
+<p>
+<p>tenor color chart for graphs:
 </div>
 <div class ="image-section">
-    <img class="figure" alt="" src="./images/Volatility_RBOB.png"/>
-</div> <!-- image-section -->
-<div class="text-section">
-<p>Volatility is a risk factor for the pricing of options.  This graph plots historical standard deviations for RBOB Regular Gasoline (New York Harbor) Nymex Futures.  Unlike many risk factors where highest risk was observed during the financial crisis of 2008, energy volatility is a function of not only economic/political factors, but of weather. At the end of August, wholesale gasoline jumped nearly 14% due to tropical storm Harvey. (Data Source: Energy Information Administration (EIA).
+    <img class="figure" alt="" src="./images/Tenor Codes.png"  style="width:100%" />
 </div>
 
