@@ -13,12 +13,17 @@ layout: marketriskfactors-template
 * {
     box-sizing: border-box;
 }
-
-body {
-    margin: 0;
-    font-family: Arial;
+body {font-family: Arial, Helvetica, sans-serif;}
+div.a {
+    text-indent: 50px;
+	line-height:1.6;
 }
 h1 {
+    color: white;
+    text-align: center;
+	background-color: #3A5FCD;
+}
+h2 {
     color: white;
     text-align: center;
 	background-color: #3A5FCD;
@@ -76,7 +81,7 @@ h1 {
 <body>
 
 <div style="text-align:center">
-  <h2>Historical Yields</h2>
+  <h1>Historical Yields</h1>
   <p>Click Image to zoom:</p>
 </div>
 
@@ -121,7 +126,7 @@ function myFunction(imgs) {
 <body>
 
 <div style="text-align:center">
-  <h2>Historical Volatility</h2>
+  <h1>Historical Volatility</h1>
   </div>
 
 <!-- The four columns -->
@@ -163,7 +168,8 @@ function myFunction(imgs) {
 
 <p>
 <h3>Yields</h3>
-    <p>The Yield curves are graphed for central governments of Canada, Europe, U.K. and the U.S.(10 years of history, for 1, 2, 3, 5, 7, 10, 20, 30 yr tenors). There is a definite flattening in the Canadian and US curves, with similar trending in the Eur curve.  The U.K.  curve is relatively stable during the same period. Long term yields embed<sup>*</sup> future expectations of short term interest rates, suggesting that rates in the future will be low.  With short term rates rising currently, a straight-line projection should indicate that long term yields will rise also.  Since that is not happening, the counter-intuitive reasoning is possibly that current high rates will depress future economic growth.  
+    <div class="a">
+	<p>The Yield curves are graphed for central governments of Canada, Europe, U.K. and the U.S.(10 years of history, for 1, 2, 3, 5, 7, 10, 20, 30 yr tenors). There is a definite flattening in the Canadian and US curves, with similar trending in the Eur curve.  The U.K.  curve is relatively stable during the same period. Long term yields embed<sup>*</sup> future expectations of short term interest rates, suggesting that rates in the future will be low.  With short term rates rising currently, a straight-line projection should indicate that long term yields will rise also.  Since that is not happening, the counter-intuitive reasoning is possibly that current high rates will depress future economic growth.  
     <p>
     <sup>*</sup>Bootstrapping of interest rates is a method used to price fixed rate and floating rate instruments consistently.  In this methodology the discounted sum of bond coupon payments equals the discounted sum of the expected short tem interest rates.    In fixed income analytics, a discount factor, d(t) = (1 - r(t)*sum of the discount facters up to t)/(1+r(t)).  From this the expected short term rate can be derived as  d(t-1)/d(t)-1.
     </p>
@@ -178,7 +184,9 @@ function myFunction(imgs) {
 
 <p>
 <h3>Volatility</h3>
+<div class="a">
 <p>Volatility is the risk factor that distinguishes the pricing of options from pricing of their underlying assets.  The graphs above plot historical standard deviations for various time periods for the S&P Index (^GSPC), a cryptocurrency, bitcoin(BTC), gasoline futures (RB) and foreign exchange spot (GBPUSD).  Unlike many risk factors where highest risk was observed during the financial crisis of 2008, energy volatility is a function not only of economic/political factors, but of weather. At the end of August, wholesale gasoline jumped nearly 14% due to tropical storm Harvey. The pound sterling experienced high volatility following the Brexit vote in June 2016.
+</div>
 <p>
 <p>tenor color chart for graphs:
 </div>
