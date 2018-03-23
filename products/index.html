@@ -2,40 +2,265 @@
 layout: products-template
 ---
 <div class="text-section">
-    <H3>RiskSnap - HVaR</H3>
+    <H1>RiskSnap - HVaR</H1>
+<div class="a">
+    <p>	RiskSnap - HVaR is a risk system that utilizes verifiable past events in order to determine the amount of risk for a trade or a portfolio of trades within the time frame required to liquidate or hedge these trades.  The system is easy to use and transparent.  All valuations within the observation periods can easily be verified, including option pricers that can price on any day in the past using the "shocked" rates and displaying the market risk parameters.
 
-    <p>	RiskSnap - HVaR is a risk system that utilizes verifiable past events in order to determine the amount of risk for a trade or a portfolio of trades within the time frame required to liquidate or hedge these trades.  The system is easy to use and transparent.  All valuations within the observation periods can easily be verified, including option pricers that can price on any day in the past using the "shocked" rates and displaying the market risk parameters.  The option pricing uses market based usage of volatility surfaces.
-    <p>What-if trades can easily be added in order to view impact on the portfolio instantly.  Graphics permit areas of risk to be viewed visually.  All data, including market data shocks as well as results and trades can be downloaded easily.
-    <p>The system also calculates risk on collateral, both fixed income and equities, to determine how the value of collateral could be affected during volatile times.  The results of the collateral haircuts are netted to cash balances, market value and liquidation risk of the trades to determine breaches and collateral deficits/excesses.  For market risk purposes users can supply market limits in order to view market limit excesses/breaches.
-    <p>Antithetic HVar permits for viewing the risk from the counterparty's point of view since they are not the same.  Thus, it is possible to view both collateral required by the trader to manage the trade, and also the collateral that the trader should request from the counterparty.
-    <p>  RiskSnap also allows for netting sets, each netting set with its own parameters on percentiles, observation date ranges, and choice of whether HVaR or Expected shortfall will be used.  This would be particularly helpful where cash trades are hedged by options, thus reducing risk and the need to tie up cash in collateral.
-    <p>  Holding periods are at the transaction level and can be adjusted if a particular transaction appears to be difficult to liquidate due to characteristic specific to that trade.
-    <p>  RiskSnap calculates the shocked rates using EWMA, in order to reduce procyclicality, with flexibility on the weightings.  Clients can submit their own shocked rates if preferable.
-
-    <p>Some of the features are listed below:
-
-    <H3>Features</H3>
-      
-    <p>  &#8226;	HVaR and Expected Shortfall
-    <p>  &#8226;	Flexible periods for the Stress Period and Current Period, 10 years of daily data or more.
-    <p>  &#8226;	Flexible percentiles
-    <p>  &#8226;	Flexible holding periods by transaction
-    <p>  &#8226;	Netting by Client, Portfolio and product, each with flexibilities above
-    <p>  &#8226;	EWMA weighting flexible by risk factor (3 choices of Lambda)
-    <p>  &#8226;	Full valuation
-    <p>  &#8226;	Risk factors include term structure of the interest rate yield curve and at-the-money volatility curve.
-    <p>  &#8226;	Interest Rate Curve bootstrapping
-    <p>  &#8226;	Futures curve conversion by contract month order
-    <p>  &#8226;	Antithetic Risk
-    <p>  &#8226;	Collateral Haircut calculations (HVaR and Expected Shortfall) for Bonds and Equities
-    <p>  &#8226;	Bonds include:  US Treasury Bonds, Medium Term Notes, Municipal Bonds, Agency Bonds
-    <p>  &#8226;	Bond pricing:  cashflow method or yield method
-    <p>  &#8226;	Collateral placements and receipts
-    <p>  &#8226;	Market limit and Client limit calculations
-    <p>  &#8226;	Risk factor volatilities for Equities, Foreign Exchange, Futures
-    <p>  &#8226;	Volatility surfaces, Lookup by strike, Lookup by delta (sticky delta)
-    <p>  &#8226;	Products:  Interest Rate Swaps, Bonds, Equities, Futures, Foreign Exchange
-    <p>  &#8226;	Fast execution of What-if calculations
-    <p>  &#8226;	Transparency, easy to use
+    
 
 </div> <!-- text-section -->
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+div.a {
+    text-indent: 50px;
+	line-height:1.6;
+} 
+h1 {
+    color: white;
+    text-align: center;
+	background-color: #3A5FCD;
+}
+h2 {
+    color:#86E8E6;
+    text-align: center;
+	
+}
+.flex-container {
+    display: -webkit-flex;
+    display: flex;  
+    -webkit-flex-flow: row wrap;
+    flex-flow: row wrap;
+    text-align: center;
+}
+
+.flex-container > * {
+    padding: 15px;
+    -webkit-flex: 1 100%;
+    flex: 1 100%;
+}
+
+.article {
+    text-align: left;
+}
+
+header {background: #3A5FCD;color:white;}
+footer {background: #aaa;color:white;}
+.nav {background:#eee;}
+
+.nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+.nav ul a {
+    text-decoration: none;
+}
+
+@media all and (min-width: 768px) {
+    .nav {text-align:left;-webkit-flex: 1 auto;flex:1 auto;-webkit-order:1;order:1;}
+    .article {-webkit-flex:5 0px;flex:5 0px;-webkit-order:2;order:2;}
+    footer {-webkit-order:3;order:3;}
+}
+</style>
+</head>
+<body>
+
+<div class="flex-container">
+<header>
+  <h2>Flexibility</h2>
+</header>
+
+<nav class="nav">
+<ul>
+  <li><a href="#">Observation Period</a></li>
+  <li><a href="#">Percentiles</a></li>
+  <li><a href="#">Holding Period</a></li>
+  <li><a href="#">Weighting</a></li>
+</ul>
+</nav>
+
+<article class="article">
+  <h3>Observation Period</h3>
+  <p>Both the stress period and the current period are defined at the transaction level.</p>
+  <p>Flexibility accommodates the variability of stress periods among assets.</p>
+ </article>
+<article class="article">
+  <h3>Percentiles</h3>
+  <p>Percentiles can be set at the transaction level for HVaR and Expected Shortfall for each observation period.</p>
+  <p>  This provides the flexibiity of requiring a higher confidence level for certain transactions.</p>
+ </article>
+<article class="article">
+  <h3>Holding Period</h3>
+  <p>The holding period can be set at the transaction level.</p>
+  <p>For example, for clients with a large concentration of asses the time to liquidate might be greater.</p>
+ </article>
+<article class="article">
+  <h3>Weighting</h3>
+  <p>EWMA weighting is set for each risk factor with a choice of 3 smoothing factors for each.</p>
+  <p>Weighting is excluded for the stress periods.</p>
+ </article>
+
+</div>
+
+</body>
+<head>
+<style> 
+.flex-container {
+    display: -webkit-flex;
+    display: flex;  
+    -webkit-flex-flow: row wrap;
+    flex-flow: row wrap;
+    text-align: center;
+}
+
+.flex-container > * {
+    padding: 15px;
+    -webkit-flex: 1 100%;
+    flex: 1 100%;
+}
+
+.article {
+    text-align: left;
+}
+
+
+.nav {background:#eee;}
+
+.nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+.nav ul a {
+    text-decoration: none;
+}
+
+@media all and (min-width: 768px) {
+    .nav {text-align:left;-webkit-flex: 1 auto;flex:1 auto;-webkit-order:1;order:1;}
+    .article {-webkit-flex:5 0px;flex:5 0px;-webkit-order:2;order:2;}
+    footer {-webkit-order:3;order:3;}
+}
+</style>
+</head>
+<body>
+
+<div class="flex-container">
+<header>
+  <h2>Full Valuation</h2>
+</header>
+
+<nav class="nav">
+<ul>
+  <li><a href="#">Products</a></li>
+  <li><a href="#">Curves</a></li>
+  <li><a href="#">Fixed Income</a></li>
+  <li><a href="#">Structured Products</a></li>
+</ul>
+</nav>
+
+<article class="article">
+  <h3>Products</h3>
+  <p>Interest Rate Swaps, Bonds, Foreign Exchange Forwards, Futures, Options, Interest Rate Swaps, Energy Swaps</p>
+  <p>Second generation examples:  Swaptions, Equity and Foreign Exchange Baskets, Options on Baskets, 2-asset options, Options on a strip of forwards, Options on Bond Futures with cheapest-to-deliver calculations, Average rate basket options, Knock-in and Knock-out options.</p>
+ </article>
+<article class="article">
+  <h3>Curves</h3>
+  <p>Bond yield curves, Interest Rate Swap curves with OIS discounting, Daily discount factors</p>
+  <p>Futures curves with turn of the month smoothing.</p>
+  <p>Capability to convert option prices to a volatility surface.</p>
+</article>
+<article class="article">
+  <h3>Fixed Income</h3>
+  <p>US Bond Market:  US Treasury Bonds, Medium Term Notes, Municipal Bonds, Agency Bonds; Canadian Bond Market.  Others on request.</p>
+  <p>Collateral bonds are segregated</p>
+  <p>Pricing can be by either Yield to Price, or cashflow method</p>
+  </article>
+<article class="article">
+  <h3>Structured Products</h3>
+  <p>Netting sets allow products such as notes to be combined with options and other exotics.</p>
+  <p>Risk profiling can be on the structured product as an entity, or underlying assets.</p>
+ </article>
+
+</div>
+
+</body>
+<head>
+<style> 
+.flex-container {
+    display: -webkit-flex;
+    display: flex;  
+    -webkit-flex-flow: row wrap;
+    flex-flow: row wrap;
+    text-align: center;
+}
+
+.flex-container > * {
+    padding: 15px;
+    -webkit-flex: 1 100%;
+    flex: 1 100%;
+}
+
+.article {
+    text-align: left;
+}
+
+
+.nav {background:#eee;}
+
+.nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+.nav ul a {
+    text-decoration: none;
+}
+
+@media all and (min-width: 768px) {
+    .nav {text-align:left;-webkit-flex: 1 auto;flex:1 auto;-webkit-order:1;order:1;}
+    .article {-webkit-flex:5 0px;flex:5 0px;-webkit-order:2;order:2;}
+    footer {-webkit-order:3;order:3;}
+}
+</style>
+</head>
+<body>
+
+<div class="flex-container">
+<header>
+  <h2>Limit Management</h2>
+</header>
+
+<nav class="nav">
+<ul>
+  <li><a href="#">Portfolio Netting</a></li>
+  <li><a href="#">Collateral and Limits</a></li>
+  <li><a href="#">What-If</a></li>
+  <li><a href="#">Antithetic Risk</a></li>
+  
+</ul>
+</nav>
+
+<article class="article">
+  <h3>Portfolio Netting</h3>
+  <p>Netting is by netting set within a Client, within a Portfolio or within a Product.</p>
+  <p>The netting set is defined by need, e.g a common netting set is an equity trade with an equity option, or a butterfly spread, or bond futures with the underlying bond.</p>
+ </article>
+<article class="article">
+  <h3>Collateral and Limits</h3>
+  <p>Collateral bonds and equities are defined separately with HVaR/ES used to calculate the haircut.</p>
+  <p>The risk amount, collateral supplied (including cash) are compared to limits for breach management.  Limits can be by client, portfolio or product.
+</p>
+</article>
+<article class="article">
+  <h3>What-If</h3>
+  <p>Trades can be copied to an excel spreadsheet and changes applied as needed including all HVar parameters (observation periods, holding periods, EWMA factor) and copied back.</p>
+  <p>All reports applicable to confirmed trades will be available within seconds.</p>
+</article>
+<article class="article">
+  <h3>Antithetic Risk</h3>
+  <p>Antithetic Risk is used to determine limit breaches imposed by a counterparty to a trade.</p>
+</article>
+<footer>All rights reserved; risksnap.com</footer>
+</div>
+
+</body>
+</html>
