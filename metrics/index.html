@@ -2,33 +2,21 @@
 layout: metrics-template
 ---
 
-<div class="text-section">
-    <P>
-    <A class="sub-nav" href="#Procyclicality"> &#8226; Procyclicality</A><BR>
-    <A class="sub-nav" href="#HoldingPeriod"> &#8226; Holding Period</A><BR>
-    <A class="sub-nav" href="#ObservationPeriod"> &#8226; Observation Period</A>
-    </P>
-    <span id="Procyclicality"/>
-	
-    <h1>Procyclicality</h1>
-     <div class="a">
-    <p>Procyclic as used here is a positive correlation between a market place action and the market price of the underlying asset.  For example, as price increases the price will increase further as buyers enter the market.  As the price decreases sellers appear and further depress prices.
-    <p>
-    This type of behaviour can lead to panic buying or panic selling.  In addition, holders of collateral will demand increased collateral forcing participants to step up these actions.  On the other hand, if the volatility is low, there is a perceived lack of risk resulting in "loading up" of positions that could become very vulnerable when volatility returns.  Weighting factors can be used to ameliorate this action.
-	<p>  JP Morgan initially published a database with the Exponentially Weighted Moving Average (EWMA).  This methodology applies the weighting formula, [&sigma;(n)]<sup>2</sup>=&lambda;[&sigma;(n-1)]<sup>2</sup>+(1-&lambda;)[&mu;(n-1)]<sup>2</sup>, where &lambda; is a decay factor, e.g. from 0.94 to 0.99 that determines the importance given to recent events.  A low lambda provides more smoothing and a lambda of 1 is the same as no weighting. &mu;(n) is the change in the risk factor price. Use of a scale will decrease volatility as volatility increases and vice versa. Many exchanges and other authorities reference the EWMA model as a means of reducing procyclicality.</p>
-   
-	
-	
-	<html>
+
+
+
+<!DOCTYPE html>
+<html>
 <head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
+* {
+    box-sizing: border-box;
+}
 body {font-family: Arial, Helvetica, sans-serif;}
 div.a {
     text-indent: 50px;
 	line-height:1.6;
-}
-body {
-    background-color: white;
 }
 h1 {
     color: white;
@@ -36,93 +24,168 @@ h1 {
 	background-color: #3A5FCD;
 }
 h2 {
-    color: black;
+    color: white;
     text-align: center;
-	background-color: #F3E4DA;
+	background-color: #3A5FCD;
 }
-* {
-    box-sizing: border-box;
-}
-
+/* The grid: Three equal columns that floats next to each other */
 .column {
     float: left;
     width: 33.33%;
-    padding: 5px;
+    padding: 10px;
 }
 
-/* Clearfix (clear floats) */
-.row::after {
+/* Style the images inside the grid */
+.column img {
+    opacity: 0.8; 
+    cursor: pointer; 
+}
+
+.column img:hover {
+    opacity: 1;
+}
+
+/* Clear floats after the columns */
+.row:after {
     content: "";
-    clear: both;
     display: table;
+    clear: both;
+}
+
+/* The expanding image container */
+.container {
+    position: relative;
+    display: none;
+}
+
+/* Expanding image text */
+#imgtext {
+    position: absolute;
+    bottom: 15px;
+    left: 15px;
+    color: red;
+    font-size: 20px;
+}
+
+/* Closable button inside the expanded image */
+.closebtn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    color: red;
+    font-size: 35px;
+    cursor: pointer;
 }
 </style>
 </head>
 <body>
+<p><div class="a">
+<p>Procyclic as used here is a positive correlation between a market place action and the market price of the underlying asset.  For example, as price increases the price will increase further as buyers enter the market.  As the price decreases sellers appear and further depress prices.
+    <p>
+    This type of behaviour can lead to panic buying or panic selling.  In addition, holders of collateral will demand increased collateral forcing participants to step up these actions.  On the other hand, if the volatility is low, there is a perceived lack of risk resulting in "loading up" of positions that could become very vulnerable when volatility returns.  Weighting factors can be used to ameliorate this action.
+	<p>  JP Morgan initially published a database with the Exponentially Weighted Moving Average (EWMA).  This methodology applies the weighting formula, [&sigma;(n)]<sup>2</sup>=&lambda;[&sigma;(n-1)]<sup>2</sup>+(1-&lambda;)[&mu;(n-1)]<sup>2</sup>, where &lambda; is a decay factor, e.g. from 0.94 to 0.99 that determines the importance given to recent events.  A low lambda provides more smoothing and a lambda of 1 is the same as no weighting. &mu;(n) is the change in the risk factor price. Use of a scale will decrease volatility as volatility increases and vice versa. Many exchanges and other authorities reference the EWMA model as a means of reducing procyclicality.
+</div>
+<div style="text-align:center">
+  <h1>EWMA Example of High volatility</h1>
+  <p>Click Image to zoom:</p>
+</div>
 
-<h3>Example of high volatility</h3>
-
-
+<!-- The threer columns -->
 <div class="row">
   <div class="column">
-    <img src="./images/T^GSPC_Vol.png" alt="CL Volatility" style="width:100%">
+    <img src="./images/T^GSPC_Vol.png" alt="^GSPC Volatility" style="width:100%" onclick="myFunction(this);">
   </div>
   <div class="column">
-    <img src="./images/T^GSPC_EWMA.png" alt="CL EWMA Weighted" style="width:100%">
+    <img src="./images/T^GSPC_EWMA.png" alt="^GSPC EWMA Weighted Risk" style="width:100%" onclick="myFunction(this);">
   </div>
   <div class="column">
-    <img src="./images/T^GSPC_Unweighted.png" alt="CL Unweighted" style="width:100%">
+    <img src="./images/T^GSPC_Unweighted.png" alt="^GSPC Unweighted Risk" style="width:100%" onclick="myFunction(this);">
   </div>
 </div>
-<p> The financial crisis of 2008 was a period of high volatility for most assets including the S&P500 index above.  EWMA weighting during this period results in a risk amount of about 25,000 as compared to the unweighted risk of 35,000.  The weighting dampens the higher volatility in order to deter selling or buying.
-</body>
 
-<head>
-<style>
-* {
-    box-sizing: border-box;
-}
-
-.column {
-    float: left;
-    width: 33.33%;
-    padding: 5px;
-}
-
-/* Clearfix (clear floats) */
-.row::after {
-    content: "";
-    clear: both;
-    display: table;
-}
-</style>
-</head>
-<body>
-
-<h3>Example of low volatility</h3>
-
-<div class="row">
-  <div class="column">
-    <img src="./images/TGOOG_Vol.png" alt="GOOG Volatility" style="width:100%">
-  </div>
-  <div class="column">
-    <img src="./images/TGOOG_EWMA.png" alt="GOOG EWMA Weighted" style="width:100%">
-  </div>
-  <div class="column">
-    <img src="./images/TGOOG_Unweighted.png" alt="GOOG Unweighted" style="width:100%">
-  </div>
+<div class="container">
+  <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
+  <img id="expandedImg" style="width:100%">
+  <div id="imgtext"></div>
 </div>
+
+<script>
+function myFunction(imgs) {
+    var expandImg = document.getElementById("expandedImg");
+    var imgText = document.getElementById("imgtext");
+    expandImg.src = imgs.src;
+    imgText.innerHTML = imgs.alt;
+    expandImg.parentElement.style.display = "block";
+}
+</script>
 
 </body>
 </html>
-	
-<p>The  volatility drops from 26% to 14% close to the latest date (right side of chart).  Viewing the EWMA Weighted chart for the days following, the EWMA weighted risk is greater than 10,000 compared to the unweighted chart where the risk is about 7,000 to 8,000.  The EWMA model adjusts for the lower volatility by assigning a greater risk.  </p> 	
-	
-	
-	
-</div> <!-- text-section -->
 
 
+
+
+<body>
+
+<div style="text-align:center">
+  <h1>EWMA Example of Low Volatility</h1>
+  </div>
+
+<!-- The three columns -->
+<div class="row">
+  <div class="column">
+    <img src="./images/TGOOG_Vol.png" alt="GOOG Volatiliy" style="width:100%" onclick="myFunction(this);">
+  </div>
+  <div class="column">
+    <img src="./images/TGOOG_EWMA.png" alt="GOOG EWMA Weighted Risk" style="width:100%" onclick="myFunction(this);">
+  </div>
+  <div class="column">
+    <img src="./images/TGOOG_Unweighted.png" alt="GOOG Unweighted Risk" style="width:100%" onclick="myFunction(this);">
+  </div>
+ 
+</div>
+
+<div class="container">
+  <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
+  <img id="expandedImg" style="width:100%">
+  <div id="imgtext"></div>
+</div>
+
+<script>
+function myFunction(imgs) {
+    var expandImg = document.getElementById("expandedImg");
+    var imgText = document.getElementById("imgtext");
+    expandImg.src = imgs.src;
+    imgText.innerHTML = imgs.alt;
+    expandImg.parentElement.style.display = "block";
+}
+</script>
+
+</body>
+</html>
+
+<div class="text-section">
+
+<p>
+<h3>High Volatility - lower weighting</h3>
+    <div class="a">
+	<p>The financial crisis of 2008 was a period of high volatility for most assets including the S&P500 index (^GSPC) above.  EWMA weighting during this period results in a risk amount of slightly more than 25,000 as compared to the unweighted risk over 30,000.  The weighting dampens the higher volatility in order to deter panic selling or buying.
+    </p>
+
+</div>
+
+<!DOCTYPE html>
+<html>
+
+
+<div class="text-section">
+
+<p>
+<h3>Low Volatility - higher weighting</h3>
+<div class="a">
+<p>The  volatility drops from 26% to 14% close to the latest date (right side of chart GOOG).  Viewing the EWMA Weighted chart for the days following, the EWMA weighted risk is 10,000 compared to the unweighted chart where the risk is about 7,000.  The EWMA model adjusts for the lower volatility by assigning a greater risk in order to deter imprudent accumulation of positions.
+</p>
+</div>
 <div class="text-section">
 <!--<span id="HoldingPeriod"/> -->
 <h1>Holding Period</h1>
@@ -146,5 +209,6 @@ h2 {
     <p>
     Basel's Minimum Capital Requirements for Market Risk require that for measures based on current observations banks must update their data sets at least once a month or when the market is subject to material changes.  For the stressed period banks must identify the 12 month period of stress over the observation horizon in which the portfolio experiences the largest loss.  This horizon must, at a minimum span back to and include 2007.  Observations within this period must be equally weighted (e.g. not subject to EWMA).  Banks must update the 12-month stressed periods no less than monthly. (BIS: Minimum capital requirements for market risk Jan 2016, bcbs352).
     </p>
-</div> <!-- text-section -->
+</div>
+
 
