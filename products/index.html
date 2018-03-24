@@ -1,122 +1,41 @@
 ---
 layout: products-template
 ---
-<!DOCTYPE html>
-<html lang="en">
-<head>
+<div class="text-section">
+    <H3>RiskSnap - HVaR</H3>
 
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
-* {
-    box-sizing: border-box;
-}
+    <p>	RiskSnap - HVaR is a risk system that utilizes verifiable past events in order to determine the amount of risk for a trade or a portfolio of trades within the time frame required to liquidate or hedge these trades.  The system is easy to use and transparent.  All valuations within the observation periods can easily be verified, including option pricers that can price on any day in the past using the "shocked" rates and displaying the market risk parameters.  The option pricing uses market based usage of volatility surfaces.
+    <p>What-if trades can easily be added in order to view impact on the portfolio instantly.  Graphics permit areas of risk to be viewed visually.  All data, including market data shocks as well as results and trades can be downloaded easily.
+    <p>The system also calculates risk on collateral, both fixed income and equities, to determine how the value of collateral could be affected during volatile times.  The results of the collateral haircuts are netted to cash balances, market value and liquidation risk of the trades to determine breaches and collateral deficits/excesses.  For market risk purposes users can supply market limits in order to view market limit excesses/breaches.
+    <p>Antithetic HVar permits for viewing the risk from the counterparty's point of view since they are not the same.  Thus, it is possible to view both collateral required by the trader to manage the trade, and also the collateral that the trader should request from the counterparty.
+    <p>  RiskSnap also allows for netting sets, each netting set with its own parameters on percentiles, observation date ranges, and choice of whether HVaR or Expected shortfall will be used.  This would be particularly helpful where cash trades are hedged by options, thus reducing risk and the need to tie up cash in collateral.
+    <p>  Holding periods are at the transaction level and can be adjusted if a particular transaction appears to be difficult to liquidate due to characteristic specific to that trade.
+    <p>  RiskSnap calculates the shocked rates using EWMA, in order to reduce procyclicality, with flexibility on the weightings.  Clients can submit their own shocked rates if preferable.
 
-body {
-    font-family: Arial, Helvetica, sans-serif;
-}
+    <p>Some of the features are listed below:
 
-/* Style the header */
-.header {
-    background-color: #f1f1f1;
-    padding: 30px;
-    text-align: center;
-    font-size: 35px;
-}
+    <H3>Features</H3>
+      
+    <p>  &#8226;	HVaR and Expected Shortfall
+    <p>  &#8226;	Flexible periods for the Stress Period and Current Period, 10 years of daily data or more.
+    <p>  &#8226;	Flexible percentiles
+    <p>  &#8226;	Flexible holding periods by transaction
+    <p>  &#8226;	Netting by Client, Portfolio and product, each with flexibilities above
+    <p>  &#8226;	EWMA weighting flexible by risk factor (3 choices of Lambda)
+    <p>  &#8226;	Full valuation
+    <p>  &#8226;	Risk factors include term structure of the interest rate yield curve and at-the-money volatility curve.
+    <p>  &#8226;	Interest Rate Curve bootstrapping
+    <p>  &#8226;	Futures curve conversion by contract month order
+    <p>  &#8226;	Antithetic Risk
+    <p>  &#8226;	Collateral Haircut calculations (HVaR and Expected Shortfall) for Bonds and Equities
+    <p>  &#8226;	Bonds include:  US Treasury Bonds, Medium Term Notes, Municipal Bonds, Agency Bonds
+    <p>  &#8226;	Bond pricing:  cashflow method or yield method
+    <p>  &#8226;	Collateral placements and receipts
+    <p>  &#8226;	Market limit and Client limit calculations
+    <p>  &#8226;	Risk factor volatilities for Equities, Foreign Exchange, Futures
+    <p>  &#8226;	Volatility surfaces, Lookup by strike, Lookup by delta (sticky delta)
+    <p>  &#8226;	Products:  Interest Rate Swaps, Bonds, Equities, Futures, Foreign Exchange
+    <p>  &#8226;	Fast execution of What-if calculations
+    <p>  &#8226;	Transparency, easy to use
 
-/* Create four equal columns that floats next to each other */
-.column {
-    float: left;
-    width: 25%;
-    padding: 10px;
-    height: 300px; /* Should be removed. Only for demonstration */
-}
-
-/* Clear floats after the columns */
-.row:after {
-    content: "";
-    display: table;
-    clear: both;
-}
-
-/* Style the footer */
-.footer {
-    background-color: #f1f1f1;
-    padding: 10px;
-    text-align: center;
-}
-
-/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
-@media (max-width: 600px) {
-    .column {
-        width: 100%;
-    }
-}
-</style>
-</head>
-<body>
-
-
-<p>RiskSnap - HVaR is a risk system that utilizes verifiable past events in order to determine the amount of risk for a trade or a portfolio of trades within the time frame required to liquidate or hedge these trades.  The system is easy to use and transparent.  All valuations within the observation periods can easily be verified, including option pricers that can price on any day in the past using the "shocked" rates while displaying the market risk parameters.</p>
-
-<div class="header">
-  <h3>Versatile HVaR Factors</h3>
-</div>
-
-<div class="row">
-  <div class="column" style="background-color:#0040ff;"><div><h3 style="color:white;">Observation Period</h3></div>
-  <p style="color:white;" style="color:white;">Both the stress period and the current period are defined at the transaction level.
-  <p style="color:white;" style="color:white;">The variability of stress periods among assets is flexibly accommodated.</p></div>
-  <div class="column" style="background-color:#0080ff;"><div><h3 style="color:white;">Percentile</h3></div>
-  <p style="color:white;">Percentiles can be set at the transaction level for HVaR and Expected Shortfall for each observation period.</p>
-  <p style="color:white;">  This provides the flexibiity for applying a higher confidence level for certain transactions.</p></div>
-  <div class="column" style="background-color:#00bfff;"><div><h3 style="color:white;">Holding Period</h3></div>
-  <p style="color:white;">The holding period can be set at the transaction level.</p>
-  <p style="color:white;">For example, clients with a large concentration of assets may require a greater period of time to liquidate those assets.</p></div>
-  <div class="column" style="background-color:#00ffff;"><div><h3>Weighting</h3></div>
-  <p style="color:black;">EWMA weighting is set for each risk factor with a choice of 3 smoothing factors for each.</p>
-  <p style="color:black;">Weighting is excluded for the stress periods.</p></div>
-</div>
-<div class="header">
-  <h3>Full Valuation</h3>
-</div>
-
-<div class="row">
-  <div class="column" style="background-color:#0040ff;"><div><h3 style="color:white;"> Products</h3></div>
-  <p style="color:white;">Interest Rate Swaps, Bonds, Foreign Exchange Forwards, Futures, Options, Interest Rate Swaps, Energy Swaps</p>
-  <p style="color:white;">Second generation examples:  Swaptions, Equity and Foreign Exchange Baskets, Options on Baskets, 2-asset options, Options on a strip of forwards, Options on Bond Futures with cheapest-to-deliver calculations, Average rate basket options, Knock-in and Knock-out options.</p></div>
-  <div class="column" style="background-color:#0080ff;"><div><h3 style="color:white;">Curves</h3></div>
-  <p style="color:white;">Bond yield curves, Interest Rate Swap curves with OIS discounting, Daily discount factors</p>
-  <p style="color:white;">Futures curves with turn of the month smoothing.</p>
-  <p style="color:white;">Capability to convert option prices to a volatility surface.</pp></div>
-  <div class="column" style="background-color:#00bfff;"><div><h3 style="color:white;">Fixed Income</h3></div>
-  <p style="color:white;">US Bond Market:  US Treasury Bonds, Medium Term Notes, Municipal Bonds, Agency Bonds; Canadian Bond Market.  Others on request.</p>
-  <p style="color:white;">Collateral bonds are segregated</p>
-  <p style="color:white;">Pricing can be by either Yield to Price, or cashflow method</pp></div>
-  <div class="column" style="background-color:#00ffff;"><div><h3 style="color:white;">Sructured Products</h3></div>
-  <p style="color:black;">Netting sets allow products such as notes to be combined with options and other exotics.</p>
-  <p style="color:black;">Risk profiling can be done on the structured product as an entity, or underlying assets.</p></div>
-</div>
-<div class="header">
-  <h3>Limit Management</h3>
-</div>
-
-<div class="row">
-  <div class="column" style="background-color:#0040ff;"><div><h3 style="color:white;">Portfolio Netting</h3></div>
-  <p style="color:white;">Netting is by netting set within a Client, within a Portfolio or within a Product.</p>
-  <p style="color:white;">The netting set is defined by need, e.g a common netting set is an equity trade with an equity option, or a butterfly spread, or bond futures with the underlying bond.</p></div>
-  <div class="column" style="background-color:#0080ff;"><div><h3 style="color:white;">Collateral and Limits</h3></div>
-  <p style="color:white;">Collateral bonds and equities are defined separately with HVaR/ES used to calculate the haircut.</p>
-  <p style="color:white;">The risk amount, collateral supplied (including cash) are compared to limits for breach management.  Limits can be by client, portfolio or product.</p></div>
-  <div class="column" style="background-color:#00bfff;"><div><h3 style="color:white;">What-If</h3></div>
-  <p style="color:white;">Trades can be copied to an excel spreadsheet and changes applied as needed including all HVar parameters (observation periods, holding periods, EWMA factor) and copied back.</p>
-  <p style="color:black;">All reports applicable to confirmed trades will be available inclusive of what-if trades within seconds.</p></div>
-  <div class="column" style="background-color:#00ffff;"><div><h3>Antithetic Risk</h3></div>
-  <p style="color:black;">Antithetic Risk is used by the system to determine limit breaches imposed by a counterparty to a trade.</p></div>
-</div>
-<div class="footer">
-  <p>All rights reserved; risksnap.com</p>
-</div>
-
-</body>
-</html>
+</div> <!-- text-section -->
