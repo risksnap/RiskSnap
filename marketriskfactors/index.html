@@ -2,196 +2,254 @@
 layout: marketriskfactors-template
 ---
 
-
-
-
 <!DOCTYPE html>
 <html>
-<head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
+body {
+  font-family: Verdana, sans-serif;
+  margin: 0;
+}
+
 * {
-    box-sizing: border-box;
-}
-body {font-family: Arial, Helvetica, sans-serif;}
-div.a {
-    text-indent: 50px;
-	line-height:1.6;
-}
-h1 {
-    color: white;
-    text-align: center;
-	background-color: #3A5FCD;
-}
-h2 {
-    color: white;
-    text-align: center;
-	background-color: #3A5FCD;
-}
-/* The grid: Four equal columns that floats next to each other */
-.column {
-    float: left;
-    width: 25%;
-    padding: 10px;
+  box-sizing: border-box;
 }
 
-/* Style the images inside the grid */
-.column img {
-    opacity: 0.8; 
-    cursor: pointer; 
+.row > .column {
+  padding: 0 8px;
 }
 
-.column img:hover {
-    opacity: 1;
-}
-
-/* Clear floats after the columns */
 .row:after {
-    content: "";
-    display: table;
-    clear: both;
+  content: "";
+  display: table;
+  clear: both;
 }
 
-/* The expanding image container */
-.container {
-    position: relative;
-    display: none;
+.column {
+  float: left;
+  width: 25%;
 }
 
-/* Expanding image text */
-#imgtext {
-    position: absolute;
-    bottom: 15px;
-    left: 15px;
-    color: red;
-    font-size: 20px;
+/* The Modal (background) */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  padding-top: 100px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: black;
 }
 
-/* Closable button inside the expanded image */
-.closebtn {
-    position: absolute;
-    top: 10px;
-    right: 15px;
-    color: red;
-    font-size: 35px;
-    cursor: pointer;
+/* Modal Content */
+.modal-content {
+  position: relative;
+  background-color: #fefefe;
+  margin: auto;
+  padding: 0;
+  width: 90%;
+  max-width: 1200px;
+}
+
+/* The Close Button */
+.close {
+  color: white;
+  position: absolute;
+  top: 10px;
+  right: 25px;
+  font-size: 35px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #999;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.mySlides {
+  display: none;
+}
+
+.cursor {
+  cursor: pointer
+}
+
+/* Next & previous buttons */
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -50px;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+img {
+  margin-bottom: -4px;
+}
+
+.caption-container {
+  text-align: center;
+  background-color: black;
+  padding: 2px 16px;
+  color: white;
+}
+
+.demo {
+  opacity: 0.6;
+}
+
+.active,
+.demo:hover {
+  opacity: 1;
+}
+
+img.hover-shadow {
+  transition: 0.3s
+}
+
+.hover-shadow:hover {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)
 }
 </style>
-</head>
 <body>
-<p><div class="a">
-<p>A market risk factor is an attribute of a financial instrument that contributes to the valuation of that instrument.  Pricing models use mathematical formulas to convert market risk factors into a price that can be used to buy or sell (trade) the instrument.  An instrument with high liquidity will allow traders to put higher reliance on the underlying market risk factors.
-<p>
-Thus the most liquid market risk factors are spot foreign exchange rates in the major country currencies.  Other “spot” type of market risk factors, ie. Those with short days to settlement include treasury bonds, large cap equities, and futures with large trading volume
-<p>
-A spot price embeds expectations of future economic events and pricing models include market risk factors for these events.  The price of a bond embeds expectations of future short term rates and each bond in the term structure becomes a market risk factor. In the case of interest rate swaps the term structure becomes complex with many instruments used including over-night interest, cash, futures, bonds and swap spreads.  Liquidity is also important in term structures with the most liquid instruments used to build a discount curve.  Similarly, liquidity in option pricing is reflected by tendency for sellers to charge more as an option moves away from at-the-money.
-</div>
-<div style="text-align:center">
-  <h1>Historical Yields</h1>
-  <p>Click Image to zoom:</p>
-</div>
 
-<!-- The four columns -->
+<h2 style="text-align:center">Market Risk Factors</h2>
+
 <div class="row">
   <div class="column">
-    <img src="./images/Yields_CAD.png" alt="Yields CAD" style="width:100%" onclick="myFunction(this);">
+    <img src="./images/Yields_CAD.png" style="width:100%" onclick="openModal();currentSlide(1)" class="hover-shadow cursor">
   </div>
   <div class="column">
-    <img src="./images/Yields_EUR.png" alt="Yields EUR" style="width:100%" onclick="myFunction(this);">
+    <img src="./images/Yields_EUR.png"style="width:100%" onclick="openModal();currentSlide(2)" class="hover-shadow cursor">
   </div>
   <div class="column">
-    <img src="./images/Yields_GBP.png" alt="Yields GBP" style="width:100%" onclick="myFunction(this);">
+    <img src="./images/Yields_GBP.png" style="width:100%" onclick="openModal();currentSlide(3)" class="hover-shadow cursor">
   </div>
   <div class="column">
-    <img src="./images/Yields_USD.png" alt="Yields USD" style="width:100%" onclick="myFunction(this);">
+    <img src="./images/Yields_USD.png" style="width:100%" onclick="openModal();currentSlide(4)" class="hover-shadow cursor">
   </div>
 </div>
 
-<div class="container">
-  <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
-  <img id="expandedImg" style="width:100%">
-  <div id="imgtext"></div>
+<div id="myModal" class="modal">
+  <span class="close cursor" onclick="closeModal()">&times;</span>
+  <div class="modal-content">
+
+    <div class="mySlides">
+      <div class="numbertext">1 / 4</div>
+      <img src="./images/Yields_CAD.png" style="width:100%">
+    </div>
+
+    <div class="mySlides">
+      <div class="numbertext">2 / 4</div>
+      <img src="./images/Yields_EUR.png" style="width:100%">
+    </div>
+
+    <div class="mySlides">
+      <div class="numbertext">3 / 4</div>
+      <img src="./images/Yields_GBP.png" style="width:100%">
+    </div>
+    
+    <div class="mySlides">
+      <div class="numbertext">4 / 4</div>
+      <img src="./images/Yields_USD.png" style="width:100%">
+    </div>
+    
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+    <div class="caption-container">
+      <p id="caption"></p>
+    </div>
+
+
+    <div class="column">
+      <img class="demo cursor" src="./images/Yields_CAD.png" style="width:100%" onclick="currentSlide(1)" alt="CAD Yields">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="./images/Yields_EUR.png" style="width:100%" onclick="currentSlide(2)" alt="EUR Yields">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="./images/Yields_GBP.png" style="width:100%" onclick="currentSlide(3)" alt="GBP Yields">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="./images/Yields_USD.png" style="width:100%" onclick="currentSlide(4)" alt="USD Yields">
+    </div>
+  </div>
 </div>
 
 <script>
-function myFunction(imgs) {
-    var expandImg = document.getElementById("expandedImg");
-    var imgText = document.getElementById("imgtext");
-    expandImg.src = imgs.src;
-    imgText.innerHTML = imgs.alt;
-    expandImg.parentElement.style.display = "block";
+function openModal() {
+  document.getElementById('myModal').style.display = "block";
+}
+
+function closeModal() {
+  document.getElementById('myModal').style.display = "none";
+}
+
+var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("demo");
+  var captionText = document.getElementById("caption");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+  captionText.innerHTML = dots[slideIndex-1].alt;
 }
 </script>
-
+    
 </body>
 </html>
-
-
-
-
-<body>
-
-<div style="text-align:center">
-  <h1>Historical Volatility</h1>
-  </div>
-
-<!-- The four columns -->
-<div class="row">
-  <div class="column">
-    <img src="./images/EquityVol_^GSPC.png" alt="Volatility Equity ^GSPC" style="width:100%" onclick="myFunction(this);">
-  </div>
-  <div class="column">
-    <img src="./images/FuturesVol_BTC.png" alt="Volatility Futures BTC" style="width:100%" onclick="myFunction(this);">
-  </div>
-  <div class="column">
-    <img src="./images/FuturesVol_RB.png" alt="Volatility Futures RB" style="width:100%" onclick="myFunction(this);">
-  </div>
-  <div class="column">
-    <img src="./images/FX_Vol_GBPUSD.png" alt="Volatility FX GBPUSD" style="width:100%" onclick="myFunction(this);">
-  </div>
-</div>
-
-<div class="container">
-  <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
-  <img id="expandedImg" style="width:100%">
-  <div id="imgtext"></div>
-</div>
-
-<script>
-function myFunction(imgs) {
-    var expandImg = document.getElementById("expandedImg");
-    var imgText = document.getElementById("imgtext");
-    expandImg.src = imgs.src;
-    imgText.innerHTML = imgs.alt;
-    expandImg.parentElement.style.display = "block";
-}
-</script>
-
-</body>
-</html>
-
-<div class="text-section">
-
-<p>
-<h3>Yields</h3>
-    <div class="a">
-	<p>The Yield curves are graphed for central governments of Canada, Europe, U.K. and the U.S.(10 years of history, for 1, 2, 3, 5, 7, 10, 20, 30 yr tenors). There is a definite flattening in the Canadian and US curves, with similar trending in the Eur curve.  The U.K.  curve is relatively stable during the same period. Long term yields embed<sup>*</sup> future expectations of short term interest rates, suggesting that rates in the future will be low.  With short term rates rising currently, a straight-line projection should indicate that long term yields will rise also.  Since that is not happening, the counter-intuitive reasoning is possibly that current high rates will depress future economic growth.  
-    <p>
-    <sup>*</sup>Bootstrapping of interest rates is a method used to price fixed rate and floating rate instruments consistently.  In this methodology the discounted sum of bond coupon payments equals the discounted sum of the expected short tem interest rates.    In fixed income analytics, a discount factor, d(t) = (1 - r(t)*sum of the discount facters up to t)/(1+r(t)).  From this the expected short term rate can be derived as  d(t-1)/d(t)-1.
-    </p>
-	</div>
-
-<p>
-<h3>Volatility</h3>
-	<div class="a">
-	<p>Volatility is the risk factor that distinguishes the pricing of options from pricing of their underlying assets.  The graphs above plot historical standard deviations for various time periods for the S&P Index (^GSPC), a cryptocurrency, bitcoin(BTC), gasoline futures (RB) and foreign exchange spot (GBPUSD).  Unlike many risk factors where highest risk was observed during the financial crisis of 2008, energy volatility is a function not only of economic/political factors, but of weather. At the end of August, wholesale gasoline jumped nearly 14% due to tropical storm Harvey. The pound sterling experienced high volatility following the Brexit vote in June 2016.
-	</p>
-	</div>
-</div>	
-<p>
-<p>tenor color chart for graphs:
-</div>
-<div class ="image-section">
-    <img class="figure" alt="" src="./images/Tenor Codes.png"  style="width:100%" />
-</div>
-
