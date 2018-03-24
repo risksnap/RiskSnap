@@ -64,55 +64,55 @@ body {
 </div>
 
 <div class="row">
-  <div class="column" style="background-color:#0040ff;"><div><h3>Observation Period</h3></div>
-  <p>Both the stress period and the current period are defined at the transaction level.</p>
-  <p>The variability of stress periods among assets is flexibly accommodated.</p></div>
-  <div class="column" style="background-color:#0080ff;"><div><h3>Percentile</h3></div>
-  <p>Percentiles can be set at the transaction level for HVaR and Expected Shortfall for each observation period.</p>
-  <p>  This provides the flexibiity for applying a higher confidence level for certain transactions.</p></div>
-  <div class="column" style="background-color:#00bfff;"><div><h3>Holding Period</h3></div>
-  <p>The holding period can be set at the transaction level.</p>
-  <p>For example, clients with a large concentration of assets may require a greater period of time to liquidate those assets.</p></div>
+  <div class="column" style="background-color:#0040ff;"><div><h3 style="color:white;">Observation Period</h3></div>
+  <p style="color:white;" style="color:white;">Both the stress period and the current period are defined at the transaction level.
+  <p style="color:white;" style="color:white;">The variability of stress periods among assets is flexibly accommodated.</p></div>
+  <div class="column" style="background-color:#0080ff;"><div><h3 style="color:white;">Percentile</h3></div>
+  <p style="color:white;">Percentiles can be set at the transaction level for HVaR and Expected Shortfall for each observation period.</p>
+  <p style="color:white;">  This provides the flexibiity for applying a higher confidence level for certain transactions.</p></div>
+  <div class="column" style="background-color:#00bfff;"><div><h3 style="color:white;">Holding Period</h3></div>
+  <p style="color:white;">The holding period can be set at the transaction level.</p>
+  <p style="color:white;">For example, clients with a large concentration of assets may require a greater period of time to liquidate those assets.</p></div>
   <div class="column" style="background-color:#00ffff;"><div><h3>Weighting</h3></div>
-  <p>EWMA weighting is set for each risk factor with a choice of 3 smoothing factors for each.</p>
-  <p>Weighting is excluded for the stress periods.</p></div>
+  <p style="color:black;">EWMA weighting is set for each risk factor with a choice of 3 smoothing factors for each.</p>
+  <p style="color:black;">Weighting is excluded for the stress periods.</p></div>
 </div>
 <div class="header">
   <h3>Full Valuation</h3>
 </div>
 
 <div class="row">
-  <div class="column" style="background-color:#aaa;"><div><h3>Products</h3></div>
-  <p>Interest Rate Swaps, Bonds, Foreign Exchange Forwards, Futures, Options, Interest Rate Swaps, Energy Swaps</p>
-  <p>Second generation examples:  Swaptions, Equity and Foreign Exchange Baskets, Options on Baskets, 2-asset options, Options on a strip of forwards, Options on Bond Futures with cheapest-to-deliver calculations, Average rate basket options, Knock-in and Knock-out options.</p></div>
-  <div class="column" style="background-color:#bbb;"><div><h3>Curves</h3></div>
-  <p>Bond yield curves, Interest Rate Swap curves with OIS discounting, Daily discount factors</p>
-  <p>Futures curves with turn of the month smoothing.</p>
-  <p>Capability to convert option prices to a volatility surface.</pp></div>
-  <div class="column" style="background-color:#ccc;"><div><h3>Fixed Income</h3></div>
-  <p>US Bond Market:  US Treasury Bonds, Medium Term Notes, Municipal Bonds, Agency Bonds; Canadian Bond Market.  Others on request.</p>
-  <p>Collateral bonds are segregated</p>
-  <p>Pricing can be by either Yield to Price, or cashflow method</pp></div>
-  <div class="column" style="background-color:#ddd;"><div><h3>Sructured Products</h3></div>
-  <p>Netting sets allow products such as notes to be combined with options and other exotics.</p>
-  <p>Risk profiling can be done on the structured product as an entity, or underlying assets.</p></div>
+  <div class="column" style="background-color:#0040ff;"><div><h3 style="color:white;"> Products</h3></div>
+  <p style="color:white;">Interest Rate Swaps, Bonds, Foreign Exchange Forwards, Futures, Options, Interest Rate Swaps, Energy Swaps</p>
+  <p style="color:white;">Second generation examples:  Swaptions, Equity and Foreign Exchange Baskets, Options on Baskets, 2-asset options, Options on a strip of forwards, Options on Bond Futures with cheapest-to-deliver calculations, Average rate basket options, Knock-in and Knock-out options.</p></div>
+  <div class="column" style="background-color:#0080ff;"><div><h3 style="color:white;">Curves</h3></div>
+  <p style="color:white;">Bond yield curves, Interest Rate Swap curves with OIS discounting, Daily discount factors</p>
+  <p style="color:white;">Futures curves with turn of the month smoothing.</p>
+  <p style="color:white;">Capability to convert option prices to a volatility surface.</pp></div>
+  <div class="column" style="background-color:#00bfff;"><div><h3 style="color:white;">Fixed Income</h3></div>
+  <p style="color:white;">US Bond Market:  US Treasury Bonds, Medium Term Notes, Municipal Bonds, Agency Bonds; Canadian Bond Market.  Others on request.</p>
+  <p style="color:white;">Collateral bonds are segregated</p>
+  <p style="color:white;">Pricing can be by either Yield to Price, or cashflow method</pp></div>
+  <div class="column" style="background-color:#00ffff;"><div><h3 style="color:white;">Sructured Products</h3></div>
+  <p style="color:black;">Netting sets allow products such as notes to be combined with options and other exotics.</p>
+  <p style="color:black;">Risk profiling can be done on the structured product as an entity, or underlying assets.</p></div>
 </div>
 <div class="header">
   <h3>Limit Management</h3>
 </div>
 
 <div class="row">
-  <div class="column" style="background-color:#aaa;"><div><h3>Portfolio Netting</h3></div>
-  <p>Netting is by netting set within a Client, within a Portfolio or within a Product.</p>
-  <p>The netting set is defined by need, e.g a common netting set is an equity trade with an equity option, or a butterfly spread, or bond futures with the underlying bond.</p></div>
-  <div class="column" style="background-color:#bbb;"><div><h3>Collateral and Limits</h3></div>
-  <p>Collateral bonds and equities are defined separately with HVaR/ES used to calculate the haircut.</p>
-  <p>The risk amount, collateral supplied (including cash) are compared to limits for breach management.  Limits can be by client, portfolio or product.</p></div>
-  <div class="column" style="background-color:#ccc;"><div><h3>What-If</h3></div>
-  <p>Trades can be copied to an excel spreadsheet and changes applied as needed including all HVar parameters (observation periods, holding periods, EWMA factor) and copied back.</p>
-  <p>All reports applicable to confirmed trades will be available inclusive of what-if trades within seconds.</p></div>
-  <div class="column" style="background-color:#ddd;"><div><h3>Antithetic Risk</h3></div>
-  <p>Antithetic Risk is used by the system to determine limit breaches imposed by a counterparty to a trade.</p></div>
+  <div class="column" style="background-color:#0040ff;"><div><h3 style="color:white;">Portfolio Netting</h3></div>
+  <p style="color:white;">Netting is by netting set within a Client, within a Portfolio or within a Product.</p>
+  <p style="color:white;">The netting set is defined by need, e.g a common netting set is an equity trade with an equity option, or a butterfly spread, or bond futures with the underlying bond.</p></div>
+  <div class="column" style="background-color:#0080ff;"><div><h3 style="color:white;">Collateral and Limits</h3></div>
+  <p style="color:white;">Collateral bonds and equities are defined separately with HVaR/ES used to calculate the haircut.</p>
+  <p style="color:white;">The risk amount, collateral supplied (including cash) are compared to limits for breach management.  Limits can be by client, portfolio or product.</p></div>
+  <div class="column" style="background-color:#00bfff;"><div><h3 style="color:white;">What-If</h3></div>
+  <p style="color:white;">Trades can be copied to an excel spreadsheet and changes applied as needed including all HVar parameters (observation periods, holding periods, EWMA factor) and copied back.</p>
+  <p style="color:black;">All reports applicable to confirmed trades will be available inclusive of what-if trades within seconds.</p></div>
+  <div class="column" style="background-color:#00ffff;"><div><h3>Antithetic Risk</h3></div>
+  <p style="color:black;">Antithetic Risk is used by the system to determine limit breaches imposed by a counterparty to a trade.</p></div>
 </div>
 <div class="footer">
   <p>All rights reserved; risksnap.com</p>
