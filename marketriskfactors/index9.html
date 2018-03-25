@@ -28,22 +28,6 @@ h2 {
     text-align: center;
 	background-color: #3A5FCD;
 }
-table {
-    font-family: arial, sans-serif;
-    border-collapse: collapse;
-    width: 100%;
-}
-
-td, th {
-    border: 1px solid #dddddd;
-    text-align: left;
-    padding: 8px;
-}
-
-tr:nth-child(even) {
-    background-color: #dddddd;
-}
-</style>
 </style>
 </head>
 <div class="a">
@@ -61,15 +45,12 @@ A spot price embeds expectations of future economic events and pricing models in
 	<p>Yield curves are graphed for central governments of Canada, Europe, U.K. and the U.S.(10 years of history, for 1, 2, 3, 5, 7, 10, 20, 30 yr tenors). There is a definite flattening in the Canadian and US curves, with a similar trend beginning in the EUR curve.  The U.K.  curve is relatively stable during the same period. Long term yields embed<sup>*</sup> future expectations of short term interest rates, suggesting that rates in the future will be low.  With short term rates rising currently, a straight-line projection should indicate that long term yields will rise also.  Since that is not happening, the counter-intuitive reasoning is possibly that current high rates will depress future economic growth.  
     <p>
 	<img src="./images/Yields_CAD.png" alt="Yields CAD" width="200" height="100">
-	<b><font color="red">Click below to view curves</font></b></p>
-<table>
-	<td><a href="http://www.risksnap.com/marketriskfactors/RiskSnapPopUp_Yields_CAD.html" target="_blank">CAD Yields</a> </td>
-	<td><a href="http://www.risksnap.com/marketriskfactors/RiskSnapPopUp_Yields_EUR.html" target="_blank">EUR Yields</a></td> 
-	<td><a href="http://www.risksnap.com/marketriskfactors/RiskSnapPopUp_Yields_GBP.html" target="_blank">GBP Yields</a></td>
-	<td><a href="http://www.risksnap.com/marketriskfactors/RiskSnapPopUp_Yields_USD.html" target="_blank">USD Yields</a></td> 
-</table> 
- <p>
-	
+	<b>Click below to view curves</b></p>
+<a href="http://www.risksnap.com/marketriskfactors/RiskSnapPopUp_Yields_CAD.html" target="_blank">CAD Yields</a> 
+<a href="http://www.risksnap.com/marketriskfactors/RiskSnapPopUp_Yields_EUR.html" target="_blank">EUR Yields</a> 
+<a href="http://www.risksnap.com/marketriskfactors/RiskSnapPopUp_Yields_GBP.html" target="_blank">GBP Yields</a> 
+<a href="http://www.risksnap.com/marketriskfactors/RiskSnapPopUp_Yields_USD.html" target="_blank">USD Yields</a> 
+    <p>
 	<small><sup>*</sup>Bootstrapping of interest rates is a method used to price fixed rate and floating rate instruments consistently.  In this methodology the discounted sum of bond coupon payments equals the discounted sum of the expected short tem interest rates.    In fixed income analytics, a discount factor, d(t) = (1 - r(t)*sum of the discount facters up to t)/(1+r(t)).  From this the expected short term rate can be derived as  d(t-1)/d(t)-1.</small>
     </p>
 	
