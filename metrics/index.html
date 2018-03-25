@@ -5,8 +5,8 @@ layout: metrics-template
 
 
 
-<!DOCTYPE html>
-<html>
+
+<body>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
@@ -26,186 +26,95 @@ h1 {
 h2 {
     color: white;
     text-align: center;
-	background-color: #3A5FCD;
+	background-color: #59B300;
 }
-/* The grid: Three equal columns that floats next to each other */
-.column {
-    float: left;
-    width: 33.33%;
-    padding: 10px;
-}
-
-/* Style the images inside the grid */
-.column img {
-    opacity: 0.8; 
-    cursor: pointer; 
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
 }
 
-.column img:hover {
-    opacity: 1;
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
 }
 
-/* Clear floats after the columns */
-.row:after {
-    content: "";
-    display: table;
-    clear: both;
-}
-
-/* The expanding image container */
-.container {
-    position: relative;
-    display: none;
-}
-
-/* Expanding image text */
-#imgtext {
-    position: absolute;
-    bottom: 15px;
-    left: 15px;
-    color: red;
-    font-size: 20px;
-}
-
-/* Closable button inside the expanded image */
-.closebtn {
-    position: absolute;
-    top: 10px;
-    right: 15px;
-    color: red;
-    font-size: 35px;
-    cursor: pointer;
+tr:nth-child(even) {
+    background-color: #dddddd;
 }
 </style>
+</style>
 </head>
-<body>
-<p><div class="a">
+<div class="a">
+<H2>Procyclicality</H2>
+     
+    <p><div class="a">
 <p>Procyclic as used here is a positive correlation between a market place action and the market price of the underlying asset.  For example, as price increases the price will increase further as buyers enter the market.  As the price decreases sellers appear and further depress prices.
     <p>
     This type of behaviour can lead to panic buying or panic selling.  In addition, holders of collateral will demand increased collateral forcing participants to step up these actions.  On the other hand, if the volatility is low, there is a perceived lack of risk resulting in "loading up" of positions that could become very vulnerable when volatility returns.  Weighting factors can be used to ameliorate this action.
 	<p>  JP Morgan initially published a database with the Exponentially Weighted Moving Average (EWMA).  This methodology applies the weighting formula, [&sigma;(n)]<sup>2</sup>=&lambda;[&sigma;(n-1)]<sup>2</sup>+(1-&lambda;)[&mu;(n-1)]<sup>2</sup>, where &lambda; is a decay factor, e.g. from 0.94 to 0.99 that determines the importance given to recent events.  A low lambda provides more smoothing and a lambda of 1 is the same as no weighting. &mu;(n) is the change in the risk factor price. Use of a scale will decrease volatility as volatility increases and vice versa. Many exchanges and other authorities reference the EWMA model as a means of reducing procyclicality.
 </div>
 <div style="text-align:center">
-  <h1>EWMA Example of High volatility</h1>
-  <p>Click Image to zoom:</p>
+  <h2>High Volatility - EWMA Weighted Risk is Lower</h2>
 </div>
 
-<!-- The threer columns -->
-<div class="row">
-  <div class="column">
-    <img src="./images/T^GSPC_Vol.png"  style="width:100%" onclick="myFunction(this);">
-  </div>
-  <div class="column">
-    <img src="./images/T^GSPC_EWMA.png"  style="width:100%" onclick="myFunction(this);">
-  </div>
-  <div class="column">
-    <img src="./images/T^GSPC_Unweighted.png"  style="width:100%" onclick="myFunction(this);">
-  </div>
-</div>
-
-<div class="container">
-  <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
-  <img id="expandedImg" style="width:100%">
-  <div id="imgtext"></div>
-</div>
-
-<script>
-function myFunction(imgs) {
-    var expandImg = document.getElementById("expandedImg");
-    var imgText = document.getElementById("imgtext");
-    expandImg.src = imgs.src;
-    imgText.innerHTML = imgs.alt;
-    expandImg.parentElement.style.display = "block";
-}
-</script>
-
-</body>
-</html>
-
-
-
-
-<body>
-
-<div style="text-align:center">
-  <h1>EWMA Example of Low Volatility</h1>
-  </div>
-
-<!-- The three columns -->
-<div class="row">
-  <div class="column">
-    <img src="./images/TGOOG_Vol.png"  style="width:100%" onclick="myFunction(this);">
-  </div>
-  <div class="column">
-    <img src="./images/TGOOG_EWMA.png"  style="width:100%" onclick="myFunction(this);">
-  </div>
-  <div class="column">
-    <img src="./images/TGOOG_Unweighted.png"  style="width:100%" onclick="myFunction(this);">
-  </div>
- 
-</div>
-
-<div class="container">
-  <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
-  <img id="expandedImg" style="width:100%">
-  <div id="imgtext"></div>
-</div>
-
-<script>
-function myFunction(imgs) {
-    var expandImg = document.getElementById("expandedImg");
-    var imgText = document.getElementById("imgtext");
-    expandImg.src = imgs.src;
-    imgText.innerHTML = imgs.alt;
-    expandImg.parentElement.style.display = "block";
-}
-</script>
-
-</body>
-</html>
-
-<div class="text-section">
 
 <p>
-<h3>High Volatility - lower weighting</h3>
-    <div class="a">
-	<p>The financial crisis of 2008 was a period of high volatility for most assets including the S&P500 index (^GSPC) above.  EWMA weighting during this period results in a risk amount of slightly more than 25,000 as compared to the unweighted risk over 30,000.  The weighting dampens the higher volatility in order to deter panic selling or buying.
-    </p>
+<<div class="a">    
+	<p>The financial crisis of 2008 was a period of high volatility for most assets including the S&P500 index (^GSPC) above.  EWMA weighting during this period results in a risk amount of slightly more than 25,000 as compared to the unweighted risk over 30,000.  The weighting dampens the higher volatility in order to deter panic selling or buying. 
+    <p>
+	<img src="./images/^GSPC_Vol.png" alt="Vol GOOG" width="200" height="100">
+	<b><font color="red">Click below to compare volatility, Weighted Risk and Unweighted Risk</font></b></p>
+	<table>
+		<td><a href="http://www.risksnap.com/metrics/RiskSnapPopUp_^GSPC_Vol.html" target="_blank">^GSPC Yields</a> </td>
+		<td><a href="http://www.risksnap.com/metrics/RiskSnapPopUp_^GSPC_EWMA.html" target="_blank">^GSPC EWMA</a></td> 
+		<td><a href="http://www.risksnap.com/metrics/RiskSnapPopUp_^GSPC_Unweighted.html" target="_blank">^GSPC Unweighted</a></td>
+		
+	</table> 
+	
+	
 	</div>
 
-
-
 <p>
-<h3>Low Volatility - higher weighting</h3>
-	<div class="a">
-	<p>The  volatility drops from 26% to 14% close to the latest date (right side of chart GOOG).  Viewing the EWMA Weighted chart for the days following, the EWMA weighted risk is 10,000 compared to the unweighted chart where the risk is about 7,000.  The EWMA model adjusts for the lower volatility by assigning a greater risk in order to deter imprudent accumulation of positions.
+<h2>Low Volatility - EWMA Weighted Risk is Higher</h2>
+<div class="a">	
+	<p>he  volatility drops from 26% to 14% close to the latest date (right side of chart GOOG).  Viewing the EWMA Weighted chart for the days following, the EWMA weighted risk is 10,000 compared to the unweighted chart where the risk is about 7,000.  The EWMA model adjusts for the lower volatility by assigning a greater risk in order to deter imprudent accumulation of positions..
 	</p>
+	<img src="./images/GOOG_Vol.png" alt="Volatility ^GSPC" width="200" height="100">
+	<b><font color="red">Click below to compare volatility, Weighted Risk and Unweighted Risk</font></b></p>
+	<table>
+		<td><a href="http://www.risksnap.com/metrics/RiskSnapPopUp_^GOOG_Vol.html" target="_blank">^GOOG Yields</a> </td>
+		<td><a href="http://www.risksnap.com/metrics/RiskSnapPopUp_^GOOG_EWMA.html" target="_blank">^GOOG EWMA</a></td> 
+		<td><a href="http://www.risksnap.com/metrics/RiskSnapPopUp_^GOOG_Unweighted.html" target="_blank">^GOOG Unweighted</a></td>
+	</table> 
 	</div>
 </div>
-<div style="text-align:center">
-<h1>Holding Period</h1>
-</div>
+<h2>Holding Period</H2>
 
-<div class="a">
-	<p>The holding period is the estimate of the time horizon for effective hedging or close out of that product under stressed market conditions. Exchanges will terminate trading, e.g. of cash equity, index based futures and options when a 20% decline the S&P500 index occurs. CME Bitcoin futures are also under a 20% circuit breaker.
-	<p>In the over-the-counter (OTC) market, the bankruptcy of Lehman Brothers in 2008 is the classic case of time to settle OTC derivatives. One thousand derivatives contracts remained outstanding 5 years after the bankrupcty. (Ref:  The Failure Resolution of Lehman Brothers, M.J. Fleming and A. Sarkar, NewYorkFed).
-	<p>Supervisory requirements for bank minimum capital or market risk using expected shortfall, require liquidity horizons of 10 days for interest rate risk in specified currencies, 10 days for equity prices of large cap instruments, 20 days for small cap equity, 10 days for FX rates in specified currency pairs, and a range of 20 to 120 days for commodities. (Ref: BCBS, Minimum capital requirements for market risk, Jan 2016).
-	<p>Holding periods are used in financial models to extend the daily risk into term risk where volatility increases proportional to the square roof of time.  If a daily volatility is observed, then the annualized volatility is a multiplication factor of the square root of 252 (trading days).  In HVar, it is possible to observe 2-day changes to obtain risk over a 2-day holding period, however this tends to breakdown with longer time horizons due to lack of data.  For example, a method is to take the standard deviation of daily changes in a value of an instrument and multiply by the SQRT of 5, if the time horizon is 5 business days.
-	<p><mark>Holding period thus greatly impacts the amount of collateral/initial margin required by the counterparty to a trade</mark> and has been a source of deciding whether a counterparty wants a tailored OTC transaction or a standard exchange traded transaction, since typically, a listed transaction holding period could be 2-days. A similar OTC trade could have a holding period of 5 days.
-	<p>Synonyms for holding period: Margin Period of Risk (MPOR), Close-out Period, Liquidity Horizon, Liquidation Time
-	</p> 
-</div>
-<div style="text-align:center">
-<h1>Observation Period</h1>
+<p><div class="a">
+<p>The holding period for a financial instrument is the estimate of the time horizon for effective hedging or close out of that product, particularly under stressed market conditions.  An example, where loss of liquidity is enforced by an exchange, is when a 20% decline in the S&P 500 index will terminate trading for the remainder of the trading day in both the cash equity market and all U.S. based  equity index futures and options, including E-mini S&P 500 and S&P 500 futures and options.  Bitcoin futures traded on the CME are also under a 20% circuit breaker.
+<p>In the OTC market, the bankruptcy of Lehman Brothers is the classic case of time to settle OTC derivatives.  Although Retail OTC derivatives counterparties of Lehman terminated their contracts within weeks of bankruptcy filing under the safe harbor provisions, final settlement was a long process such that about 1,000 derivatives contracts remained "not settled" by the beginning of 2013, more than 4 years after the start of Lehman's bankruptcy. (Ref:  The Failure Resolution of Lehman Brothers, M.J. Fleming and A. Sarkar, NewYorkFed).
+<p>Supervisory requirements for bank minimum capital or market risk using expected shortfall, require liquidity horizons of 10 days for interest rate risk in specified currencies, 10 days for equity prices of large cap instruments, 20 days for small cap equity, 10 days for FX rates in specified currency pairs, and a range of 20 to 120 days for commodities. (Ref: BCBS, Minimum capital requirements for market risk, Jan 2016).
+<p>Holding periods are used in financial models to extend the daily risk into term risk where volatility increases proportional to the square roof of time.  If a daily volatility is observed, then the annualized volatility is a multiplication factor of the square root of 252 (trading days).  In HVar, it is possible to observe 2-day changes to obtain risk over a 2-day holding period, however this tends to breakdown with longer time horizons due to lack of data.  For example, a method is to take the standard deviation of daily changes in a value of an instrument and multiply by the SQRT of 5, if the time horizon is 5 business days.
+<p>Holding periods thus impact the amount of collateral/initial margin required by the counterparty to a trade and has been a source of determining whether a counterparty wishes to do a tailored OTC transaction or a standardized exchange traded transaction, since typically, a listed transaction holding period could be 2-days. A similar OTC trade could have a holding period of 5 days.
+<p>    Synonyms for holding period: Margin Period of Risk (MPOR), Close-out Period, Liquidity Horizon, Liquidation Time 
+</p>
+
+
+<h2>Observation Period</H2>
 </div> <!-- text-section -->
 
 <div class="text-section">
-<div class="a">
+<p><div class="a">
     <p>The observation period is the period over which the historical prices are observed.  Basel’s Principles for Market Infrastructures, PFMI, and the standard to which Central Counterparties (CCP) who wish to be PFMI compliant must adhere to, expects that a CCP include peak historic price volatilities as well as scenarios in light of current and evolving market conditions. Historical scenarios should not be excluded purely on account of passage of time. (BIS: Resilience and recovery of central counterparties (CCPs):  Further guidance on the PFMI, Aug 2016, d149.pdf)
     <p>
     Basel's Minimum Capital Requirements for Market Risk require that for measures based on current observations banks must update their data sets at least once a month or when the market is subject to material changes.  For the stressed period banks must identify the 12 month period of stress over the observation horizon in which the portfolio experiences the largest loss.  This horizon must, at a minimum span back to and include 2007.  Observations within this period must be equally weighted (e.g. not subject to EWMA).  Banks must update the 12-month stressed periods no less than monthly. (BIS: Minimum capital requirements for market risk Jan 2016, bcbs352).
     </p>
-</div>
-</div>
+</div> <!-- text-section -->
+
+
+
+</body>	
 
 
