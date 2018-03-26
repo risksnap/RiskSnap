@@ -1,0 +1,1 @@
+the HVar description has been moved to images, and is refenced in solutions.
