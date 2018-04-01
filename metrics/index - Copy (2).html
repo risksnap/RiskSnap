@@ -41,7 +41,7 @@ td, th {
 }
 
 tr:nth-child(even) {
-    background-color: #dddddd;
+    background-color: #fff1e0;
 }
 </style>
 </style>
@@ -110,7 +110,189 @@ tr:nth-child(even) {
     <p>The observation period is the period over which the historical prices are observed.  Basel’s Principles for Market Infrastructures, PFMI, and the standard to which Central Counterparties (CCP) who wish to be PFMI compliant must adhere to, expects that a CCP include peak historic price volatilities as well as scenarios in light of current and evolving market conditions. Historical scenarios should not be excluded purely on account of passage of time. (BIS: Resilience and recovery of central counterparties (CCPs):  Further guidance on the PFMI, Aug 2016, d149.pdf)
     <p>
     Basel's Minimum Capital Requirements for Market Risk require that for measures based on current observations banks must update their data sets at least once a month or when the market is subject to material changes.  For the stressed period banks must identify the 12 month period of stress over the observation horizon in which the portfolio experiences the largest loss.  This horizon must, at a minimum span back to and include 2007.  Observations within this period must be equally weighted (e.g. not subject to EWMA).  Banks must update the 12-month stressed periods no less than monthly. (BIS: Minimum capital requirements for market risk Jan 2016, bcbs352).
+	<p>
+	The following table identifies the observation period for the largest unweighted loss, over a 12 month period, tested over a horizon from 15-Feb-2008 to 27 Mar 2017. 
     </p>
+	
+
+<table>
+  <tr>
+    <th>Risk Factor</th>
+    <th>Code</th>
+    <th>Start Date</th>
+    <th>End Date</th>
+  </tr>
+  <tr>
+  <td>Foreign Exchange</td>
+  <td>CADUSD</td>
+  <td>10-Oct-2008</td>
+  <td>06-Oct-2009</td>
+</tr>
+<tr>
+  <td>Foreign Exchange</td>
+  <td>GBPUSD</td>
+  <td>24-Jun-2016</td>
+  <td>29-Jun-2017</td>
+</tr>
+<tr>
+  <td>Foreign Exchange</td>
+  <td>EURUSD</td>
+  <td>19-Dec-2008</td>
+  <td>15-Dec-2009</td>
+</tr>
+<tr>
+  <td>Bonds</td>
+  <td>USTreasuryLT</td>
+  <td>11-Aug-2011</td>
+  <td>17-Aug-2012</td>
+</tr>
+<tr>
+  <td>Bonds</td>
+  <td>USTreasuryST</td>
+  <td>19-Sep-2008</td>
+  <td>15-Sep-2009</td>
+</tr>
+<tr>
+  <td>Futures</td>
+  <td>CL</td>
+  <td>10-Oct-2008</td>
+  <td>06-Oct-2009</td>
+</tr>
+<tr>
+  <td>Futures</td>
+  <td>HO</td>
+  <td>24-Dec-2008</td>
+  <td>18-Dec-2009</td>
+</tr>
+<tr>
+  <td>Futures</td>
+  <td>RB</td>
+  <td>29-Sep-2008</td>
+  <td>23-Sep-2009</td>
+</tr>
+<tr>
+  <td>Futures</td>
+  <td>BTC</td>
+  <td>06-Dec-2013</td>
+  <td>11-Dec-2014</td>
+</tr>
+<tr>
+  <td>Equities</td>
+  <td>AMZN</td>
+  <td>15-Oct-2008</td>
+  <td>08-Oct-2009</td>
+</tr>
+<tr>
+  <td>Equities</td>
+  <td>FB</td>
+  <td>21-May-2012</td>
+  <td>29-May-2013</td>
+</tr>
+<tr>
+  <td>Equities</td>
+  <td>NFLX</td>
+  <td>15-Sep-2011</td>
+  <td>21-Sep-2012</td>
+</tr>
+<tr>
+  <td>Equities</td>
+  <td>AAPL</td>
+  <td>17-Sep-2008</td>
+  <td>11-Sep-2009</td>
+</tr>
+<tr>
+  <td>Equities</td>
+  <td>BDX</td>
+  <td>09-Oct-2008</td>
+  <td>05-Oct-2009</td>
+</tr>
+<tr>
+  <td>Equities</td>
+  <td>CVS</td>
+  <td>01-Dec-2008</td>
+  <td>25-Nov-2009</td>
+</tr>
+<tr>
+  <td>Equities</td>
+  <td>DHI</td>
+  <td>22-Sep-2008</td>
+  <td>16-Sep-2009</td>
+</tr>
+<tr>
+  <td>Equities</td>
+  <td>GOOG</td>
+  <td>18-Jul-2008</td>
+  <td>14-Jul-2009</td>
+</tr>
+<tr>
+  <td>Equities</td>
+  <td>^GSPC</td>
+  <td>29-Sep-2008</td>
+  <td>23-Sep-2009</td>
+</tr>
+<tr>
+  <td>Equities</td>
+  <td>JNJ</td>
+  <td>09-Oct-2008</td>
+  <td>05-Oct-2009</td>
+</tr>
+<tr>
+  <td>Equities</td>
+  <td>KMI</td>
+  <td>12-Nov-2015</td>
+  <td>16-Nov-2016</td>
+</tr>
+<tr>
+  <td>Equities</td>
+  <td>LEN</td>
+  <td>19-Nov-2008</td>
+  <td>13-Nov-2009</td>
+</tr>
+<tr>
+  <td>Equities</td>
+  <td>LOW</td>
+  <td>14-Nov-2008</td>
+  <td>09-Nov-2009</td>
+</tr>
+<tr>
+  <td>Equities</td>
+  <td>MSFT</td>
+  <td>29-Sep-2008</td>
+  <td>23-Sep-2009</td>
+</tr>
+<tr>
+  <td>Equities</td>
+  <td>NVR</td>
+  <td>10-Nov-2008</td>
+  <td>04-Nov-2009</td>
+</tr>
+<tr>
+  <td>Equities</td>
+  <td>SU.TO</td>
+  <td>20-Nov-2008</td>
+  <td>16-Nov-2009</td>
+</tr>
+<tr>
+  <td>Equities</td>
+  <td>UTX</td>
+  <td>04-Aug-2011</td>
+  <td>10-Aug-2012</td>
+</tr>
+<tr>
+  <td>Equities</td>
+  <td>XOM</td>
+  <td>09-Oct-2008</td>
+  <td>05-Oct-2009</td>
+</tr>
+<tr>
+  <td>Equities</td>
+  <td>MU</td>
+  <td>12-Nov-2008</td>
+  <td>05-Nov-2009</td>
+</tr>
+
+</table>
+
 </div> <!-- text-section -->
 
 

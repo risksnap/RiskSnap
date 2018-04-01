@@ -111,7 +111,7 @@ tr:nth-child(even) {
     <p>
     Basel's Minimum Capital Requirements for Market Risk require that for measures based on current observations banks must update their data sets at least once a month or when the market is subject to material changes.  For the stressed period banks must identify the 12 month period of stress over the observation horizon in which the portfolio experiences the largest loss.  This horizon must, at a minimum span back to and include 2007.  Observations within this period must be equally weighted (e.g. not subject to EWMA).  Banks must update the 12-month stressed periods no less than monthly. (BIS: Minimum capital requirements for market risk Jan 2016, bcbs352).
 	<p>
-	The following table identifies the observation period for the maximum  Expected Shortfall loss using a 99% percentile, over a 12 month period, tested over a horizon from 15-Feb-2008 to 29 Sep 2017. 
+	The following table identifies the observation period for the largest unweighted loss, over a 12 month period, over a horizon from 15-Feb-2008 to 27 Mar 2017.  In certain cases the weighted loss over the horizon may be worse than the largest unweighted loss, due to the procyclicality effect.  The HVaR graphs show unweighted changes for the stress period and weighted changes otherwise.
     </p>
 	
 
@@ -122,174 +122,175 @@ tr:nth-child(even) {
     <th>Start Date</th>
     <th>End Date</th>
   </tr>
-  <tr>
+ <tr>
   <td>Foreign Exchange</td>
   <td>CADUSD</td>
-  <td>10-Oct-2008</td>
-  <td>06-Oct-2009</td>
+  <td>22-May-2008</td>
+  <td>22-May-2009</td>
 </tr>
 <tr>
   <td>Foreign Exchange</td>
   <td>GBPUSD</td>
-  <td>24-Jun-2016</td>
-  <td>29-Jun-2017</td>
+  <td>24-Dec-2015</td>
+  <td>23-Dec-2016</td>
 </tr>
 <tr>
   <td>Foreign Exchange</td>
   <td>EURUSD</td>
-  <td>19-Dec-2008</td>
-  <td>15-Dec-2009</td>
+  <td>20-Jun-2008</td>
+  <td>19-Jun-2009</td>
 </tr>
 <tr>
   <td>Bonds</td>
   <td>USTreasuryLT</td>
-  <td>11-Aug-2011</td>
-  <td>17-Aug-2012</td>
+  <td>10-Feb-2011</td>
+  <td>10-Feb-2012</td>
 </tr>
 <tr>
   <td>Bonds</td>
   <td>USTreasuryST</td>
-  <td>19-Sep-2008</td>
-  <td>15-Sep-2009</td>
+  <td>21-Mar-2008</td>
+  <td>20-Mar-2009</td>
 </tr>
 <tr>
   <td>Futures</td>
   <td>CL</td>
-  <td>10-Oct-2008</td>
-  <td>06-Oct-2009</td>
+  <td>30-May-2014</td>
+  <td>29-May-2015</td>
 </tr>
 <tr>
   <td>Futures</td>
   <td>HO</td>
-  <td>24-Dec-2008</td>
-  <td>18-Dec-2009</td>
+  <td>29-Aug-2008</td>
+  <td>01-Sep-2009</td>
 </tr>
 <tr>
   <td>Futures</td>
   <td>RB</td>
-  <td>29-Sep-2008</td>
-  <td>23-Sep-2009</td>
+  <td>11-Apr-2008</td>
+  <td>10-Apr-2009</td>
 </tr>
 <tr>
   <td>Futures</td>
   <td>BTC</td>
-  <td>06-Dec-2013</td>
-  <td>11-Dec-2014</td>
+  <td>19-Jun-2013</td>
+  <td>19-Jun-2014</td>
 </tr>
 <tr>
-  <td>Equities</td>
+  <td>Equity</td>
   <td>AMZN</td>
-  <td>15-Oct-2008</td>
-  <td>08-Oct-2009</td>
+  <td>14-May-2008</td>
+  <td>14-May-2009</td>
 </tr>
 <tr>
-  <td>Equities</td>
+  <td>Equity</td>
   <td>FB</td>
   <td>21-May-2012</td>
-  <td>29-May-2013</td>
+  <td>21-May-2013</td>
 </tr>
 <tr>
-  <td>Equities</td>
+  <td>Equity</td>
   <td>NFLX</td>
-  <td>15-Sep-2011</td>
-  <td>21-Sep-2012</td>
+  <td>26-Apr-2011</td>
+  <td>25-Apr-2012</td>
 </tr>
 <tr>
-  <td>Equities</td>
+  <td>Equity</td>
   <td>AAPL</td>
-  <td>17-Sep-2008</td>
-  <td>11-Sep-2009</td>
+  <td>31-Mar-2008</td>
+  <td>31-Mar-2009</td>
 </tr>
 <tr>
-  <td>Equities</td>
+  <td>Equity</td>
   <td>BDX</td>
-  <td>09-Oct-2008</td>
-  <td>05-Oct-2009</td>
+  <td>29-Jan-2009</td>
+  <td>29-Jan-2010</td>
 </tr>
 <tr>
-  <td>Equities</td>
+  <td>Equity</td>
   <td>CVS</td>
-  <td>01-Dec-2008</td>
-  <td>25-Nov-2009</td>
+  <td>07-May-2009</td>
+  <td>07-May-2010</td>
 </tr>
 <tr>
-  <td>Equities</td>
+  <td>Equity</td>
   <td>DHI</td>
-  <td>22-Sep-2008</td>
-  <td>16-Sep-2009</td>
+  <td>24-Apr-2008</td>
+  <td>24-Apr-2009</td>
 </tr>
 <tr>
-  <td>Equities</td>
+  <td>Equity</td>
   <td>GOOG</td>
-  <td>18-Jul-2008</td>
-  <td>14-Jul-2009</td>
+  <td>31-Mar-2008</td>
+  <td>31-Mar-2009</td>
 </tr>
 <tr>
-  <td>Equities</td>
+  <td>Equity</td>
   <td>^GSPC</td>
-  <td>29-Sep-2008</td>
-  <td>23-Sep-2009</td>
+  <td>16-Apr-2008</td>
+  <td>16-Apr-2009</td>
 </tr>
 <tr>
-  <td>Equities</td>
+  <td>Equity</td>
   <td>JNJ</td>
-  <td>09-Oct-2008</td>
-  <td>05-Oct-2009</td>
+  <td>10-Apr-2008</td>
+  <td>10-Apr-2009</td>
 </tr>
 <tr>
-  <td>Equities</td>
+  <td>Equity</td>
   <td>KMI</td>
-  <td>12-Nov-2015</td>
-  <td>16-Nov-2016</td>
+  <td>05-Jun-2015</td>
+  <td>03-Jun-2016</td>
 </tr>
 <tr>
-  <td>Equities</td>
+  <td>Equity</td>
   <td>LEN</td>
-  <td>19-Nov-2008</td>
-  <td>13-Nov-2009</td>
+  <td>22-May-2008</td>
+  <td>22-May-2009</td>
 </tr>
 <tr>
-  <td>Equities</td>
+  <td>Equity</td>
   <td>LOW</td>
-  <td>14-Nov-2008</td>
-  <td>09-Nov-2009</td>
+  <td>13-Feb-2009</td>
+  <td>16-Feb-2010</td>
 </tr>
 <tr>
-  <td>Equities</td>
+  <td>Equity</td>
   <td>MSFT</td>
-  <td>29-Sep-2008</td>
-  <td>23-Sep-2009</td>
+  <td>24-Jul-2008</td>
+  <td>24-Jul-2009</td>
 </tr>
 <tr>
-  <td>Equities</td>
+  <td>Equity</td>
   <td>NVR</td>
-  <td>10-Nov-2008</td>
-  <td>04-Nov-2009</td>
+  <td>19-Jan-2012</td>
+  <td>18-Jan-2013</td>
 </tr>
 <tr>
-  <td>Equities</td>
+  <td>Equity</td>
   <td>SU.TO</td>
-  <td>20-Nov-2008</td>
-  <td>16-Nov-2009</td>
+  <td>22-Jul-2008</td>
+  <td>22-Jul-2009</td>
 </tr>
 <tr>
-  <td>Equities</td>
+  <td>Equity</td>
   <td>UTX</td>
-  <td>04-Aug-2011</td>
-  <td>10-Aug-2012</td>
+  <td>24-Mar-2011</td>
+  <td>23-Mar-2012</td>
 </tr>
 <tr>
-  <td>Equities</td>
+  <td>Equity</td>
   <td>XOM</td>
-  <td>09-Oct-2008</td>
-  <td>05-Oct-2009</td>
+  <td>16-Apr-2008</td>
+  <td>16-Apr-2009</td>
 </tr>
 <tr>
-  <td>Equities</td>
+  <td>Equity</td>
   <td>MU</td>
-  <td>12-Nov-2008</td>
-  <td>05-Nov-2009</td>
+  <td>14-May-2008</td>
+  <td>14-May-2009</td>
 </tr>
+
 
 </table>
 
