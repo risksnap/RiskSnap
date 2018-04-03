@@ -28,6 +28,11 @@ h2 {
     text-align: center;
 	background-color: #59B300;
 }
+h3 {
+    color: white;
+    text-align: center;
+	background-color: #00994d;
+}
 table {
     font-family: arial, sans-serif;
     border-collapse: collapse;
@@ -56,7 +61,7 @@ tr:nth-child(even) {
 	<p>  JP Morgan initially published a database with the Exponentially Weighted Moving Average (EWMA).  This methodology applies the weighting formula, [&sigma;(n)]<sup>2</sup>=&lambda;[&sigma;(n-1)]<sup>2</sup>+(1-&lambda;)[&mu;(n-1)]<sup>2</sup>, where &lambda; is a decay factor, e.g. from 0.94 to 0.99 that determines the importance given to recent events.  A low lambda provides more smoothing and a lambda of 1 is the same as no weighting. &mu;(n) is the change in the risk factor price. Use of a scale will decrease volatility as volatility increases and vice versa. Many exchanges and other authorities reference the EWMA model as a means of reducing procyclicality.
 </div>
 <div style="text-align:center">
-  <h2>High Volatility - EWMA Weighted Risk is Lower</h2>
+  <h3>High Volatility - EWMA Weighted Risk is Lower</h2>
 </div>
 
 
@@ -77,7 +82,7 @@ tr:nth-child(even) {
 	</div>
 
 <p>
-<h2>Low Volatility - EWMA Weighted Risk is Higher</h2>
+<h3>Low Volatility - EWMA Weighted Risk is Higher</h2>
 <div class="a">	
 	<p>The volatility for Google drops from 26% to 14% close to the latest date (right side of chart GOOG).  Viewing the EWMA Weighted chart for the days following, the EWMA weighted risk is 10,000 compared to the unweighted chart where the risk is 7,000.  The EWMA model adjusts for the lower volatility by assigning a greater risk in order to deter imprudent accumulation of positions..
 	</p>
