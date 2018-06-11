@@ -161,7 +161,7 @@ A spot price embeds expectations of future economic events and pricing models in
 <span id="Volatility Surface"/>
 <h2>Volatility Surface</h2>
 <div class="a">	
-	<p>A volatility surface is a 3 D representation of implied volatility of asset prices with time and strike being the other 2 axes.  The data source for a volatility surface are option prices.  The volatilities are backed out of an option pricing model, in this case Black-Scholes, with spot, interest rates and dividend yields being held constant.  In this way, the volatilities reflect current supply and demand for the underlying assets.  In general volatilities increase with time, however based on market conditions, near term options may exhibit higher volatility. Absent preference for puts or for calls, the ATM (at-the-money) volatility is lowest with volatility increasing as the strike goes further OTM (out-of-the-money) due to market preference for lower priced options.  A preference for puts over calls, such as hedges of underlying long positions in the assets, will introduce a skew into the surface. 
+	<p>A volatility surface is a 3D representation of implied volatility of asset prices with time and strike being the other 2 axes.  The data source for a volatility surface are option prices.  The volatilities are backed out of an option pricing model, in this case Black-Scholes, with spot, interest rates and dividend yields being held constant.  In this way, the volatilities reflect current supply and demand for the underlying assets.  In general volatilities increase with time, however based on market conditions, near term options may exhibit higher volatility. Absent preference for puts or for calls, the ATM (at-the-money) volatility is lowest with volatility increasing as the strike goes further OTM (out-of-the-money) due to market preference for lower priced options.  A preference for puts over calls, such as hedges of underlying long positions in the assets, will introduce a skew into the surface. 
 	<p>
 	RiskSnap provides alternative methods and factors.  The description below is the default.
 	<p>
@@ -173,12 +173,12 @@ A spot price embeds expectations of future economic events and pricing models in
 	The pricing model is Black-Scholes where the dividend yield is based on put-call parity. This accommodates certain unknown factors such as the repo rate or the borrowing rate of equities for short sales or collateral and the dividend yield can sometimes be negative.  Interpolation across strikes is through a monotonic spline of implied vols from market prices.  Interpolation across time is linear variance.  Extrapolation is always an estimation process and a linear method is used to indicate direction base on the last 2 points. In order to distinguish source of data the surface table uses green for interpolations only, beige for extrapolations only, and wine for a mixture.
 	</p>
 	
-	<b><font color="red">Click and expand below to view compare surface and grid</font></b></p>
+	<b><font color="red">Click and expand below to view compare surface and table</font></b></p>
 	<table>
 		<td><a href="http://www.risksnap.com/marketriskfactors/RiskSnapPopUp_Surf_Eq_AAPL.html" target="_blank">Surf Eq AAPL</a> </td>
-		<td><a href="http://www.risksnap.com/marketriskfactors/RiskSnapPopUp_Surf_Eq_AAPL_Grid.html" target="_blank">Surf Eq AAPL Grid</a></td> 
+		<td><a href="http://www.risksnap.com/marketriskfactors/RiskSnapPopUp_Surf_Eq_AAPL_T.html" target="_blank">Surf Eq AAPL Table</a></td> 
 		<td><a href="http://www.risksnap.com/marketriskfactors/RiskSnapPopUp_Surf_Eq_TSLA.html" target="_blank">Surf Eq TSLA</a></td>
-		<td><a href="http://www.risksnap.com/marketriskfactors/RiskSnapPopUp_Surf_Eq_TSLA_Grid.html" target="_blank">Surf Eq TSLA Grid</a></td> 
+		<td><a href="http://www.risksnap.com/marketriskfactors/RiskSnapPopUp_Surf_Eq_TSLA_T.html" target="_blank">Surf Eq TSLA Table</a></td> 
 	</table> 
 	</div>
 </div>
