@@ -1,0 +1,226 @@
+---
+layout: metrics-template
+---
+
+
+
+
+
+<body>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+    box-sizing: border-box;
+}
+body {font-family: Arial, Helvetica, sans-serif;}
+div.a {
+    text-indent: 50px;
+	line-height:1.6;
+}
+h1 {
+    color: white;
+    text-align: center;
+	background-color: #3A5FCD;
+}
+h2 {
+    color: white;
+    text-align: center;
+	background-color: #59B300;
+}
+h3 {
+    color: white;
+    text-align: center;
+	background-color: #00994d;
+}
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #fff1e0;
+}
+div.b {
+    text-indent: 50px;
+	
+}
+div.c {
+    text-indent: 100px;
+}
+div.d {
+    font-size: 130%;
+}
+p.thick {
+    font-weight: bold;
+}
+p.thicker {
+    font-weight: 900;
+}
+</style>
+</head>
+<div class="a">
+
+
+
+<html>
+<head>
+<style>
+.button {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+.button2 {background-color: #008CBA;} /* Blue */
+.button3 {background-color: #f44336;} /* Red */ 
+
+.button {border-radius: 12px;}
+.button2 {border-radius: 12px;}
+.button3 {border-radius: 12px;}
+
+</style>
+</head>
+<body>
+
+
+
+<button class="button"  onclick="window.location.href='#CorporateEquityDerivatives'">Corporate Equity Derivatives</button>
+
+
+
+</body>
+</html>
+
+
+
+
+<span id="CorporateEquityDerivatives"/>
+<H2>Corporate Equity Derivatives</H2>
+
+     
+    <p><div class="a">
+<p>“Complexity can be dangerous if it inhibits a genuine understanding, and an accurate calculation, of risks and exposure,” said Colombo, a former Morgan Stanley counsel. “On the other hand, a complex arrangement may present a very lucrative opportunity that ought not to be passed up<sup>1</sup> text.” 
+</div>
+<div style="text-align:center">
+  <h3>Equity Collar Trades</h2>
+</div>
+
+
+<p>
+<div class="b">    
+	<p>A collar trade provides investors a way to borrow money using equity shares as collateral while hedging against a decline in stock prices.  The borrowing optically looks risk-free however is not immune to default and the resulting market exposure. 
+    <p>
+</div>
+<div class="b">
+	<p>•	In February, 2018, Geely, a Hangzhou-based automotive company bought a $9 billion stake in Daimler AG using the biggest collar of its kind, Bloomberg has reported.
+</div>
+	<p>
+<div class="b">
+	<p>•	In 2016, Steinhoff  International Holdings borrowed $1.5 billion from a group of lenders through a margin loan pledging stock in the company as collateral without a collar.  The deal went bad.  Over 2 days in December, Steinhoff’s shares plunged 80%. Global investment banks lost more than $1B<sup>2</sup>. 
+</div>
+	
+	<p>
+<div class="b">
+	<p>•	The collar transaction can be very lucrative.  When Chinese billionaire Li Shufu needed help in building a 10% stake in Daimler, Bank of America, Merrill Lynch, and Morgan Stanley made around $250m in upfront profits for providing Mr. Li with a “funded equity collar”.<sup>3</sup>. 
+</div>
+ 
+ <div class="d"><p><font color="blue"><p class="thicker">How a Collar Works</p></font></div>
+
+	<p>In this example, a $2M – 2 year loan is taken out typically at a discount from the share value.  For this example, using an 80% discount, the amount of shares pledged is $2.5M.  The loan is 1.5% above Libor, lower than available on a non-collateralized loan for this borrower.  AAPL shares are used as the example.  Spot is 191.70, and a 20% out-of-the money (OTM) 153.36 put is purchased.   Lower moneyness options have a higher volatility for AAPL, and a mid-point volatility of 24.3% is used.  In order to make the put zero cost, a call option is sold.  Since the volatility for this higher moneyness option is lower at 21%, a higher strike is achieved at 248.16.  The moneyness indicates that out-of-the money puts on AAPL are priced with a higher volatility.
+	<p>
+	The number of shares put up as collateral = 2,500,000/191.70 =13,041 which also equals the number of put options and number of call options.  The borrower owns the puts and has written the call.  The puts can be placed as collateral with the lender.
+	<p>
+<div class="c">
+	<p><font color="red"><p class="thicker">Scenario A</p></font>
+</div>
+	<p>If spot at expiry is below the put strike, the put will be exercised automatically, the collateral shares delivered to the put holder and cash received for the value of the loan.  E.g. spot is 120 the lender gets 153.36 * 13,041 = $2M. 
+    <p>
+<div class="c">
+	<p><font color="red"><p class="thicker">Scenario B</p></font>
+</div>
+	<p>If spot at expiry is above the call strike, the borrower will not default on this particular transaction since the exercise of the call, e.g. if spot is 300, the cash received by the borrower or its other creditors will be 248.16 x 13,041 = $3,236,255, more than enough to pay off the loan and any loan cancellation fee.  (This amount is capped at the strike).
+	<p>If spot is between the put and call strikes, for similar reasons, the borrower is not likely to default on this particular arrangement since it is more advantageous to sell the shares.
+	<p>The following chart illustrates the payout possibilities.  Below the put strike, the borrower exercises the put and receives $2m the value of the loan.  Anywheres above that to the call cap, the borrower sells the shares with excess funds after paying off the loan.  Above the call strike, the borrower delivers the shares for the agreed strike and also has an excees of funds from which the loan is paid.
+	<img src="./images/Collar.PNG" alt="Collar" >
+	
+	<p>
+	<div class="d"><p><font color="blue"><p class="thicker">Risks</p></font></div
+	<p>If the borrower defaults prior to expiry and the put option is in-the-money, the lender will likely deliver the options against the cash consideration.  However, the risk exists to the lender that the reinvestment will be at lower interest rates than the original loan.   The lender might hold on to its shares to wait for better lending rates, however the shares and put option are no longer collateral and must be managed against market risk.  If the put option is out-of-the money, the lender could sell both the shares and options at market but is subject to market risk while selling the positions.
+	<p>
+		
+<div class="c">
+	<p><font color="red"><p class="thicker">Wrong-way risk</p></font>
+</div>
+	<p>.  If the borrower lends money against its own shares as collateral then the value of the collateral falls as the borrower’s credit worthiness declines.  This is what happened with Steinhoff.  Additionally, if the borrower writes puts on its own shares, the same risk exists. 
+	
+<div class="d"><p><font color="blue"><p class="thicker">Monitoring Risk through RiskSnap</p></font></div
+<p>Four transactions are applicable:</p>
+<div class="b">
+	<p>1)  FRN 2year loan to “Corporate1” for $2M 3-Month Libor +150bp. 
+</div>
+<div class="b">
+	<p>2)  Collateral received $2.5M, 13041 shares.  Lodged with a depository.. 
+</div>
+<div class="b">
+	<p>3)	Collateral received 153.36 2yr Put option on 13,041 shares.  (Sold by “Broker4” to “Corporate1” at zero cost.  “Corporate1” places the put option as part of the collateral with the lender.
+</div>
+<div class="b">
+	<p>4)	Call sold by “Corporate1” to “Broker” at zero cost.  This has no market risk nor credit risk to the lender.  (The counterparty to both option trades could be the lender, or even the borrower but adds to the complexity of the example). If the call is exercised the borrower's gain on the shares is capped at the strike. 
+</div>
+<p>Risk is calculated separately for the loan. 
+<p>The collateral is managed as a netted book due to the underlying assets being AAPL shares and put option and thereby posing little correlation risk.
+<p>
+<img src="./images/Corporate1Risk.png" alt="Corporate1 Risk" >
+<p>
+In the risk profile above, 
+<div class="b">
+	<p>a)	The MTM of (2,574,447) represents the market value of the loan that “Corporate1” owes to the lender. 
+</div>
+<div class="b">
+	<p>b)	The value of the loan to the lender decreases as rates rise.  The opposite is true for the borrower, therefore the margin on the FRN is measured using Antithetic risk.  This value is determined over the 1 year period that contains the largest loss over a 10 year period.  On 15 Sep 2008, 2 year rates dropped by 25 bp resulting in a historically simulated loss of $8,000 adjusted for a holding period.  The average tail risk was $4,714.  This is the margin required for the Floating Rate Note (FRN).
+</div>
+<div class="b">
+	<p>c)	The value of the collateral is determined based on the market value of equity collateral and equity put less the value of the “hair-cut”.  The market value of the put option on the trade date was $7.77.  Added to spot of 191.70, 199.47 x 13,041 = $2,601,288.   The haircut on this portfolio at that date was determined in RiskSnap as 324,998 and therefore the value of collateral is $2,276,292.   The risk on the collateral is the risk on the shares offset by the risk on the put option.
+  <p>
+The equity share risk can be seen below where the worst case was 29-Sep-2008.  On that day AAPL shares were down close to 20 % and appeared to be due to a stock ratings cut by RBC Capital and Morgan Stanley.  Both were concerned about AAPL’s prices in a worsening economy. 
+
+</div>
+<p>
+<img src="./images/Collateral.png" alt="Corporate1 Risk" >
+<p>The same magnitude of drop on the valuation day of this example would have produced a loss of close to $500,000.  Assuming that liquidation was not immediate but over  2 more days of volatility, the loss could be as high as 633,541.  The protective properties of the put however, were limited to 193,000 since the put delta at this point was 32%.  The net effect was 440,000 for this worst case.  Since the average of the tail risk is used, the haircut was 324,998.
+<p>
+<div class="b">
+	<p>d)	The summary of Collateral and excess/deficit is,
+	<p>•	MTM of the FRN   -$2,574,447
+	<p>•	Value of the collateral received  $2,276,292
+	<p>•	Cash collateral $278,122 (for this example, it is assumed that the borrower has placed funds for the haircut).
+	<p>•	Total Equity = -$2,574,447 + $2,276,292 + $278,122 = (20,033).
+	<p>•	Net owed from borrower to lender:  $(24,747).
+</div>
+
+
+
+Footnotes:
+<p>
+<a href="https://www.bloomberg.com/news/articles/2018-03-28/an-opaque-3-5-billion-business-is-giving-wall-street-a-hangover">1</a>
+<a href="https://www.businesslive.co.za/bd/companies/2018-03-28-beware-margin-loans-and-collar-trades-that-way-steinhoff-lies/">2</a> 
+<a href="https://www.ft.com/content/6bb33298-4172-11e8-93cf-67ac3a6482fd/">3</a> 
+
+</body>	
+
+
