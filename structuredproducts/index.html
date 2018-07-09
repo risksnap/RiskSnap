@@ -141,7 +141,7 @@ p.thicker {
  
  <div class="d"><p><font color="blue"><p class="thicker">How a Collar Works</p></font></div>
 
-	<p>In this example, a $2M – 2 year loan is taken out at a discount from the share value.  Using an 80% discount, the amount of shares pledged is $2.5M.  The loan is 1.5% above Libor, lower than available on a non-collateralized loan for this borrower.  AAPL shares are used as the example.  Spot is 191.70, and a 20% out-of-the money (OTM) 153.36 put is purchased.   Lower moneyness options have a higher volatility for AAPL, and a mid-point volatility of 24.3% is used.  In order to make the put zero cost, a call option is sold.  Since the volatility for this higher moneyness option is lower at 21%, a higher strike is achieved at 248.16.  The moneyness indicates that out-of-the money puts on AAPL are priced with a higher volatility.
+	<p>In this example, a $2M 2 year loan is taken out at a discount from the share value.  Using an 80% discount, the amount of shares pledged is $2.5M.  The loan is 1.5% above Libor, lower than available on a non-collateralized loan for this borrower.  AAPL shares are used as the example.  Spot is 191.70, and a 20% out-of-the money (OTM) 153.36 put is purchased.   Lower moneyness options have a higher volatility for AAPL, and a mid-point volatility of 24.3% is used.  In order to make the put zero cost, a call option is sold.  Since the volatility for this higher moneyness option is lower at 21%, a higher strike is achieved at 248.16.  The moneyness indicates that out-of-the money puts on AAPL are priced with a higher volatility.
 	<p>
 	The number of shares put up as collateral = 2,500,000/191.70 =13,041 which also equals the number of put options and number of call options.  The borrower owns the puts and has written the call.  The puts are placed as collateral with the lender.
 	<p>
@@ -186,8 +186,7 @@ p.thicker {
 <p>Risk is calculated separately for the loan. 
 <p>The collateral is managed as a netted book due to the underlying assets being AAPL shares and put option and thereby posing little correlation risk.
 <p>
-<img src="./images/Corporate1Risk.png" alt="Corporate1 Risk" >
-<p>
+<div class="b"><img src="./images/Corporate1Risk.PNG" alt="Corporate" ></div>
 In the risk profile above, 
 <div class="b">
 	<p>a)	The MTM of (2,574,447) represents the market value of the loan that “Corporate1” owes to the lender. 
@@ -202,10 +201,10 @@ The equity share risk of $324,998 can be seen below where the worst case was 29-
 
 </div>
 <p>
-<div class="b"><img src="./images/Collateral.png" alt="Corporate1 Risk" ></div>
+<div class="b"><img src="./images/Collateral.png" alt="Collateral" ></div>
 <p>The same magnitude of drop on the valuation day of this example would have produced a loss of close to $500,000.  Assuming that liquidation was not immediate but over  2 more days of volatility (the holding period), the loss could be as high as 633,541.  The protective properties of the put was limited to 193,000 since the put delta at this point was 32%.  The net effect was 440,000 for this worst case.  Since the average of the tail risk is used, the haircut was 324,998.  If the put was not netted against the shares, the sum of the individual risks would have been 491,179. The collateral netting benefit for haircus is shown in the graph below.
 <p>
-<div class="b"><img src="./images/benefits.png" alt="Corporate1 Risk" ></div>
+<div class="b"><img src="./images/benefits.PNG" alt="Netting Benefits" ></div>
 
 
 
