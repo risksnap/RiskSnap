@@ -141,7 +141,7 @@ table, th, td {
 <p>Mr. Aas bet on the German-Nordic spread narrowing.  However, German prices spiked on CO2 cost and Nordics fell on rain.  Since this is a significant loss to a clearing exchange and as RiskSnap provides HVaR software, we wanted to provide a risk analysis of the position using HVaR as compared to a proprietary SPAN&#174; model which is used by Nasdaq Clearing for their commodities.
 <p>It should be noted that for this analysis data from the European Commodities Clearing (ECC)  (AG), the clearer for the European Commodities Exchange (EEX) AG, is used since ECC's data appeared to be more easily accessible.  Hopefully, some insights can be gained.  The front quarterly futures contracts of the ECC Nordic and German based power contracts are graphed below over 3 years.   Clearly, there was a widening in the spread during the August - September period.
 <p>
-<img  class="one" src="./images/Nordic1.jpg" name="slide" style="width:800px;height:400px;">
+<!--<img  class="one" src="./images/Nordic1.jpg" name="slide" style="width:800px;height:400px;">-->
 <p>Both Nasdaq Clearing and ECC use SPAN&#174; for margining of these products.  Generally, it is believed that 2-day parametric VaR is used for SPAN&#174; risk amounts.  Nasdaq Clearing uses parametric VaR and a 2 day holding period for each contract separately with a correlation offset of 50%.    RiskSnap’s calculations are based on the portfolio and take into account both HVaR and expected shortfall (the tail of the HVaR calculations) for a stress period defined as the 365 day period over which the largest loss is experienced, and also for the current period which has been arbitrarily set as 90 days.  The same 99.2% confidence intervals as Nasdaq’s was used.  According to regulatory requirements no weighting is applied to the stress period. For the current period EWMA was used with a lambda weighting of 0.98.  RiskSnap takes the worst case of the above 4 scenarios.   The results follow below for one contract long Nordic and one contract short German, each of 2209 MWH.
 <p>
 <table>
@@ -175,13 +175,25 @@ table, th, td {
 <p>1.	The HVaR results are similar to the SPAN&#174; Margin at the time of the default.
 <p>2.	Regarding concentration, although regulatory and legal restrictions prevented Nasdaq from divulging the percentage of the market that the trader held, there was a big impact on variation margin indicating a large position.  In addition, a question and answer document by Nasdaq said that the position limit was 50% of open interest for category German “other months”, and had been increased July 1st from 35% as at year-end 2017.  A 2 day holding period is used for futures due to reasonably high liquidity.  Some exchanges, however, when faced with concentration risk will increase the number of liquidation days. Using a 4 day HP, for example, would have increased margin to 15580 or enough to cover the variation margin. It is unknown what value Nasdaq or ECC uses in these cases.
 <p>3.	On Sep 28th, according to RiskSnap’s HVaR model, the stress period had shifted significantly due to the inclusion of current events.  The risk was then &#8364; 17,690.  However, ECC’s SPAN&#174; value had remained unmoved.  Nasdaq updates the parameters of the margin methodology on a monthly basis, perhaps ECC has as of Sep 28th not yet updated the parameters.   RiskSnap searches for the stress period over the historical period for a portfolio of trades and does not require establishment of scenarios.
-<p>The following risk amount calculated of 11,020 was similar to the ECC SPAN value of 10884.
+<!--<p>The following risk amount calculated of 11,020 was similar to the ECC SPAN value of 10884.
 <p><img  class="one" src="./images/Nordic2.jpg" name="slide" style="width:800px;height:400px;">
 <p>Using a holding period of 4 days increases the Margin to 15,580.  A possible strategy for concentration margin.
 <p><img  class="one" src="./images/Nordic3.jpg" name="slide" style="width:800px;height:400px;">
 <p>Recalculating the risk amount on September 28th, shifts the stress period increasing the margin to 17,680.
-<p><img  class="one" src="./images/Nordic4.jpg" name="slide" style="width:800px;height:400px;">
+<p><img  class="one" src="./images/Nordic4.jpg" name="slide" style="width:800px;height:400px;">-->
 <p>
+<p>
+	
+	<img src="./images/Nordic1.jpg" alt="Nordic1" width="200" height="100">
+	<b><font color="red">Click and expand below to view and compare curves</font></b></p>
+	<table>
+		<td><a href="http://www.risksnap.com/Marketriskfactors/RiskSnapPopUp_Nordic1.html" target="_blank">Nordic1</a> </td>
+		<td><a href="http://www.risksnap.com/Marketriskfactors/RiskSnapPopUp_Nordic2.html" target="_blank">Nordic2</a></td> 
+		<td><a href="http://www.risksnap.com/Marketriskfactors/RiskSnapPopUp_Nordic3.html" target="_blank">Nordic3</a></td>
+		<td><a href="http://www.risksnap.com/Marketriskfactors/RiskSnapPopUp_Nordic4.html" target="_blank">Nordic4</a></td> 
+		
+	</table> 
+	<p>
 <p>CONCLUSIONS:  Regardless of margins specified by exchanges or other authorities it is prudent to run your own risk calculations to help protect your investments.
 <p>
 <h1 style="color:blue;">Chiming in on the FANG barrier</h1>
