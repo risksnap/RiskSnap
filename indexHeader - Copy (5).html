@@ -122,6 +122,26 @@ table, th, td {
 }
 </style>
 </head>
+<head>
+<meta charset="UTF-8">
+<style type = "text/css">
+.pic{
+	width:100px;
+	height:50px;
+}
+.picbig{
+	position: absolute;
+	width:0px;
+	-webkit-transition:width 0.3s linear 0s;
+	transition:width 0.3s linear 0s:
+	z-index:10;
+	}
+.pic:hover + .picbig{
+	width:700px;
+}
+</style>
+</head>
+
 <!-- end new -->
 
 
@@ -137,12 +157,65 @@ table, th, td {
 <h3 class="three-col-header">Thoughts on Risk Factors for the day</h3>
 <p>
 <h1 style="color:blue;">Nordic Power Blowout and Risk</h1>
-<p>Einer Aas, a private trader and Nasdaq Clearing Member, received an intraday margin call on Monday September 10, 2018 but could not meet the margin requirement and was declared to be in default Sep 11.  Within 48 hours of the default, Nasdaq Clearing closed-out the contracts consuming &#8364;7M of Nasdaq Junior Capital and  &#8364;107m of clearing members funds (65% of the default fund).
-<p>Mr. Aas bet on the German-Nordic spread narrowing.  However, German prices spiked on CO2 cost and Nordics fell on rain.  Since this is a significant loss to a clearing exchange and as RiskSnap provides HVaR software, we wanted to provide a risk analysis of the position using HVaR as compared to a proprietary SPAN&#174; model which is used by Nasdaq Clearing for their commodities.
-<p>It should be noted that for this analysis data from the European Commodities Clearing (ECC)  (AG), the clearer for the European Commodities Exchange (EEX) AG, is used since ECC's data appeared to be more easily accessible.  Hopefully, some insights can be gained.  The front quarterly futures contracts of the ECC Nordic and German based power contracts are graphed below over 3 years.   Clearly, there was a widening in the spread during the August - September period.
+<p>Einer Aas, a private trader and Nasdaq Clearing Member had bet on the German-Nordic spread narrowing. However, German prices spiked on CO2 cost and Nordics fell on rain.  On Monday, September 10, 2018 Mr. Aas received an intraday margin call but could not meet the requirement and was declared to be in default Sep 11.
+
 <p>
-<!--<img  class="one" src="./images/Nordic1.jpg" name="slide" style="width:800px;height:400px;">-->
-<p>Both Nasdaq Clearing and ECC use SPAN&#174; for margining of these products.  Generally, it is believed that 2-day parametric VaR is used for SPAN&#174; risk amounts.  Nasdaq Clearing uses parametric VaR and a 2 day holding period for each contract separately with a correlation offset of 50%.    RiskSnap’s calculations are based on the portfolio and take into account both HVaR and expected shortfall (the tail of the HVaR calculations) for a stress period defined as the 365 day period over which the largest loss is experienced, and also for the current period which has been arbitrarily set as 90 days.  The same 99.2% confidence intervals as Nasdaq’s was used.  According to regulatory requirements no weighting is applied to the stress period. For the current period EWMA was used with a lambda weighting of 0.98.  RiskSnap takes the worst case of the above 4 scenarios.   The results follow below for one contract long Nordic and one contract short German, each of 2209 MWH.
+ <img id="myImg1" src="./images/Waterfall.jpg" alt = "Nasdaq Waterfall" width = "50" height = "20">
+<!-- The Modal -->
+<div id="myModal1" class="modal">
+  <span class="close">&times;</span>
+  <img class="modal-content" id="img1">
+  <div id="caption1"></div>
+</div>
+<script>
+// Get the modal
+var modal = document.getElementById('myModal1');
+// Get the image and insert it inside the modal - use its "alt" text as a caption
+var img = document.getElementById('myImg1');
+var modalImg = document.getElementById("img1");
+var captionText = document.getElementById("caption1");
+img.onclick = function(){
+    modal.style.display = "block";
+    modalImg.src = this.src;
+    captionText.innerHTML = this.alt;
+}
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() { 
+    modal.style.display = "none";
+}
+</script>
+
+<!--<img class="pic" src="./images/Waterfall.png" alt="Waterfall" align="left">
+<img class="picbig" src="./images/Waterfall.png" alt="Waterfall" align="left">-->
+<p><font size="5">Waterfall</font><p Within 48 hours of the default, Nasdaq Clearing closed-out the contracts consuming &#8364;7M of Nasdaq Junior Capital and  &#8364;107m of clearing members funds (65% of the default fund).
+<p> Within 48 hours of the default, Nasdaq Clearing closed-out the contracts consuming Eur 7M of Nasdaq Junior Capital and  Eur107m of clearing members funds (65% of the default fund). Since this is a significant loss to a clearing exchange and as RiskSnap provides HVaR software, we provide a risk analysis of the position using HVaR.  Nasdaq Clearing uses a proprietary SPAN&#174; model for their commodity margining.
+<p>
+<img class="pic" src="./images/NordicA.jpg" alt="nord" align="left">
+<img class="picbig" src="./images/NordicA.jpg" alt="nord" align="left"><p><font size="5">Data</font><p>It should be noted that for this analysis data from the European Commodities Clearing (ECC)  (AG), the clearer for the European Commodities Exchange (EEX) AG, is used since ECC's data appeared to be more easily accessible.  An assumption is that similar insights can be obtained.  The front quarterly futures contracts of the ECC Nordic and German based power contracts are graphed above covering 3 years.   Clearly, there was a widening in the spread during the August - September period.  The closing prices on Nordic was 55.95 Sep 7th, and 51.5 Sep 10th; for German power, 61.06 and 62.56 resp.  On a contract size of 2209 MWH the variation margin was <font color="red">&#8364;-13145</font></p>
+<p>
+<img class="pic" src="./images/SPAN.jpg" alt="nord" align="left">
+<img class="picbig" src="./images/SPAN.jpg" alt="nord" align="left"><p>
+<font size="5">SPAN&#174</font><p>Both Nasdaq Clearing and ECC use SPAN&#174; for margining power futures.  Generally, 2-day parametric VaR is used for SPAN&#174; risk amounts.  Nasdaq Clearing uses parametric VaR (variance analysis) and a 2 day holding period (HP)for each contract separately with a correlation offset of 50%.  The ECC SPAN&#174; result was <font color="red">&#8364;10884.</font>, a shortfall of 17%.</p>  
+<p>
+<img class="pic" src="./images/NordicB.jpg" alt="nord" align="left">
+<img class="picbig" src="./images/NordicB.jpg" alt="nord" align="left">
+<p><font size="5">RiskSnap Historical Simulation</font><p>RiskSnap’s calculations are based on a historical simulation of the portfolio, taking into account both HVaR and expected shortfall (the tail of the HVaR calculations) for a stress period defined as the 365 day period over which the largest loss is experienced, and also for the current period which has been arbitrarily set as 90 days.  Since historical simulation is used, long positions will have a different risk profile from short positions, unlike SPAN&#174;. 
+The same 99.2% confidence intervals as Nasdaq’s was used.  According to regulatory requirements no weighting is applied to the stress period. For the current period EWMA was used with a lambda weighting of 0.98.  RiskSnap takes the worst case of the above 4 scenarios.   The result was<font color="red"> &#8364;11020</font>, similar to the EEC's SPAN&#174; margin.</p>
+<p>
+<img class="pic" src="./images/NordicC.jpg" alt="nord" align="left">
+<img class="picbig" src="./images/NordicC.jpg" alt="nord" align="left">
+<p><font size="5">Concentration</font></p>Although regulatory and legal restrictions prevented Nasdaq from divulging the percentage of the market that the trader held, there was a big impact on variation margin indicating a large position.  In addition, a question and answer document by Nasdaq said that the position limit of 14,469,300 MWh was 50% of open interest for category German “other months”, and had been increased July 1st from 35% as at year-end 2017.  A 2 day holding period is commonly used for futures due to perceived high liquidity.  Some exchanges, however, when faced with concentration risk will increase the number of liquidation days. Using a 4 day HP, for example, would have increased margin to <font color="red"> &#8364;15580</font> or enough to cover the variation margin and possibly force a reduction of holdings leading up to the crisis. It is not known what value Nasdaq or ECC uses in these cases.</p>
+
+<p>
+<img class="pic" src="./images/NordicD.jpg" alt="nord" align="left">
+<img class="picbig" src="./images/NordicD.jpg" alt="nord" align="left">
+<p><font size="5">Frequency of Parameter Update</font></p>On Sep 28th, according to RiskSnap’s HVaR model, the stress period had shifted significantly due to the inclusion of current events.  The risk was then <font color="red"> &#8364; 17,690</font>.  However, ECC’s SPAN&#174; value had remained unmoved.  Nasdaq updates the parameters of the margin methodology on a monthly basis, perhaps ECC has as of Sep 28th not yet updated the parameters.   RiskSnap searches for the stress period over the historical period for a portfolio of trades and does not require establishment of scenarios.</p
+
+
+
+
 <p>
 <table>
   <tr>
@@ -171,30 +244,11 @@ table, th, td {
   </tr>
   
 </table>
-<p>Observations:
-<p>1.	The HVaR results are similar to the SPAN&#174; Margin at the time of the default.
-<p>2.	Regarding concentration, although regulatory and legal restrictions prevented Nasdaq from divulging the percentage of the market that the trader held, there was a big impact on variation margin indicating a large position.  In addition, a question and answer document by Nasdaq said that the position limit was 50% of open interest for category German “other months”, and had been increased July 1st from 35% as at year-end 2017.  A 2 day holding period is used for futures due to reasonably high liquidity.  Some exchanges, however, when faced with concentration risk will increase the number of liquidation days. Using a 4 day HP, for example, would have increased margin to 15580 or enough to cover the variation margin. It is unknown what value Nasdaq or ECC uses in these cases.
-<p>3.	On Sep 28th, according to RiskSnap’s HVaR model, the stress period had shifted significantly due to the inclusion of current events.  The risk was then &#8364; 17,690.  However, ECC’s SPAN&#174; value had remained unmoved.  Nasdaq updates the parameters of the margin methodology on a monthly basis, perhaps ECC has as of Sep 28th not yet updated the parameters.   RiskSnap searches for the stress period over the historical period for a portfolio of trades and does not require establishment of scenarios.
-<!--<p>The following risk amount calculated of 11,020 was similar to the ECC SPAN value of 10884.
-<p><img  class="one" src="./images/Nordic2.jpg" name="slide" style="width:800px;height:400px;">
-<p>Using a holding period of 4 days increases the Margin to 15,580.  A possible strategy for concentration margin.
-<p><img  class="one" src="./images/Nordic3.jpg" name="slide" style="width:800px;height:400px;">
-<p>Recalculating the risk amount on September 28th, shifts the stress period increasing the margin to 17,680.
-<p><img  class="one" src="./images/Nordic4.jpg" name="slide" style="width:800px;height:400px;">-->
-<p>
-<p>
-	
-	<img src="./images/Nordic1.jpg" alt="Nordic1" width="200" height="100">
-	<b><font color="red">Click and expand below to view and compare curves</font></b></p>
-	<table>
-		<td><a href="http://www.risksnap.com/Marketriskfactors/RiskSnapPopUp_Nordic1.html" target="_blank">Nordic1</a> </td>
-		<td><a href="http://www.risksnap.com/Marketriskfactors/RiskSnapPopUp_Nordic2.html" target="_blank">Nordic2</a></td> 
-		<td><a href="http://www.risksnap.com/Marketriskfactors/RiskSnapPopUp_Nordic3.html" target="_blank">Nordic3</a></td>
-		<td><a href="http://www.risksnap.com/Marketriskfactors/RiskSnapPopUp_Nordic4.html" target="_blank">Nordic4</a></td> 
-		
-	</table> 
-	<p>
-<p>CONCLUSIONS:  Regardless of margins specified by exchanges or other authorities it is prudent to run your own risk calculations to help protect your investments.
+<body>
+
+
+
+<p>CONCLUSION:  Regardless of margins specified by exchanges or other authorities it is prudent to run your own risk calculations to prevent blow-outs.
 <p>
 <h1 style="color:blue;">Chiming in on the FANG barrier</h1>
 <p class="paragraph">The Auto-Callable Contingent Coupon Barrier Notes Linked to the Lesser Performing of Four Equity
@@ -259,4 +313,3436 @@ Securities (a.k.a. "FANG barrier") was cited in FT Alphaville, July 20 by Dan Mc
 
 <body>
 <table id="customers">
+
+<tr>
+  <th>Code</th>
+  <th>Description</th>
+  <th>Amount</th>
+  <th>Type</th>
+  <th>Industry</th>
+  <th>Market 28-Sep-2018</th>
+  <th>Daily Gain/(loss)</th>
+  <th>Current Antithetic</th>
+  <th>HP</th>
+  <th>Stress ES</th>
+  <th>Sep-24/Sep-21</th>
+  <th>Sep-25/Sep-24</th>
+  <th>Sep-26/Sep-25</th>
+  <th>Sep-27/Sep-26</th>
+  <th>Sep-28/Sep-27</th>
+  <th>Current Risk Sep-28</th>
+</tr>
+<tr>
+  <td>USTreasuryLT</td>
+  <td>17-Dec-2044</td>
+  <td>100,000</td>
+  <td>Bond</td>
+  <td></td>
+  <td>3.17%</td>
+  <td>14</td>
+  <td>(1,173)</td>
+  <td>1</td>
+  <td>(5,144)</td>
+  <td>47</td>
+  <td>14</td>
+  <td>(5)</td>
+  <td>3</td>
+  <td>(3)</td>
+<td>
+  <img id="myImg" src="./images/USTreasuryLT.png" alt = "&emsp; &emsp;&emsp;&emsp; USTreasuryLT     17-Dec-2044         Current Period HVaR:  (1,615),    Current Period ES:  (1,650),    Stress Period HVaR:  (3,364),    Stress Period ES:  (5,144),    Worst:  (5,144)" width = "50" height = "20">
+<!-- The Modal -->
+<div id="myModal" class="modal">
+  <span class="close">&times;</span>
+  <img class="modal-content" id="img">
+  <div id="caption"></div>
+</div>
+<script>
+// Get the modal
+var modal = document.getElementById('myModal');
+// Get the image and insert it inside the modal - use its "alt" text as a caption
+var img = document.getElementById('myImg');
+var modalImg = document.getElementById("img");
+var captionText = document.getElementById("caption");
+img.onclick = function(){
+    modal.style.display = "block";
+    modalImg.src = this.src;
+    captionText.innerHTML = this.alt;
+}
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() { 
+    modal.style.display = "none";
+}
+</script>
+(1,615)
+  </td>
+</tr>
+<tr>
+  <td>USTreasuryST</td>
+  <td>15-Sep-2020</td>
+  <td>100,000</td>
+  <td>Bond</td>
+  <td></td>
+  <td>2.8%</td>
+  <td>30</td>
+  <td>(115)</td>
+  <td>1</td>
+  <td>(421)</td>
+  <td>4</td>
+  <td>1</td>
+  <td>1</td>
+  <td>1</td>
+  <td>1</td>
+<td>
+  <img id="myImg1" src="./images/USTreasuryST.png" alt = "&emsp; &emsp;&emsp;&emsp; USTreasuryST     15-Sep-2020         Current Period HVaR:  (130),    Current Period ES:  (167),    Stress Period HVaR:  (217),    Stress Period ES:  (421),    Worst:  (421)" width = "50" height = "20">
+<!-- The Modal -->
+<div id="myModal1" class="modal">
+  <span class="close">&times;</span>
+  <img class="modal-content" id="img1">
+  <div id="caption1"></div>
+</div>
+<script>
+// Get the modal
+var modal = document.getElementById('myModal1');
+// Get the image and insert it inside the modal - use its "alt" text as a caption
+var img = document.getElementById('myImg1');
+var modalImg = document.getElementById("img1");
+var captionText = document.getElementById("caption1");
+img.onclick = function(){
+    modal.style.display = "block";
+    modalImg.src = this.src;
+    captionText.innerHTML = this.alt;
+}
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[1];
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() { 
+    modal.style.display = "none";
+}
+</script>
+(130)
+  </td>
+</tr>
+<tr>
+  <td>AAL</td>
+  <td>American Airlines Group Inc</td>
+  <td>100 Units</td>
+  <td>Services</td>
+  <td>Major Airlines</td>
+  <td>41.33</td>
+  <td>(17)</td>
+  <td>(274)</td>
+  <td>2</td>
+  <td>(1,415)</td>
+  <td>23</td>
+  <td>5</td>
+  <td>(6)</td>
+  <td>(5)</td>
+  <td>3</td>
+<td>
+  <img id="myImg2" src="./images/AAL.png" alt = "&emsp; &emsp;&emsp;&emsp; AAL     American Airlines Group Inc         Current Period HVaR:  (354),    Current Period ES:  (472),    Stress Period HVaR:  (1,074),    Stress Period ES:  (1,415),    Worst:  (1,415)" width = "50" height = "20">
+<!-- The Modal -->
+<div id="myModal2" class="modal">
+  <span class="close">&times;</span>
+  <img class="modal-content" id="img2">
+  <div id="caption2"></div>
+</div>
+<script>
+// Get the modal
+var modal = document.getElementById('myModal2');
+// Get the image and insert it inside the modal - use its "alt" text as a caption
+var img = document.getElementById('myImg2');
+var modalImg = document.getElementById("img2");
+var captionText = document.getElementById("caption2");
+img.onclick = function(){
+    modal.style.display = "block";
+    modalImg.src = this.src;
+    captionText.innerHTML = this.alt;
+}
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[2];
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() { 
+    modal.style.display = "none";
+}
+</script>
+(354)
+  </td>
+</tr>
+<tr>
+  <td>AAPL</td>
+  <td>Apple Inc.</td>
+  <td>100 Units</td>
+  <td>Consumer Goods</td>
+  <td>Electronic Equipment</td>
+  <td>225.74</td>
+  <td>79</td>
+  <td>(1,251)</td>
+  <td>2</td>
+  <td>(2,747)</td>
+  <td>26</td>
+  <td>(4)</td>
+  <td>6</td>
+  <td>(14)</td>
+  <td></td>
+<td>
+  <img id="myImg3" src="./images/AAPL.png" alt = "&emsp; &emsp;&emsp;&emsp; AAPL     Apple Inc.         Current Period HVaR:  (848),    Current Period ES:  (1,153),    Stress Period HVaR:  (1,489),    Stress Period ES:  (2,747),    Worst:  (2,747)" width = "50" height = "20">
+<!-- The Modal -->
+<div id="myModal3" class="modal">
+  <span class="close">&times;</span>
+  <img class="modal-content" id="img3">
+  <div id="caption3"></div>
+</div>
+<script>
+// Get the modal
+var modal = document.getElementById('myModal3');
+// Get the image and insert it inside the modal - use its "alt" text as a caption
+var img = document.getElementById('myImg3');
+var modalImg = document.getElementById("img3");
+var captionText = document.getElementById("caption3");
+img.onclick = function(){
+    modal.style.display = "block";
+    modalImg.src = this.src;
+    captionText.innerHTML = this.alt;
+}
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[3];
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() { 
+    modal.style.display = "none";
+}
+</script>
+(848)
+  </td>
+</tr>
+<tr>
+  <td>AMZN</td>
+  <td>Amazon.com Inc.</td>
+  <td>100 Units</td>
+  <td>Services</td>
+  <td>Catalog & Mail Order Houses</td>
+  <td>2003.</td>
+  <td>(998)</td>
+  <td>(9,769)</td>
+  <td>2</td>
+  <td>(29,015)</td>
+  <td>20</td>
+  <td>(184)</td>
+  <td>21</td>
+  <td>(216)</td>
+  <td>89</td>
+<td>
+  <img id="myImg4" src="./images/AMZN.png" alt = "&emsp; &emsp;&emsp;&emsp; AMZN     Amazon.com Inc.         Current Period HVaR:  (8,922),    Current Period ES:  (9,210),    Stress Period HVaR:  (19,604),    Stress Period ES:  (29,015),    Worst:  (29,015)" width = "50" height = "20">
+<!-- The Modal -->
+<div id="myModal4" class="modal">
+  <span class="close">&times;</span>
+  <img class="modal-content" id="img4">
+  <div id="caption4"></div>
+</div>
+<script>
+// Get the modal
+var modal = document.getElementById('myModal4');
+// Get the image and insert it inside the modal - use its "alt" text as a caption
+var img = document.getElementById('myImg4');
+var modalImg = document.getElementById("img4");
+var captionText = document.getElementById("caption4");
+img.onclick = function(){
+    modal.style.display = "block";
+    modalImg.src = this.src;
+    captionText.innerHTML = this.alt;
+}
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[4];
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() { 
+    modal.style.display = "none";
+}
+</script>
+(8,922)
+  </td>
+</tr>
+<tr>
+  <td>AXP</td>
+  <td>American Express Company</td>
+  <td>100 Units</td>
+  <td>Financial</td>
+  <td>Credit Services</td>
+  <td>106.49</td>
+  <td>(136)</td>
+  <td>(249)</td>
+  <td>2</td>
+  <td>(2,325)</td>
+  <td>40</td>
+  <td>2</td>
+  <td>7</td>
+  <td>2</td>
+  <td>2</td>
+<td>
+  <img id="myImg5" src="./images/AXP.png" alt = "&emsp; &emsp;&emsp;&emsp; AXP     American Express Company         Current Period HVaR:  (395),    Current Period ES:  (425),    Stress Period HVaR:  (1,864),    Stress Period ES:  (2,325),    Worst:  (2,325)" width = "50" height = "20">
+<!-- The Modal -->
+<div id="myModal5" class="modal">
+  <span class="close">&times;</span>
+  <img class="modal-content" id="img5">
+  <div id="caption5"></div>
+</div>
+<script>
+// Get the modal
+var modal = document.getElementById('myModal5');
+// Get the image and insert it inside the modal - use its "alt" text as a caption
+var img = document.getElementById('myImg5');
+var modalImg = document.getElementById("img5");
+var captionText = document.getElementById("caption5");
+img.onclick = function(){
+    modal.style.display = "block";
+    modalImg.src = this.src;
+    captionText.innerHTML = this.alt;
+}
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[5];
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() { 
+    modal.style.display = "none";
+}
+</script>
+(395)
+  </td>
+</tr>
+<tr>
+  <td>AXTA</td>
+  <td>Axalta Coating Systems Ltd</td>
+  <td>100 Units</td>
+  <td>Basic Materials</td>
+  <td>Specialty Chemicals</td>
+  <td>29.16</td>
+  <td>(8)</td>
+  <td>(98)</td>
+  <td>2</td>
+  <td>(436)</td>
+  <td>15</td>
+  <td>(1)</td>
+  <td></td>
+  <td></td>
+  <td></td>
+<td>
+  <img id="myImg6" src="./images/AXTA.png" alt = "&emsp; &emsp;&emsp;&emsp; AXTA     Axalta Coating Systems Ltd         Current Period HVaR:  (82),    Current Period ES:  (93),    Stress Period HVaR:  (191),    Stress Period ES:  (436),    Worst:  (436)" width = "50" height = "20">
+<!-- The Modal -->
+<div id="myModal6" class="modal">
+  <span class="close">&times;</span>
+  <img class="modal-content" id="img6">
+  <div id="caption6"></div>
+</div>
+<script>
+// Get the modal
+var modal = document.getElementById('myModal6');
+// Get the image and insert it inside the modal - use its "alt" text as a caption
+var img = document.getElementById('myImg6');
+var modalImg = document.getElementById("img6");
+var captionText = document.getElementById("caption6");
+img.onclick = function(){
+    modal.style.display = "block";
+    modalImg.src = this.src;
+    captionText.innerHTML = this.alt;
+}
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[6];
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() { 
+    modal.style.display = "none";
+}
+</script>
+(82)
+  </td>
+</tr>
+<tr>
+  <td>BAC</td>
+  <td>Bank of America Corp</td>
+  <td>100 Units</td>
+  <td>Financial</td>
+  <td>Money Center Banks</td>
+  <td>29.46</td>
+  <td>(48)</td>
+  <td>(136)</td>
+  <td>2</td>
+  <td>(1,114)</td>
+  <td>17</td>
+  <td>1</td>
+  <td>2</td>
+  <td>1</td>
+  <td>1</td>
+<td>
+  <img id="myImg7" src="./images/BAC.png" alt = "&emsp; &emsp;&emsp;&emsp; BAC     Bank of America Corp         Current Period HVaR:  (96),    Current Period ES:  (141),    Stress Period HVaR:  (943),    Stress Period ES:  (1,114),    Worst:  (1,114)" width = "50" height = "20">
+<!-- The Modal -->
+<div id="myModal7" class="modal">
+  <span class="close">&times;</span>
+  <img class="modal-content" id="img7">
+  <div id="caption7"></div>
+</div>
+<script>
+// Get the modal
+var modal = document.getElementById('myModal7');
+// Get the image and insert it inside the modal - use its "alt" text as a caption
+var img = document.getElementById('myImg7');
+var modalImg = document.getElementById("img7");
+var captionText = document.getElementById("caption7");
+img.onclick = function(){
+    modal.style.display = "block";
+    modalImg.src = this.src;
+    captionText.innerHTML = this.alt;
+}
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[7];
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() { 
+    modal.style.display = "none";
+}
+</script>
+(96)
+  </td>
+</tr>
+<tr>
+  <td>BDX</td>
+  <td>Becton, Dickinson and Company</td>
+  <td>100 Units</td>
+  <td>Healthcare</td>
+  <td>Medical Instruments & Supplies</td>
+  <td>261.</td>
+  <td>101</td>
+  <td>(639)</td>
+  <td>2</td>
+  <td>(2,295)</td>
+  <td>70</td>
+  <td>3</td>
+  <td>3</td>
+  <td>44</td>
+  <td></td>
+<td>
+  <img id="myImg8" src="./images/BDX.png" alt = "&emsp; &emsp;&emsp;&emsp; BDX     Becton, Dickinson and Company         Current Period HVaR:  (586),    Current Period ES:  (655),    Stress Period HVaR:  (1,587),    Stress Period ES:  (2,295),    Worst:  (2,295)" width = "50" height = "20">
+<!-- The Modal -->
+<div id="myModal8" class="modal">
+  <span class="close">&times;</span>
+  <img class="modal-content" id="img8">
+  <div id="caption8"></div>
+</div>
+<script>
+// Get the modal
+var modal = document.getElementById('myModal8');
+// Get the image and insert it inside the modal - use its "alt" text as a caption
+var img = document.getElementById('myImg8');
+var modalImg = document.getElementById("img8");
+var captionText = document.getElementById("caption8");
+img.onclick = function(){
+    modal.style.display = "block";
+    modalImg.src = this.src;
+    captionText.innerHTML = this.alt;
+}
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[8];
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() { 
+    modal.style.display = "none";
+}
+</script>
+(586)
+  </td>
+</tr>
+<tr>
+  <td>BK</td>
+  <td>Bank of New York Mellon Corp</td>
+  <td>100 Units</td>
+  <td>Financial</td>
+  <td>Asset Management</td>
+  <td>50.99</td>
+  <td>(55)</td>
+  <td>(195)</td>
+  <td>2</td>
+  <td>(1,076)</td>
+  <td>23</td>
+  <td>1</td>
+  <td></td>
+  <td>3</td>
+  <td>3</td>
+<td>
+  <img id="myImg9" src="./images/BK.png" alt = "&emsp; &emsp;&emsp;&emsp; BK     Bank of New York Mellon Corp         Current Period HVaR:  (202),    Current Period ES:  (337),    Stress Period HVaR:  (792),    Stress Period ES:  (1,076),    Worst:  (1,076)" width = "50" height = "20">
+<!-- The Modal -->
+<div id="myModal9" class="modal">
+  <span class="close">&times;</span>
+  <img class="modal-content" id="img9">
+  <div id="caption9"></div>
+</div>
+<script>
+// Get the modal
+var modal = document.getElementById('myModal9');
+// Get the image and insert it inside the modal - use its "alt" text as a caption
+var img = document.getElementById('myImg9');
+var modalImg = document.getElementById("img9");
+var captionText = document.getElementById("caption9");
+img.onclick = function(){
+    modal.style.display = "block";
+    modalImg.src = this.src;
+    captionText.innerHTML = this.alt;
+}
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[9];
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() { 
+    modal.style.display = "none";
+}
+</script>
+(202)
+  </td>
+</tr>
+<tr>
+  <td>BRK-A</td>
+  <td>Berkshire Hathaway Inc.</td>
+  <td>1 Units</td>
+  <td>Financial</td>
+  <td>Property & Casualty Insurance</td>
+  <td>320000.</td>
+  <td>(4,731)</td>
+  <td>(9,429)</td>
+  <td>2</td>
+  <td>(41,318)</td>
+  <td>1,348</td>
+  <td>2</td>
+  <td>82</td>
+  <td>209</td>
+  <td>72</td>
+<td>
+  <img id="myImg10" src="./images/BRK-A.png" alt = "&emsp; &emsp;&emsp;&emsp; BRK-A     Berkshire Hathaway Inc.         Current Period HVaR:  (6,636),    Current Period ES:  (6,828),    Stress Period HVaR:  (26,767),    Stress Period ES:  (41,318),    Worst:  (41,318)" width = "50" height = "20">
+<!-- The Modal -->
+<div id="myModal10" class="modal">
+  <span class="close">&times;</span>
+  <img class="modal-content" id="img10">
+  <div id="caption10"></div>
+</div>
+<script>
+// Get the modal
+var modal = document.getElementById('myModal10');
+// Get the image and insert it inside the modal - use its "alt" text as a caption
+var img = document.getElementById('myImg10');
+var modalImg = document.getElementById("img10");
+var captionText = document.getElementById("caption10");
+img.onclick = function(){
+    modal.style.display = "block";
+    modalImg.src = this.src;
+    captionText.innerHTML = this.alt;
+}
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[10];
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() { 
+    modal.style.display = "none";
+}
+</script>
+(6,636)
+  </td>
+</tr>
+<tr>
+  <td>CHTR</td>
+  <td>Charter Communications, Inc.</td>
+  <td>100 Units</td>
+  <td>Services</td>
+  <td>CATV Systems</td>
+  <td>325.88</td>
+  <td>81</td>
+  <td>(1,586)</td>
+  <td>2</td>
+  <td>(4,052)</td>
+  <td>79</td>
+  <td>25</td>
+  <td>10</td>
+  <td>(12)</td>
+  <td>3</td>
+<td>
+  <img id="myImg11" src="./images/CHTR.png" alt = "&emsp; &emsp;&emsp;&emsp; CHTR     Charter Communications, Inc.         Current Period HVaR:  (1,647),    Current Period ES:  (4,767),    Stress Period HVaR:  (1,851),    Stress Period ES:  (4,052),    Worst:  (4,767)" width = "50" height = "20">
+<!-- The Modal -->
+<div id="myModal11" class="modal">
+  <span class="close">&times;</span>
+  <img class="modal-content" id="img11">
+  <div id="caption11"></div>
+</div>
+<script>
+// Get the modal
+var modal = document.getElementById('myModal11');
+// Get the image and insert it inside the modal - use its "alt" text as a caption
+var img = document.getElementById('myImg11');
+var modalImg = document.getElementById("img11");
+var captionText = document.getElementById("caption11");
+img.onclick = function(){
+    modal.style.display = "block";
+    modalImg.src = this.src;
+    captionText.innerHTML = this.alt;
+}
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[11];
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() { 
+    modal.style.display = "none";
+}
+</script>
+(1,647)
+  </td>
+</tr>
+<tr>
+  <td>COST</td>
+  <td>Costco Wholesale Corporation</td>
+  <td>100 Units</td>
+  <td>Services</td>
+  <td>Discount, Variety Stores</td>
+  <td>234.88</td>
+  <td>88</td>
+  <td>(739)</td>
+  <td>2</td>
+  <td>(1,998)</td>
+  <td>(13)</td>
+  <td>5</td>
+  <td>(1)</td>
+  <td>3</td>
+  <td></td>
+<td>
+  <img id="myImg12" src="./images/COST.png" alt = "&emsp; &emsp;&emsp;&emsp; COST     Costco Wholesale Corporation         Current Period HVaR:  (752),    Current Period ES:  (921),    Stress Period HVaR:  (902),    Stress Period ES:  (1,998),    Worst:  (1,998)" width = "50" height = "20">
+<!-- The Modal -->
+<div id="myModal12" class="modal">
+  <span class="close">&times;</span>
+  <img class="modal-content" id="img12">
+  <div id="caption12"></div>
+</div>
+<script>
+// Get the modal
+var modal = document.getElementById('myModal12');
+// Get the image and insert it inside the modal - use its "alt" text as a caption
+var img = document.getElementById('myImg12');
+var modalImg = document.getElementById("img12");
+var captionText = document.getElementById("caption12");
+img.onclick = function(){
+    modal.style.display = "block";
+    modalImg.src = this.src;
+    captionText.innerHTML = this.alt;
+}
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[12];
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() { 
+    modal.style.display = "none";
+}
+</script>
+(752)
+  </td>
+</tr>
+<tr>
+  <td>CVS</td>
+  <td>CVS Health Corporation</td>
+  <td>100 Units</td>
+  <td>HealthCare</td>
+  <td>Health Care Plans</td>
+  <td>78.72</td>
+  <td>(4)</td>
+  <td>(448)</td>
+  <td>2</td>
+  <td>(1,148)</td>
+  <td>30</td>
+  <td>11</td>
+  <td>(4)</td>
+  <td>(2)</td>
+  <td>2</td>
+<td>
+  <img id="myImg13" src="./images/CVS.png" alt = "&emsp; &emsp;&emsp;&emsp; CVS     CVS Health Corporation         Current Period HVaR:  (556),    Current Period ES:  (616),    Stress Period HVaR:  (397),    Stress Period ES:  (1,148),    Worst:  (1,148)" width = "50" height = "20">
+<!-- The Modal -->
+<div id="myModal13" class="modal">
+  <span class="close">&times;</span>
+  <img class="modal-content" id="img13">
+  <div id="caption13"></div>
+</div>
+<script>
+// Get the modal
+var modal = document.getElementById('myModal13');
+// Get the image and insert it inside the modal - use its "alt" text as a caption
+var img = document.getElementById('myImg13');
+var modalImg = document.getElementById("img13");
+var captionText = document.getElementById("caption13");
+img.onclick = function(){
+    modal.style.display = "block";
+    modalImg.src = this.src;
+    captionText.innerHTML = this.alt;
+}
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[13];
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() { 
+    modal.style.display = "none";
+}
+</script>
+(556)
+  </td>
+</tr>
+<tr>
+  <td>DAL</td>
+  <td>Delta Air Lines, Inc.</td>
+  <td>100 Units</td>
+  <td>Services</td>
+  <td>Major Airlines</td>
+  <td>57.83</td>
+  <td>(17)</td>
+  <td>(261)</td>
+  <td>2</td>
+  <td>(1,479)</td>
+  <td>25</td>
+  <td>(12)</td>
+  <td>(9)</td>
+  <td>(1)</td>
+  <td>2</td>
+<td>
+  <img id="myImg14" src="./images/DAL.png" alt = "&emsp; &emsp;&emsp;&emsp; DAL     Delta Air Lines, Inc.         Current Period HVaR:  (234),    Current Period ES:  (296),    Stress Period HVaR:  (1,157),    Stress Period ES:  (1,479),    Worst:  (1,479)" width = "50" height = "20">
+<!-- The Modal -->
+<div id="myModal14" class="modal">
+  <span class="close">&times;</span>
+  <img class="modal-content" id="img14">
+  <div id="caption14"></div>
+</div>
+<script>
+// Get the modal
+var modal = document.getElementById('myModal14');
+// Get the image and insert it inside the modal - use its "alt" text as a caption
+var img = document.getElementById('myImg14');
+var modalImg = document.getElementById("img14");
+var captionText = document.getElementById("caption14");
+img.onclick = function(){
+    modal.style.display = "block";
+    modalImg.src = this.src;
+    captionText.innerHTML = this.alt;
+}
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[14];
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() { 
+    modal.style.display = "none";
+}
+</script>
+(234)
+  </td>
+</tr>
+<tr>
+  <td>DHI</td>
+  <td>D.R. Horton, Inc.</td>
+  <td>100 Units</td>
+  <td>Industrial Goods</td>
+  <td>Residential Construction</td>
+  <td>42.18</td>
+  <td>35</td>
+  <td>(241)</td>
+  <td>2</td>
+  <td>(580)</td>
+  <td>3</td>
+  <td>(5)</td>
+  <td>3</td>
+  <td>3</td>
+  <td>(1)</td>
+<td>
+  <img id="myImg15" src="./images/DHI.png" alt = "&emsp; &emsp;&emsp;&emsp; DHI     D.R. Horton, Inc.         Current Period HVaR:  (245),    Current Period ES:  (381),    Stress Period HVaR:  (346),    Stress Period ES:  (580),    Worst:  (580)" width = "50" height = "20">
+<!-- The Modal -->
+<div id="myModal15" class="modal">
+  <span class="close">&times;</span>
+  <img class="modal-content" id="img15">
+  <div id="caption15"></div>
+</div>
+<script>
+// Get the modal
+var modal = document.getElementById('myModal15');
+// Get the image and insert it inside the modal - use its "alt" text as a caption
+var img = document.getElementById('myImg15');
+var modalImg = document.getElementById("img15");
+var captionText = document.getElementById("caption15");
+img.onclick = function(){
+    modal.style.display = "block";
+    modalImg.src = this.src;
+    captionText.innerHTML = this.alt;
+}
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[15];
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() { 
+    modal.style.display = "none";
+}
+</script>
+(245)
+  </td>
+</tr>
+<tr>
+  <td>DVA</td>
+  <td>Davita Inc</td>
+  <td>100 Units</td>
+  <td>Healthcare</td>
+  <td>Specialized Health Services</td>
+  <td>71.63</td>
+  <td>39</td>
+  <td>(559)</td>
+  <td>2</td>
+  <td>(921)</td>
+  <td>(24)</td>
+  <td>2</td>
+  <td>1</td>
+  <td>(3)</td>
+  <td></td>
+<td>
+  <img id="myImg16" src="./images/DVA.png" alt = "&emsp; &emsp;&emsp;&emsp; DVA     Davita Inc         Current Period HVaR:  (294),    Current Period ES:  (954),    Stress Period HVaR:  (681),    Stress Period ES:  (921),    Worst:  (954)" width = "50" height = "20">
+<!-- The Modal -->
+<div id="myModal16" class="modal">
+  <span class="close">&times;</span>
+  <img class="modal-content" id="img16">
+  <div id="caption16"></div>
+</div>
+<script>
+// Get the modal
+var modal = document.getElementById('myModal16');
+// Get the image and insert it inside the modal - use its "alt" text as a caption
+var img = document.getElementById('myImg16');
+var modalImg = document.getElementById("img16");
+var captionText = document.getElementById("caption16");
+img.onclick = function(){
+    modal.style.display = "block";
+    modalImg.src = this.src;
+    captionText.innerHTML = this.alt;
+}
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[16];
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() { 
+    modal.style.display = "none";
+}
+</script>
+(294)
+  </td>
+</tr>
+<tr>
+  <td>FB</td>
+  <td>Facebook, Inc.</td>
+  <td>100 Units</td>
+  <td>Technology</td>
+  <td>Internet Information Products</td>
+  <td>164.46</td>
+  <td>(438)</td>
+  <td>(1,108)</td>
+  <td>2</td>
+  <td>(2,616)</td>
+  <td>(125)</td>
+  <td>5</td>
+  <td>(8)</td>
+  <td>(5)</td>
+  <td>28</td>
+<td>
+  <img id="myImg17" src="./images/FB.png" alt = "&emsp; &emsp;&emsp;&emsp; FB     Facebook, Inc.         Current Period HVaR:  (919),    Current Period ES:  (4,617),    Stress Period HVaR:  (1,125),    Stress Period ES:  (2,616),    Worst:  (4,617)" width = "50" height = "20">
+<!-- The Modal -->
+<div id="myModal17" class="modal">
+  <span class="close">&times;</span>
+  <img class="modal-content" id="img17">
+  <div id="caption17"></div>
+</div>
+<script>
+// Get the modal
+var modal = document.getElementById('myModal17');
+// Get the image and insert it inside the modal - use its "alt" text as a caption
+var img = document.getElementById('myImg17');
+var modalImg = document.getElementById("img17");
+var captionText = document.getElementById("caption17");
+img.onclick = function(){
+    modal.style.display = "block";
+    modalImg.src = this.src;
+    captionText.innerHTML = this.alt;
+}
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[17];
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() { 
+    modal.style.display = "none";
+}
+</script>
+(919)
+  </td>
+</tr>
+<tr>
+  <td>GHC</td>
+  <td>Graham Holdings Co</td>
+  <td>100 Units</td>
+  <td>Services</td>
+  <td> Education & Training Services</td>
+  <td>579.3</td>
+  <td>770</td>
+  <td>(1,633)</td>
+  <td>2</td>
+  <td>(9,222)</td>
+  <td>68</td>
+  <td>(7)</td>
+  <td>25</td>
+  <td>12</td>
+  <td>(28)</td>
+<td>
+  <img id="myImg18" src="./images/GHC.png" alt = "&emsp; &emsp;&emsp;&emsp; GHC     Graham Holdings Co         Current Period HVaR:  (1,754),    Current Period ES:  (2,126),    Stress Period HVaR:  (7,280),    Stress Period ES:  (9,222),    Worst:  (9,222)" width = "50" height = "20">
+<!-- The Modal -->
+<div id="myModal18" class="modal">
+  <span class="close">&times;</span>
+  <img class="modal-content" id="img18">
+  <div id="caption18"></div>
+</div>
+<script>
+// Get the modal
+var modal = document.getElementById('myModal18');
+// Get the image and insert it inside the modal - use its "alt" text as a caption
+var img = document.getElementById('myImg18');
+var modalImg = document.getElementById("img18");
+var captionText = document.getElementById("caption18");
+img.onclick = function(){
+    modal.style.display = "block";
+    modalImg.src = this.src;
+    captionText.innerHTML = this.alt;
+}
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[18];
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() { 
+    modal.style.display = "none";
+}
+</script>
+(1,754)
+  </td>
+</tr>
+<tr>
+  <td>GM</td>
+  <td>General Motors Company</td>
+  <td>100 Units</td>
+  <td>Consumer Good</td>
+  <td>Auto Manufacturers - Major</td>
+  <td>33.67</td>
+  <td></td>
+  <td>(214)</td>
+  <td>2</td>
+  <td>(456)</td>
+  <td>19</td>
+  <td>5</td>
+  <td>(6)</td>
+  <td>(2)</td>
+  <td>1</td>
+<td>
+  <img id="myImg19" src="./images/GM.png" alt = "&emsp; &emsp;&emsp;&emsp; GM     General Motors Company         Current Period HVaR:  (166),    Current Period ES:  (206),    Stress Period HVaR:  (308),    Stress Period ES:  (456),    Worst:  (456)" width = "50" height = "20">
+<!-- The Modal -->
+<div id="myModal19" class="modal">
+  <span class="close">&times;</span>
+  <img class="modal-content" id="img19">
+  <div id="caption19"></div>
+</div>
+<script>
+// Get the modal
+var modal = document.getElementById('myModal19');
+// Get the image and insert it inside the modal - use its "alt" text as a caption
+var img = document.getElementById('myImg19');
+var modalImg = document.getElementById("img19");
+var captionText = document.getElementById("caption19");
+img.onclick = function(){
+    modal.style.display = "block";
+    modalImg.src = this.src;
+    captionText.innerHTML = this.alt;
+}
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[19];
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() { 
+    modal.style.display = "none";
+}
+</script>
+(166)
+  </td>
+</tr>
+<tr>
+  <td>GOOG</td>
+  <td>Alphabet Inc.</td>
+  <td>100 Units</td>
+  <td>Technology</td>
+  <td>Internet Information Products</td>
+  <td>1193.47</td>
+  <td>(117)</td>
+  <td>(4,983)</td>
+  <td>2</td>
+  <td>(14,574)</td>
+  <td>302</td>
+  <td>(55)</td>
+  <td>28</td>
+  <td>(40)</td>
+  <td>21</td>
+<td>
+  <img id="myImg20" src="./images/GOOG.png" alt = "&emsp; &emsp;&emsp;&emsp; GOOG     Alphabet Inc.         Current Period HVaR:  (4,026),    Current Period ES:  (6,070),    Stress Period HVaR:  (11,103),    Stress Period ES:  (14,574),    Worst:  (14,574)" width = "50" height = "20">
+<!-- The Modal -->
+<div id="myModal20" class="modal">
+  <span class="close">&times;</span>
+  <img class="modal-content" id="img20">
+  <div id="caption20"></div>
+</div>
+<script>
+// Get the modal
+var modal = document.getElementById('myModal20');
+// Get the image and insert it inside the modal - use its "alt" text as a caption
+var img = document.getElementById('myImg20');
+var modalImg = document.getElementById("img20");
+var captionText = document.getElementById("caption20");
+img.onclick = function(){
+    modal.style.display = "block";
+    modalImg.src = this.src;
+    captionText.innerHTML = this.alt;
+}
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[20];
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() { 
+    modal.style.display = "none";
+}
+</script>
+(4,026)
+  </td>
+</tr>
+<tr>
+  <td>GS</td>
+  <td>Goldman Sachs Group Inc</td>
+  <td>100 Units</td>
+  <td>Financial</td>
+  <td>Investment Brokerage - National</td>
+  <td>224.24</td>
+  <td>(350)</td>
+  <td>(928)</td>
+  <td>2</td>
+  <td>(5,256)</td>
+  <td>121</td>
+  <td>2</td>
+  <td>10</td>
+  <td>24</td>
+  <td>7</td>
+<td>
+  <img id="myImg21" src="./images/GS.png" alt = "&emsp; &emsp;&emsp;&emsp; GS     Goldman Sachs Group Inc         Current Period HVaR:  (584),    Current Period ES:  (914),    Stress Period HVaR:  (3,598),    Stress Period ES:  (5,256),    Worst:  (5,256)" width = "50" height = "20">
+<!-- The Modal -->
+<div id="myModal21" class="modal">
+  <span class="close">&times;</span>
+  <img class="modal-content" id="img21">
+  <div id="caption21"></div>
+</div>
+<script>
+// Get the modal
+var modal = document.getElementById('myModal21');
+// Get the image and insert it inside the modal - use its "alt" text as a caption
+var img = document.getElementById('myImg21');
+var modalImg = document.getElementById("img21");
+var captionText = document.getElementById("caption21");
+img.onclick = function(){
+    modal.style.display = "block";
+    modalImg.src = this.src;
+    captionText.innerHTML = this.alt;
+}
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[21];
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() { 
+    modal.style.display = "none";
+}
+</script>
+(584)
+  </td>
+</tr>
+<tr>
+  <td>IBM</td>
+  <td>International Business Machines Corp.</td>
+  <td>100 Units</td>
+  <td>Technology</td>
+  <td>Information Technology Services</td>
+  <td>151.21</td>
+  <td>(29)</td>
+  <td>(601)</td>
+  <td>2</td>
+  <td>(1,353)</td>
+  <td>68</td>
+  <td>5</td>
+  <td>(7)</td>
+  <td>36</td>
+  <td>(3)</td>
+<td>
+  <img id="myImg22" src="./images/IBM.png" alt = "&emsp; &emsp;&emsp;&emsp; IBM     International Business Machines Corp.         Current Period HVaR:  (369),    Current Period ES:  (1,213),    Stress Period HVaR:  (495),    Stress Period ES:  (1,353),    Worst:  (1,353)" width = "50" height = "20">
+<!-- The Modal -->
+<div id="myModal22" class="modal">
+  <span class="close">&times;</span>
+  <img class="modal-content" id="img22">
+  <div id="caption22"></div>
+</div>
+<script>
+// Get the modal
+var modal = document.getElementById('myModal22');
+// Get the image and insert it inside the modal - use its "alt" text as a caption
+var img = document.getElementById('myImg22');
+var modalImg = document.getElementById("img22");
+var captionText = document.getElementById("caption22");
+img.onclick = function(){
+    modal.style.display = "block";
+    modalImg.src = this.src;
+    captionText.innerHTML = this.alt;
+}
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[22];
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() { 
+    modal.style.display = "none";
+}
+</script>
+(369)
+  </td>
+</tr>
+<tr>
+  <td>JNJ</td>
+  <td>Johnson & Johnson</td>
+  <td>100 Units</td>
+  <td> Healthcare</td>
+  <td>Drug Manufacturers - Major</td>
+  <td>138.17</td>
+  <td>(5)</td>
+  <td>(381)</td>
+  <td>2</td>
+  <td>(975)</td>
+  <td>64</td>
+  <td>4</td>
+  <td>(2)</td>
+  <td>(1)</td>
+  <td>1</td>
+<td>
+  <img id="myImg23" src="./images/JNJ.png" alt = "&emsp; &emsp;&emsp;&emsp; JNJ     Johnson & Johnson         Current Period HVaR:  (337),    Current Period ES:  (355),    Stress Period HVaR:  (887),    Stress Period ES:  (975),    Worst:  (975)" width = "50" height = "20">
+<!-- The Modal -->
+<div id="myModal23" class="modal">
+  <span class="close">&times;</span>
+  <img class="modal-content" id="img23">
+  <div id="caption23"></div>
+</div>
+<script>
+// Get the modal
+var modal = document.getElementById('myModal23');
+// Get the image and insert it inside the modal - use its "alt" text as a caption
+var img = document.getElementById('myImg23');
+var modalImg = document.getElementById("img23");
+var captionText = document.getElementById("caption23");
+img.onclick = function(){
+    modal.style.display = "block";
+    modalImg.src = this.src;
+    captionText.innerHTML = this.alt;
+}
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[23];
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() { 
+    modal.style.display = "none";
+}
+</script>
+(337)
+  </td>
+</tr>
+<tr>
+  <td>KHC</td>
+  <td>Kraft Heinz Co</td>
+  <td>100 Units</td>
+  <td>Consumer Goods</td>
+  <td>Food - Major Diversified</td>
+  <td>55.11</td>
+  <td>7</td>
+  <td>(406)</td>
+  <td>2</td>
+  <td>(351)</td>
+  <td>(7)</td>
+  <td>4</td>
+  <td>3</td>
+  <td></td>
+  <td></td>
+<td>
+  <img id="myImg24" src="./images/KHC.png" alt = "&emsp; &emsp;&emsp;&emsp; KHC     Kraft Heinz Co         Current Period HVaR:  (221),    Current Period ES:  (245),    Stress Period HVaR:  (305),    Stress Period ES:  (351),    Worst:  (351)" width = "50" height = "20">
+<!-- The Modal -->
+<div id="myModal24" class="modal">
+  <span class="close">&times;</span>
+  <img class="modal-content" id="img24">
+  <div id="caption24"></div>
+</div>
+<script>
+// Get the modal
+var modal = document.getElementById('myModal24');
+// Get the image and insert it inside the modal - use its "alt" text as a caption
+var img = document.getElementById('myImg24');
+var modalImg = document.getElementById("img24");
+var captionText = document.getElementById("caption24");
+img.onclick = function(){
+    modal.style.display = "block";
+    modalImg.src = this.src;
+    captionText.innerHTML = this.alt;
+}
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[24];
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() { 
+    modal.style.display = "none";
+}
+</script>
+(221)
+  </td>
+</tr>
+<tr>
+  <td>KMI</td>
+  <td>Kinder Morgan</td>
+  <td>100 Units</td>
+  <td>Basic Materials</td>
+  <td>Oil & Gas Pipelines</td>
+  <td>17.73</td>
+  <td>17</td>
+  <td>(69)</td>
+  <td>2</td>
+  <td>(245)</td>
+  <td>7</td>
+  <td></td>
+  <td>1</td>
+  <td>2</td>
+  <td>(1)</td>
+<td>
+  <img id="myImg25" src="./images/KMI.png" alt = "&emsp; &emsp;&emsp;&emsp; KMI     Kinder Morgan         Current Period HVaR:  (44),    Current Period ES:  (46),    Stress Period HVaR:  (194),    Stress Period ES:  (245),    Worst:  (245)" width = "50" height = "20">
+<!-- The Modal -->
+<div id="myModal25" class="modal">
+  <span class="close">&times;</span>
+  <img class="modal-content" id="img25">
+  <div id="caption25"></div>
+</div>
+<script>
+// Get the modal
+var modal = document.getElementById('myModal25');
+// Get the image and insert it inside the modal - use its "alt" text as a caption
+var img = document.getElementById('myImg25');
+var modalImg = document.getElementById("img25");
+var captionText = document.getElementById("caption25");
+img.onclick = function(){
+    modal.style.display = "block";
+    modalImg.src = this.src;
+    captionText.innerHTML = this.alt;
+}
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[25];
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() { 
+    modal.style.display = "none";
+}
+</script>
+(44)
+  </td>
+</tr>
+<tr>
+  <td>KO</td>
+  <td>The Coca-Cola Co</td>
+  <td>100 Units</td>
+  <td>Consumer Good</td>
+  <td>Beverages - Soft Drinks</td>
+  <td>46.19</td>
+  <td>18</td>
+  <td>(104)</td>
+  <td>2</td>
+  <td>(265)</td>
+  <td>12</td>
+  <td>1</td>
+  <td>(1)</td>
+  <td></td>
+  <td></td>
+<td>
+  <img id="myImg26" src="./images/KO.png" alt = "&emsp; &emsp;&emsp;&emsp; KO     The Coca-Cola Co         Current Period HVaR:  (85),    Current Period ES:  (116),    Stress Period HVaR:  (155),    Stress Period ES:  (265),    Worst:  (265)" width = "50" height = "20">
+<!-- The Modal -->
+<div id="myModal26" class="modal">
+  <span class="close">&times;</span>
+  <img class="modal-content" id="img26">
+  <div id="caption26"></div>
+</div>
+<script>
+// Get the modal
+var modal = document.getElementById('myModal26');
+// Get the image and insert it inside the modal - use its "alt" text as a caption
+var img = document.getElementById('myImg26');
+var modalImg = document.getElementById("img26");
+var captionText = document.getElementById("caption26");
+img.onclick = function(){
+    modal.style.display = "block";
+    modalImg.src = this.src;
+    captionText.innerHTML = this.alt;
+}
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[26];
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() { 
+    modal.style.display = "none";
+}
+</script>
+(85)
+  </td>
+</tr>
+<tr>
+  <td>LBTYA</td>
+  <td>Liberty Global plc - Class A Ordinary Shares</td>
+  <td>100 Units</td>
+  <td>Services</td>
+  <td>CATV Systems</td>
+  <td>28.93</td>
+  <td>(13)</td>
+  <td>(158)</td>
+  <td>2</td>
+  <td>(633)</td>
+  <td>21</td>
+  <td>(4)</td>
+  <td>(1)</td>
+  <td>(2)</td>
+  <td>2</td>
+<td>
+  <img id="myImg27" src="./images/LBTYA.png" alt = "&emsp; &emsp;&emsp;&emsp; LBTYA     Liberty Global plc - Class A Ordinary Shares         Current Period HVaR:  (199),    Current Period ES:  (237),    Stress Period HVaR:  (490),    Stress Period ES:  (633),    Worst:  (633)" width = "50" height = "20">
+<!-- The Modal -->
+<div id="myModal27" class="modal">
+  <span class="close">&times;</span>
+  <img class="modal-content" id="img27">
+  <div id="caption27"></div>
+</div>
+<script>
+// Get the modal
+var modal = document.getElementById('myModal27');
+// Get the image and insert it inside the modal - use its "alt" text as a caption
+var img = document.getElementById('myImg27');
+var modalImg = document.getElementById("img27");
+var captionText = document.getElementById("caption27");
+img.onclick = function(){
+    modal.style.display = "block";
+    modalImg.src = this.src;
+    captionText.innerHTML = this.alt;
+}
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[27];
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() { 
+    modal.style.display = "none";
+}
+</script>
+(199)
+  </td>
+</tr>
+<tr>
+  <td>LBTYK</td>
+  <td>Liberty Global plc - Class C Ordinary Shares</td>
+  <td>100 Units</td>
+  <td></td>
+  <td></td>
+  <td>28.16</td>
+  <td>(14)</td>
+  <td>(170)</td>
+  <td>2</td>
+  <td>(621)</td>
+  <td>21</td>
+  <td>(4)</td>
+  <td>1</td>
+  <td>(1)</td>
+  <td>2</td>
+<td>
+  <img id="myImg28" src="./images/LBTYK.png" alt = "&emsp; &emsp;&emsp;&emsp; LBTYK     Liberty Global plc - Class C Ordinary Shares         Current Period HVaR:  (207),    Current Period ES:  (251),    Stress Period HVaR:  (457),    Stress Period ES:  (621),    Worst:  (621)" width = "50" height = "20">
+<!-- The Modal -->
+<div id="myModal28" class="modal">
+  <span class="close">&times;</span>
+  <img class="modal-content" id="img28">
+  <div id="caption28"></div>
+</div>
+<script>
+// Get the modal
+var modal = document.getElementById('myModal28');
+// Get the image and insert it inside the modal - use its "alt" text as a caption
+var img = document.getElementById('myImg28');
+var modalImg = document.getElementById("img28");
+var captionText = document.getElementById("caption28");
+img.onclick = function(){
+    modal.style.display = "block";
+    modalImg.src = this.src;
+    captionText.innerHTML = this.alt;
+}
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[28];
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() { 
+    modal.style.display = "none";
+}
+</script>
+(207)
+  </td>
+</tr>
+<tr>
+  <td>LEN</td>
+  <td>Lennar Corporation</td>
+  <td>100 Units</td>
+  <td>Industrial Goods</td>
+  <td>Residential Construction</td>
+  <td>46.69</td>
+  <td>(39)</td>
+  <td>(261)</td>
+  <td>2</td>
+  <td>(1,315)</td>
+  <td>12</td>
+  <td>2</td>
+  <td>5</td>
+  <td>7</td>
+  <td>2</td>
+<td>
+  <img id="myImg29" src="./images/LEN.png" alt = "&emsp; &emsp;&emsp;&emsp; LEN     Lennar Corporation         Current Period HVaR:  (306),    Current Period ES:  (348),    Stress Period HVaR:  (1,237),    Stress Period ES:  (1,315),    Worst:  (1,315)" width = "50" height = "20">
+<!-- The Modal -->
+<div id="myModal29" class="modal">
+  <span class="close">&times;</span>
+  <img class="modal-content" id="img29">
+  <div id="caption29"></div>
+</div>
+<script>
+// Get the modal
+var modal = document.getElementById('myModal29');
+// Get the image and insert it inside the modal - use its "alt" text as a caption
+var img = document.getElementById('myImg29');
+var modalImg = document.getElementById("img29");
+var captionText = document.getElementById("caption29");
+img.onclick = function(){
+    modal.style.display = "block";
+    modalImg.src = this.src;
+    captionText.innerHTML = this.alt;
+}
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[29];
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() { 
+    modal.style.display = "none";
+}
+</script>
+(306)
+  </td>
+</tr>
+<tr>
+  <td>LILA</td>
+  <td>Liberty Latin America Ltd</td>
+  <td>100 Units</td>
+  <td></td>
+  <td></td>
+  <td>20.84</td>
+  <td>(34)</td>
+  <td>(122)</td>
+  <td>2</td>
+  <td>(489)</td>
+  <td>1</td>
+  <td>2</td>
+  <td>1</td>
+  <td>1</td>
+  <td>2</td>
+<td>
+  <img id="myImg30" src="./images/LILA.png" alt = "&emsp; &emsp;&emsp;&emsp; LILA     Liberty Latin America Ltd         Current Period HVaR:  (112),    Current Period ES:  (116),    Stress Period HVaR:  (185),    Stress Period ES:  (489),    Worst:  (489)" width = "50" height = "20">
+<!-- The Modal -->
+<div id="myModal30" class="modal">
+  <span class="close">&times;</span>
+  <img class="modal-content" id="img30">
+  <div id="caption30"></div>
+</div>
+<script>
+// Get the modal
+var modal = document.getElementById('myModal30');
+// Get the image and insert it inside the modal - use its "alt" text as a caption
+var img = document.getElementById('myImg30');
+var modalImg = document.getElementById("img30");
+var captionText = document.getElementById("caption30");
+img.onclick = function(){
+    modal.style.display = "block";
+    modalImg.src = this.src;
+    captionText.innerHTML = this.alt;
+}
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[30];
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() { 
+    modal.style.display = "none";
+}
+</script>
+(112)
+  </td>
+</tr>
+<tr>
+  <td>LILAK</td>
+  <td>Liberty Latin America Ltd</td>
+  <td>100 Units</td>
+  <td>Services</td>
+  <td>CATV Systems</td>
+  <td>20.63</td>
+  <td>(28)</td>
+  <td>(119)</td>
+  <td>2</td>
+  <td>(488)</td>
+  <td>6</td>
+  <td>1</td>
+  <td>2</td>
+  <td>2</td>
+  <td>2</td>
+<td>
+  <img id="myImg31" src="./images/LILAK.png" alt = "&emsp; &emsp;&emsp;&emsp; LILAK     Liberty Latin America Ltd         Current Period HVaR:  (99),    Current Period ES:  (108),    Stress Period HVaR:  (185),    Stress Period ES:  (488),    Worst:  (488)" width = "50" height = "20">
+<!-- The Modal -->
+<div id="myModal31" class="modal">
+  <span class="close">&times;</span>
+  <img class="modal-content" id="img31">
+  <div id="caption31"></div>
+</div>
+<script>
+// Get the modal
+var modal = document.getElementById('myModal31');
+// Get the image and insert it inside the modal - use its "alt" text as a caption
+var img = document.getElementById('myImg31');
+var modalImg = document.getElementById("img31");
+var captionText = document.getElementById("caption31");
+img.onclick = function(){
+    modal.style.display = "block";
+    modalImg.src = this.src;
+    captionText.innerHTML = this.alt;
+}
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[31];
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() { 
+    modal.style.display = "none";
+}
+</script>
+(99)
+  </td>
+</tr>
+<tr>
+  <td>LOW</td>
+  <td>Lowe's Corporation</td>
+  <td>100 Units</td>
+  <td>Services</td>
+  <td>Home Improvement Services</td>
+  <td>114.82</td>
+  <td>32</td>
+  <td>(840)</td>
+  <td>2</td>
+  <td>(1,352)</td>
+  <td>63</td>
+  <td>1</td>
+  <td>1</td>
+  <td>2</td>
+  <td>48</td>
+<td>
+  <img id="myImg32" src="./images/LOW.png" alt = "&emsp; &emsp;&emsp;&emsp; LOW     Lowe's Corporation         Current Period HVaR:  (275),    Current Period ES:  (324),    Stress Period HVaR:  (960),    Stress Period ES:  (1,352),    Worst:  (1,352)" width = "50" height = "20">
+<!-- The Modal -->
+<div id="myModal32" class="modal">
+  <span class="close">&times;</span>
+  <img class="modal-content" id="img32">
+  <div id="caption32"></div>
+</div>
+<script>
+// Get the modal
+var modal = document.getElementById('myModal32');
+// Get the image and insert it inside the modal - use its "alt" text as a caption
+var img = document.getElementById('myImg32');
+var modalImg = document.getElementById("img32");
+var captionText = document.getElementById("caption32");
+img.onclick = function(){
+    modal.style.display = "block";
+    modalImg.src = this.src;
+    captionText.innerHTML = this.alt;
+}
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[32];
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() { 
+    modal.style.display = "none";
+}
+</script>
+(275)
+  </td>
+</tr>
+<tr>
+  <td>LSXMA</td>
+  <td>Liberty Sirius XM Group</td>
+  <td>100 Units</td>
+  <td></td>
+  <td></td>
+  <td>43.44</td>
+  <td>26</td>
+  <td>(192)</td>
+  <td>2</td>
+  <td>(416)</td>
+  <td>21</td>
+  <td>(46)</td>
+  <td>(63)</td>
+  <td>1</td>
+  <td>(2)</td>
+<td>
+  <img id="myImg33" src="./images/LSXMA.png" alt = "&emsp; &emsp;&emsp;&emsp; LSXMA     Liberty Sirius XM Group         Current Period HVaR:  (266),    Current Period ES:  (656),    Stress Period HVaR:  (225),    Stress Period ES:  (416),    Worst:  (656)" width = "50" height = "20">
+<!-- The Modal -->
+<div id="myModal33" class="modal">
+  <span class="close">&times;</span>
+  <img class="modal-content" id="img33">
+  <div id="caption33"></div>
+</div>
+<script>
+// Get the modal
+var modal = document.getElementById('myModal33');
+// Get the image and insert it inside the modal - use its "alt" text as a caption
+var img = document.getElementById('myImg33');
+var modalImg = document.getElementById("img33");
+var captionText = document.getElementById("caption33");
+img.onclick = function(){
+    modal.style.display = "block";
+    modalImg.src = this.src;
+    captionText.innerHTML = this.alt;
+}
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[33];
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() { 
+    modal.style.display = "none";
+}
+</script>
+(266)
+  </td>
+</tr>
+<tr>
+  <td>LUV</td>
+  <td>Southwest Airlines Co</td>
+  <td>100 Units</td>
+  <td>Services</td>
+  <td>Regional Airline</td>
+  <td>62.45</td>
+  <td>(26)</td>
+  <td>(277)</td>
+  <td>2</td>
+  <td>(1,250)</td>
+  <td>26</td>
+  <td>(5)</td>
+  <td>(4)</td>
+  <td>(1)</td>
+  <td>2</td>
+<td>
+  <img id="myImg34" src="./images/LUV.png" alt = "&emsp; &emsp;&emsp;&emsp; LUV     Southwest Airlines Co         Current Period HVaR:  (236),    Current Period ES:  (282),    Stress Period HVaR:  (913),    Stress Period ES:  (1,250),    Worst:  (1,250)" width = "50" height = "20">
+<!-- The Modal -->
+<div id="myModal34" class="modal">
+  <span class="close">&times;</span>
+  <img class="modal-content" id="img34">
+  <div id="caption34"></div>
+</div>
+<script>
+// Get the modal
+var modal = document.getElementById('myModal34');
+// Get the image and insert it inside the modal - use its "alt" text as a caption
+var img = document.getElementById('myImg34');
+var modalImg = document.getElementById("img34");
+var captionText = document.getElementById("caption34");
+img.onclick = function(){
+    modal.style.display = "block";
+    modalImg.src = this.src;
+    captionText.innerHTML = this.alt;
+}
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[34];
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() { 
+    modal.style.display = "none";
+}
+</script>
+(236)
+  </td>
+</tr>
+<tr>
+  <td>MA</td>
+  <td>Mastercard Inc</td>
+  <td>100 Units</td>
+  <td>Financial</td>
+  <td>Credit Services</td>
+  <td>222.61</td>
+  <td>30</td>
+  <td>(849)</td>
+  <td>2</td>
+  <td>(2,526)</td>
+  <td>43</td>
+  <td>1</td>
+  <td>4</td>
+  <td>30</td>
+  <td>3</td>
+<td>
+  <img id="myImg35" src="./images/MA.png" alt = "&emsp; &emsp;&emsp;&emsp; MA     Mastercard Inc         Current Period HVaR:  (929),    Current Period ES:  (972),    Stress Period HVaR:  (1,678),    Stress Period ES:  (2,526),    Worst:  (2,526)" width = "50" height = "20">
+<!-- The Modal -->
+<div id="myModal35" class="modal">
+  <span class="close">&times;</span>
+  <img class="modal-content" id="img35">
+  <div id="caption35"></div>
+</div>
+<script>
+// Get the modal
+var modal = document.getElementById('myModal35');
+// Get the image and insert it inside the modal - use its "alt" text as a caption
+var img = document.getElementById('myImg35');
+var modalImg = document.getElementById("img35");
+var captionText = document.getElementById("caption35");
+img.onclick = function(){
+    modal.style.display = "block";
+    modalImg.src = this.src;
+    captionText.innerHTML = this.alt;
+}
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[35];
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() { 
+    modal.style.display = "none";
+}
+</script>
+(929)
+  </td>
+</tr>
+<tr>
+  <td>MCO</td>
+  <td>Moody's Corporation</td>
+  <td>100 Units</td>
+  <td>Services</td>
+  <td>Business Services</td>
+  <td>167.2</td>
+  <td>(626)</td>
+  <td>(426)</td>
+  <td>2</td>
+  <td>(3,104)</td>
+  <td>42</td>
+  <td>(1)</td>
+  <td>3</td>
+  <td>(6)</td>
+  <td>30</td>
+<td>
+  <img id="myImg36" src="./images/MCO.png" alt = "&emsp; &emsp;&emsp;&emsp; MCO     Moody's Corporation         Current Period HVaR:  (707),    Current Period ES:  (1,109),    Stress Period HVaR:  (2,780),    Stress Period ES:  (3,104),    Worst:  (3,104)" width = "50" height = "20">
+<!-- The Modal -->
+<div id="myModal36" class="modal">
+  <span class="close">&times;</span>
+  <img class="modal-content" id="img36">
+  <div id="caption36"></div>
+</div>
+<script>
+// Get the modal
+var modal = document.getElementById('myModal36');
+// Get the image and insert it inside the modal - use its "alt" text as a caption
+var img = document.getElementById('myImg36');
+var modalImg = document.getElementById("img36");
+var captionText = document.getElementById("caption36");
+img.onclick = function(){
+    modal.style.display = "block";
+    modalImg.src = this.src;
+    captionText.innerHTML = this.alt;
+}
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[36];
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() { 
+    modal.style.display = "none";
+}
+</script>
+(707)
+  </td>
+</tr>
+<tr>
+  <td>MDLZ</td>
+  <td>Mondelez International Inc</td>
+  <td>100 Units</td>
+  <td>Consumer Goods</td>
+  <td>Confectioners</td>
+  <td>42.96</td>
+  <td>(11)</td>
+  <td>(182)</td>
+  <td>2</td>
+  <td>(441)</td>
+  <td>10</td>
+  <td>1</td>
+  <td></td>
+  <td></td>
+  <td>1</td>
+<td>
+  <img id="myImg37" src="./images/MDLZ.png" alt = "&emsp; &emsp;&emsp;&emsp; MDLZ     Mondelez International Inc         Current Period HVaR:  (132),    Current Period ES:  (150),    Stress Period HVaR:  (318),    Stress Period ES:  (441),    Worst:  (441)" width = "50" height = "20">
+<!-- The Modal -->
+<div id="myModal37" class="modal">
+  <span class="close">&times;</span>
+  <img class="modal-content" id="img37">
+  <div id="caption37"></div>
+</div>
+<script>
+// Get the modal
+var modal = document.getElementById('myModal37');
+// Get the image and insert it inside the modal - use its "alt" text as a caption
+var img = document.getElementById('myImg37');
+var modalImg = document.getElementById("img37");
+var captionText = document.getElementById("caption37");
+img.onclick = function(){
+    modal.style.display = "block";
+    modalImg.src = this.src;
+    captionText.innerHTML = this.alt;
+}
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[37];
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() { 
+    modal.style.display = "none";
+}
+</script>
+(132)
+  </td>
+</tr>
+<tr>
+  <td>MSFT</td>
+  <td>Microsoft Corporation</td>
+  <td>100 Units</td>
+  <td>Technology</td>
+  <td>Business Software & Services</td>
+  <td>114.37</td>
+  <td>(4)</td>
+  <td>(323)</td>
+  <td>2</td>
+  <td>(1,548)</td>
+  <td>59</td>
+  <td>2</td>
+  <td>3</td>
+  <td></td>
+  <td>1</td>
+<td>
+  <img id="myImg38" src="./images/MSFT.png" alt = "&emsp; &emsp;&emsp;&emsp; MSFT     Microsoft Corporation         Current Period HVaR:  (321),    Current Period ES:  (439),    Stress Period HVaR:  (1,192),    Stress Period ES:  (1,548),    Worst:  (1,548)" width = "50" height = "20">
+<!-- The Modal -->
+<div id="myModal38" class="modal">
+  <span class="close">&times;</span>
+  <img class="modal-content" id="img38">
+  <div id="caption38"></div>
+</div>
+<script>
+// Get the modal
+var modal = document.getElementById('myModal38');
+// Get the image and insert it inside the modal - use its "alt" text as a caption
+var img = document.getElementById('myImg38');
+var modalImg = document.getElementById("img38");
+var captionText = document.getElementById("caption38");
+img.onclick = function(){
+    modal.style.display = "block";
+    modalImg.src = this.src;
+    captionText.innerHTML = this.alt;
+}
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[38];
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() { 
+    modal.style.display = "none";
+}
+</script>
+(321)
+  </td>
+</tr>
+<tr>
+  <td>MTB</td>
+  <td>M&T Bank Corporation</td>
+  <td>100 Units</td>
+  <td>Financial</td>
+  <td>Regional - Northeast Banks</td>
+  <td>164.54</td>
+  <td>(106)</td>
+  <td>(485)</td>
+  <td>2</td>
+  <td>(2,823)</td>
+  <td>34</td>
+  <td>8</td>
+  <td></td>
+  <td>17</td>
+  <td>5</td>
+<td>
+  <img id="myImg39" src="./images/MTB.png" alt = "&emsp; &emsp;&emsp;&emsp; MTB     M&T Bank Corporation         Current Period HVaR:  (568),    Current Period ES:  (823),    Stress Period HVaR:  (2,315),    Stress Period ES:  (2,823),    Worst:  (2,823)" width = "50" height = "20">
+<!-- The Modal -->
+<div id="myModal39" class="modal">
+  <span class="close">&times;</span>
+  <img class="modal-content" id="img39">
+  <div id="caption39"></div>
+</div>
+<script>
+// Get the modal
+var modal = document.getElementById('myModal39');
+// Get the image and insert it inside the modal - use its "alt" text as a caption
+var img = document.getElementById('myImg39');
+var modalImg = document.getElementById("img39");
+var captionText = document.getElementById("caption39");
+img.onclick = function(){
+    modal.style.display = "block";
+    modalImg.src = this.src;
+    captionText.innerHTML = this.alt;
+}
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[39];
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() { 
+    modal.style.display = "none";
+}
+</script>
+(568)
+  </td>
+</tr>
+<tr>
+  <td>MU</td>
+  <td>Micron Technology,Inc.</td>
+  <td>100 Units</td>
+  <td>Technology</td>
+  <td>Semiconductor-Memory Chips</td>
+  <td>45.23</td>
+  <td>24</td>
+  <td>(317)</td>
+  <td>2</td>
+  <td>(1,273)</td>
+  <td>14</td>
+  <td>5</td>
+  <td>5</td>
+  <td>(5)</td>
+  <td></td>
+<td>
+  <img id="myImg40" src="./images/MU.png" alt = "&emsp; &emsp;&emsp;&emsp; MU     Micron Technology,Inc.         Current Period HVaR:  (472),    Current Period ES:  (630),    Stress Period HVaR:  (1,091),    Stress Period ES:  (1,273),    Worst:  (1,273)" width = "50" height = "20">
+<!-- The Modal -->
+<div id="myModal40" class="modal">
+  <span class="close">&times;</span>
+  <img class="modal-content" id="img40">
+  <div id="caption40"></div>
+</div>
+<script>
+// Get the modal
+var modal = document.getElementById('myModal40');
+// Get the image and insert it inside the modal - use its "alt" text as a caption
+var img = document.getElementById('myImg40');
+var modalImg = document.getElementById("img40");
+var captionText = document.getElementById("caption40");
+img.onclick = function(){
+    modal.style.display = "block";
+    modalImg.src = this.src;
+    captionText.innerHTML = this.alt;
+}
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[40];
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() { 
+    modal.style.display = "none";
+}
+</script>
+(472)
+  </td>
+</tr>
+<tr>
+  <td>NFLX</td>
+  <td>Netflix, Inc.</td>
+  <td>100 Units</td>
+  <td>Services</td>
+  <td>CATV Systems</td>
+  <td>374.13</td>
+  <td>(658)</td>
+  <td>(3,024)</td>
+  <td>2</td>
+  <td>(12,836)</td>
+  <td>(157)</td>
+  <td>14</td>
+  <td>(73)</td>
+  <td>(8)</td>
+  <td>59</td>
+<td>
+  <img id="myImg41" src="./images/NFLX.png" alt = "&emsp; &emsp;&emsp;&emsp; NFLX     Netflix, Inc.         Current Period HVaR:  (3,269),    Current Period ES:  (3,483),    Stress Period HVaR:  (6,581),    Stress Period ES:  (12,836),    Worst:  (12,836)" width = "50" height = "20">
+<!-- The Modal -->
+<div id="myModal41" class="modal">
+  <span class="close">&times;</span>
+  <img class="modal-content" id="img41">
+  <div id="caption41"></div>
+</div>
+<script>
+// Get the modal
+var modal = document.getElementById('myModal41');
+// Get the image and insert it inside the modal - use its "alt" text as a caption
+var img = document.getElementById('myImg41');
+var modalImg = document.getElementById("img41");
+var captionText = document.getElementById("caption41");
+img.onclick = function(){
+    modal.style.display = "block";
+    modalImg.src = this.src;
+    captionText.innerHTML = this.alt;
+}
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[41];
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() { 
+    modal.style.display = "none";
+}
+</script>
+(3,269)
+  </td>
+</tr>
+<tr>
+  <td>NVR</td>
+  <td>NVR, Inc.</td>
+  <td>100 Units</td>
+  <td>Industrial Goods</td>
+  <td>Residential Construction</td>
+  <td>2470.8</td>
+  <td>(7,245)</td>
+  <td>(10,457)</td>
+  <td>2</td>
+  <td>(31,109)</td>
+  <td>892</td>
+  <td>145</td>
+  <td>299</td>
+  <td>(78)</td>
+  <td>468</td>
+<td>
+  <img id="myImg42" src="./images/NVR.png" alt = "&emsp; &emsp;&emsp;&emsp; NVR     NVR, Inc.         Current Period HVaR:  (15,209),    Current Period ES:  (26,835),    Stress Period HVaR:  (14,291),    Stress Period ES:  (31,109),    Worst:  (31,109)" width = "50" height = "20">
+<!-- The Modal -->
+<div id="myModal42" class="modal">
+  <span class="close">&times;</span>
+  <img class="modal-content" id="img42">
+  <div id="caption42"></div>
+</div>
+<script>
+// Get the modal
+var modal = document.getElementById('myModal42');
+// Get the image and insert it inside the modal - use its "alt" text as a caption
+var img = document.getElementById('myImg42');
+var modalImg = document.getElementById("img42");
+var captionText = document.getElementById("caption42");
+img.onclick = function(){
+    modal.style.display = "block";
+    modalImg.src = this.src;
+    captionText.innerHTML = this.alt;
+}
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[42];
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() { 
+    modal.style.display = "none";
+}
+</script>
+(15,209)
+  </td>
+</tr>
+<tr>
+  <td>PG</td>
+  <td>Procter & Gamble Co</td>
+  <td>100 Units</td>
+  <td>Consumer Goods</td>
+  <td> Personal Products</td>
+  <td>83.23</td>
+  <td>37</td>
+  <td>(208)</td>
+  <td>2</td>
+  <td>(695)</td>
+  <td>24</td>
+  <td>4</td>
+  <td>(5)</td>
+  <td>(1)</td>
+  <td></td>
+<td>
+  <img id="myImg43" src="./images/PG.png" alt = "&emsp; &emsp;&emsp;&emsp; PG     Procter & Gamble Co         Current Period HVaR:  (249),    Current Period ES:  (343),    Stress Period HVaR:  (559),    Stress Period ES:  (695),    Worst:  (695)" width = "50" height = "20">
+<!-- The Modal -->
+<div id="myModal43" class="modal">
+  <span class="close">&times;</span>
+  <img class="modal-content" id="img43">
+  <div id="caption43"></div>
+</div>
+<script>
+// Get the modal
+var modal = document.getElementById('myModal43');
+// Get the image and insert it inside the modal - use its "alt" text as a caption
+var img = document.getElementById('myImg43');
+var modalImg = document.getElementById("img43");
+var captionText = document.getElementById("caption43");
+img.onclick = function(){
+    modal.style.display = "block";
+    modalImg.src = this.src;
+    captionText.innerHTML = this.alt;
+}
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[43];
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() { 
+    modal.style.display = "none";
+}
+</script>
+(249)
+  </td>
+</tr>
+<tr>
+  <td>PSX</td>
+  <td>Phillips 66</td>
+  <td>100 Units</td>
+  <td>Basic Materials</td>
+  <td>Oil & Gas Refining & Marketing</td>
+  <td>112.72</td>
+  <td>(16)</td>
+  <td>(501)</td>
+  <td>2</td>
+  <td>(1,175)</td>
+  <td>(24)</td>
+  <td>(7)</td>
+  <td>3</td>
+  <td>5</td>
+  <td>2</td>
+<td>
+  <img id="myImg44" src="./images/PSX.png" alt = "&emsp; &emsp;&emsp;&emsp; PSX     Phillips 66         Current Period HVaR:  (547),    Current Period ES:  (724),    Stress Period HVaR:  (929),    Stress Period ES:  (1,175),    Worst:  (1,175)" width = "50" height = "20">
+<!-- The Modal -->
+<div id="myModal44" class="modal">
+  <span class="close">&times;</span>
+  <img class="modal-content" id="img44">
+  <div id="caption44"></div>
+</div>
+<script>
+// Get the modal
+var modal = document.getElementById('myModal44');
+// Get the image and insert it inside the modal - use its "alt" text as a caption
+var img = document.getElementById('myImg44');
+var modalImg = document.getElementById("img44");
+var captionText = document.getElementById("caption44");
+img.onclick = function(){
+    modal.style.display = "block";
+    modalImg.src = this.src;
+    captionText.innerHTML = this.alt;
+}
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[44];
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() { 
+    modal.style.display = "none";
+}
+</script>
+(547)
+  </td>
+</tr>
+<tr>
+  <td>QSR</td>
+  <td>Restaurant Brands International Inc</td>
+  <td>100 Units</td>
+  <td>Services</td>
+  <td>Restaurants</td>
+  <td>59.28</td>
+  <td>16</td>
+  <td>(282)</td>
+  <td>2</td>
+  <td>(384)</td>
+  <td>10</td>
+  <td>(4)</td>
+  <td>1</td>
+  <td>1</td>
+  <td></td>
+<td>
+  <img id="myImg45" src="./images/QSR.png" alt = "&emsp; &emsp;&emsp;&emsp; QSR     Restaurant Brands International Inc         Current Period HVaR:  (195),    Current Period ES:  (212),    Stress Period HVaR:  (325),    Stress Period ES:  (384),    Worst:  (384)" width = "50" height = "20">
+<!-- The Modal -->
+<div id="myModal45" class="modal">
+  <span class="close">&times;</span>
+  <img class="modal-content" id="img45">
+  <div id="caption45"></div>
+</div>
+<script>
+// Get the modal
+var modal = document.getElementById('myModal45');
+// Get the image and insert it inside the modal - use its "alt" text as a caption
+var img = document.getElementById('myImg45');
+var modalImg = document.getElementById("img45");
+var captionText = document.getElementById("caption45");
+img.onclick = function(){
+    modal.style.display = "block";
+    modalImg.src = this.src;
+    captionText.innerHTML = this.alt;
+}
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[45];
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() { 
+    modal.style.display = "none";
+}
+</script>
+(195)
+  </td>
+</tr>
+<tr>
+  <td>SIRI</td>
+  <td>Sirius XM Holdings Inc.</td>
+  <td>100 Units</td>
+  <td>Services</td>
+  <td>Broadcasting - Radio</td>
+  <td>6.32</td>
+  <td>(4)</td>
+  <td>(32)</td>
+  <td>2</td>
+  <td>(285)</td>
+  <td>6</td>
+  <td>(9)</td>
+  <td>(13)</td>
+  <td></td>
+  <td></td>
+<td>
+  <img id="myImg46" src="./images/SIRI.png" alt = "&emsp; &emsp;&emsp;&emsp; SIRI     Sirius XM Holdings Inc.         Current Period HVaR:  (51),    Current Period ES:  (108),    Stress Period HVaR:  (187),    Stress Period ES:  (285),    Worst:  (285)" width = "50" height = "20">
+<!-- The Modal -->
+<div id="myModal46" class="modal">
+  <span class="close">&times;</span>
+  <img class="modal-content" id="img46">
+  <div id="caption46"></div>
+</div>
+<script>
+// Get the modal
+var modal = document.getElementById('myModal46');
+// Get the image and insert it inside the modal - use its "alt" text as a caption
+var img = document.getElementById('myImg46');
+var modalImg = document.getElementById("img46");
+var captionText = document.getElementById("caption46");
+img.onclick = function(){
+    modal.style.display = "block";
+    modalImg.src = this.src;
+    captionText.innerHTML = this.alt;
+}
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[46];
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() { 
+    modal.style.display = "none";
+}
+</script>
+(51)
+  </td>
+</tr>
+<tr>
+  <td>SNY</td>
+  <td>Sanofi SA (ADR)</td>
+  <td>100 Units</td>
+  <td>Healthcare</td>
+  <td>Drug Manufacturers - Major</td>
+  <td>44.67</td>
+  <td>(17)</td>
+  <td>(161)</td>
+  <td>2</td>
+  <td>(418)</td>
+  <td>1</td>
+  <td>(1)</td>
+  <td>(1)</td>
+  <td>(1)</td>
+  <td></td>
+<td>
+  <img id="myImg47" src="./images/SNY.png" alt = "&emsp; &emsp;&emsp;&emsp; SNY     Sanofi SA (ADR)         Current Period HVaR:  (120),    Current Period ES:  (136),    Stress Period HVaR:  (205),    Stress Period ES:  (418),    Worst:  (418)" width = "50" height = "20">
+<!-- The Modal -->
+<div id="myModal47" class="modal">
+  <span class="close">&times;</span>
+  <img class="modal-content" id="img47">
+  <div id="caption47"></div>
+</div>
+<script>
+// Get the modal
+var modal = document.getElementById('myModal47');
+// Get the image and insert it inside the modal - use its "alt" text as a caption
+var img = document.getElementById('myImg47');
+var modalImg = document.getElementById("img47");
+var captionText = document.getElementById("caption47");
+img.onclick = function(){
+    modal.style.display = "block";
+    modalImg.src = this.src;
+    captionText.innerHTML = this.alt;
+}
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[47];
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() { 
+    modal.style.display = "none";
+}
+</script>
+(120)
+  </td>
+</tr>
+<tr>
+  <td>STOR</td>
+  <td>Store Capital Corp</td>
+  <td>100 Units</td>
+  <td></td>
+  <td></td>
+  <td>27.79</td>
+  <td>42</td>
+  <td>(68)</td>
+  <td>2</td>
+  <td>(284)</td>
+  <td>3</td>
+  <td></td>
+  <td>1</td>
+  <td></td>
+  <td>(1)</td>
+<td>
+  <img id="myImg48" src="./images/STOR.png" alt = "&emsp; &emsp;&emsp;&emsp; STOR     Store Capital Corp         Current Period HVaR:  (69),    Current Period ES:  (88),    Stress Period HVaR:  (173),    Stress Period ES:  (284),    Worst:  (284)" width = "50" height = "20">
+<!-- The Modal -->
+<div id="myModal48" class="modal">
+  <span class="close">&times;</span>
+  <img class="modal-content" id="img48">
+  <div id="caption48"></div>
+</div>
+<script>
+// Get the modal
+var modal = document.getElementById('myModal48');
+// Get the image and insert it inside the modal - use its "alt" text as a caption
+var img = document.getElementById('myImg48');
+var modalImg = document.getElementById("img48");
+var captionText = document.getElementById("caption48");
+img.onclick = function(){
+    modal.style.display = "block";
+    modalImg.src = this.src;
+    captionText.innerHTML = this.alt;
+}
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[48];
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() { 
+    modal.style.display = "none";
+}
+</script>
+(69)
+  </td>
+</tr>
+<tr>
+  <td>SU.TO</td>
+  <td>Suncor Energy, Inc</td>
+  <td>100 Units</td>
+  <td>Basic Materials</td>
+  <td>Major Integrated Oil & Gas</td>
+  <td>49.98</td>
+  <td>(129)</td>
+  <td>(226)</td>
+  <td>2</td>
+  <td>(1,216)</td>
+  <td>4</td>
+  <td>5</td>
+  <td>(2)</td>
+  <td>(5)</td>
+  <td>7</td>
+<td>
+  <img id="myImg49" src="./images/SU.TO.png" alt = "&emsp; &emsp;&emsp;&emsp; SU.TO     Suncor Energy, Inc         Current Period HVaR:  (237),    Current Period ES:  (297),    Stress Period HVaR:  (1,019),    Stress Period ES:  (1,216),    Worst:  (1,216)" width = "50" height = "20">
+<!-- The Modal -->
+<div id="myModal49" class="modal">
+  <span class="close">&times;</span>
+  <img class="modal-content" id="img49">
+  <div id="caption49"></div>
+</div>
+<script>
+// Get the modal
+var modal = document.getElementById('myModal49');
+// Get the image and insert it inside the modal - use its "alt" text as a caption
+var img = document.getElementById('myImg49');
+var modalImg = document.getElementById("img49");
+var captionText = document.getElementById("caption49");
+img.onclick = function(){
+    modal.style.display = "block";
+    modalImg.src = this.src;
+    captionText.innerHTML = this.alt;
+}
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[49];
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() { 
+    modal.style.display = "none";
+}
+</script>
+(237)
+  </td>
+</tr>
+<tr>
+  <td>SYF</td>
+  <td>Synchrony Financial</td>
+  <td>100 Units</td>
+  <td>Financial</td>
+  <td>Credit Services</td>
+  <td>31.08</td>
+  <td>(49)</td>
+  <td>(111)</td>
+  <td>2</td>
+  <td>(370)</td>
+  <td>(15)</td>
+  <td>2</td>
+  <td>8</td>
+  <td>4</td>
+  <td></td>
+<td>
+  <img id="myImg50" src="./images/SYF.png" alt = "&emsp; &emsp;&emsp;&emsp; SYF     Synchrony Financial         Current Period HVaR:  (233),    Current Period ES:  (434),    Stress Period HVaR:  (142),    Stress Period ES:  (370),    Worst:  (434)" width = "50" height = "20">
+<!-- The Modal -->
+<div id="myModal50" class="modal">
+  <span class="close">&times;</span>
+  <img class="modal-content" id="img50">
+  <div id="caption50"></div>
+</div>
+<script>
+// Get the modal
+var modal = document.getElementById('myModal50');
+// Get the image and insert it inside the modal - use its "alt" text as a caption
+var img = document.getElementById('myImg50');
+var modalImg = document.getElementById("img50");
+var captionText = document.getElementById("caption50");
+img.onclick = function(){
+    modal.style.display = "block";
+    modalImg.src = this.src;
+    captionText.innerHTML = this.alt;
+}
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[50];
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() { 
+    modal.style.display = "none";
+}
+</script>
+(233)
+  </td>
+</tr>
+<tr>
+  <td>TEVA</td>
+  <td>Teva Pharmaceutical Industries Ltd (ADR)</td>
+  <td>100 Units</td>
+  <td>Healthcare</td>
+  <td>Drug Manufacturers - Othe</td>
+  <td>21.54</td>
+  <td>30</td>
+  <td>(178)</td>
+  <td>2</td>
+  <td>(623)</td>
+  <td>9</td>
+  <td>4</td>
+  <td>8</td>
+  <td>(33)</td>
+  <td>(5)</td>
+<td>
+  <img id="myImg51" src="./images/TEVA.png" alt = "&emsp; &emsp;&emsp;&emsp; TEVA     Teva Pharmaceutical Industries Ltd (ADR)         Current Period HVaR:  (166),    Current Period ES:  (295),    Stress Period HVaR:  (424),    Stress Period ES:  (623),    Worst:  (623)" width = "50" height = "20">
+<!-- The Modal -->
+<div id="myModal51" class="modal">
+  <span class="close">&times;</span>
+  <img class="modal-content" id="img51">
+  <div id="caption51"></div>
+</div>
+<script>
+// Get the modal
+var modal = document.getElementById('myModal51');
+// Get the image and insert it inside the modal - use its "alt" text as a caption
+var img = document.getElementById('myImg51');
+var modalImg = document.getElementById("img51");
+var captionText = document.getElementById("caption51");
+img.onclick = function(){
+    modal.style.display = "block";
+    modalImg.src = this.src;
+    captionText.innerHTML = this.alt;
+}
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[51];
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() { 
+    modal.style.display = "none";
+}
+</script>
+(166)
+  </td>
+</tr>
+<tr>
+  <td>TMK</td>
+  <td>Torchmark Corporation</td>
+  <td>100 Units</td>
+  <td>Financial</td>
+  <td>Life Insurance</td>
+  <td>86.69</td>
+  <td>42</td>
+  <td>(313)</td>
+  <td>2</td>
+  <td>(1,659)</td>
+  <td>4</td>
+  <td>3</td>
+  <td>5</td>
+  <td>4</td>
+  <td>(2)</td>
+<td>
+  <img id="myImg52" src="./images/TMK.png" alt = "&emsp; &emsp;&emsp;&emsp; TMK     Torchmark Corporation         Current Period HVaR:  (348),    Current Period ES:  (557),    Stress Period HVaR:  (1,558),    Stress Period ES:  (1,659),    Worst:  (1,659)" width = "50" height = "20">
+<!-- The Modal -->
+<div id="myModal52" class="modal">
+  <span class="close">&times;</span>
+  <img class="modal-content" id="img52">
+  <div id="caption52"></div>
+</div>
+<script>
+// Get the modal
+var modal = document.getElementById('myModal52');
+// Get the image and insert it inside the modal - use its "alt" text as a caption
+var img = document.getElementById('myImg52');
+var modalImg = document.getElementById("img52");
+var captionText = document.getElementById("caption52");
+img.onclick = function(){
+    modal.style.display = "block";
+    modalImg.src = this.src;
+    captionText.innerHTML = this.alt;
+}
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[52];
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() { 
+    modal.style.display = "none";
+}
+</script>
+(348)
+  </td>
+</tr>
+<tr>
+  <td>TSLA</td>
+  <td>Tesla, Inc.</td>
+  <td>100 Units</td>
+  <td>Consumer Goods</td>
+  <td>Auto Manufacturers - Major</td>
+  <td>264.77</td>
+  <td>(4,275)</td>
+  <td>(4,157)</td>
+  <td>2</td>
+  <td>(5,015)</td>
+  <td>(271)</td>
+  <td>3</td>
+  <td>(75)</td>
+  <td>39</td>
+  <td>462</td>
+<td>
+  <img id="myImg53" src="./images/TSLA.png" alt = "&emsp; &emsp;&emsp;&emsp; TSLA     Tesla, Inc.         Current Period HVaR:  (2,824),    Current Period ES:  (3,228),    Stress Period HVaR:  (3,202),    Stress Period ES:  (5,015),    Worst:  (5,015)" width = "50" height = "20">
+<!-- The Modal -->
+<div id="myModal53" class="modal">
+  <span class="close">&times;</span>
+  <img class="modal-content" id="img53">
+  <div id="caption53"></div>
+</div>
+<script>
+// Get the modal
+var modal = document.getElementById('myModal53');
+// Get the image and insert it inside the modal - use its "alt" text as a caption
+var img = document.getElementById('myImg53');
+var modalImg = document.getElementById("img53");
+var captionText = document.getElementById("caption53");
+img.onclick = function(){
+    modal.style.display = "block";
+    modalImg.src = this.src;
+    captionText.innerHTML = this.alt;
+}
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[53];
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() { 
+    modal.style.display = "none";
+}
+</script>
+(2,824)
+  </td>
+</tr>
+<tr>
+  <td>UAL</td>
+  <td>United Continental Holdings Inc</td>
+  <td>100 Units</td>
+  <td>Services</td>
+  <td>Major Airline</td>
+  <td>89.06</td>
+  <td>72</td>
+  <td>(511)</td>
+  <td>2</td>
+  <td>(3,182)</td>
+  <td>31</td>
+  <td>1</td>
+  <td>(7)</td>
+  <td>5</td>
+  <td>(2)</td>
+<td>
+  <img id="myImg54" src="./images/UAL.png" alt = "&emsp; &emsp;&emsp;&emsp; UAL     United Continental Holdings Inc         Current Period HVaR:  (396),    Current Period ES:  (434),    Stress Period HVaR:  (2,645),    Stress Period ES:  (3,182),    Worst:  (3,182)" width = "50" height = "20">
+<!-- The Modal -->
+<div id="myModal54" class="modal">
+  <span class="close">&times;</span>
+  <img class="modal-content" id="img54">
+  <div id="caption54"></div>
+</div>
+<script>
+// Get the modal
+var modal = document.getElementById('myModal54');
+// Get the image and insert it inside the modal - use its "alt" text as a caption
+var img = document.getElementById('myImg54');
+var modalImg = document.getElementById("img54");
+var captionText = document.getElementById("caption54");
+img.onclick = function(){
+    modal.style.display = "block";
+    modalImg.src = this.src;
+    captionText.innerHTML = this.alt;
+}
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[54];
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() { 
+    modal.style.display = "none";
+}
+</script>
+(396)
+  </td>
+</tr>
+<tr>
+  <td>UPS</td>
+  <td>United Parcel Service, Inc.</td>
+  <td>100 Units</td>
+  <td>Services</td>
+  <td> Air Delivery & Freight Services</td>
+  <td>116.75</td>
+  <td>2</td>
+  <td>(597)</td>
+  <td>2</td>
+  <td>(974)</td>
+  <td>3</td>
+  <td>6</td>
+  <td>(1)</td>
+  <td>1</td>
+  <td>2</td>
+<td>
+  <img id="myImg55" src="./images/UPS.png" alt = "&emsp; &emsp;&emsp;&emsp; UPS     United Parcel Service, Inc.         Current Period HVaR:  (458),    Current Period ES:  (497),    Stress Period HVaR:  (366),    Stress Period ES:  (974),    Worst:  (974)" width = "50" height = "20">
+<!-- The Modal -->
+<div id="myModal55" class="modal">
+  <span class="close">&times;</span>
+  <img class="modal-content" id="img55">
+  <div id="caption55"></div>
+</div>
+<script>
+// Get the modal
+var modal = document.getElementById('myModal55');
+// Get the image and insert it inside the modal - use its "alt" text as a caption
+var img = document.getElementById('myImg55');
+var modalImg = document.getElementById("img55");
+var captionText = document.getElementById("caption55");
+img.onclick = function(){
+    modal.style.display = "block";
+    modalImg.src = this.src;
+    captionText.innerHTML = this.alt;
+}
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[55];
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() { 
+    modal.style.display = "none";
+}
+</script>
+(458)
+  </td>
+</tr>
+<tr>
+  <td>USB</td>
+  <td>U.S. Bancorp</td>
+  <td>100 Units</td>
+  <td>Financial</td>
+  <td>Regional - Midwest Banks</td>
+  <td>52.81</td>
+  <td>(12)</td>
+  <td>(124)</td>
+  <td>2</td>
+  <td>(1,242)</td>
+  <td>30</td>
+  <td>1</td>
+  <td>1</td>
+  <td>1</td>
+  <td></td>
+<td>
+  <img id="myImg56" src="./images/USB.png" alt = "&emsp; &emsp;&emsp;&emsp; USB     U.S. Bancorp         Current Period HVaR:  (119),    Current Period ES:  (202),    Stress Period HVaR:  (1,050),    Stress Period ES:  (1,242),    Worst:  (1,242)" width = "50" height = "20">
+<!-- The Modal -->
+<div id="myModal56" class="modal">
+  <span class="close">&times;</span>
+  <img class="modal-content" id="img56">
+  <div id="caption56"></div>
+</div>
+<script>
+// Get the modal
+var modal = document.getElementById('myModal56');
+// Get the image and insert it inside the modal - use its "alt" text as a caption
+var img = document.getElementById('myImg56');
+var modalImg = document.getElementById("img56");
+var captionText = document.getElementById("caption56");
+img.onclick = function(){
+    modal.style.display = "block";
+    modalImg.src = this.src;
+    captionText.innerHTML = this.alt;
+}
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[56];
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() { 
+    modal.style.display = "none";
+}
+</script>
+(119)
+  </td>
+</tr>
+<tr>
+  <td>USG</td>
+  <td>USG Corporation</td>
+  <td>100 Units</td>
+  <td>Industrial Goods</td>
+  <td>General Building Materials</td>
+  <td>43.31</td>
+  <td>4</td>
+  <td>(160)</td>
+  <td>2</td>
+  <td>(1,270)</td>
+  <td>24</td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td>9</td>
+<td>
+  <img id="myImg57" src="./images/USG.png" alt = "&emsp; &emsp;&emsp;&emsp; USG     USG Corporation         Current Period HVaR:  (44),    Current Period ES:  (53),    Stress Period HVaR:  (936),    Stress Period ES:  (1,270),    Worst:  (1,270)" width = "50" height = "20">
+<!-- The Modal -->
+<div id="myModal57" class="modal">
+  <span class="close">&times;</span>
+  <img class="modal-content" id="img57">
+  <div id="caption57"></div>
+</div>
+<script>
+// Get the modal
+var modal = document.getElementById('myModal57');
+// Get the image and insert it inside the modal - use its "alt" text as a caption
+var img = document.getElementById('myImg57');
+var modalImg = document.getElementById("img57");
+var captionText = document.getElementById("caption57");
+img.onclick = function(){
+    modal.style.display = "block";
+    modalImg.src = this.src;
+    captionText.innerHTML = this.alt;
+}
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[57];
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() { 
+    modal.style.display = "none";
+}
+</script>
+(44)
+  </td>
+</tr>
+<tr>
+  <td>UTX</td>
+  <td>United Technologies Corp</td>
+  <td>100 Units</td>
+  <td>Industrial Goods</td>
+  <td>Aerospace/Defense Products & Services</td>
+  <td>139.81</td>
+  <td>13</td>
+  <td>(407)</td>
+  <td>2</td>
+  <td>(1,419)</td>
+  <td>12</td>
+  <td>4</td>
+  <td></td>
+  <td>25</td>
+  <td>1</td>
+<td>
+  <img id="myImg58" src="./images/UTX.png" alt = "&emsp; &emsp;&emsp;&emsp; UTX     United Technologies Corp         Current Period HVaR:  (360),    Current Period ES:  (384),    Stress Period HVaR:  (1,157),    Stress Period ES:  (1,419),    Worst:  (1,419)" width = "50" height = "20">
+<!-- The Modal -->
+<div id="myModal58" class="modal">
+  <span class="close">&times;</span>
+  <img class="modal-content" id="img58">
+  <div id="caption58"></div>
+</div>
+<script>
+// Get the modal
+var modal = document.getElementById('myModal58');
+// Get the image and insert it inside the modal - use its "alt" text as a caption
+var img = document.getElementById('myImg58');
+var modalImg = document.getElementById("img58");
+var captionText = document.getElementById("caption58");
+img.onclick = function(){
+    modal.style.display = "block";
+    modalImg.src = this.src;
+    captionText.innerHTML = this.alt;
+}
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[58];
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() { 
+    modal.style.display = "none";
+}
+</script>
+(360)
+  </td>
+</tr>
+<tr>
+  <td>V</td>
+  <td>Visa Inc</td>
+  <td>100 Units</td>
+  <td> Financial</td>
+  <td>Credit Services</td>
+  <td>150.09</td>
+  <td>7</td>
+  <td>(394)</td>
+  <td>2</td>
+  <td>(1,715)</td>
+  <td>29</td>
+  <td></td>
+  <td>3</td>
+  <td></td>
+  <td>3</td>
+<td>
+  <img id="myImg59" src="./images/V.png" alt = "&emsp; &emsp;&emsp;&emsp; V     Visa Inc         Current Period HVaR:  (645),    Current Period ES:  (730),    Stress Period HVaR:  (1,018),    Stress Period ES:  (1,715),    Worst:  (1,715)" width = "50" height = "20">
+<!-- The Modal -->
+<div id="myModal59" class="modal">
+  <span class="close">&times;</span>
+  <img class="modal-content" id="img59">
+  <div id="caption59"></div>
+</div>
+<script>
+// Get the modal
+var modal = document.getElementById('myModal59');
+// Get the image and insert it inside the modal - use its "alt" text as a caption
+var img = document.getElementById('myImg59');
+var modalImg = document.getElementById("img59");
+var captionText = document.getElementById("caption59");
+img.onclick = function(){
+    modal.style.display = "block";
+    modalImg.src = this.src;
+    captionText.innerHTML = this.alt;
+}
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[59];
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() { 
+    modal.style.display = "none";
+}
+</script>
+(645)
+  </td>
+</tr>
+<tr>
+  <td>VRSK</td>
+  <td>Verisk Analytics, Inc.</td>
+  <td>100 Units</td>
+  <td>Services</td>
+  <td> Business Services</td>
+  <td>120.55</td>
+  <td>(25)</td>
+  <td>(247)</td>
+  <td>2</td>
+  <td>(1,004)</td>
+  <td>(3)</td>
+  <td>(1)</td>
+  <td>2</td>
+  <td>1</td>
+  <td>2</td>
+<td>
+  <img id="myImg60" src="./images/VRSK.png" alt = "&emsp; &emsp;&emsp;&emsp; VRSK     Verisk Analytics, Inc.         Current Period HVaR:  (327),    Current Period ES:  (892),    Stress Period HVaR:  (551),    Stress Period ES:  (1,004),    Worst:  (1,004)" width = "50" height = "20">
+<!-- The Modal -->
+<div id="myModal60" class="modal">
+  <span class="close">&times;</span>
+  <img class="modal-content" id="img60">
+  <div id="caption60"></div>
+</div>
+<script>
+// Get the modal
+var modal = document.getElementById('myModal60');
+// Get the image and insert it inside the modal - use its "alt" text as a caption
+var img = document.getElementById('myImg60');
+var modalImg = document.getElementById("img60");
+var captionText = document.getElementById("caption60");
+img.onclick = function(){
+    modal.style.display = "block";
+    modalImg.src = this.src;
+    captionText.innerHTML = this.alt;
+}
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[60];
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() { 
+    modal.style.display = "none";
+}
+</script>
+(327)
+  </td>
+</tr>
+<tr>
+  <td>VRSN</td>
+  <td>Verisign, Inc.</td>
+  <td>100 Units</td>
+  <td>Technology</td>
+  <td>Internet Information Providers</td>
+  <td>160.12</td>
+  <td>98</td>
+  <td>(438)</td>
+  <td>2</td>
+  <td>(2,863)</td>
+  <td>14</td>
+  <td>(3)</td>
+  <td>9</td>
+  <td></td>
+  <td>(3)</td>
+<td>
+  <img id="myImg61" src="./images/VRSN.png" alt = "&emsp; &emsp;&emsp;&emsp; VRSN     Verisign, Inc.         Current Period HVaR:  (673),    Current Period ES:  (925),    Stress Period HVaR:  (1,079),    Stress Period ES:  (2,863),    Worst:  (2,863)" width = "50" height = "20">
+<!-- The Modal -->
+<div id="myModal61" class="modal">
+  <span class="close">&times;</span>
+  <img class="modal-content" id="img61">
+  <div id="caption61"></div>
+</div>
+<script>
+// Get the modal
+var modal = document.getElementById('myModal61');
+// Get the image and insert it inside the modal - use its "alt" text as a caption
+var img = document.getElementById('myImg61');
+var modalImg = document.getElementById("img61");
+var captionText = document.getElementById("caption61");
+img.onclick = function(){
+    modal.style.display = "block";
+    modalImg.src = this.src;
+    captionText.innerHTML = this.alt;
+}
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[61];
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() { 
+    modal.style.display = "none";
+}
+</script>
+(673)
+  </td>
+</tr>
+<tr>
+  <td>VZ</td>
+  <td>Verizon Communications Inc.</td>
+  <td>100 Units</td>
+  <td>Technology</td>
+  <td>Telecom Services - Domesti</td>
+  <td>53.39</td>
+  <td>(20)</td>
+  <td>(211)</td>
+  <td>2</td>
+  <td>(454)</td>
+  <td>20</td>
+  <td>2</td>
+  <td>(2)</td>
+  <td>(1)</td>
+  <td>2</td>
+<td>
+  <img id="myImg62" src="./images/VZ.png" alt = "&emsp; &emsp;&emsp;&emsp; VZ     Verizon Communications Inc.         Current Period HVaR:  (192),    Current Period ES:  (277),    Stress Period HVaR:  (396),    Stress Period ES:  (454),    Worst:  (454)" width = "50" height = "20">
+<!-- The Modal -->
+<div id="myModal62" class="modal">
+  <span class="close">&times;</span>
+  <img class="modal-content" id="img62">
+  <div id="caption62"></div>
+</div>
+<script>
+// Get the modal
+var modal = document.getElementById('myModal62');
+// Get the image and insert it inside the modal - use its "alt" text as a caption
+var img = document.getElementById('myImg62');
+var modalImg = document.getElementById("img62");
+var captionText = document.getElementById("caption62");
+img.onclick = function(){
+    modal.style.display = "block";
+    modalImg.src = this.src;
+    captionText.innerHTML = this.alt;
+}
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[62];
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() { 
+    modal.style.display = "none";
+}
+</script>
+(192)
+  </td>
+</tr>
+<tr>
+  <td>WFC</td>
+  <td>Wells Fargo & Co</td>
+  <td>100 Units</td>
+  <td>Financial</td>
+  <td>Money Center Banks</td>
+  <td>52.56</td>
+  <td>(26)</td>
+  <td>(200)</td>
+  <td>2</td>
+  <td>(1,510)</td>
+  <td>39</td>
+  <td></td>
+  <td>4</td>
+  <td>2</td>
+  <td>(1)</td>
+<td>
+  <img id="myImg63" src="./images/WFC.png" alt = "&emsp; &emsp;&emsp;&emsp; WFC     Wells Fargo & Co         Current Period HVaR:  (211),    Current Period ES:  (231),    Stress Period HVaR:  (1,192),    Stress Period ES:  (1,510),    Worst:  (1,510)" width = "50" height = "20">
+<!-- The Modal -->
+<div id="myModal63" class="modal">
+  <span class="close">&times;</span>
+  <img class="modal-content" id="img63">
+  <div id="caption63"></div>
+</div>
+<script>
+// Get the modal
+var modal = document.getElementById('myModal63');
+// Get the image and insert it inside the modal - use its "alt" text as a caption
+var img = document.getElementById('myImg63');
+var modalImg = document.getElementById("img63");
+var captionText = document.getElementById("caption63");
+img.onclick = function(){
+    modal.style.display = "block";
+    modalImg.src = this.src;
+    captionText.innerHTML = this.alt;
+}
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[63];
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() { 
+    modal.style.display = "none";
+}
+</script>
+(211)
+  </td>
+</tr>
+<tr>
+  <td>WMT</td>
+  <td>Walmart Inc</td>
+  <td>100 Units</td>
+  <td>Services</td>
+  <td>Discount, Variety Stores</td>
+  <td>93.91</td>
+  <td>(22)</td>
+  <td>(347)</td>
+  <td>2</td>
+  <td>(865)</td>
+  <td>17</td>
+  <td>1</td>
+  <td>2</td>
+  <td>3</td>
+  <td>2</td>
+<td>
+  <img id="myImg64" src="./images/WMT.png" alt = "&emsp; &emsp;&emsp;&emsp; WMT     Walmart Inc         Current Period HVaR:  (283),    Current Period ES:  (369),    Stress Period HVaR:  (463),    Stress Period ES:  (865),    Worst:  (865)" width = "50" height = "20">
+<!-- The Modal -->
+<div id="myModal64" class="modal">
+  <span class="close">&times;</span>
+  <img class="modal-content" id="img64">
+  <div id="caption64"></div>
+</div>
+<script>
+// Get the modal
+var modal = document.getElementById('myModal64');
+// Get the image and insert it inside the modal - use its "alt" text as a caption
+var img = document.getElementById('myImg64');
+var modalImg = document.getElementById("img64");
+var captionText = document.getElementById("caption64");
+img.onclick = function(){
+    modal.style.display = "block";
+    modalImg.src = this.src;
+    captionText.innerHTML = this.alt;
+}
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[64];
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() { 
+    modal.style.display = "none";
+}
+</script>
+(283)
+  </td>
+</tr>
+<tr>
+  <td>XOM</td>
+  <td>Exxon Mobile Corporation</td>
+  <td>100 Units</td>
+  <td>Basic Materials</td>
+  <td>Major Integrated Oil & Gas</td>
+  <td>85.02</td>
+  <td>(75)</td>
+  <td>(303)</td>
+  <td>2</td>
+  <td>(842)</td>
+  <td>14</td>
+  <td>2</td>
+  <td></td>
+  <td>1</td>
+  <td>3</td>
+<td>
+  <img id="myImg65" src="./images/XOM.png" alt = "&emsp; &emsp;&emsp;&emsp; XOM     Exxon Mobile Corporation         Current Period HVaR:  (301),    Current Period ES:  (395),    Stress Period HVaR:  (719),    Stress Period ES:  (842),    Worst:  (842)" width = "50" height = "20">
+<!-- The Modal -->
+<div id="myModal65" class="modal">
+  <span class="close">&times;</span>
+  <img class="modal-content" id="img65">
+  <div id="caption65"></div>
+</div>
+<script>
+// Get the modal
+var modal = document.getElementById('myModal65');
+// Get the image and insert it inside the modal - use its "alt" text as a caption
+var img = document.getElementById('myImg65');
+var modalImg = document.getElementById("img65");
+var captionText = document.getElementById("caption65");
+img.onclick = function(){
+    modal.style.display = "block";
+    modalImg.src = this.src;
+    captionText.innerHTML = this.alt;
+}
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[65];
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() { 
+    modal.style.display = "none";
+}
+</script>
+(301)
+  </td>
+</tr>
+<tr>
+  <td>^GSPC</td>
+  <td>S&P 500 index</td>
+  <td>100 Units</td>
+  <td>S&P 500 index</td>
+  <td>500 large NYSE/NASDAQ co.</td>
+  <td>2913.98</td>
+  <td>(2)</td>
+  <td>(4,201)</td>
+  <td>2</td>
+  <td>(32,232)</td>
+  <td>894</td>
+  <td>26</td>
+  <td>28</td>
+  <td>545</td>
+  <td>10</td>
+<td>
+  <img id="myImg66" src="./images/^GSPC.png" alt = "&emsp; &emsp;&emsp;&emsp; ^GSPC     S&P 500 index         Current Period HVaR:  (4,157),    Current Period ES:  (4,707),    Stress Period HVaR:  (26,432),    Stress Period ES:  (32,232),    Worst:  (32,232)" width = "50" height = "20">
+<!-- The Modal -->
+<div id="myModal66" class="modal">
+  <span class="close">&times;</span>
+  <img class="modal-content" id="img66">
+  <div id="caption66"></div>
+</div>
+<script>
+// Get the modal
+var modal = document.getElementById('myModal66');
+// Get the image and insert it inside the modal - use its "alt" text as a caption
+var img = document.getElementById('myImg66');
+var modalImg = document.getElementById("img66");
+var captionText = document.getElementById("caption66");
+img.onclick = function(){
+    modal.style.display = "block";
+    modalImg.src = this.src;
+    captionText.innerHTML = this.alt;
+}
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[66];
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() { 
+    modal.style.display = "none";
+}
+</script>
+(4,157)
+  </td>
+</tr>
+<tr>
+  <td>BTC</td>
+  <td>Bitcoin, CME</td>
+  <td>5, Coins</td>
+  <td>Futures</td>
+  <td></td>
+  <td>6670.</td>
+  <td>125</td>
+  <td>(4,190)</td>
+  <td>2</td>
+  <td>(10,298)</td>
+  <td>312</td>
+  <td>132</td>
+  <td>(56)</td>
+  <td>(94)</td>
+  <td>(1)</td>
+<td>
+  <img id="myImg67" src="./images/BTC.png" alt = "&emsp; &emsp;&emsp;&emsp; BTC     Bitcoin, CME         Current Period HVaR:  (3,652),    Current Period ES:  (4,834),    Stress Period HVaR:  (9,316),    Stress Period ES:  (10,298),    Worst:  (10,298)" width = "50" height = "20">
+<!-- The Modal -->
+<div id="myModal67" class="modal">
+  <span class="close">&times;</span>
+  <img class="modal-content" id="img67">
+  <div id="caption67"></div>
+</div>
+<script>
+// Get the modal
+var modal = document.getElementById('myModal67');
+// Get the image and insert it inside the modal - use its "alt" text as a caption
+var img = document.getElementById('myImg67');
+var modalImg = document.getElementById("img67");
+var captionText = document.getElementById("caption67");
+img.onclick = function(){
+    modal.style.display = "block";
+    modalImg.src = this.src;
+    captionText.innerHTML = this.alt;
+}
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[67];
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() { 
+    modal.style.display = "none";
+}
+</script>
+(3,652)
+  </td>
+</tr>
+<tr>
+  <td>CL</td>
+  <td>Crude Oil, Nymex</td>
+  <td>1000,  Barrel</td>
+  <td>Futures</td>
+  <td></td>
+  <td>73.25</td>
+  <td>1,130</td>
+  <td>(2,560)</td>
+  <td>1</td>
+  <td>(8,071)</td>
+  <td>(88)</td>
+  <td>4</td>
+  <td>24</td>
+  <td>(8)</td>
+  <td>(38)</td>
+<td>
+  <img id="myImg68" src="./images/CL.png" alt = "&emsp; &emsp;&emsp;&emsp; CL     Crude Oil, Nymex         Current Period HVaR:  (3,026),    Current Period ES:  (3,519),    Stress Period HVaR:  (7,179),    Stress Period ES:  (8,071),    Worst:  (8,071)" width = "50" height = "20">
+<!-- The Modal -->
+<div id="myModal68" class="modal">
+  <span class="close">&times;</span>
+  <img class="modal-content" id="img68">
+  <div id="caption68"></div>
+</div>
+<script>
+// Get the modal
+var modal = document.getElementById('myModal68');
+// Get the image and insert it inside the modal - use its "alt" text as a caption
+var img = document.getElementById('myImg68');
+var modalImg = document.getElementById("img68");
+var captionText = document.getElementById("caption68");
+img.onclick = function(){
+    modal.style.display = "block";
+    modalImg.src = this.src;
+    captionText.innerHTML = this.alt;
+}
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[68];
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() { 
+    modal.style.display = "none";
+}
+</script>
+(3,026)
+  </td>
+</tr>
+<tr>
+  <td>HO</td>
+  <td>New York Harbour ULSD (Heating Oil), Nymex</td>
+  <td>42000,  Gallon</td>
+  <td>Futures</td>
+  <td></td>
+  <td>2.35</td>
+  <td>1,205</td>
+  <td>(2,737)</td>
+  <td>1</td>
+  <td>(9,217)</td>
+  <td>157</td>
+  <td>(13)</td>
+  <td>(40)</td>
+  <td>(24)</td>
+  <td>(26)</td>
+<td>
+  <img id="myImg69" src="./images/HO.png" alt = "&emsp; &emsp;&emsp;&emsp; HO     New York Harbour ULSD (Heating Oil), Nymex         Current Period HVaR:  (3,344),    Current Period ES:  (4,897),    Stress Period HVaR:  (8,541),    Stress Period ES:  (9,217),    Worst:  (9,217)" width = "50" height = "20">
+<!-- The Modal -->
+<div id="myModal69" class="modal">
+  <span class="close">&times;</span>
+  <img class="modal-content" id="img69">
+  <div id="caption69"></div>
+</div>
+<script>
+// Get the modal
+var modal = document.getElementById('myModal69');
+// Get the image and insert it inside the modal - use its "alt" text as a caption
+var img = document.getElementById('myImg69');
+var modalImg = document.getElementById("img69");
+var captionText = document.getElementById("caption69");
+img.onclick = function(){
+    modal.style.display = "block";
+    modalImg.src = this.src;
+    captionText.innerHTML = this.alt;
+}
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[69];
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() { 
+    modal.style.display = "none";
+}
+</script>
+(3,344)
+  </td>
+</tr>
+<tr>
+  <td>RB</td>
+  <td>RBOB Gasoline, Nymex</td>
+  <td>42000,  Gallon</td>
+  <td>Futures</td>
+  <td></td>
+  <td>2.1</td>
+  <td>790</td>
+  <td>(2,535)</td>
+  <td>1</td>
+  <td>(8,884)</td>
+  <td>(100)</td>
+  <td>(5)</td>
+  <td>6</td>
+  <td>(29)</td>
+  <td>(18)</td>
+<td>
+  <img id="myImg70" src="./images/RB.png" alt = "&emsp; &emsp;&emsp;&emsp; RB     RBOB Gasoline, Nymex         Current Period HVaR:  (3,931),    Current Period ES:  (4,200),    Stress Period HVaR:  (6,542),    Stress Period ES:  (8,884),    Worst:  (8,884)" width = "50" height = "20">
+<!-- The Modal -->
+<div id="myModal70" class="modal">
+  <span class="close">&times;</span>
+  <img class="modal-content" id="img70">
+  <div id="caption70"></div>
+</div>
+<script>
+// Get the modal
+var modal = document.getElementById('myModal70');
+// Get the image and insert it inside the modal - use its "alt" text as a caption
+var img = document.getElementById('myImg70');
+var modalImg = document.getElementById("img70");
+var captionText = document.getElementById("caption70");
+img.onclick = function(){
+    modal.style.display = "block";
+    modalImg.src = this.src;
+    captionText.innerHTML = this.alt;
+}
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[70];
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() { 
+    modal.style.display = "none";
+}
+</script>
+(3,931)
+  </td>
+</tr>
+<tr>
+  <td>CADUSD</td>
+  <td>CAD</td>
+  <td>100,000</td>
+  <td>Foreign Exchange</td>
+  <td></td>
+  <td>1.2945</td>
+  <td>591</td>
+  <td>(669)</td>
+  <td>1</td>
+  <td>(2,613)</td>
+  <td>48</td>
+  <td>4</td>
+  <td>4</td>
+  <td>6</td>
+  <td>(3)</td>
+<td>
+  <img id="myImg71" src="./images/CADUSD.png" alt = "&emsp; &emsp;&emsp;&emsp; CADUSD     CAD         Current Period HVaR:  (656),    Current Period ES:  (729),    Stress Period HVaR:  (2,073),    Stress Period ES:  (2,613),    Worst:  (2,613)" width = "50" height = "20">
+<!-- The Modal -->
+<div id="myModal71" class="modal">
+  <span class="close">&times;</span>
+  <img class="modal-content" id="img71">
+  <div id="caption71"></div>
+</div>
+<script>
+// Get the modal
+var modal = document.getElementById('myModal71');
+// Get the image and insert it inside the modal - use its "alt" text as a caption
+var img = document.getElementById('myImg71');
+var modalImg = document.getElementById("img71");
+var captionText = document.getElementById("caption71");
+img.onclick = function(){
+    modal.style.display = "block";
+    modalImg.src = this.src;
+    captionText.innerHTML = this.alt;
+}
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[71];
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() { 
+    modal.style.display = "none";
+}
+</script>
+(656)
+  </td>
+</tr>
+<tr>
+  <td>EURUSD</td>
+  <td>EUR</td>
+  <td>125,000</td>
+  <td>Foreign Exchange</td>
+  <td></td>
+  <td>1.1603</td>
+  <td>(895)</td>
+  <td>(1,138)</td>
+  <td>1</td>
+  <td>(3,943)</td>
+  <td>(5)</td>
+  <td>7</td>
+  <td>10</td>
+  <td>19</td>
+  <td>16</td>
+<td>
+  <img id="myImg72" src="./images/EURUSD.png" alt = "&emsp; &emsp;&emsp;&emsp; EURUSD     EUR         Current Period HVaR:  (1,595),    Current Period ES:  (1,888),    Stress Period HVaR:  (3,360),    Stress Period ES:  (3,943),    Worst:  (3,943)" width = "50" height = "20">
+<!-- The Modal -->
+<div id="myModal72" class="modal">
+  <span class="close">&times;</span>
+  <img class="modal-content" id="img72">
+  <div id="caption72"></div>
+</div>
+<script>
+// Get the modal
+var modal = document.getElementById('myModal72');
+// Get the image and insert it inside the modal - use its "alt" text as a caption
+var img = document.getElementById('myImg72');
+var modalImg = document.getElementById("img72");
+var captionText = document.getElementById("caption72");
+img.onclick = function(){
+    modal.style.display = "block";
+    modalImg.src = this.src;
+    captionText.innerHTML = this.alt;
+}
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[72];
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() { 
+    modal.style.display = "none";
+}
+</script>
+(1,595)
+  </td>
+</tr>
+<tr>
+  <td>GBPUSD</td>
+  <td>GBP</td>
+  <td>62,500</td>
+  <td>Foreign Exchange</td>
+  <td></td>
+  <td>1.3036</td>
+  <td>(460)</td>
+  <td>(708)</td>
+  <td>1</td>
+  <td>(3,960)</td>
+  <td>(18)</td>
+  <td>(35)</td>
+  <td>1</td>
+  <td>7</td>
+  <td>9</td>
+<td>
+  <img id="myImg73" src="./images/GBPUSD.png" alt = "&emsp; &emsp;&emsp;&emsp; GBPUSD     GBP         Current Period HVaR:  (868),    Current Period ES:  (1,062),    Stress Period HVaR:  (1,823),    Stress Period ES:  (3,960),    Worst:  (3,960)" width = "50" height = "20">
+<!-- The Modal -->
+<div id="myModal73" class="modal">
+  <span class="close">&times;</span>
+  <img class="modal-content" id="img73">
+  <div id="caption73"></div>
+</div>
+<script>
+// Get the modal
+var modal = document.getElementById('myModal73');
+// Get the image and insert it inside the modal - use its "alt" text as a caption
+var img = document.getElementById('myImg73');
+var modalImg = document.getElementById("img73");
+var captionText = document.getElementById("caption73");
+img.onclick = function(){
+    modal.style.display = "block";
+    modalImg.src = this.src;
+    captionText.innerHTML = this.alt;
+}
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[73];
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() { 
+    modal.style.display = "none";
+}
+</script>
+(868)
+  </td>
+</tr>
+</table>
+
+</body>
+
+<p>Note that these calculations are based on available data and RiskSnap technology and are provided for general information purposes and any use of these samples is at your own risk.
+<p> 
+
+
+</div> <!-- text-section -->
 
