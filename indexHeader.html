@@ -140,6 +140,7 @@ table, th, td {
 	width:700px;
 }
 </style>
+
 </head>
 
 <!-- end new -->
@@ -219,12 +220,54 @@ The same 99.2% confidence intervals as Nasdaq’s was used.  According to regula
 <p class="paragraph">The Auto-Callable Contingent Coupon Barrier Notes Linked to the Lesser Performing of Four Equity
 Securities (a.k.a. "FANG barrier") was cited in FT Alphaville, July 20 by Dan McCrum with the challenge “Readers better able to price option values might chime in”.   As we are interested in risk, we chime in on this interesting product.
 <p>The FANG barrier is a July 1, 2021 note, whose superior coupon payments of 10.2% per annum and principal return are impacted by barriers.  If any of the four stocks (<b>F</b>acebook, <b>A</b>mazon, <b>N</b>etflicks, <b>G</b>oogle) at any of the 12 quarterly coupon payment dates is 50% below their initial price then there is no coupon for that date, plus a loss of principal if the date is the maturity date where the principal returned is based on the return of the lowest returning stock as measured against the initial price. The maximum possible return is the principal plus 12 coupon payments of 2.55% each.  The maximum possible loss is loss of all coupon payments plus the entire principal.  An automatic call occurs if on any payment date from Dec 27, 2018, each of the stocks are greater than the initial price.
-<p>RBC issued $1,424,000 of this note June 29, 2019, with net proceeds of $1,391,960.  RiskSnap priced the product as worth $1,359,000 July 20th using Monte Carlo.  On Sep 7th the value increased to 1,386,000.  In the case of barrier options, volatility is a negative factor since there is more likelihood of getting “knocked out”.  On the other hand time decay is positive since as maturity approaches, the risk of getting “knocked out” diminishes, which may have contributed to the increase in price.  Other risk factors include correlation.  As correlation diminishes there is more likelihood that one of the stocks will hit a barrier as they begin to behave independently of each other.
-<p>The initial prices and current prices are: Facebook (195.84/163.04), Amazon (1660.51/1952.07), Netflix (390.39/348.68),Google (Alphabet)(1116.94/1164.83). Stay tuned for more pricing updates on this note.
+<p>RBC issued $1,424,000 of this note June 29, 2019, with net proceeds of $1,391,960.  RiskSnap priced the product as worth $1,359,000 July 20th using <b>Monte Carlo</b>.  On Sep 7th the value increased to 1,386,000.  In the case of barrier options, volatility is a negative factor since there is more likelihood of getting “knocked out”.  On the other hand time decay is positive since as maturity approaches, the risk of getting “knocked out” diminishes, which may have contributed to the increase in price.  Other risk factors include correlation.  As correlation diminishes there is more likelihood that one of the stocks will hit a barrier as they begin to behave independently of each other.
+<p>Payments are tracked below.
 <p>
+<table>
+  <tr>
+    <th></th>
+    <th>AMZN</th>
+    <th>FB</th>
+	<th>GOOG</th>
+	<th>NFLX</th>
+	<th>Action</th>
+  </tr>
+  <tr>
+    <td>Initial Price (Strike)</td>
+    <td>1660.51</td>
+    <td>195.84</td>
+	<td>1116.94</td>
+	<td>390.39
+	<td>
+  <tr>
+    <td>Barrier</td>
+    <td>830.26</td>
+    <td>97.92</td>	
+	<td>558.47</td>	
+	<td>105.2</td>	
+	<td>
+  </tr>  
+  </tr>
+  <tr>
+    <td>27-Sep-2018</td>
+    <td>2012.98</td>
+    <td>168.84</td>
+	<td>1194.64</td>
+	<td>380.71</td>
+	<td>2.55% Coupon Paid</td>
+  </tr>
+  <tr>
+    <td>% Change</td>
+    <td>21.7</td>
+	<td>-13.8</td>
+	<td>7</td>
+	<td>2.5</td>
+	<td></td>
+  </tr>
+  
+</table>
 
 
-<img  class="one" src="./images/FangBarrier.PNG" name="slide" width="300" height="300">
 
 <h1 style="color:blue;">Housing Prices,Pelegrini, and <i>the Greatest Trade Ever</i></h1>
 <p class="paragraph">At a 2007 hedge fund conference in Nassau, a Paulson & Co presenter showed an interesting housing chart which has since stuck with me.  In 2007, John Paulson became world-famous by shorting the US housing market by betting against mortgage backed securities through credit default swaps. His firm made $14Billion and Mr. Paulson himself made $4Billion on this one trade alone.
