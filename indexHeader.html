@@ -219,8 +219,11 @@ The same 99.2% confidence intervals as Nasdaq’s was used.  According to regula
 <h1 style="color:blue;">Chiming in on the FANG barrier</h1>
 <p class="paragraph">The Auto-Callable Contingent Coupon Barrier Notes Linked to the Lesser Performing of Four Equity
 Securities (a.k.a. "FANG barrier") was cited in FT Alphaville, July 20 by Dan McCrum with the challenge “Readers better able to price option values might chime in”.   As we are interested in risk, we chime in on this interesting product.
-<p>The FANG barrier is a July 1, 2021 note, whose superior coupon payments of 10.2% per annum and principal return are impacted by barriers.  If any of the four stocks (<b>F</b>acebook, <b>A</b>mazon, <b>N</b>etflicks, <b>G</b>oogle) at any of the 12 quarterly coupon payment dates is 50% below their initial price then there is no coupon for that date, plus a loss of principal if the date is the maturity date where the principal returned is based on the return of the lowest returning stock as measured against the initial price. The maximum possible return is the principal plus 12 coupon payments of 2.55% each.  The maximum possible loss is loss of all coupon payments plus the entire principal.  An automatic call occurs if on any payment date from Dec 27, 2018, each of the stocks are greater than the initial price.
-<p>RBC issued $1,424,000 of this note June 29, 2019, with net proceeds of $1,391,960.  RiskSnap priced the product as worth $1,359,000 July 20th using <b>Monte Carlo</b>.  On Sep 7th the value increased to 1,386,000.  In the case of barrier options, volatility is a negative factor since there is more likelihood of getting “knocked out”.  On the other hand time decay is positive since as maturity approaches, the risk of getting “knocked out” diminishes, which may have contributed to the increase in price.  Other risk factors include correlation.  As correlation diminishes there is more likelihood that one of the stocks will hit a barrier as they begin to behave independently of each other.
+<p><img class="pic" src="./images/FANG.png" alt="FANG" align="left">
+<img class="picbig" src="./images/FANG.png" alt="FANG" align="left"><font size="5"></font>  The FANG barrier is a July 1, 2021 note, whose superior coupon payments of 10.2% per annum and principal return are impacted by barriers.  If any of the four stocks (<b>F</b>acebook, <b>A</b>mazon, <b>N</b>etflicks, <b>G</b>oogle) at any of the 12 quarterly coupon payment dates is 50% below their initial price then there is no coupon for that date, plus a loss of principal if the date is the maturity date where the principal returned is based on the return of the lowest returning stock as measured against the initial price. The maximum possible return is the principal plus 12 coupon payments of 2.55% each.  The maximum possible loss is loss of all coupon payments plus the entire principal.  An automatic call occurs if on any payment date from Dec 27, 2018, each of the stocks are greater than the initial price.  RBC issued $1,424,000 of this note June 29, 2019, with net proceeds of $1,391,960.
+<p>
+<img class="pic" src="./images/MonteCarlo.png" alt="MonteCarlo" align="left">
+<img class="picbig" src="./images/MonteCarlo.png" alt="MonteCarlo" align="left"><font size="5"></font>    RiskSnap priced the product as worth $1,359,000 July 20th using <b>Monte Carlo</b>.  On Sep 7th the value increased to 1,386,000.  In the case of barrier options, volatility is a negative factor since there is more likelihood of getting “knocked out”.  On the other hand time decay is positive since as maturity approaches, the risk of getting “knocked out” diminishes, which may have contributed to the increase in price.  Other risk factors include correlation.  As correlation diminishes there is more likelihood that one of the stocks will hit a barrier as they begin to behave independently of each other.
 <p>Payments are tracked below.
 <p>
 <table>
@@ -267,17 +270,59 @@ Securities (a.k.a. "FANG barrier") was cited in FT Alphaville, July 20 by Dan Mc
   
 </table>
 
-
+<p>
 
 <h1 style="color:blue;">Housing Prices,Pelegrini, and <i>the Greatest Trade Ever</i></h1>
-<p class="paragraph">At a 2007 hedge fund conference in Nassau, a Paulson & Co presenter showed an interesting housing chart which has since stuck with me.  In 2007, John Paulson became world-famous by shorting the US housing market by betting against mortgage backed securities through credit default swaps. His firm made $14Billion and Mr. Paulson himself made $4Billion on this one trade alone.
-<p>Mr. Paulson believed that housing prices were decelerating and Paolo Pellegrini, the analyst who worked with Mr. Paulson, developed a housing price vs wage chart.  The chart below is similar and shows the year over year change in the seasonally adjusted housing price index divided by the inflation-adjusted hourly wage growth.. The chart below relates to wages, a more direct approach which illustrates that regardless of cause, housing is becoming less attractive/affordable relative to wage. Although the housing data only covers the period to June, yields showing a constant increase beyond June.  Possibly the future is reflected in share price change beginning of this year to Sep 21 of the three S&P500 homebuilding companies: Lennar Corporation (LEN) -22.5%, D.R Horton (DHI) -16.23% and NVR Inc (NVR) -26.8%. (T. Murk)
-<p>Var results for LEN and DHI covering 10 years are shown below.  Yield curves for other currencies can be found under market risk factors.
+<p class="paragraph">At a 2007 hedge fund conference in Nassau, a Paulson & Co presenter showed an interesting housing chart which has since stuck with me.  In 2007, John Paulson became world-famous by shorting the US housing market by betting against mortgage backed credit default swaps. His firm made $14Billion and Mr. Paulson himself made <font color="red">$4Billion</font> on this one trade alone.<p><img class="pic" src="./images/Pelligrini.png" alt="Pelligrini" align="left">
+<img class="picbig" src="./images/Pelligrini.png" alt="Pelligrini" align="left"><font size="5"></font>
+<p><img class="pic" src="./images/Housing.png" alt="Housing" align="left">
+<img class="picbig" src="./images/Housing.png" alt="Housing" align="left"><font size="5"></font>
+<p><img class="pic" src="./marketriskfactors/images/Yields_USD.png" alt="Yields_USD" align="left">
+<img class="picbig" src="./marketriskfactors/images/Yields_USD.png" alt="Yields_USD" align="left"><font size="5"></font>
+<p><img class="pic" src="./marketriskfactors/images/Yields_CAD.png" alt="Yields_CAD" align="left">
+<img class="picbig" src="./marketriskfactors/images/Yields_CAD.png" alt="Yields_CAD" align="left"><font size="5"></font>
+<p><img class="pic" src="./marketriskfactors/images/Yields_EUR.png" alt="Yields_EUR" align="left">
+<img class="picbig" src="./marketriskfactors/images/Yields_EUR.png" alt="Yields_EUR" align="left"><font size="5"></font>
+<p><img class="pic" src="./marketriskfactors/images/Yields_GBP.png" alt="Yields_GBP" align="left">
+<img class="picbig" src="./marketriskfactors/images/Yields_GBP.png" alt="Yields_GBP" align="left"><font size="5"></font>Mr. Paulson believed that housing prices were decelerating and Paolo Pellegrini, the analyst who worked with Mr. Paulson, developed a housing price vs wage chart.  The chart above is similar and shows the year over year change in the seasonally adjusted housing price index divided by the inflation-adjusted hourly wage growth.. The chart above relates to wages, a more direct approach than yields alone, which illustrates that regardless of cause, housing is becoming less attractive/affordable relative to wage.  Although the housing data is lagged, yields are showing a constant increasee.  Possibly the future is reflected in share price change beginning of this year of the three S&P500 homebuilding companies.
 <p>
-<img src="./images/Housing.PNG" name="slide" style="width:100%;">
+<table>
+  <tr>
+    <th></th>
+    <th>D.R Horton (DHI)</th>
+    <th>Lennar Corporation (LEN)</th>
+	<th>NVR Inc (NVR)</th>
+  </tr>
+  <tr>
+    <td>02-Jan-2018</td>
+    <td>50.621</td>
+    <td>64.71</td>
+	<td>3259.61</td>
+	<td>
+  <tr>
+    <td>28-Sep-2018</td>
+    <td>42.18</td>	
+	<td>46.69</td>	
+	<td>2470.80</td>	
+	<td>
+  </tr>  
+  </tr>
+  <tr>
+    <td>% Change</td>
+    <td>-16.7</td>
+    <td>-27.8</td>
+	<td>-30.0</td>
+  </tr>
+</table>
+
+: Lennar Corporation (LEN) -22.5%, D.R Horton (DHI) -16.23% and NVR Inc (NVR) -26.8%. (T. Murk)
 
 <p>
-<h3 class="three-col-header">VaR as a Risk Measure</h3>
+<p>
+
+
+<p>
+<h1 class="three-col-header">VaR as a Risk Measure</h1>
 <p class="paragraph">Value at Risk (VaR) is one of the most popular tools used in risk management and is incorporated within the Basel Accord for banking supervision.  VaR is used by central counterparties (CCPs) for purposes of determining initial margin.  VaR and Expected Shortfall (ES) are standard measures used by traders for setting risk limits and can be used by investors, traders and risk managers both for preventing panic selling (or buying) in periods of high volatility, and also preventing overreaching in periods of low volatility.
 <p> Our core solution is VaR.
 <p>
