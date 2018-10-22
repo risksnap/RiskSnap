@@ -369,41 +369,41 @@ Although the housing data is lagged, yields are showing a constant increase.
 	<p>Yield Curves
     <p>
 	<p class="paragraph">
-<p><img src="./images/Yields_USD.png" alt="Yields USD" width="100" height="50" align="left">
-	United States Treasury.
-	<p>
-	<a href="http://www.risksnap.com/marketriskfactors/RiskSnapPopUp_Yields_USD.html" target="_blank">Click to Enlarge</a>
-<p><img src="./images/Yields_CAD.png" alt="Yields CAD" width="100" height="50" align="left">
-	Bank of Canada.
-	<p>
-	<a href="http://www.risksnap.com/marketriskfactors/RiskSnapPopUp_Yields_CAD.html" target="_blank">Click to Enlarge</a>
-<p><img src="./images/Yields_GBP.png" alt="Yields GBP" width="100" height="50" align="left">
-	Bank of England.
-	<p>
-	<a href="http://www.risksnap.com/marketriskfactors/RiskSnapPopUp_Yields_GBP.html" target="_blank">Click to Enlarge</a>
-<p><img src="./images/Yields_EUR.png" alt="Yields EUR" width="100" height="50" align="left">
-	European Central Bank.
-	<p>
-	<a href="http://www.risksnap.com/marketriskfactors/RiskSnapPopUp_Yields_EUR.html" target="_blank">Click to Enlarge</a>
-<p><img src="./images/Yields_JPY.png" alt="Yields JPY" width="100" height="50" align="left">
-	Japanese Ministry of Finance.
-	<p>
-	<a href="http://www.risksnap.com/marketriskfactors/RiskSnapPopUp_Yields_JPY.html" target="_blank">Click to Enlarge</a>
-<!--	<p><img class="pic" src="./marketriskfactors/images/Yields_USD.png" alt="Yields_USD" align="middle">
-	<img class="picbig" src="./marketriskfactors/images/Yields_USD.png" alt="Yields_USD" align="middle"><font size="5">US Yields</font>
-	<p><img class="pic" src="./marketriskfactors/images/Yields_CAD.png" alt="Yields_CAD" align="middle">
-	<img class="picbig" src="./marketriskfactors/images/Yields_CAD.png" alt="Yields_CAD" align="middle"><font size="5">Canadian Yields</font>
-	<p><img class="pic" src="./marketriskfactors/images/Yields_EUR.png" alt="Yields_EUR" align="middle">
-	<img class="picbig" src="./marketriskfactors/images/Yields_EUR.png" alt="Yields_EUR" align="middle"><font size="5">Euro Yields</font>
-	<p><img class="pic" src="./marketriskfactors/images/Yields_GBP.png" alt="Yields_GBP" align="middle">
-	<img class="picbig" src="./marketriskfactors/images/Yields_GBP.png" alt="Yields_GBP" align="middle"><font size="5">U.K. Yields </font>
-	<p><img class="pic" src="./marketriskfactors/images/Yields_JPY.png" alt="Yields_JPY" align="middle">
-	<img class="picbig" src="./marketriskfactors/images/Yields_JPY.png" alt="Yields_JPY" align="middle"><font size="5">Japanese Yields </font>-->
- 
-<p>
-<p class="paragraph">
-	</p>
+	  <img id="myImg" src="./images/USTreasuryLT.png" alt = "&emsp; &emsp;&emsp;&emsp; USTreasuryLT     17-Dec-2044         Current Period HVaR:  (1,689),    Current Period ES:  (2,229),    Stress Period HVaR:  (3,278),    Stress Period ES:  (5,015),    Worst:  (5,015)" width = "100" height = "50">
+<!-- The Modal -->
+<div id="myModal" class="modal">
+  <span class="close">&times;</span>
+  <img class="modal-content" id="img">
+  <div id="caption"></div>
+</div>
+<script>
+// Get the modal
+var modal = document.getElementById('myModal');
+// Get the image and insert it inside the modal - use its "alt" text as a caption
+var img = document.getElementById('myImg');
+var modalImg = document.getElementById("img");
+var captionText = document.getElementById("caption");
+img.onclick = function(){
+    modal.style.display = "block";
+    modalImg.src = this.src;
+    captionText.innerHTML = this.alt;
+}
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() { 
+    modal.style.display = "none";
+}
+</script>
+(1,689)
+
   </div>
+  <div class="column right" style="background-color:#990F3D;">
+  
+ 
+ </div>
+<p>
+  
 </div>
 
 </body>
@@ -487,33 +487,7 @@ Although the housing data is lagged, yields are showing a constant increase.
   <td>(27)</td>
   <td>5</td>
 <td>
-  <img id="myImg" src="./images/USTreasuryLT.png" alt = "&emsp; &emsp;&emsp;&emsp; USTreasuryLT     17-Dec-2044         Current Period HVaR:  (1,689),    Current Period ES:  (2,229),    Stress Period HVaR:  (3,278),    Stress Period ES:  (5,015),    Worst:  (5,015)" width = "50" height = "20">
-<!-- The Modal -->
-<div id="myModal" class="modal">
-  <span class="close">&times;</span>
-  <img class="modal-content" id="img">
-  <div id="caption"></div>
-</div>
-<script>
-// Get the modal
-var modal = document.getElementById('myModal');
-// Get the image and insert it inside the modal - use its "alt" text as a caption
-var img = document.getElementById('myImg');
-var modalImg = document.getElementById("img");
-var captionText = document.getElementById("caption");
-img.onclick = function(){
-    modal.style.display = "block";
-    modalImg.src = this.src;
-    captionText.innerHTML = this.alt;
-}
-// Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close")[0];
-// When the user clicks on <span> (x), close the modal
-span.onclick = function() { 
-    modal.style.display = "none";
-}
-</script>
-(1,689)
+
   </td>
 </tr>
 <tr>
@@ -3845,32 +3819,7 @@ span.onclick = function() {
   <td>2</td>
   <td>(1)</td>
 <td>
-  <img id="myImg73" src="./images/GBPUSD.png" alt = "&emsp; &emsp;&emsp;&emsp; GBPUSD     GBP         Current Period HVaR:  (875),    Current Period ES:  (1,069),    Stress Period HVaR:  (1,842),    Stress Period ES:  (4,002),    Worst:  (4,002)" width = "50" height = "20">
-<!-- The Modal -->
-<div id="myModal73" class="modal">
-  <span class="close">&times;</span>
-  <img class="modal-content" id="img73">
-  <div id="caption73"></div>
-</div>
-<script>
-// Get the modal
-var modal = document.getElementById('myModal73');
-// Get the image and insert it inside the modal - use its "alt" text as a caption
-var img = document.getElementById('myImg73');
-var modalImg = document.getElementById("img73");
-var captionText = document.getElementById("caption73");
-img.onclick = function(){
-    modal.style.display = "block";
-    modalImg.src = this.src;
-    captionText.innerHTML = this.alt;
-}
-// Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close")[73];
-// When the user clicks on <span> (x), close the modal
-span.onclick = function() { 
-    modal.style.display = "none";
-}
-</script>
+  
 (875)
   </td>
 </tr>

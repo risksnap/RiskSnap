@@ -380,18 +380,18 @@ Although the housing data is lagged, yields are showing a constant increase.
     <h2>Market Risk Factors</h2>
 	<p>Yield Curves
     <p>
-	<div class="a">The curves indicate tightening in yields across the world economies.  The U.S. Federal Reserve is reversing the bond buying program initiated in response to the Financial Crisis of 2007-2008.  Long term yields, in bond math, a reflection of expected short term rates, are starting to rise.</div>
-	<p>
-<!-- image Yields CAD -->	
+	<div class="a">The curves show tightening in yields across the economies.  The U.S. Federal Reserve is reversing the bond buying program initiated in response to the Financial Crisis of 2007-2008.  Long term yields, in bond math a reflection of expected short term rates, are on the rise.</div>
+	<figure>
 	 <img id="myImg" src="./marketriskfactors/images/Yields_CAD.png" alt = "     CAD Yields (1, 2, 3, 5, 7, 10, 20 and 30 years)" width = "100" height = "50">
-	
-	  Bank of Canada</p>
+	  <figcaption>Bank of Canada</figcaption>
+     </figure> 
+<!-- The Modal -->
   <div id="myModal" class="modal">
   <span class="close">&times;</span>
   <img class="modal-content" id="img">
   <div id="caption"></div>
   </div>
- 
+  Bank of Canada
 <script>
 // Get the modal
 var modal = document.getElementById('myModal');
@@ -411,10 +411,12 @@ span.onclick = function() {
     modal.style.display = "none";
 }
 </script>
-<p>
-<!-- image Yields USD -->
+	
+  <figure>
   <img id="myImg1" src="./marketriskfactors/images/Yields_USD.png" alt = "     US Yields (1, 2, 3, 5, 7, 10, 20 and 30 years)" width = "100" height = "50">
-  U.S. Treasury</p>
+    <figcaption>U.S. Treasury</figcaption>
+     </figure> 
+<!-- The Modal -->
 <div id="myModal1" class="modal">
   <span class="close">&times;</span>
   <img class="modal-content" id="img1">
@@ -439,10 +441,11 @@ span.onclick = function() {
     modal.style.display = "none";
 }
 </script>
-<p>
-<!-- image Yields GBP -->
+<figure>
 <img id="myImg2" src="./marketriskfactors/images/Yields_GBP.png" alt = "    GBP Yields (1, 2, 3, 5, 7, 10, 20 and 30 years)" width = "100" height = "50">
- Bank of England </p>
+  <figcaption>Bank of England</figcaption>
+     </figure> 
+<!-- The Modal -->
 <div id="myModal2" class="modal">
   <span class="close">&times;</span>
   <img class="modal-content" id="img2">
@@ -467,10 +470,11 @@ span.onclick = function() {
     modal.style.display = "none";
 }
 </script>
-<p>
-<!-- image Yields EUR -->
+<figure>
 <img id="myImg3" src="./marketriskfactors/images/Yields_EUR.png" alt = "    EUR Yields (1, 2, 3, 5, 7, 10, 20 and 30 years)" width = "100" height = "50">
-European Central Bank</p>
+<figcaption>European Central Bank</figcaption>
+     </figure>
+<!-- The Modal -->
 <div id="myModal3" class="modal">
   <span class="close">&times;</span>
   <img class="modal-content" id="img3">
@@ -495,10 +499,11 @@ span.onclick = function() {
     modal.style.display = "none";
 }
 </script>
-<p>
-<!-- image Yields JPY -->
+<figure>
 <img id="myImg4" src="./marketriskfactors/images/Yields_JPY.png" alt = "    JPY Yields (1, 2, 3, 5, 7, 10, 20 and 30 years)" width = "100" height = "50">
-Japanese Ministry of Finance</p>
+<figcaption>Japanese Ministry of Finance</figcaption>
+     </figure>
+<!-- The Modal -->
 <div id="myModal4" class="modal">
   <span class="close">&times;</span>
   <img class="modal-content" id="img4">
@@ -525,148 +530,11 @@ span.onclick = function() {
 </script>
   </div>
   <div class="column right" style="background-color:#990F3D;">
-   	<body>
-	<p><font color="white">Volatility Surface</font>
-    <p>
-	<div class="a"><p style="color:white;">Puts are favoured over calls for FANG stocks.  Possibly due to hedges of long-run bull positions, speculative short positions through a put or through a costless risk reversal (buy put/sell call).  Lennar Corporation (LEN) on the other hand features some call demand.  Building stocks have experienced a large fall this year.</p></div>
-<p>
-<!-- image Yields FB -->
-<img id="myImg5" src="./marketriskfactors/images/Surface_Equity_FB.png" alt = "Surface FB" width = "100" height = "50"><font color="white">Facebook, Inc.</font></p>
-<div id="myModal5" class="modal">
-  <span class="close">&times;</span>
-  <img class="modal-content" id="img5">
-  <div id="caption5"></div>
-</div>
-<script>
-// Get the modal
-var modal = document.getElementById('myModal5');
-// Get the image and insert it inside the modal - use its "alt" text as a caption
-var img = document.getElementById('myImg5');
-var modalImg = document.getElementById("img5");
-var captionText = document.getElementById("caption5");
-img.onclick = function(){
-    modal.style.display = "block";
-    modalImg.src = this.src;
-    captionText.innerHTML = this.alt;
-}
-// Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close")[5];
-// When the user clicks on <span> (x), close the modal
-span.onclick = function() { 
-    modal.style.display = "none";
-}
-</script>
-<p>
-<!-- image Yields AMZN -->
-<img id="myImg6" src="./marketriskfactors/images/Surface_Equity_AMZN.png" alt = "Surface AMZN" width = "100" height = "50"><font color="white">Amazon.com Inc.</font></p>
-<div id="myModal6" class="modal">
-  <span class="close">&times;</span>
-  <img class="modal-content" id="img6">
-  <div id="caption6"></div>
-</div>
-<script>
-// Get the modal
-var modal = document.getElementById('myModal6');
-// Get the image and insert it inside the modal - use its "alt" text as a caption
-var img = document.getElementById('myImg6');
-var modalImg = document.getElementById("img6");
-var captionText = document.getElementById("caption6");
-img.onclick = function(){
-    modal.style.display = "block";
-    modalImg.src = this.src;
-    captionText.innerHTML = this.alt;
-}
-// Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close")[6];
-// When the user clicks on <span> (x), close the modal
-span.onclick = function() { 
-    modal.style.display = "none";
-}
-</script>
- <p>
-<!-- image Yields NFLX -->
-<img id="myImg7" src="./marketriskfactors/images/Surface_Equity_NFLX.png" alt = "Surface NFLX" width = "100" height = "50"><font color="white">Netflix, Inc.</font></p>
-<div id="myModal7" class="modal">
-  <span class="close">&times;</span>
-  <img class="modal-content" id="img7">
-  <div id="caption7"></div>
-</div>
-<script>
-// Get the modal
-var modal = document.getElementById('myModal7');
-// Get the image and insert it inside the modal - use its "alt" text as a caption
-var img = document.getElementById('myImg7');
-var modalImg = document.getElementById("img7");
-var captionText = document.getElementById("caption7");
-img.onclick = function(){
-    modal.style.display = "block";
-    modalImg.src = this.src;
-    captionText.innerHTML = this.alt;
-}
-// Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close")[7];
-// When the user clicks on <span> (x), close the modal
-span.onclick = function() { 
-    modal.style.display = "none";
-}
-</script>
- <p>
-<!-- image Yields GOOG -->
-<img id="myImg8" src="./marketriskfactors/images/Surface_Equity_GOOG.png" alt = "Surface GOOG" width = "100" height = "50"><font color="white">Alphabet Inc."</font></p>
-<div id="myModal8" class="modal">
-  <span class="close">&times;</span>
-  <img class="modal-content" id="img8">
-  <div id="caption8"></div>
-</div>
-<script>
-// Get the modal
-var modal = document.getElementById('myModal8');
-// Get the image and insert it inside the modal - use its "alt" text as a caption
-var img = document.getElementById('myImg8');
-var modalImg = document.getElementById("img8");
-var captionText = document.getElementById("caption8");
-img.onclick = function(){
-    modal.style.display = "block";
-    modalImg.src = this.src;
-    captionText.innerHTML = this.alt;
-}
-// Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close")[8];
-// When the user clicks on <span> (x), close the modal
-span.onclick = function() { 
-    modal.style.display = "none";
-}
-</script>
- <p>
-<!-- image Yields LEN -->
-<img id="myImg9" src="./marketriskfactors/images/Surface_Equity_LEN.png" alt = "Surface LEN" width = "100" height = "50"><font color="white">Lennar Corporation"</font></p>
-<div id="myModal9" class="modal">
-  <span class="close">&times;</span>
-  <img class="modal-content" id="img9">
-  <div id="caption9"></div>
-</div>
-<script>
-// Get the modal
-var modal = document.getElementById('myModal9');
-// Get the image and insert it inside the modal - use its "alt" text as a caption
-var img = document.getElementById('myImg9');
-var modalImg = document.getElementById("img9");
-var captionText = document.getElementById("caption9");
-img.onclick = function(){
-    modal.style.display = "block";
-    modalImg.src = this.src;
-    captionText.innerHTML = this.alt;
-}
-// Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close")[9];
-// When the user clicks on <span> (x), close the modal
-span.onclick = function() { 
-    modal.style.display = "none";
-}
-</script>
+  
+ 
  </div>
 <p>
-  </body>
+  
 </div>
 
 </body>

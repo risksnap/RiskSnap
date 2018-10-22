@@ -144,7 +144,36 @@ table, th, td {
 </head>
 
 <!-- end new -->
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+    box-sizing: border-box;
+}
 
+/* Create two unequal columns that floats next to each other */
+.column {
+    float: left;
+    padding: 10px;
+ <!--   height: 300px; /* Should be removed. Only for demonstration */-->
+}
+
+.left {
+  width: 66%;
+}
+
+.right {
+  width: 34%;
+}
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+</style>
+</head>
 
 
 
@@ -155,7 +184,14 @@ table, th, td {
 </div>
        
 <div class="text-section">
-<h3 class="three-col-header">Thoughts on Risk Factors for the day</h3>
+<body>
+
+<p>
+<div class="row">
+  <div class="column left" style="background-color:#FFF9F5;">
+<!--    <h2>Column 1</h2>-->
+    <p>
+<h3 class="three-col-header">Thoughts on Risk for the day</h3>
 <p>
 <h1 style="color:blue;">Nordic Power Blowout and Risk</h1>
 <p>Einer Aas, a private trader and Nasdaq Clearing Member had bet on the German-Nordic spread narrowing. However, German prices spiked on CO2 cost and Nordics fell on rain.  On Monday, September 10, 2018 Mr. Aas received an intraday margin call but could not meet the requirement and was declared to be in default Sep 11.
@@ -288,20 +324,7 @@ Securities (a.k.a. "FANG barrier") was cited in FT Alphaville, July 20 by Dan Mc
 
 <p>
 Although the housing data is lagged, yields are showing a constant increase.
-<p class="paragraph">
-<p><img class="pic" src="./marketriskfactors/images/Yields_USD.png" alt="Yields_USD" align="left">
-<img class="picbig" src="./marketriskfactors/images/Yields_USD.png" alt="Yields_USD" align="left"><font size="5">US Yields</font>
-<p><img class="pic" src="./marketriskfactors/images/Yields_CAD.png" alt="Yields_CAD" align="left">
-<img class="picbig" src="./marketriskfactors/images/Yields_CAD.png" alt="Yields_CAD" align="left"><font size="5">Canadian Yields</font>
-<p><img class="pic" src="./marketriskfactors/images/Yields_EUR.png" alt="Yields_EUR" align="left">
-<img class="picbig" src="./marketriskfactors/images/Yields_EUR.png" alt="Yields_EUR" align="left"><font size="5">Euro Yields</font>
-<p><img class="pic" src="./marketriskfactors/images/Yields_GBP.png" alt="Yields_GBP" align="left">
-<img class="picbig" src="./marketriskfactors/images/Yields_GBP.png" alt="Yields_GBP" align="left"><font size="5">U.K. Yields </font>
-<p><img class="pic" src="./marketriskfactors/images/Yields_JPY.png" alt="Yields_JPY" align="left">
-<img class="picbig" src="./marketriskfactors/images/Yields_JPY.png" alt="Yields_JPY" align="left"><font size="5">Japanese Yields </font>
- 
-<p>
-<p class="paragraph">
+
 
 <p>Possibly the future is reflected in share price change beginning of this year of the three S&P500 homebuilding companies.
 <p>
@@ -340,6 +363,76 @@ Although the housing data is lagged, yields are showing a constant increase.
 
 
 <p>
+  </div>
+<div class="column right" style="background-color:#FFEBCC;">
+    <h2>Market Risk Factors</h2>
+	<p>Yield Curves
+    <p>
+	<p class="paragraph">
+	  <img id="myImg" src="./images/USTreasuryLT.png" alt = "&emsp; &emsp;&emsp;&emsp; USTreasuryLT     17-Dec-2044         Current Period HVaR:  (1,689),    Current Period ES:  (2,229),    Stress Period HVaR:  (3,278),    Stress Period ES:  (5,015),    Worst:  (5,015)" width = "100" height = "50">
+<!-- The Modal -->
+  <div id="myModal" class="modal">
+  <span class="close">&times;</span>
+  <img class="modal-content" id="img">
+  <div id="caption"></div>
+  </div>
+<script>
+// Get the modal
+var modal = document.getElementById('myModal');
+// Get the image and insert it inside the modal - use its "alt" text as a caption
+var img = document.getElementById('myImg');
+var modalImg = document.getElementById("img");
+var captionText = document.getElementById("caption");
+img.onclick = function(){
+    modal.style.display = "block";
+    modalImg.src = this.src;
+    captionText.innerHTML = this.alt;
+}
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() { 
+    modal.style.display = "none";
+}
+</script>
+	<p class="paragraph">
+	  <img id="myImg" src="./images/USTreasuryLT.png" alt = "&emsp; &emsp;&emsp;&emsp; USTreasuryLT     17-Dec-2044         Current Period HVaR:  (1,689),    Current Period ES:  (2,229),    Stress Period HVaR:  (3,278),    Stress Period ES:  (5,015),    Worst:  (5,015)" width = "100" height = "50">
+<!-- The Modal -->
+  <div id="myModal" class="modal">
+  <span class="close">&times;</span>
+  <img class="modal-content" id="img">
+  <div id="caption"></div>
+  </div>
+<script>
+// Get the modal
+var modal = document.getElementById('myModal');
+// Get the image and insert it inside the modal - use its "alt" text as a caption
+var img = document.getElementById('myImg');
+var modalImg = document.getElementById("img");
+var captionText = document.getElementById("caption");
+img.onclick = function(){
+    modal.style.display = "block";
+    modalImg.src = this.src;
+    captionText.innerHTML = this.alt;
+}
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() { 
+    modal.style.display = "none";
+}
+</script>
+
+  </div>
+  <div class="column right" style="background-color:#990F3D;">
+  
+ 
+ </div>
+<p>
+  
+</div>
+
+</body>
 <h1 class="three-col-header">VaR as a Risk Measure</h1>
 <p class="paragraph">Value at Risk (VaR) is one of the most popular tools used in risk management and is incorporated within the Basel Accord for banking supervision.  VaR is used by central counterparties (CCPs) for purposes of determining initial margin.  VaR and Expected Shortfall (ES) are standard measures used by traders for setting risk limits and can be used by investors, traders and risk managers both for preventing panic selling (or buying) in periods of high volatility, and also preventing overreaching in periods of low volatility.
 <p> Our core solution is VaR.
@@ -420,33 +513,7 @@ Although the housing data is lagged, yields are showing a constant increase.
   <td>(27)</td>
   <td>5</td>
 <td>
-  <img id="myImg" src="./images/USTreasuryLT.png" alt = "&emsp; &emsp;&emsp;&emsp; USTreasuryLT     17-Dec-2044         Current Period HVaR:  (1,689),    Current Period ES:  (2,229),    Stress Period HVaR:  (3,278),    Stress Period ES:  (5,015),    Worst:  (5,015)" width = "50" height = "20">
-<!-- The Modal -->
-<div id="myModal" class="modal">
-  <span class="close">&times;</span>
-  <img class="modal-content" id="img">
-  <div id="caption"></div>
-</div>
-<script>
-// Get the modal
-var modal = document.getElementById('myModal');
-// Get the image and insert it inside the modal - use its "alt" text as a caption
-var img = document.getElementById('myImg');
-var modalImg = document.getElementById("img");
-var captionText = document.getElementById("caption");
-img.onclick = function(){
-    modal.style.display = "block";
-    modalImg.src = this.src;
-    captionText.innerHTML = this.alt;
-}
-// Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close")[0];
-// When the user clicks on <span> (x), close the modal
-span.onclick = function() { 
-    modal.style.display = "none";
-}
-</script>
-(1,689)
+
   </td>
 </tr>
 <tr>
@@ -3778,32 +3845,7 @@ span.onclick = function() {
   <td>2</td>
   <td>(1)</td>
 <td>
-  <img id="myImg73" src="./images/GBPUSD.png" alt = "&emsp; &emsp;&emsp;&emsp; GBPUSD     GBP         Current Period HVaR:  (875),    Current Period ES:  (1,069),    Stress Period HVaR:  (1,842),    Stress Period ES:  (4,002),    Worst:  (4,002)" width = "50" height = "20">
-<!-- The Modal -->
-<div id="myModal73" class="modal">
-  <span class="close">&times;</span>
-  <img class="modal-content" id="img73">
-  <div id="caption73"></div>
-</div>
-<script>
-// Get the modal
-var modal = document.getElementById('myModal73');
-// Get the image and insert it inside the modal - use its "alt" text as a caption
-var img = document.getElementById('myImg73');
-var modalImg = document.getElementById("img73");
-var captionText = document.getElementById("caption73");
-img.onclick = function(){
-    modal.style.display = "block";
-    modalImg.src = this.src;
-    captionText.innerHTML = this.alt;
-}
-// Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close")[73];
-// When the user clicks on <span> (x), close the modal
-span.onclick = function() { 
-    modal.style.display = "none";
-}
-</script>
+  
 (875)
   </td>
 </tr>
