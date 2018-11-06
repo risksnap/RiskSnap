@@ -847,12 +847,12 @@ span.onclick = function() {
 }
 </script>
 </div>
-
 <div class="column right" style="background-color:#00B359;">
    <p><font color="white">Volatility Surface - Foreign Exchange</font>
  <p>
    <div class="a"><p style="color:white;">Sterling (GBP) volatility is highly skewed in favour of puts on Sterling, particularly in the longer dates, perhaps anxiety related to Brexit.
   Swiss Franch volatility, in the short end at least, is neutral, reflecting CHF as a safe haven currency, in spite of Brexit.  The Canadian dollar favors calls, with Canadian yields mirroring US yields.</p></div>
+</div>
 <!-- image Surface CADUSD -->
 <div class="row">
 <div class="column">
@@ -882,7 +882,6 @@ span.onclick = function() {
     modal.style.display = "none";
 }
 </script>
-</div>
 </div>
 <!-- image Surface GBPUSD -->
 <div class="column">
@@ -1001,15 +1000,48 @@ span.onclick = function() {
     modal.style.display = "none";
 }
 </script>
- </div>
- </div>
- </div>
- </div>
-<p>
-  </body>
 </div>
-
+<div class="column right" style="background-color:#1AECFF;">
+   <p><font color="black">Correlations</font>
+ <p>
+   <div class="a"><p style="color:black;">The 90 day correlation chart below combines the FANG stocks, the Home Builder stocks and the US Yield curve. The FANG stocks are a heavy component of the general stock market (S&P) and yields correlate positively, possibly with yields rising as economic factors improve.  The Home building stocks, on the other hand are negatively correlated to yields, a reflection of cost of funding or buying construction. There is relatively little correlation between the FANG stocks and the Home Builders, with the former seemingly better able to weather yield increases.
+</div>
+<!-- image Correlations -->
+<div class="row">
+<div class="column">
+<img id="myImg21" src="./marketriskfactors/images/Correlations.png" alt = "    Correlations (1, 2, 3, 5, 7, 10, 20 and 30 years)" width = "100" height = "50">
+</p>
+<div id="myModal21" class="modal">
+  <span class="close">&times;</span>
+  <img class="modal-content" id="img21">
+  <div id="caption21"></div>
+</div>
+<script>
+// Get the modal
+var modal = document.getElementById('myModal21');
+// Get the image and insert it inside the modal - use its "alt" text as a caption
+var img = document.getElementById('myImg21');
+var modalImg = document.getElementById("img21");
+var captionText = document.getElementById("caption21");
+img.onclick = function(){
+    modal.style.display = "block";
+    modalImg.src = this.src;
+    captionText.innerHTML = this.alt;
+}
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[21];
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() { 
+    modal.style.display = "none";
+}
+</script>
+</div>
+</div>
+</div>
+</div>
+<p>
 </body>
+</div>
 <h1 class="three-col-header">VaR as a Risk Measure</h1>
 <p class="paragraph">Value at Risk (VaR) is one of the most popular tools used in risk management and is incorporated within the Basel Accord for banking supervision.  VaR is used by central counterparties (CCPs) for purposes of determining initial margin.  VaR and Expected Shortfall (ES) are standard measures used by traders for setting risk limits and can be used by investors, traders and risk managers both for preventing panic selling (or buying) in periods of high volatility, and also preventing overreaching in periods of low volatility.
 <p> Our core solution is VaR.
