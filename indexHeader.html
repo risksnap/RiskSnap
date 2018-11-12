@@ -881,10 +881,10 @@ span.onclick = function() {
 }
 </script>
 </div>
-<!-- image Surface GBPUSD -->
+<!-- image Surface CADUSD -->
 <div class="column">
-<img id="myImg17" src="./marketriskfactors/images/Surface_FX_GBPUSD.png" alt = "    GBPUSD Surface (1, 2, 3, 5, 7, 10, 20 and 30 years)" width = "100" height = "50">
-<font color="white">GBPUSD</font></p>
+<img id="myImg17" src="./marketriskfactors/images/Surface_FX_CADUSD_20181102.png" alt = "    CADUSD Surface (1, 2, 3, 5, 7, 10, 20 and 30 years)" width = "100" height = "50">
+<font color="white">CADUSD Prior</font></p>
 <div id="myModal17" class="modal">
   <span class="close">&times;</span>
   <img class="modal-content" id="img17">
@@ -910,11 +910,11 @@ span.onclick = function() {
 }
 </script>
 </div>
-<!-- image Surface EURUSD -->
+<!-- image Surface GBPUSD -->
 <div class="row">
 <div class="column">
-<img id="myImg18" src="./marketriskfactors/images/Surface_FX_EURUSD.png" alt = "    EURUSD Surface (1, 2, 3, 5, 7, 10, 20 and 30 years)" width = "100" height = "50">
-<font color="white">EURUSD</font></p>
+<img id="myImg18" src="./marketriskfactors/images/Surface_FX_GBPUSD.png" alt = "    GBPUSD Surface (1, 2, 3, 5, 7, 10, 20 and 30 years)" width = "100" height = "50">
+<font color="white">GBPUSD</font></p>
 <div id="myModal18" class="modal">
   <span class="close">&times;</span>
   <img class="modal-content" id="img18">
@@ -940,10 +940,10 @@ span.onclick = function() {
 }
 </script>
 </div>
-<!-- image Surface CHFUSD -->
+<!-- image Surface EURUSD -->
 <div class="column">
-<img id="myImg19" src="./marketriskfactors/images/Surface_FX_CHFUSD.png" alt = "    CHFUSD Surface (1, 2, 3, 5, 7, 10, 20 and 30 years)" width = "100" height = "50">
-<font color="white">CHFUSD</font></p>
+<img id="myImg19" src="./marketriskfactors/images/Surface_FX_EURUSD.png" alt = "    EURUSD Surface (1, 2, 3, 5, 7, 10, 20 and 30 years)" width = "100" height = "50">
+<font color="white">EURUSD</font></p>
 <div id="myModal19" class="modal">
   <span class="close">&times;</span>
   <img class="modal-content" id="img19">
@@ -969,11 +969,11 @@ span.onclick = function() {
 }
 </script>
 </div>
-<!-- image Surface JPYUSD -->
+<!-- image Surface CHFUSD -->
 <div class="row">
 <div class="column">
-<img id="myImg20" src="./marketriskfactors/images/Surface_FX_JPYUSD.png" alt = "    JPYUSD Surface (1, 2, 3, 5, 7, 10, 20 and 30 years)" width = "100" height = "50">
-<font color="white">JPYUSD</font></p>
+<img id="myImg20" src="./marketriskfactors/images/Surface_FX_CHFUSD.png" alt = "    CHFUSD Surface (1, 2, 3, 5, 7, 10, 20 and 30 years)" width = "100" height = "50">
+<font color="white">CHFUSD</font></p>
 <div id="myModal20" class="modal">
   <span class="close">&times;</span>
   <img class="modal-content" id="img20">
@@ -999,20 +999,10 @@ span.onclick = function() {
 }
 </script>
 </div>
-</div>
-</div>
-</div>
-</div>
-<div class="column right" style="background-color:#1AECFF;">
-   <p><font color="black">Correlations</font>
- <p>
-   <div class="a"><p style="color:black;">The 90 day correlation chart below combines the FANG stocks, the Home Builder stocks and the US Yield curve. The FANG stocks are a heavy component of the general stock market (S&P) and yields correlate positively, possibly with yields rising as economic factors improve.  The Home building stocks, on the other hand are negatively correlated to yields, a reflection of cost of funding or buying construction. There is relatively little correlation between the FANG stocks and the Home Builders, with the former seemingly better able to weather yield increases.
-</div>
-<!-- image Correlations -->
-<div class="row">
+<!-- image Surface JPYUSD -->
 <div class="column">
-<img id="myImg21" src="./marketriskfactors/images/Correlations.png" alt = "    Correlations (1, 2, 3, 5, 7, 10, 20 and 30 years)" width = "100" height = "50">
-</p>
+<img id="myImg21" src="./marketriskfactors/images/Surface_FX_JPYUSD.png" alt = "    JPYUSD Surface (1, 2, 3, 5, 7, 10, 20 and 30 years)" width = "100" height = "50">
+<font color="white">JPYUSD</font></p>
 <div id="myModal21" class="modal">
   <span class="close">&times;</span>
   <img class="modal-content" id="img21">
@@ -1032,6 +1022,45 @@ img.onclick = function(){
 }
 // Get the <span> element that closes the modal
 var span = document.getElementsByClassName("close")[21];
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() { 
+    modal.style.display = "none";
+}
+</script>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="column right" style="background-color:#1AECFF;">
+   <p><font color="black">Correlations</font>
+ <p>
+   <div class="a"><p style="color:black;">The 90 day correlation chart below combines the FANG stocks, the Home Builder stocks and the US Yield curve. The FANG stocks are a heavy component of the general stock market (S&P) and yields correlate positively, possibly with yields rising as economic factors improve.  The Home building stocks, on the other hand are negatively correlated to yields, a reflection of cost of funding or buying construction. There is relatively little correlation between the FANG stocks and the Home Builders, with the former seemingly better able to weather yield increases.
+</div>
+<!-- image Correlations -->
+<div class="row">
+<div class="column">
+<img id="myImg22" src="./marketriskfactors/images/Correlations.png" alt = "    Correlations (1, 2, 3, 5, 7, 10, 20 and 30 years)" width = "100" height = "50">
+</p>
+<div id="myModal22" class="modal">
+  <span class="close">&times;</span>
+  <img class="modal-content" id="img22">
+  <div id="caption22"></div>
+</div>
+<script>
+// Get the modal
+var modal = document.getElementById('myModal22');
+// Get the image and insert it inside the modal - use its "alt" text as a caption
+var img = document.getElementById('myImg22');
+var modalImg = document.getElementById("img22");
+var captionText = document.getElementById("caption22");
+img.onclick = function(){
+    modal.style.display = "block";
+    modalImg.src = this.src;
+    captionText.innerHTML = this.alt;
+}
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[22];
 // When the user clicks on <span> (x), close the modal
 span.onclick = function() { 
     modal.style.display = "none";
