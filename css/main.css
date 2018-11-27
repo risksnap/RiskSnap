@@ -209,3 +209,8 @@ ul.posts li {
     padding: 6px;
     font-weight:400;
 }
+
+.headline {
+    color: blue;
+    word-break: keep-all
+}
