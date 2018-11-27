@@ -201,4 +201,8 @@ ul.posts li {
     padding: 10px;
 }
 
+/* New stuff */
 
+.in-line-header {
+    font-size: 5;
+}
