@@ -150,6 +150,7 @@ h4 {
 h5 {
     font-size: 1.125rem;
 }
+h1,h2,h3,h4,h5,h6{font-family:"Chronicle Deck", Georgia, Times, "Times New Roman", serif;color:#00306e;margin:0;padding:0;line-height:1.1em}
 
 p{font-family:"Chronicle Deck",Georgia,Times,"Times New Roman",serif;color:#00306e;
   line-height:1.67;color:#666;clear:left;margin-top:1em;letter-spacing:-.02em}
