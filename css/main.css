@@ -215,18 +215,23 @@ ul.posts li {
     word-break: keep-all
 }
 
-.container1 {
-    color: blue;
-    word-break: keep-all
+.frame1 {
+    background-color:#FFEBCC;
+    color:black;
 }
 
-.container2 {
-    color: blue;
-    word-break: keep-all
+.frame2 {
+    background-color:#990F3D;
+    color:white;
 }
 
-.container3 {
-    background-color: #990F3D;;
-    color: white;
+.frame3 {
+    background-color:#00B359;
+    color:white;
+}
+
+.frame4 {
+    background-color:#1AECFF;
+    color:black;
 }
 
