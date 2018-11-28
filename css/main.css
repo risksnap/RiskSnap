@@ -216,6 +216,10 @@ ul.posts li {
     word-break: keep-all
 }
 
+.image-label {
+    padding: 3px;
+}
+
 .frame1 {
     background-color:#FFEBCC;
     color:#00306e;
