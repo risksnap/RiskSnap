@@ -57,6 +57,7 @@ body {
 .text-section {
     margin-left: 3%;
     width: 81%;
+    color:#00306e;
 }
 
 .image-section {
@@ -217,7 +218,8 @@ ul.posts li {
 
 .frame1 {
     background-color:#FFEBCC;
-    color:black;
+    color:#00306e;
+    /* color:black; */
 }
 
 .frame2 {
@@ -232,6 +234,7 @@ ul.posts li {
 
 .frame4 {
     background-color:#1AECFF;
-    color:black;
+    color:#00306e;
+    /* color:black; */
 }
 
