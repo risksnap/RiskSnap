@@ -85,121 +85,188 @@ p.thicker {
 <button class="button"  onclick="window.location.href='#Strategies'">Strategies</button>
 
 <span id="Strategies"/>
-<H2>Strategies - THIS PAGE IS IN Development</H2>
+<H2>Strategies - Equity Options</H2>
 
      
     <p><div class="a">
-<p>Options differ from the underlying asset in that the probability of the asset being above or below a certain price at a certain date, is embedded into the pricing. Various strategies are available.  In order to adopt a strategy, strategy as in buying or selling short a stock, a view on volatility is required.<sup>1</sup>.” 
-</div>
-<div style="text-align:center">
-  <h3>Butterfly</h2>
+<p>Options are used both for hedging and for earning income.  Strategies are combinations of options based on expectations of future movements of the underlying (spot), and volatilities.  Risk, as for all capital markets instruments, always remains but the extent can be managed either through caps or through selling/buying back the option during the option’s life (to expiry).</p> 
+<p>Strategies can be used to build structured notes as in the costless collar. </p>
+<p>In the following, for each of the strategies, the structure, the participant’s view and the maximum/minimum gains are listed.  (fees which may or may not be required by the broker are not shown).  The risk factors, including spot, volatility and expiry, are assumed to be the same for these strategies.</p>
 </div>
 
-
-<p>
-<div class="b">    
-	<p>A collar trade provides investors a way to borrow money using equity shares as collateral while hedging against a decline in stock prices.  The borrowing optically looks risk-free however is not immune to default and the resulting market exposure. 
-    <p>
-</div>
-<div class="b">
-	<p>•	In February, 2018, Geely, a Hangzhou-based automotive company bought a $9 billion stake in Daimler AG using the biggest collar of its kind, Bloomberg has reported.
-</div>
-	<p>
-<div class="b">
-	<p>•	In 2016, Steinhoff  International Holdings borrowed $1.5 billion from a group of lenders through a margin loan pledging stock in the company as collateral without a collar.  The deal went bad.  Over 2 days in December, Steinhoff’s shares plunged 80%. Global investment banks lost more than $1B<sup>2</sup>. 
-</div>
+<table style="width:100%">
+  <tr>
+    <th>Strategy</th>
+	<th>Chart</th>
+    <th>Structure</th>
+    <th>Equity View</th>
+	<th>Volatility View</th>
+    <th>Max Loss</th>
+    <th>Max Gain</th>
 	
-	<p>
-<div class="b">
-	<p>•	The collar transaction can be very lucrative.  When Chinese billionaire Li Shufu needed help in building a 10% stake in Daimler, Bank of America, Merrill Lynch, and Morgan Stanley made around $250m in upfront profits for providing Mr. Li with a “funded equity collar”.<sup>3</sup>. 
-</div>
- 
- <div class="d"><p><font color="blue"><p class="thicker">How a Collar Works</p></font></div>
+  </tr>
+  <tr>
+    <td>1.Bull Call Spread</td>
+    <td><img src="./images/1.png" alt="Bull Call Spread" ></td>
+    <td>Buy a lower strike call and sell a higher strike call.</td>
+    <td>long</td>
+    <td>neutral</td>
+    <td>Net premium paid</td>
+    <td>higher strike less lower strike less net premium paid</td>
+  </tr>
+  <tr>
+    <td>2.Bull Put Spread</td>
+    <td><img src="./images/2.png" alt="Bull Put Spread" ></td>
+    <td>Buy a lower strike put and sell a higher strike put</td>
+    <td>long</td>
+    <td>neutral</td>
+    <td>Higher strike less lower strike plus net premium received</td>
+    <td>Net premium received</td>
+  </tr>
+  <tr>
+    <td>3.Bear Call Spread</td>
+    <td><img src="./images/3.png" alt="Bear Call Spread" ></td>
+    <td>Sell a lower strike call and buy a higher strike call</td>
+    <td>short</td>
+    <td>neutral</td>
+    <td>Higher strike less lower strike plus net premium received</td>
+    <td>Net premium received</td>
+  </tr>
+  <tr>
+    <td>4.Bear Put Spread</td>
+    <td><img src="./images/4.png" alt="Bear Put Spread" ></td>
+    <td>Sell a lower strike put and buy a higher strike put</td>
+    <td>short</td>
+    <td>neutral</td>
+    <td>Net premium paid</td>
+    <td>higher strike less lower strike less net premium paid</td>
+  </tr>
+  <tr>
+    <td>5.Long Strangle</td>
+    <td><img src="./images/5.png" alt="Long Strangle" ></td>
+    <td>Buy an OTM call and Buy an OTM put</td>
+    <td>none</td>
+    <td>Long</td>
+    <td>Net premium paid</td>
+    <td>Unlimited</td>
+  </tr>
+  <tr>
+    <td>6.Short Strangle</td>
+    <td><img src="./images/6.png" alt="Short Strangle" ></td>
+    <td>Sell an OTM call and sell an OTM put</td>
+    <td>none</td>
+    <td>Short</td>
+    <td>Unlimited</td>
+    <td>Net premium received</td>
+  </tr>
+  <tr>
+    <td>7.Long Straddle</td>
+    <td><img src="./images/7.png" alt="Long Straddle" ></td>
+    <td>Buy a call and buy a put at same strikes</td>
+    <td>none</td>
+    <td>Long</td>
+    <td>Net premium paid</td>
+    <td>Unlimited</td>
+  </tr>
+  <tr>
+    <td>8.Short Straddle</td>
+    <td><img src="./images/8.png" alt="Short Straddle" ></td>
+    <td>Sell a call and sell a put at same strikes</td>
+    <td>none</td>
+    <td>short</td>
+    <td>Unlimited</td>
+    <td>Net premium received</td>
+  </tr>
+  <tr>
+    <td>9.Negative Risk Reversal</td>
+    <td><img src="./images/9.png" alt="Negative Risk Reversal" ></td>
+    <td>Sell OTM call and buy OTM put</td>
+    <td>short</td>
+    <td>Neutral</td>
+    <td>Unlimited</td>
+    <td>Put strike less net premium paid</td>
+  </tr>
+  <tr>
+    <td>10.Positive Risk Reversal</td>
+    <td><img src="./images/10.png" alt="Positive Risk Reversal" ></td>
+    <td>Buy OTM call and sell OTM Put</td>
+    <td>long</td>
+    <td>Neutral</td>
+    <td>Put strike less net premium received</td>
+    <td>Unlimited</td>
+  </tr>
+  <tr>
+    <td>11.Long Call Butterfly Spread</td>
+    <td><img src="./images/11.png" alt="Long Call Butterfly Spread" ></td>
+    <td>Buy one ITM call, sell 2 ATM Calls, buy one OTM Call; strikes equidistant</td>
+    <td>neutral</td>
+    <td>Short</td>
+    <td>Net premium paid</td>
+    <td>1 ATM strike les OTM strike less net premium paid</td>
+  </tr>
+  <tr>
+    <td>12.Short Call Butterfly Spread</td>
+    <td><img src="./images/12.png" alt="Short Call Butterfly Spread" ></td>
+    <td>Sell one ITM call, buy 2 ATM Calls, sell one OTM Call; strikes equidistant</td>
+    <td>neutral</td>
+    <td>long</td>
+    <td>1 ATM strike less OTM strike less net premium received</td>
+    <td>Net premium received</td>
+  </tr>
+  <tr>
+    <td>13.Long Put Butterfly Spread</td>
+    <td><img src="./images/13.png" alt="Long Put Butterfly Spread" ></td>
+    <td>Buy one OTM Put, sell 2 ATM Puts, buy one ITM Put; strikes equidistant</td>
+    <td>neutral</td>
+    <td>short</td>
+    <td>Net premium paid</td>
+    <td>ITM strike less 1 ATM strike less net premium paid</td>
+  </tr>
+  <tr>
+    <td>14.Short Put Butterfly Spread</td>
+    <td><img src="./images/14.png" alt="Short Put Butterfly Spread" ></td>
+    <td>Sell one OTM put, buy 2 ATM Puts, sell one ITM Put; strikes equidistant</td>
+    <td>neutral</td>
+    <td>long</td>
+    <td>1 ATM strike less ITM strike less net premium received</td>
+    <td>Net premium received</td>
+  </tr>
+  <tr>
+    <td>15.Short Iron Condor</td>
+    <td><img src="./images/15.png" alt="Short Iron Condor" ></td>
+    <td>Buy one OTM Put, Sell one ATM put, Sell one OTM Call, Buy one OTM Call further above; strikes equidistant apart</td>
+    <td>neutral</td>
+    <td>short</td>
+    <td>Lower put strike less higher put strike, or, lower call strike less higher call strike;  less net premium received </td>
+    <td>Net premium received</td>
+  </tr>
+  <tr>
+    <td>16.Long Iron Condor</td>
+    <td><img src="./images/16.png" alt="Long Iron Condor" ></td>
+    <td>Sell one OTM Put, Buy one ATM put, Buy one OTM Call, Sell one OTM Call further above; strikes equidistant apart</td>
+    <td>neutral</td>
+    <td>long</td>
+    <td>Net premium paid</td>
+    <td>Higher put strike less lower put strike, or, higher call strike less lower call strike; less net premium paid</td>
+  </tr>
+  <tr>
+    <td>17.Bullish Seagull</td>
+    <td><img src="./images/17.png" alt="Bullish Seagull" ></td>
+    <td>Buy a lower strike call and sell a higher strike call, Sell one OTM Put, zero premium</td>
+    <td>long</td>
+    <td>neutral</td>
+    <td>Put strike </td>
+    <td>Higher call strike less lower call strike</td>
+  </tr>
+  <tr>
+    <td>18.Bearish Seagull</td>
+    <td><img src="./images/18.png" alt="Bearish Seagull" ></td>
+    <td>Sell a lower strike put and buy a higher strike put, , Sell one OTM Call, zero premium</td>
+    <td>short</td>
+    <td>neutral</td>
+    <td>Unlimited</td>
+    <td>Higher put strike less lower put strike</td>
+  </tr>
 
-	<p>In this example, a $2M 2 year loan is taken out at a discount from the share value.  Using an 80% discount, the amount of shares pledged is $2.5M.  The loan is 1.5% above Libor, lower than available on a non-collateralized loan for this borrower.  AAPL shares are used as the example.  Spot is 191.70, and a 20% out-of-the money (OTM) 153.36 put is purchased.   Lower moneyness options have a higher volatility for AAPL, and a mid-point volatility of 24.3% is used.  In order to make the put zero cost, a call option is sold.  Since the volatility for this higher moneyness option is lower at 21%, a higher strike is achieved at 248.16.  The moneyness indicates that out-of-the money puts on AAPL are priced with a higher volatility.
-	<p>
-	The number of shares put up as collateral = 2,500,000/191.70 =13,041 which also equals the number of put options and number of call options.  The borrower owns the puts and has written the call.  The puts are placed as collateral with the lender.
-	<p>
-<div class="c">
-	<p><font color="red"><p class="thicker">Scenario A</p></font>
-</div>
-	<p>If spot at expiry is below the put strike, the put will be exercised automatically, the collateral shares delivered to the put holder and cash received for the value of the loan.  E.g. spot is 120 the lender gets 153.36 * 13,041 = $2M. 
-    <p>
-<div class="c">
-	<p><font color="red"><p class="thicker">Scenario B</p></font>
-</div>
-	<p>If spot at expiry is above the call strike, the borrower will not default on this particular transaction since the exercise of the call, e.g. if spot is 300, the cash received by the borrower or its other creditors will be 248.16 x 13,041 = $3,236,255, more than enough to pay off the loan and any loan cancellation fee.  (This amount is capped at the strike).
-	<p>If spot is between the put and call strikes, for similar reasons, the borrower is not likely to default on this particular arrangement since it is more advantageous to sell the shares.
-	<p>The following chart illustrates the payout possibilities.  Below the put strike, the borrower exercises the put and receives $2m the value of the loan.  Anywheres above that to the call cap, the borrower sells the shares with excess funds after paying off the loan.  Above the call strike, the borrower delivers the shares for the agreed strike and also has an excees of funds from which the loan is paid.
-	<div class="b"><img src="./images/Collar.PNG" alt="Collar" ></div>
-	
-	<p>
-	<div class="d"><p><font color="blue"><p class="thicker">Risks</p></font></div
-	<p>If the borrower defaults prior to expiry several market risks occur.  If the price of the collateral is over the put strike price the lender may sell the collateral shares and is subject to share price volatility.  If the price of the collateral is below the strike price then the lender may exercise (assuming the option is american-style) and sell those shares, subject to the same volatility, or alternatively sell the put option and apply the difference to the loss in share collateral value. The put option price is also subject to liquidity constraints, adding in to the equation the bid-offer spread of the market implied volatility. If the lender chooses to hold the shares and/or option, market risk and hedging costs exist on the newly acquired position.  In addition, market risk exists on on the reinvestment of the cash if libor spreads, or the current Libor fixing is lower than the defaulting instrument.
-	
-	<p>
-		
-<div class="c">
-	<p><font color="red"><p class="thicker">Wrong-way risk</p></font>
-</div>
-	<p>.  If the borrower lends money against its own shares as collateral then the value of the collateral falls as the borrower’s credit worthiness declines.  This is what happened with Steinhoff.  Additionally, if the borrower writes puts on its own shares, the same risk exists. 
-	
-<div class="d"><p><font color="blue"><p class="thicker">Monitoring Risk through RiskSnap</p></font></div
-<p>Four transactions are applicable:</p>
-<div class="b">
-	<p>1)  FRN 2 year loan to “Corporate1” for $2M 3-Month Libor +150bp. 
-</div>
-<div class="b">
-	<p>2)  Collateral received $2.5M, 13041 shares.  Lodged with a depository.. 
-</div>
-<div class="b">
-	<p>3)	Collateral received 153.36 2yr Put option on 13,041 shares.  (Sold by “Broker4” to “Corporate1” at zero cost.  “Corporate1” places the put option as part of the collateral with the lender.
-</div>
-<div class="b">
-	<p>4)	Call sold by “Corporate1” to “Broker” at zero cost.  This has no market risk nor credit risk to the lender unless the lender is the counterparty to the call.  However, this transaction is managed separately.
-</div>
-<p>Risk is calculated separately for the loan. 
-<p>The collateral is managed as a netted book due to the underlying assets being AAPL shares and put option and thereby posing little correlation risk.
-<p>
-<div class="b"><img src="./images/Corporate1Risk.PNG" alt="Corporate" ></div>
-In the risk profile above, 
-<div class="b">
-	<p>a)	The MTM of (2,574,447) represents the market value of the loan that “Corporate1” owes to the lender. 
-</div>
-<div class="b">
-	<p>b)	The value of the loan to the lender decreases as rates rise.  The opposite is true for the borrower, therefore the margin on the FRN is measured using Antithetic risk.  This value is determined over the 1 year period that contains the largest loss over a 10 year period.  On 15 Sep 2008, 2 year rates dropped by 25 bp resulting in a historically simulated loss of $8,000 adjusted for a holding period.  Although HVaR can be used, in this case the lender prefers to use tail risk or expected shortfall. Expected shortfall is calculated as $4,714.  This is the margin required for the Floating Rate Note (FRN).
-</div>
-<div class="b">
-	<p>c)	The value of the collateral is determined based on the market value of equity collateral and equity put less the value of the “hair-cut”.  The market value of the put option on the trade date was $7.77.  Added to spot of 191.70, 199.47 x 13,041 = $2,601,288.   The haircut on this portfolio at that date was determined in RiskSnap as $324,998 and therefore the value of collateral is $2,276,292.   The risk on the collateral (haircut) is the risk on the shares offset by the risk on the put option.
-  <p>
-The equity share risk of $324,998 can be seen below where the worst case was 29-Sep-2008.  On that day AAPL shares were down close to 20 % and appeared to be due to a stock ratings cut by RBC Capital and Morgan Stanley.  Both were concerned about AAPL’s prices in a worsening economy. 
 
-</div>
-<p>
-<div class="b"><img src="./images/Collateral.png" alt="Collateral" ></div>
-<p>The same magnitude of drop on the valuation day of this example would have produced a loss of close to $500,000.  Assuming that liquidation was not immediate but over  2 more days of volatility (the holding period), the loss could be as high as 633,541.  The protective properties of the put was limited to 193,000 since the put delta at this point was 32%.  The net effect was 440,000 for this worst case.  Since the average of the tail risk is used, the haircut was 324,998.  If the put was not netted against the shares, the sum of the individual risks would have been 491,179. The collateral netting benefit for haircus is shown in the graph below.
-<p>
-<div class="b"><img src="./images/benefits.PNG" alt="Netting Benefits"  style="width:100%;"></div>
-
-
-
-
-<p>
-<p>
-<div class="b">
-	<p>d)	The summary of Collateral and excess/deficit is,
-	<p>•	MTM of the FRN   -$2,574,447
-	<p>•	Value of the collateral received  $2,276,292
-	<p>•	Cash collateral $278,122 (for this example, it is assumed that the borrower has placed funds for the haircut).
-	<p>•	Total Equity = -$2,574,447 + $2,276,292 + $278,122 = (20,033).
-	<p>•	Net owed from borrower to lender:  $(24,747).
-</div>
-
-
-
-Footnotes:
-<p>
-<a href="https://www.bloomberg.com/news/articles/2018-03-28/an-opaque-3-5-billion-business-is-giving-wall-street-a-hangover">1</a>
-<a href="https://www.businesslive.co.za/bd/companies/2018-03-28-beware-margin-loans-and-collar-trades-that-way-steinhoff-lies/">2</a> 
-<a href="https://www.ft.com/content/6bb33298-4172-11e8-93cf-67ac3a6482fd/">3</a> 
-
+</table>
