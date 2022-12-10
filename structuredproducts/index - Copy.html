@@ -83,8 +83,6 @@ p.thicker {
 </style>
 
 <button class="button"  onclick="window.location.href='#CorporateEquityDerivatives'">Corporate Equity Derivatives</button>
-<button class="button"  onclick="window.location.href='#EquityCollarTrades'">Equity Collar Trades</button>
-<button class="button"  onclick="window.location.href='#EquityLinkedNotes'">Equity Linked Notes</button>
 
 <span id="CorporateEquityDerivatives"/>
 <H2>Corporate Equity Derivatives</H2>
@@ -93,7 +91,6 @@ p.thicker {
     <p><div class="a">
 <p>“Complexity can be dangerous if it inhibits a genuine understanding, and an accurate calculation, of risks and exposure,” said Colombo, a former Morgan Stanley counsel. “On the other hand, a complex arrangement may present a very lucrative opportunity that ought not to be passed up<sup>1</sup>.” 
 </div>
-<span id="EquityCollarTrades"/>
 <div style="text-align:center">
   <h3>Equity Collar Trades</h2>
 </div>
@@ -199,46 +196,7 @@ The equity share risk of $324,998 can be seen below where the worst case was 29-
 </div>
 
 
-<span id="EquityLinkedNotes"/>
-<div style="text-align:center">
-  <h3>Equity Linked Notes</h2>
-</div>
 
-
-<p>
-<div class="b">    
-	<p>Equity Linked Notes are pre-packaged investments that normally include assets linked to interest plus one or more derivatives.  Examples are where the final payout on the amount invested depends on movements (positive or negative) of one or more underlying assets (equities, commodities, foreign exchange).
-<p>In some cases the principal amount is protected and in other cases the principal amount will decrease with the value of the underlying asset.
-<p>The package allows the investor to engage in wholesale pricing for interest rate products and option products on a wholesale basis not normally available in the retail market.  The initial bid-offer spread allows the dealer to hedge and manage the product and payouts.  This strategy works better in a higher interest rate environment since there is more cash for the investor to pay for the options and also with higher option volatility since the value of the option is higher.
-<p>RBC’s Principal Protected Canadian Large Cap Guaranteed Return Notes, Series 122, issued Nov 22, 2022 is used for the example.  This note provides a guaranteed coupon 3% for 5 years, paid monthly or 0.25% per month.  The return at maturity is linked to the price performance of 5 Canadian large cap shares equally weighted where the return is based on the closing price of the equities Nov 22, 2027 compared to the base price as of close Nov 21, 2022 as listed on TSX.  The return is applied to 50% of the Principal. The Principal due at maturity(t) is,
-<div class="b"><img src="./imagesEquityLinkedNote_Formula1.png" alt="EquityLinkedNote_Formula1" ></div>
-<p>Where e represents the share prices at time 0 and at maturity.  The principal investment is $100,000.  A hypothetical example for prices at maturity [from the prospectus] follows.</p
-<div class="b"><img src="./imagesEquityLinkedNote_Formula2.png" alt="EquityLinkedNote_Formula2" ></div>
-<p>Where e1= Enbridge Inc. (ENB), e2=Manulife Financial Corporation (MFC), e3=Rogers Communications, Inc (RCI/B), e4=Sun Life Financial Inc. (SLF) and e5=TC Energy Corporation (TRP).  The starting prices were the close on TXS on Nov 21st.  Note that SLF had a dividend payment on Nov 22.  Yahoo’s Nov 21st adjusted price is after the dividend whereas TSX’s price is before the dividend.  Although the overall return in this example is 24%, the actual return is one-half that since only 50% of the Principal applies.
-<p>In this example, the last equity has a negative return which reduces the overall return.  Since the return has a floor of 0, if the sum of the returns is negative then the return is zero and no lower, that is, the principal amount of $100,000  is guaranteed.  
-<p>This product depends on the volatility due to the optionality that puts the floor on the maximum loss.  The volatility in turn depends on the correlations between the assets.  If all assets were correlated then a drop in price of one asset would impact the entire portfolio.  Where assets are uncorrelated, a loss in one asset will be offset by a gain in another asset.  In the case of this portfolio as of the pricing date Nov 25, 2022, the correlation matrix (with volatility in the diagonal)  was as follows:
-<div class="b"><img src="./EquityLinkedNote_Correlations.png" alt="EquityLinkedNote_Correlations" ></div>
-<p>The energy related companies, Enbridge and TC Energy Corporation are highly correlated at 0.74, as are the two financials, Manulife and Sun Life at 0.64.   However, the correlation between a financial (Manulife) and energy (Enbridge) while high, is not as high at 0.47.  Rogers, the telecommunications company has low correlation with the others averaging about 0.34.  Volatility for TC Energy Corporation, 54% as of Nov 25th is high relative to the other equities.
-Portfolio volatility may be measured by the general Markowitz formula with weighting as follows:
-Using the general Markowitz formula below, the portfolio volatility can be calculated.  When all correlations = 1, the portfolio volatility is the same as the average of the volatilities, 32.5%.  Reduction in correlations reduces the portfolio volatility as gains in one asset is offset by losses in another.  The porfolio volatility for the above is 24%.
-<div class="b"><img src="./EquityLinkedNote_Markowitz.png" alt="EquityLinkedNote_Markowitz" ></div>
-<ul>
-  <li>Correlations cannot be hedged through the market since there are no easily obtained correlation products.  Historical correlations for this examples are based on historical equity prices.</li>
-  <li>Deltas are difficult to hedge for basket options since a change in correlation will affect more than one asset in the basket.  The safest hedge for the structurer is to overhedge by buying the individual options.</li>
-  <li>Historical correlations depend on the observation period.  In this example, the number of observations is based on days to maturity with a floor of 25 business days and max of 252 business days.</li>
-  <li>Implied volatilities have been used for the volatilities.   Options traded on exchanges are generally limited in term and 5 year options are not available for the term.  For the example the volatilities have been capped at the maximum term found</li>
-  <li>The strike for the option is 1, ie. 1 x 50000 will be paid on exercise.  The expected forward is the sum of the ratio of the forward/spot at inception multiplied by the weight, in this case 20%.</li>
-  <li>The expected forward for each equity is calculated as f = s x exp((r-q)t) where r is the interest rate derived from the Canadian Treasury Curve, and q, the dividend yield is based on the latest one year’s value of dividends divided by current spot.  The  dividend yield can alternatively be derived using put-call parity from the volatility surface.</li>
-</ul>
-<p>As of Nov 25, 2022, the bond was priced at 94,810 or a loss of -C$5,190 for a C$100,000 investment.
-<p>The value of the (basket) option was C$7,425 for a net gain of C$2,235.
-<p>Alternatively, purchase of the underlying options separately on C$50,000  was C$10,293 offering the investor a 28% savings through the basket.  However, the exercise of the basket will result in losses offsetting gains, whereas individual options that expire out-of-the-money are no exercised.
-<p>HVaR is illustrated below for the basket, and for the portfolio of the individual options.
-<p>The HVaR values are in US dollars.  The expected shortfall for the basket is US$-760 and for the portfolio of options, is US$-830, illustrating the lower risk.  For the example below both the </p>
-<div class="b"><img src="./EquityLinkedNote_HVar.png" alt="EEquityLinkedNote_HVar" ></div>
-</p>
-</p>
-</div>
 Footnotes:
 <p>
 <a href="https://www.bloomberg.com/news/articles/2018-03-28/an-opaque-3-5-billion-business-is-giving-wall-street-a-hangover">1</a>
