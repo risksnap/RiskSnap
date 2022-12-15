@@ -234,9 +234,28 @@ Using the general Markowitz formula below, the portfolio volatility can be calcu
 <p>As of Nov 25, 2022, the bond was priced at 94,810 or a loss of -C$5,190 for a C$100,000 investment.
 <p>The value of the (basket) option was C$7,425 for a net gain of C$2,235.
 <p>Alternatively, purchase of the underlying options separately on C$50,000  was C$10,293 offering the investor a 28% savings through the basket.  However, the exercise of the basket will result in losses offsetting gains, whereas individual options that expire out-of-the-money are not exercised.
-<p>HVaR is illustrated below for the basket, and for the portfolio of the individual options.
-<p>The HVaR values are in US dollars.  The expected shortfall for the basket is US$-760 and for the portfolio of options, is US$-830, illustrating the lower risk.   </p>
-<div class="b"><img src="./images/EquityLinkedNote_HVar.png" alt="EquityLinkedNote_HVar" ></div>
+	<p>
+	<div class="d"><p><font color="blue"><p class="thicker">Risks</p></font></div
+	<p>Risk arises from the following sources:</p>
+<ul>
+  <li>If the issuer defaults before the maturity date, there is a risk that the principal as well as interest payments and equity returns will be lost, otherwise at a minimum the principal will be returned.</li>
+  <li>A decrease in one or more equity prices will lower the return.</li>
+  <li>A decrease in option volatility will reduce the likelihood of exercise and will lower the price of the structure.</li>
+  <li>A decrease in correlation will reduce the portfolio volatility resulting in a lower valuation for the structure as gains in one equity will be offset by losses in another.</li>
+  <li>An increase in interest rates will reduce the value of the fixed payments received on the principal which is twice the amount of the principal for the equity return.</li>
+</ul>
+	
+	<p>
+<div class="d"><p><font color="blue"><p class="thicker">Monitoring Risk through RiskSnap</p></font></div
+
+<p>The risk values below are in US dollars.  
+<p>There are two transactions in the structure, the fixed interest rates at 3%, and the equity return.  The risk is shown separately, then combined as the equity linked note.<;>
+<p>The interest rate risk based on an absolute movement in rates, was greatest on Mar 18th, 2020.  The expected shortfall for the stress period was -$4,190 on the $100,000 5 year note</p>  
+<div class="b"><img src="./images/EquityLinked_Note_Rates.png" alt="EquityLinked_Note_Rates" ></div>
+<p>The equities benefited from the increased volatility during the same period, and the worst case risk for the equity portion alone occurred later with an expected shortfall of -$760.</o>
+<div class="b"><img src="./images/Equity Linked basket only.png" alt="Equity Linked basket only" ></div>
+<p>When the two transactions are combined, the expected shortfall is -3,910.  The main risk source for this transaction are interest rate changes where the Canadian Treasury 5 yr rate on March 18, 2020 change by 13bp, and the 2 day change from the 16 to the 18th was 32bp..</p
+<div class="b"><img src="./images/Equity Linked Note.png" alt="Equity Linked Note" ></div>
 </p>
 </p>
 </div>
