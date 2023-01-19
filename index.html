@@ -163,6 +163,62 @@ The BIS review criticizes Nasdaq for not maintaining enough collateral through s
 The central clearing of standardised OTC derivatives is a pillar of the G20 Leader’s commitments to reform OTC derivatives markets in response to the systemic 2008 financial crisis.  Therefore, a significant error in collateral calculations by a central clearer such as Nasdaq is a magnet for regulatory attention.  This is more so as OTC derivatives clearing has grown, it has become increasingly concentrated in a few CCPs.  “The exposures of individual banks are also large, e.g. the notional amount of JPMorgan’s OTC derivatives exposures to CCPs is about $30 trillion.”  There is justification for the BIS to express concern over the high concentration across both banks and CCPs of OTC derivatives.
 <p>
 <b><font size="-1"><sup>*</sup>Clearing risks in OTC derivatives markets: the CCP-bank nexus, Umar Faruqui, Wenqian Huang, Előd Takáts</b></font>
+<h1 class="headline">Nordic Power Blowout and Risk</h1>
+<p>Einer Aas, a private trader and Nasdaq Clearing Member had bet on the German-Nordic spread narrowing. However, German prices spiked on CO2 cost and Nordics fell on rain.  On Monday, September 10, 2018 Mr. Aas received an intraday margin call but could not meet the requirement and was declared to be in default Sep 11 2018.
+
+<p>
+<img class="pic" src="./images/Waterfall.png" alt="Waterfall" align="left">
+<img class="picbig" src="./images/Waterfall.png" alt="Waterfall" align="right"><span class="in-line-header">Waterfall</span>  Within 48 hours of the default, Nasdaq Clearing closed-out the contracts consuming Eur 7M of Nasdaq Junior Capital and  Eur107m of clearing members funds (65% of the default fund). Since this is a significant loss to a clearing exchange and as RiskSnap provides HVaR software, we provide a risk analysis of the position using HVaR.  Nasdaq Clearing uses a proprietary SPAN&#174; model for their commodity margining.
+<p>
+<img class="pic" src="./images/NordicA.png" alt="Historical Data" align="left">
+<img class="picbig" src="./images/NordicA.png" alt="Historical Data" align="right"><span class="in-line-header">Data</span>  It should be noted that for this analysis data from the European Commodities Clearing (ECC)  (AG), the clearer for the European Commodities Exchange (EEX) AG, is used since ECC's data appeared to be more easily accessible.  An assumption is that similar insights can be obtained.  The front quarterly futures contracts of the ECC Nordic and German based power contracts are graphed above covering 3 years.   Clearly, there was a widening in the spread during the August - September period.  The closing prices on Nordic was 55.95 Sep 7th, and 51.5 Sep 10th; for German power, 61.06 and 62.56 resp.  On a contract size of 2209 MWH the variation margin was <font color="red">&#8364;-13145</font></p>
+<p>
+<img class="pic" src="./images/Span.png" alt="Span results" align="left">
+<img class="picbig" src="./images/Span.png" alt="Span results" align="right"><span class="in-line-header">SPAN&#174</span>  Both Nasdaq Clearing and ECC use SPAN&#174; for margining power futures.  Generally, 2-day parametric VaR is used for SPAN&#174; risk amounts.  Nasdaq Clearing uses parametric VaR (variance analysis) and a 2 day holding period (HP)for each contract separately with a correlation offset of 50%.  The ECC SPAN&#174; result was <font color="red">&#8364;10884.</font>, a shortfall of 17%.</p>  
+<p>
+<img class="pic" src="./images/NordicB.png" alt="HVaR" align="left">
+<img class="picbig" src="./images/NordicB.png" alt="HVaR" align="right"><span class="in-line-header">RiskSnap Historical Simulation</span>  RiskSnap’s calculations are based on a historical simulation of the portfolio, taking into account both HVaR and expected shortfall (the tail of the HVaR calculations) for a stress period defined as the 365 day period over which the largest loss is experienced, and also for the current period which has been arbitrarily set as 90 days.  Since historical simulation is used, long positions will have a different risk profile from short positions, unlike SPAN&#174;. 
+The same 99.2% confidence intervals as Nasdaq’s was used. According to regulatory requirements no weighting is applied to the stress period. For the current period EWMA was used with a lambda weighting of 0.98.  RiskSnap takes the worst case of the above 4 scenarios.   The result was<font color="red"> &#8364;11020</font>, similar to the EEC's SPAN&#174; margin.</p>
+<p>
+<img class="pic" src="./images/NordicC.png" alt="Concentration" align="left">
+<img class="picbig" src="./images/NordicC.png" alt="Concentration" align="right"><span class="in-line-header">Concentration</span>  Although regulatory and legal restrictions prevented Nasdaq from divulging the percentage of the market that the trader held, there was a big impact on variation margin indicating a large position.  In addition, a question and answer document by Nasdaq said that the position limit of 14,469,300 MWh was 50% of open interest for category German “other months”, and had been increased July 1st from 35% as at year-end 2017.  A 2 day holding period is commonly used for futures due to perceived high liquidity.  Some exchanges, however, when faced with concentration risk will increase the number of liquidation days. Using a 4 day HP, for example, would have increased margin to <font color="red"> &#8364;15580</font> or enough to cover the variation margin and possibly force a reduction of holdings leading up to the crisis. It is not known what value Nasdaq or ECC uses in these cases.</p>
+
+<p>
+<img class="pic" src="./images/NordicD.png" alt="Stress Period" align="left">
+<img class="picbig" src="./images/NordicD.png" alt="Stress Period" align="right"><span class="in-line-header">Frequency of Parameter Update</span>  On Sep 28th, according to RiskSnap’s HVaR model, the stress period had shifted significantly due to the inclusion of current events.  The risk was then <font color="red"> &#8364; 17,690</font>.  However, ECC’s SPAN&#174; value had remained unmoved.  Nasdaq updates the parameters of the margin methodology on a monthly basis, perhaps ECC has as of Sep 28th not yet updated the parameters.   RiskSnap searches for the stress period over the historical period for a portfolio of trades and does not require establishment of scenarios.</p
+
+
+<p>
+<table>
+  <tr>
+    <th>EUR</th>
+    <th>10-Sep-2018</th>
+    <th>28-Sep-2018</th>
+  </tr>
+  <tr>
+    <td>Variation Margin</td>
+    <td>-13143.6</td>
+    <td></td>
+  <tr>
+    <td>SPAN Margin (ECC)</td>
+    <td>10884</td>
+    <td>10407</td>
+  </tr>  
+  </tr>
+  <tr>
+    <td>RiskSnap Margin - 2 day HP</td>
+    <td>11020</td>
+    <td>17690</td>
+  </tr>
+  <tr>
+    <td>RiskSnap Margin - 4 day HP</td>
+    <td>15580</td>
+  </tr>
+  
+</table>
+
+<p>CONCLUSION:  Regardless of margins specified by exchanges or other authorities it is prudent to run your own risk calculations to prevent blow-outs.
+
 
 </p>
   </div>
@@ -171,18 +227,15 @@ The central clearing of standardised OTC derivatives is a pillar of the G20 Lead
 <!--    <h2>Column 1</h2>-->
     <p>
 <h3 class="three-col-header">Thoughts on Risk for the day</h3>
-   <p>Jan 16 2023.</p>
+   <p>Jan 19 2022.</p>
 <p><b>Canadian Interest Rates </b>
-  <p>Canadian interest rates closely track the US yields and have risen to yields not seen in the past 16 years.  The currency has been generally stable, although not helped by the recent fall in oil prices which is a key factor for this currency. (Charts are in right panel)</p>
+  <p>Canadian interest rates closely track the US yields and has risen to yields not seen in the past 16 years.  The currency has been generally stable, although not helped by the recent fall in oil prices which is a key factor for this currency. (Charts are in right panel)</p>
    <p><b>Equity Linked Notes</b>
    <p><img class="pic" src="./images/EquityLinkedNote_Links.png" alt="EquityLinkedNote_Links" align="left">
 <img class="picbig" src="./images/EquityLinkedNote_Links.png" alt="EquityLinkedNote_Links" align="right">
-<p>An Equity Linked note is reviewed under the Structured Products Tab.  These notes benefit from the higher interest rates.  Current model value of the 3% note is 96,600 or a discount of 3,400, the basket value is 10,300 for a net gain of 6,900.    </p>
+<p>An Equity Linked note is reviewed under the Structured Products Tab.  These notes benefited from higher interest rates at inception in that more funds were available to buy the options.  The note has increased in value as forward interest rates became lower. The average prices of the components increased with exception of TRP.  Current value of the note is 96,602 for a loss of 3398, and the call option is now worth 10,330 for a net value of $6,932. </p>
    <p><b>FRAs</b>  
- <p><img class="pic" src="./images/FRAs.png" alt="FRAs" align="left">
-<img class="picbig" src="./images/FRAs.png" alt="FRAs" align="right">
- <p>Forward interest rates (FRAs) provide estimates of future short term interest rates. 
-Generally, comparing to the prior month, forward rates are slightly higher.  
+ <p>Forward interest rates (FRAs) provide estimates of future short term interest rates. Canadian FRA's are falling earlier than a week ago falling below 3% in 2 years vs 3.5 years .  Charts are in the right column.
  The interest rate swap markets (37% of a $Quadrillion) use FRAs. FRA = [DF(t)/DF(t+1)-1] /day count fraction where DF = discount factor.
  </p>
  <p><b>Pivotal Moment?</b>  
@@ -267,77 +320,22 @@ Possibly the future is reflected in share price change since the three S&P500 ho
 <td>179%</td>
 <td>138%</td>
 </tr>
-<td>06-Jan-2023</td>
-<td>93.58</td>
-<td>95.66</td>
-<td>4796.82</td>
+<td>13-Jan-2023</td>
+<td>94.96</td>
+<td>98.82</td>
+<td>4992.24</td>
 <td></td>
 </tr>
 <tr>
 <td>Change</td>
-<td>-10.57%</td>
-<td>-13.69%</td>
-<td>-16.68%</td>
+<td>-9.25%</td>
+<td>-10.84%</td>
+<td>-13.28%</td>
 </tr>
 </table>
 <p>
 <p>
 <p>
-<h1 class="headline">Nordic Power Blowout and Risk</h1>
-<p>Einer Aas, a private trader and Nasdaq Clearing Member had bet on the German-Nordic spread narrowing. However, German prices spiked on CO2 cost and Nordics fell on rain.  On Monday, September 10, 2018 Mr. Aas received an intraday margin call but could not meet the requirement and was declared to be in default Sep 11 2018.
-
-<p>
-<img class="pic" src="./images/Waterfall.png" alt="Waterfall" align="left">
-<img class="picbig" src="./images/Waterfall.png" alt="Waterfall" align="right"><span class="in-line-header">Waterfall</span>  Within 48 hours of the default, Nasdaq Clearing closed-out the contracts consuming Eur 7M of Nasdaq Junior Capital and  Eur107m of clearing members funds (65% of the default fund). Since this is a significant loss to a clearing exchange and as RiskSnap provides HVaR software, we provide a risk analysis of the position using HVaR.  Nasdaq Clearing uses a proprietary SPAN&#174; model for their commodity margining.
-<p>
-<img class="pic" src="./images/NordicA.png" alt="Historical Data" align="left">
-<img class="picbig" src="./images/NordicA.png" alt="Historical Data" align="right"><span class="in-line-header">Data</span>  It should be noted that for this analysis data from the European Commodities Clearing (ECC)  (AG), the clearer for the European Commodities Exchange (EEX) AG, is used since ECC's data appeared to be more easily accessible.  An assumption is that similar insights can be obtained.  The front quarterly futures contracts of the ECC Nordic and German based power contracts are graphed above covering 3 years.   Clearly, there was a widening in the spread during the August - September period.  The closing prices on Nordic was 55.95 Sep 7th, and 51.5 Sep 10th; for German power, 61.06 and 62.56 resp.  On a contract size of 2209 MWH the variation margin was <font color="red">&#8364;-13145</font></p>
-<p>
-<img class="pic" src="./images/Span.png" alt="Span results" align="left">
-<img class="picbig" src="./images/Span.png" alt="Span results" align="right"><span class="in-line-header">SPAN&#174</span>  Both Nasdaq Clearing and ECC use SPAN&#174; for margining power futures.  Generally, 2-day parametric VaR is used for SPAN&#174; risk amounts.  Nasdaq Clearing uses parametric VaR (variance analysis) and a 2 day holding period (HP)for each contract separately with a correlation offset of 50%.  The ECC SPAN&#174; result was <font color="red">&#8364;10884.</font>, a shortfall of 17%.</p>  
-<p>
-<img class="pic" src="./images/NordicB.png" alt="HVaR" align="left">
-<img class="picbig" src="./images/NordicB.png" alt="HVaR" align="right"><span class="in-line-header">RiskSnap Historical Simulation</span>  RiskSnap’s calculations are based on a historical simulation of the portfolio, taking into account both HVaR and expected shortfall (the tail of the HVaR calculations) for a stress period defined as the 365 day period over which the largest loss is experienced, and also for the current period which has been arbitrarily set as 90 days.  Since historical simulation is used, long positions will have a different risk profile from short positions, unlike SPAN&#174;. 
-The same 99.2% confidence intervals as Nasdaq’s was used. According to regulatory requirements no weighting is applied to the stress period. For the current period EWMA was used with a lambda weighting of 0.98.  RiskSnap takes the worst case of the above 4 scenarios.   The result was<font color="red"> &#8364;11020</font>, similar to the EEC's SPAN&#174; margin.</p>
-<p>
-<img class="pic" src="./images/NordicC.png" alt="Concentration" align="left">
-<img class="picbig" src="./images/NordicC.png" alt="Concentration" align="right"><span class="in-line-header">Concentration</span>  Although regulatory and legal restrictions prevented Nasdaq from divulging the percentage of the market that the trader held, there was a big impact on variation margin indicating a large position.  In addition, a question and answer document by Nasdaq said that the position limit of 14,469,300 MWh was 50% of open interest for category German “other months”, and had been increased July 1st from 35% as at year-end 2017.  A 2 day holding period is commonly used for futures due to perceived high liquidity.  Some exchanges, however, when faced with concentration risk will increase the number of liquidation days. Using a 4 day HP, for example, would have increased margin to <font color="red"> &#8364;15580</font> or enough to cover the variation margin and possibly force a reduction of holdings leading up to the crisis. It is not known what value Nasdaq or ECC uses in these cases.</p>
-
-<p>
-<img class="pic" src="./images/NordicD.png" alt="Stress Period" align="left">
-<img class="picbig" src="./images/NordicD.png" alt="Stress Period" align="right"><span class="in-line-header">Frequency of Parameter Update</span>  On Sep 28th, according to RiskSnap’s HVaR model, the stress period had shifted significantly due to the inclusion of current events.  The risk was then <font color="red"> &#8364; 17,690</font>.  However, ECC’s SPAN&#174; value had remained unmoved.  Nasdaq updates the parameters of the margin methodology on a monthly basis, perhaps ECC has as of Sep 28th not yet updated the parameters.   RiskSnap searches for the stress period over the historical period for a portfolio of trades and does not require establishment of scenarios.</p
-
-
-<p>
-<table>
-  <tr>
-    <th>EUR</th>
-    <th>10-Sep-2018</th>
-    <th>28-Sep-2018</th>
-  </tr>
-  <tr>
-    <td>Variation Margin</td>
-    <td>-13143.6</td>
-    <td></td>
-  <tr>
-    <td>SPAN Margin (ECC)</td>
-    <td>10884</td>
-    <td>10407</td>
-  </tr>  
-  </tr>
-  <tr>
-    <td>RiskSnap Margin - 2 day HP</td>
-    <td>11020</td>
-    <td>17690</td>
-  </tr>
-  <tr>
-    <td>RiskSnap Margin - 4 day HP</td>
-    <td>15580</td>
-  </tr>
-  
-</table>
-
-<p>CONCLUSION:  Regardless of margins specified by exchanges or other authorities it is prudent to run your own risk calculations to prevent blow-outs.
 
 <h1 class="headline">Chiming in on the FANG barrier</h1>
 
@@ -474,9 +472,20 @@ Securities (a.k.a. "FANG barrier") was cited in FT Alphaville, July 20 by Dan Mc
 	<img class="picbig" src="./marketriskfactors/images/Yields_CHF.png" alt="Yields_CHF" align="right" >SNB
 	<img class="pic" src="./marketriskfactors/images/Spot_FX_CHFUSD.png" alt="Spot_FX_CHFUSD" >
 	<img class="picbig" src="./marketriskfactors/images/Spot_FX_CHFUSD.png" alt="Spot_FX_CHFUSD" align="right" >CHFUSD
-<p>Yield terms:  1 yr, 2 yr, 3 yr, 5 yr, 7 yr, 10 yr, 20 yr and 30 yr.
+<p><img class="pic" src="./marketriskfactors/images/Tenor Codes.png" alt="Tenor Codes" >
+	<img class="picbig" src="./marketriskfactors/images/Tenor Codes.png" alt="Tenor Codes" align="right" >Tenors
+	
 <p> 
 
+</div>
+<div class="column right frame1"> 
+   <h4>FRA's</h4>
+ <p>
+   <div class="a"><p>Six Month Forward Rates<p></div>
+<p><img class="pic" src="./marketriskfactors/images/FRAsNow.png" alt="FRAs Now" >
+	<img class="picbig" src="./marketriskfactors/images/FRAsNow.png" alt="FRAs Now" align="right" >Now
+	<img class="pic" src="./marketriskfactors/images/FRAsPrior.png" alt="FRAs Prior" >
+	<img class="picbig" src="./marketriskfactors/images/FRAsPrior.png" alt="FRAs Prior" align="right">L
 </div>
 <div class="column right frame1"> 
    <h4>Futures</h4>
@@ -609,17 +618,17 @@ Securities (a.k.a. "FANG barrier") was cited in FT Alphaville, July 20 by Dan Mc
   <th>Amount</th>
   <th>Type</th>
   <th>Industry</th>
-  <th>Market 06-Jan-2023</th>
+  <th>Market 13-Jan-2023</th>
   <th>Daily Gain/(loss)</th>
   <th>Current Antithetic</th>
   <th>HP</th>
   <th>Stress ES</th>
-  <th>Dec-30/Dec-29</th>
-  <th>Jan-03/Dec-30</th>
-  <th>Jan-04/Jan-03</th>
-  <th>Jan-05/Jan-04</th>
-  <th>Jan-06/Jan-05</th>
-  <th>Current Risk Jan-06</th>
+  <th>Jan-09/Jan-06</th>
+  <th>Jan-10/Jan-09</th>
+  <th>Jan-11/Jan-10</th>
+  <th>Jan-12/Jan-11</th>
+  <th>Jan-13/Jan-12</th>
+  <th>Current Risk Jan-13</th>
 </tr>
 <tr>
   <td>USTreasuryLT</td>
@@ -627,18 +636,18 @@ Securities (a.k.a. "FANG barrier") was cited in FT Alphaville, July 20 by Dan Mc
   <td>100,000</td>
   <td>Bond</td>
   <td></td>
-  <td>3.57%</td>
-  <td>(1,548)</td>
-  <td>16</td>
+  <td>3.51%</td>
+  <td>(1,690)</td>
+  <td></td>
   <td>1</td>
+  <td></td>
+  <td>16</td>
   <td>(16)</td>
   <td></td>
-  <td>(16)</td>
-  <td></td>
-  <td>(32)</td>
-  <td>32</td>
+  <td>(47)</td>
+  <td>63</td>
 <td>
-  <img id="myImg" src="./images/USTreasuryLT.png" alt = "&emsp; &emsp;&emsp;&emsp; USTreasuryLT     17-Dec-2044         Current Period HVaR:  (16),    Current Period ES:  (16),    Stress Period HVaR:  (16),    Stress Period ES:  (16),    Worst:  (16)" width = "50" height = "20">
+  <img id="myImg" src="./images/USTreasuryLT.png" alt = "&emsp; &emsp;&emsp;&emsp; USTreasuryLT     17-Dec-2044         Current Period HVaR:  ,    Current Period ES:  ,    Stress Period HVaR:  ,    Stress Period ES:  ,    Worst:  " width = "50" height = "20">
 <!-- The Modal -->
 <div id="myModal" class="modal">
   <span class="close">&times;</span>
@@ -664,7 +673,7 @@ span.onclick = function() {
     modal.style.display = "none";
 }
 </script>
-(16)
+
   </td>
 </tr>
 <tr>
@@ -673,18 +682,18 @@ span.onclick = function() {
   <td>100,000</td>
   <td>Bond</td>
   <td></td>
-  <td>4.79%</td>
-  <td>(143)</td>
-  <td>16</td>
+  <td>4.77%</td>
+  <td>(286)</td>
+  <td></td>
   <td>1</td>
+  <td></td>
+  <td>16</td>
   <td>(16)</td>
   <td></td>
-  <td>(16)</td>
-  <td></td>
-  <td>(32)</td>
-  <td>32</td>
+  <td>(48)</td>
+  <td>64</td>
 <td>
-  <img id="myImg1" src="./images/USTreasuryST.png" alt = "&emsp; &emsp;&emsp;&emsp; USTreasuryST     15-Sep-2023         Current Period HVaR:  (16),    Current Period ES:  (16),    Stress Period HVaR:  (16),    Stress Period ES:  (16),    Worst:  (16)" width = "50" height = "20">
+  <img id="myImg1" src="./images/USTreasuryST.png" alt = "&emsp; &emsp;&emsp;&emsp; USTreasuryST     15-Sep-2023         Current Period HVaR:  ,    Current Period ES:  ,    Stress Period HVaR:  ,    Stress Period ES:  ,    Worst:  " width = "50" height = "20">
 <!-- The Modal -->
 <div id="myModal1" class="modal">
   <span class="close">&times;</span>
@@ -710,7 +719,7 @@ span.onclick = function() {
     modal.style.display = "none";
 }
 </script>
-(16)
+
   </td>
 </tr>
 <tr>
@@ -720,17 +729,17 @@ span.onclick = function() {
   <td>Services</td>
   <td>Major Airlines</td>
   <td></td>
-  <td>1,399</td>
-  <td>(161)</td>
+  <td>1,702</td>
+  <td>(190)</td>
   <td>2</td>
-  <td>(376)</td>
-  <td>(97)</td>
-  <td>3</td>
-  <td>111</td>
-  <td>(66)</td>
-  <td>(32)</td>
+  <td>(483)</td>
+  <td>(30)</td>
+  <td>78</td>
+  <td>(62)</td>
+  <td>183</td>
+  <td>(212)</td>
 <td>
-  <img id="myImg2" src="./images/AAL.png" alt = "&emsp; &emsp;&emsp;&emsp; AAL     American Airlines Group Inc         Current Period HVaR:  (81),    Current Period ES:  (105),    Stress Period HVaR:  (263),    Stress Period ES:  (376),    Worst:  (376)" width = "50" height = "20">
+  <img id="myImg2" src="./images/AAL.png" alt = "&emsp; &emsp;&emsp;&emsp; AAL     American Airlines Group Inc         Current Period HVaR:  (125),    Current Period ES:  (129),    Stress Period HVaR:  (348),    Stress Period ES:  (483),    Worst:  (483)" width = "50" height = "20">
 <!-- The Modal -->
 <div id="myModal2" class="modal">
   <span class="close">&times;</span>
@@ -756,7 +765,7 @@ span.onclick = function() {
     modal.style.display = "none";
 }
 </script>
-(81)
+(125)
   </td>
 </tr>
 <tr>
@@ -766,17 +775,17 @@ span.onclick = function() {
   <td>Consumer Goods</td>
   <td>Electronic Equipment</td>
   <td></td>
-  <td>12,502</td>
-  <td>(1,991)</td>
+  <td>13,476</td>
+  <td>(1,388)</td>
   <td>2</td>
-  <td>(1,306)</td>
-  <td>(939)</td>
-  <td>(653)</td>
-  <td>863</td>
-  <td>(366)</td>
-  <td>809</td>
+  <td>(2,035)</td>
+  <td>(652)</td>
+  <td>74</td>
+  <td>291</td>
+  <td>(399)</td>
+  <td>2</td>
 <td>
-  <img id="myImg3" src="./images/AAPL.png" alt = "&emsp; &emsp;&emsp;&emsp; AAPL     Apple Inc.         Current Period HVaR:  (288),    Current Period ES:  (466),    Stress Period HVaR:  (808),    Stress Period ES:  (1,306),    Worst:  (1,306)" width = "50" height = "20">
+  <img id="myImg3" src="./images/AAPL.png" alt = "&emsp; &emsp;&emsp;&emsp; AAPL     Apple Inc.         Current Period HVaR:  (972),    Current Period ES:  (1,157),    Stress Period HVaR:  (1,516),    Stress Period ES:  (2,035),    Worst:  (2,035)" width = "50" height = "20">
 <!-- The Modal -->
 <div id="myModal3" class="modal">
   <span class="close">&times;</span>
@@ -802,7 +811,7 @@ span.onclick = function() {
     modal.style.display = "none";
 }
 </script>
-(288)
+(972)
   </td>
 </tr>
 <tr>
@@ -812,17 +821,17 @@ span.onclick = function() {
   <td>Services</td>
   <td>Catalog & Mail Order Houses</td>
   <td></td>
-  <td>8,312</td>
-  <td>(1,575)</td>
+  <td>9,812</td>
+  <td>(1,325)</td>
   <td>2</td>
-  <td>(827)</td>
-  <td>(785)</td>
-  <td>241</td>
-  <td>(345)</td>
-  <td>(170)</td>
-  <td>679</td>
+  <td>(1,420)</td>
+  <td>(430)</td>
+  <td>331</td>
+  <td>336</td>
+  <td>(714)</td>
+  <td>(58)</td>
 <td>
-  <img id="myImg4" src="./images/AMZN.png" alt = "&emsp; &emsp;&emsp;&emsp; AMZN     Amazon.com Inc.         Current Period HVaR:  (381),    Current Period ES:  (438),    Stress Period HVaR:  (477),    Stress Period ES:  (827),    Worst:  (827)" width = "50" height = "20">
+  <img id="myImg4" src="./images/AMZN.png" alt = "&emsp; &emsp;&emsp;&emsp; AMZN     Amazon.com Inc.         Current Period HVaR:  (915),    Current Period ES:  (981),    Stress Period HVaR:  (1,021),    Stress Period ES:  (1,420),    Worst:  (1,420)" width = "50" height = "20">
 <!-- The Modal -->
 <div id="myModal4" class="modal">
   <span class="close">&times;</span>
@@ -848,7 +857,7 @@ span.onclick = function() {
     modal.style.display = "none";
 }
 </script>
-(381)
+(915)
   </td>
 </tr>
 <tr>
@@ -858,17 +867,17 @@ span.onclick = function() {
   <td>Financial</td>
   <td>Credit Services</td>
   <td></td>
-  <td>14,643</td>
-  <td>(1,335)</td>
+  <td>15,576</td>
+  <td>(833)</td>
   <td>2</td>
-  <td>(2,426)</td>
-  <td>(759)</td>
-  <td>(86)</td>
-  <td>555</td>
-  <td>(969)</td>
-  <td>1,017</td>
+  <td>(3,065)</td>
+  <td>(531)</td>
+  <td>217</td>
+  <td>37</td>
+  <td>(134)</td>
+  <td>(145)</td>
 <td>
-  <img id="myImg5" src="./images/AXP.png" alt = "&emsp; &emsp;&emsp;&emsp; AXP     American Express Company         Current Period HVaR:  (243),    Current Period ES:  (359),    Stress Period HVaR:  (1,760),    Stress Period ES:  (2,426),    Worst:  (2,426)" width = "50" height = "20">
+  <img id="myImg5" src="./images/AXP.png" alt = "&emsp; &emsp;&emsp;&emsp; AXP     American Express Company         Current Period HVaR:  (798),    Current Period ES:  (918),    Stress Period HVaR:  (2,374),    Stress Period ES:  (3,065),    Worst:  (3,065)" width = "50" height = "20">
 <!-- The Modal -->
 <div id="myModal5" class="modal">
   <span class="close">&times;</span>
@@ -894,7 +903,7 @@ span.onclick = function() {
     modal.style.display = "none";
 }
 </script>
-(243)
+(798)
   </td>
 </tr>
 <tr>
@@ -904,17 +913,17 @@ span.onclick = function() {
   <td>Basic Materials</td>
   <td>Specialty Chemicals</td>
   <td></td>
-  <td>2,533</td>
-  <td>(380)</td>
+  <td>2,727</td>
+  <td>(219)</td>
   <td>2</td>
-  <td>(402)</td>
-  <td>(177)</td>
-  <td>22</td>
-  <td>85</td>
-  <td>(261)</td>
-  <td>317</td>
+  <td>(588)</td>
+  <td>(171)</td>
+  <td>39</td>
+  <td>29</td>
+  <td>(53)</td>
+  <td>(20)</td>
 <td>
-  <img id="myImg6" src="./images/AXTA.png" alt = "&emsp; &emsp;&emsp;&emsp; AXTA     Axalta Coating Systems Ltd         Current Period HVaR:  (14),    Current Period ES:  (29),    Stress Period HVaR:  (219),    Stress Period ES:  (402),    Worst:  (402)" width = "50" height = "20">
+  <img id="myImg6" src="./images/AXTA.png" alt = "&emsp; &emsp;&emsp;&emsp; AXTA     Axalta Coating Systems Ltd         Current Period HVaR:  (191),    Current Period ES:  (206),    Stress Period HVaR:  (400),    Stress Period ES:  (588),    Worst:  (588)" width = "50" height = "20">
 <!-- The Modal -->
 <div id="myModal6" class="modal">
   <span class="close">&times;</span>
@@ -940,7 +949,7 @@ span.onclick = function() {
     modal.style.display = "none";
 }
 </script>
-(14)
+(191)
   </td>
 </tr>
 <tr>
@@ -950,17 +959,17 @@ span.onclick = function() {
   <td>Financial</td>
   <td>Money Center Banks</td>
   <td></td>
-  <td>3,407</td>
-  <td>(320)</td>
+  <td>3,523</td>
+  <td>(276)</td>
   <td>2</td>
-  <td>(634)</td>
-  <td>(191)</td>
-  <td>53</td>
-  <td>31</td>
-  <td>(98)</td>
-  <td>56</td>
+  <td>(698)</td>
+  <td>(45)</td>
+  <td>32</td>
+  <td>3</td>
+  <td>(24)</td>
+  <td>(17)</td>
 <td>
-  <img id="myImg7" src="./images/BAC.png" alt = "&emsp; &emsp;&emsp;&emsp; BAC     Bank of America Corp         Current Period HVaR:  (149),    Current Period ES:  (164),    Stress Period HVaR:  (428),    Stress Period ES:  (634),    Worst:  (634)" width = "50" height = "20">
+  <img id="myImg7" src="./images/BAC.png" alt = "&emsp; &emsp;&emsp;&emsp; BAC     Bank of America Corp         Current Period HVaR:  (200),    Current Period ES:  (215),    Stress Period HVaR:  (487),    Stress Period ES:  (698),    Worst:  (698)" width = "50" height = "20">
 <!-- The Modal -->
 <div id="myModal7" class="modal">
   <span class="close">&times;</span>
@@ -986,7 +995,7 @@ span.onclick = function() {
     modal.style.display = "none";
 }
 </script>
-(149)
+(200)
   </td>
 </tr>
 <tr>
@@ -996,17 +1005,17 @@ span.onclick = function() {
   <td>Healthcare</td>
   <td>Medical Instruments & Supplies</td>
   <td></td>
-  <td>25,531</td>
-  <td>(2,004)</td>
+  <td>25,585</td>
+  <td>(1,416)</td>
   <td>2</td>
-  <td>(3,075)</td>
-  <td>(1,103)</td>
-  <td>258</td>
-  <td>(2)</td>
-  <td>(649)</td>
-  <td>948</td>
+  <td>(3,596)</td>
+  <td>(539)</td>
+  <td>400</td>
+  <td>(312)</td>
+  <td>(322)</td>
+  <td>216</td>
 <td>
-  <img id="myImg8" src="./images/BDX.png" alt = "&emsp; &emsp;&emsp;&emsp; BDX     Becton, Dickinson and Company         Current Period HVaR:  (549),    Current Period ES:  (726),    Stress Period HVaR:  (2,377),    Stress Period ES:  (3,075),    Worst:  (3,075)" width = "50" height = "20">
+  <img id="myImg8" src="./images/BDX.png" alt = "&emsp; &emsp;&emsp;&emsp; BDX     Becton, Dickinson and Company         Current Period HVaR:  (1,105),    Current Period ES:  (1,280),    Stress Period HVaR:  (2,907),    Stress Period ES:  (3,596),    Worst:  (3,596)" width = "50" height = "20">
 <!-- The Modal -->
 <div id="myModal8" class="modal">
   <span class="close">&times;</span>
@@ -1032,7 +1041,7 @@ span.onclick = function() {
     modal.style.display = "none";
 }
 </script>
-(549)
+(1,105)
   </td>
 </tr>
 <tr>
@@ -1042,17 +1051,17 @@ span.onclick = function() {
   <td>Financial</td>
   <td>Asset Management</td>
   <td></td>
-  <td>4,721</td>
-  <td>(436)</td>
+  <td>4,903</td>
+  <td>(335)</td>
   <td>2</td>
-  <td>(769)</td>
-  <td>(208)</td>
-  <td>106</td>
-  <td>46</td>
-  <td>(193)</td>
-  <td>133</td>
+  <td>(893)</td>
+  <td>(105)</td>
+  <td>(18)</td>
+  <td>42</td>
+  <td>(26)</td>
+  <td>(1)</td>
 <td>
-  <img id="myImg9" src="./images/BK.png" alt = "&emsp; &emsp;&emsp;&emsp; BK     Bank of New York Mellon Corp         Current Period HVaR:  (115),    Current Period ES:  (128),    Stress Period HVaR:  (439),    Stress Period ES:  (769),    Worst:  (769)" width = "50" height = "20">
+  <img id="myImg9" src="./images/BK.png" alt = "&emsp; &emsp;&emsp;&emsp; BK     Bank of New York Mellon Corp         Current Period HVaR:  (222),    Current Period ES:  (235),    Stress Period HVaR:  (555),    Stress Period ES:  (893),    Worst:  (893)" width = "50" height = "20">
 <!-- The Modal -->
 <div id="myModal9" class="modal">
   <span class="close">&times;</span>
@@ -1078,7 +1087,7 @@ span.onclick = function() {
     modal.style.display = "none";
 }
 </script>
-(115)
+(222)
   </td>
 </tr>
 <tr>
@@ -1088,17 +1097,17 @@ span.onclick = function() {
   <td>Financial</td>
   <td>Property & Casualty Insurance</td>
   <td></td>
-  <td>473,660</td>
-  <td>(38,397)</td>
+  <td>481,021</td>
+  <td>(26,441)</td>
   <td>2</td>
-  <td>(40,727)</td>
-  <td>(20,753)</td>
-  <td>1,069</td>
-  <td>8,129</td>
-  <td>(13,033)</td>
-  <td>15,040</td>
+  <td>(52,356)</td>
+  <td>(11,527)</td>
+  <td>1,388</td>
+  <td>4,837</td>
+  <td>(7,958)</td>
+  <td>1,708</td>
 <td>
-  <img id="myImg10" src="./images/BRK-A.png" alt = "&emsp; &emsp;&emsp;&emsp; BRK-A     Berkshire Hathaway Inc.         Current Period HVaR:  (9,548),    Current Period ES:  (11,416),    Stress Period HVaR:  (34,849),    Stress Period ES:  (40,727),    Worst:  (40,727)" width = "50" height = "20">
+  <img id="myImg10" src="./images/BRK-A.png" alt = "&emsp; &emsp;&emsp;&emsp; BRK-A     Berkshire Hathaway Inc.         Current Period HVaR:  (21,100),    Current Period ES:  (22,953),    Stress Period HVaR:  (46,490),    Stress Period ES:  (52,356),    Worst:  (52,356)" width = "50" height = "20">
 <!-- The Modal -->
 <div id="myModal10" class="modal">
   <span class="close">&times;</span>
@@ -1124,7 +1133,7 @@ span.onclick = function() {
     modal.style.display = "none";
 }
 </script>
-(9,548)
+(21,100)
   </td>
 </tr>
 <tr>
@@ -1134,17 +1143,17 @@ span.onclick = function() {
   <td>Financial</td>
   <td>CryptoCurrency</td>
   <td></td>
-  <td>16,837</td>
-  <td>(4,054)</td>
+  <td>19,910</td>
+  <td>(4,413)</td>
   <td>5</td>
-  <td>(8,296)</td>
-  <td>(4,469)</td>
-  <td>162</td>
-  <td>198</td>
-  <td>(452)</td>
-  <td>296</td>
+  <td>(10,046)</td>
+  <td>(313)</td>
+  <td>502</td>
+  <td>414</td>
+  <td>759</td>
+  <td>(2,360)</td>
 <td>
-  <img id="myImg11" src="./images/BTC-USD.png" alt = "&emsp; &emsp;&emsp;&emsp; BTC-USD     Bit Coin USD         Current Period HVaR:  (4,265),    Current Period ES:  (6,444),    Stress Period HVaR:  (4,287),    Stress Period ES:  (8,296),    Worst:  (8,296)" width = "50" height = "20">
+  <img id="myImg11" src="./images/BTC-USD.png" alt = "&emsp; &emsp;&emsp;&emsp; BTC-USD     Bit Coin USD         Current Period HVaR:  (5,263),    Current Period ES:  (7,801),    Stress Period HVaR:  (5,338),    Stress Period ES:  (10,046),    Worst:  (10,046)" width = "50" height = "20">
 <!-- The Modal -->
 <div id="myModal11" class="modal">
   <span class="close">&times;</span>
@@ -1170,7 +1179,7 @@ span.onclick = function() {
     modal.style.display = "none";
 }
 </script>
-(4,265)
+(5,263)
   </td>
 </tr>
 <tr>
@@ -1180,17 +1189,17 @@ span.onclick = function() {
   <td>Services</td>
   <td>CATV Systems</td>
   <td></td>
-  <td>36,143</td>
-  <td>(4,498)</td>
+  <td>38,847</td>
+  <td>(3,772)</td>
   <td>2</td>
-  <td>(5,705)</td>
-  <td>(4,510)</td>
-  <td>325</td>
-  <td>1,254</td>
-  <td>(792)</td>
-  <td>(250)</td>
+  <td>(6,913)</td>
+  <td>(877)</td>
+  <td>965</td>
+  <td>(555)</td>
+  <td>374</td>
+  <td>(1,023)</td>
 <td>
-  <img id="myImg12" src="./images/CHTR.png" alt = "&emsp; &emsp;&emsp;&emsp; CHTR     Charter Communications, Inc.         Current Period HVaR:  (3,973),    Current Period ES:  (7,774),    Stress Period HVaR:  (2,915),    Stress Period ES:  (5,705),    Worst:  (7,774)" width = "50" height = "20">
+  <img id="myImg12" src="./images/CHTR.png" alt = "&emsp; &emsp;&emsp;&emsp; CHTR     Charter Communications, Inc.         Current Period HVaR:  (5,089),    Current Period ES:  (9,073),    Stress Period HVaR:  (4,021),    Stress Period ES:  (6,913),    Worst:  (9,073)" width = "50" height = "20">
 <!-- The Modal -->
 <div id="myModal12" class="modal">
   <span class="close">&times;</span>
@@ -1216,7 +1225,7 @@ span.onclick = function() {
     modal.style.display = "none";
 }
 </script>
-(3,973)
+(5,089)
   </td>
 </tr>
 <tr>
@@ -1226,17 +1235,17 @@ span.onclick = function() {
   <td>Services</td>
   <td>Discount, Variety Stores</td>
   <td></td>
-  <td>45,019</td>
-  <td>(7,174)</td>
+  <td>48,525</td>
+  <td>(3,173)</td>
   <td>2</td>
-  <td>(968)</td>
-  <td>(3,347)</td>
-  <td>(425)</td>
-  <td>903</td>
-  <td>(1,311)</td>
-  <td>5,292</td>
+  <td>(5,647)</td>
+  <td>(4,588)</td>
+  <td>248</td>
+  <td>22</td>
+  <td>(655)</td>
+  <td>253</td>
 <td>
-  <img id="myImg13" src="./images/COST.png" alt = "&emsp; &emsp;&emsp;&emsp; COST     Costco Wholesale Corporation         Current Period HVaR:  1,112,    Current Period ES:  294,    Stress Period HVaR:  1,094,    Stress Period ES:  (968),    Worst:  (968)" width = "50" height = "20">
+  <img id="myImg13" src="./images/COST.png" alt = "&emsp; &emsp;&emsp;&emsp; COST     Costco Wholesale Corporation         Current Period HVaR:  (3,608),    Current Period ES:  (4,450),    Stress Period HVaR:  (3,555),    Stress Period ES:  (5,647),    Worst:  (5,647)" width = "50" height = "20">
 <!-- The Modal -->
 <div id="myModal13" class="modal">
   <span class="close">&times;</span>
@@ -1262,7 +1271,7 @@ span.onclick = function() {
     modal.style.display = "none";
 }
 </script>
-1,112
+(3,608)
   </td>
 </tr>
 <tr>
@@ -1272,17 +1281,17 @@ span.onclick = function() {
   <td>HealthCare</td>
   <td>Health Care Plans</td>
   <td></td>
-  <td>9,045</td>
-  <td>(539)</td>
+  <td>8,992</td>
+  <td>(365)</td>
   <td>2</td>
-  <td>(1,205)</td>
-  <td>(390)</td>
-  <td>(38)</td>
-  <td>(87)</td>
-  <td>(78)</td>
-  <td>375</td>
+  <td>(1,342)</td>
+  <td>(162)</td>
+  <td>(115)</td>
+  <td>(4)</td>
+  <td>50</td>
+  <td>78</td>
 <td>
-  <img id="myImg14" src="./images/CVS.png" alt = "&emsp; &emsp;&emsp;&emsp; CVS     CVS Health Corporation         Current Period HVaR:  (217),    Current Period ES:  (1,076),    Stress Period HVaR:  (596),    Stress Period ES:  (1,205),    Worst:  (1,205)" width = "50" height = "20">
+  <img id="myImg14" src="./images/CVS.png" alt = "&emsp; &emsp;&emsp;&emsp; CVS     CVS Health Corporation         Current Period HVaR:  (370),    Current Period ES:  (1,208),    Stress Period HVaR:  (745),    Stress Period ES:  (1,342),    Worst:  (1,342)" width = "50" height = "20">
 <!-- The Modal -->
 <div id="myModal14" class="modal">
   <span class="close">&times;</span>
@@ -1308,7 +1317,7 @@ span.onclick = function() {
     modal.style.display = "none";
 }
 </script>
-(217)
+(370)
   </td>
 </tr>
 <tr>
@@ -1318,17 +1327,17 @@ span.onclick = function() {
   <td>Services</td>
   <td>Major Airlines</td>
   <td></td>
-  <td>3,523</td>
-  <td>(410)</td>
+  <td>3,820</td>
+  <td>(314)</td>
   <td>2</td>
-  <td>(1,009)</td>
-  <td>(209)</td>
-  <td>(34)</td>
-  <td>276</td>
-  <td>(138)</td>
-  <td>(12)</td>
+  <td>(1,189)</td>
+  <td>(118)</td>
+  <td>178</td>
+  <td>(174)</td>
+  <td>179</td>
+  <td>(191)</td>
 <td>
-  <img id="myImg15" src="./images/DAL.png" alt = "&emsp; &emsp;&emsp;&emsp; DAL     Delta Air Lines, Inc.         Current Period HVaR:  (116),    Current Period ES:  (124),    Stress Period HVaR:  (659),    Stress Period ES:  (1,009),    Worst:  (1,009)" width = "50" height = "20">
+  <img id="myImg15" src="./images/DAL.png" alt = "&emsp; &emsp;&emsp;&emsp; DAL     Delta Air Lines, Inc.         Current Period HVaR:  (242),    Current Period ES:  (251),    Stress Period HVaR:  (819),    Stress Period ES:  (1,189),    Worst:  (1,189)" width = "50" height = "20">
 <!-- The Modal -->
 <div id="myModal15" class="modal">
   <span class="close">&times;</span>
@@ -1354,7 +1363,7 @@ span.onclick = function() {
     modal.style.display = "none";
 }
 </script>
-(116)
+(242)
   </td>
 </tr>
 <tr>
@@ -1364,17 +1373,17 @@ span.onclick = function() {
   <td>Industrial Goods</td>
   <td>Residential Construction</td>
   <td></td>
-  <td>9,231</td>
-  <td>(943)</td>
+  <td>9,496</td>
+  <td>(768)</td>
   <td>2</td>
-  <td>(1,907)</td>
-  <td>(764)</td>
-  <td>206</td>
-  <td>(88)</td>
-  <td>(46)</td>
-  <td>76</td>
+  <td>(2,117)</td>
+  <td>(171)</td>
+  <td>109</td>
+  <td>158</td>
+  <td>(291)</td>
+  <td>10</td>
 <td>
-  <img id="myImg16" src="./images/DHI.png" alt = "&emsp; &emsp;&emsp;&emsp; DHI     D.R. Horton, Inc.         Current Period HVaR:  (617),    Current Period ES:  (679),    Stress Period HVaR:  (1,203),    Stress Period ES:  (1,907),    Worst:  (1,907)" width = "50" height = "20">
+  <img id="myImg16" src="./images/DHI.png" alt = "&emsp; &emsp;&emsp;&emsp; DHI     D.R. Horton, Inc.         Current Period HVaR:  (802),    Current Period ES:  (864),    Stress Period HVaR:  (1,403),    Stress Period ES:  (2,117),    Worst:  (2,117)" width = "50" height = "20">
 <!-- The Modal -->
 <div id="myModal16" class="modal">
   <span class="close">&times;</span>
@@ -1400,7 +1409,7 @@ span.onclick = function() {
     modal.style.display = "none";
 }
 </script>
-(617)
+(802)
   </td>
 </tr>
 <tr>
@@ -1410,17 +1419,17 @@ span.onclick = function() {
   <td>Healthcare</td>
   <td>Specialized Health Services</td>
   <td></td>
-  <td>7,850</td>
-  <td>(937)</td>
+  <td>7,903</td>
+  <td>(557)</td>
   <td>2</td>
-  <td>(2,012)</td>
-  <td>(499)</td>
-  <td>23</td>
-  <td>289</td>
-  <td>(143)</td>
-  <td>153</td>
+  <td>(2,304)</td>
+  <td>(344)</td>
+  <td>144</td>
+  <td>(154)</td>
+  <td>(204)</td>
+  <td>214</td>
 <td>
-  <img id="myImg17" src="./images/DVA.png" alt = "&emsp; &emsp;&emsp;&emsp; DVA     Davita Inc         Current Period HVaR:  (177),    Current Period ES:  (2,824),    Stress Period HVaR:  (431),    Stress Period ES:  (2,012),    Worst:  (2,824)" width = "50" height = "20">
+  <img id="myImg17" src="./images/DVA.png" alt = "&emsp; &emsp;&emsp;&emsp; DVA     Davita Inc         Current Period HVaR:  (520),    Current Period ES:  (3,084),    Stress Period HVaR:  (769),    Stress Period ES:  (2,304),    Worst:  (3,084)" width = "50" height = "20">
 <!-- The Modal -->
 <div id="myModal17" class="modal">
   <span class="close">&times;</span>
@@ -1446,7 +1455,7 @@ span.onclick = function() {
     modal.style.display = "none";
 }
 </script>
-(177)
+(520)
   </td>
 </tr>
 <tr>
@@ -1456,17 +1465,17 @@ span.onclick = function() {
   <td>Services</td>
   <td> Education & Training Services</td>
   <td></td>
-  <td>60,298</td>
-  <td>(6,281)</td>
+  <td>63,465</td>
+  <td>(3,793)</td>
   <td>2</td>
-  <td>(11,092)</td>
-  <td>(3,951)</td>
-  <td>1,108</td>
-  <td>(1,223)</td>
-  <td>(1,148)</td>
-  <td>3,736</td>
+  <td>(13,956)</td>
+  <td>(2,518)</td>
+  <td>929</td>
+  <td>(488)</td>
+  <td>606</td>
+  <td>(1,182)</td>
 <td>
-  <img id="myImg18" src="./images/GHC.png" alt = "&emsp; &emsp;&emsp;&emsp; GHC     Graham Holdings Co         Current Period HVaR:  (1,478),    Current Period ES:  (2,913),    Stress Period HVaR:  (6,813),    Stress Period ES:  (11,092),    Worst:  (11,092)" width = "50" height = "20">
+  <img id="myImg18" src="./images/GHC.png" alt = "&emsp; &emsp;&emsp;&emsp; GHC     Graham Holdings Co         Current Period HVaR:  (4,131),    Current Period ES:  (5,597),    Stress Period HVaR:  (9,584),    Stress Period ES:  (13,956),    Worst:  (13,956)" width = "50" height = "20">
 <!-- The Modal -->
 <div id="myModal18" class="modal">
   <span class="close">&times;</span>
@@ -1492,7 +1501,7 @@ span.onclick = function() {
     modal.style.display = "none";
 }
 </script>
-(1,478)
+(4,131)
   </td>
 </tr>
 <tr>
@@ -1502,17 +1511,17 @@ span.onclick = function() {
   <td>Financial</td>
   <td>Life Insurance</td>
   <td></td>
-  <td>12,019</td>
-  <td>(1,010)</td>
+  <td>12,128</td>
+  <td>(553)</td>
   <td>2</td>
-  <td>(1,882)</td>
-  <td>(472)</td>
-  <td>(131)</td>
-  <td>194</td>
-  <td>(5)</td>
-  <td>384</td>
+  <td>(2,292)</td>
+  <td>(437)</td>
+  <td>170</td>
+  <td>(123)</td>
+  <td>(134)</td>
+  <td>81</td>
 <td>
-  <img id="myImg19" src="./images/GL.png" alt = "&emsp; &emsp;&emsp;&emsp; GL     Globe Life Inc.         Current Period HVaR:  (30),    Current Period ES:  (141),    Stress Period HVaR:  (1,584),    Stress Period ES:  (1,882),    Worst:  (1,882)" width = "50" height = "20">
+  <img id="myImg19" src="./images/GL.png" alt = "&emsp; &emsp;&emsp;&emsp; GL     Globe Life Inc.         Current Period HVaR:  (474),    Current Period ES:  (583),    Stress Period HVaR:  (1,999),    Stress Period ES:  (2,292),    Worst:  (2,292)" width = "50" height = "20">
 <!-- The Modal -->
 <div id="myModal19" class="modal">
   <span class="close">&times;</span>
@@ -1538,7 +1547,7 @@ span.onclick = function() {
     modal.style.display = "none";
 }
 </script>
-(30)
+(474)
   </td>
 </tr>
 <tr>
@@ -1548,17 +1557,17 @@ span.onclick = function() {
   <td>Consumer Good</td>
   <td>Auto Manufacturers - Major</td>
   <td></td>
-  <td>3,500</td>
-  <td>(385)</td>
+  <td>3,651</td>
+  <td>(229)</td>
   <td>2</td>
-  <td>(669)</td>
-  <td>(265)</td>
-  <td>24</td>
-  <td>91</td>
-  <td>(81)</td>
-  <td>78</td>
+  <td>(811)</td>
+  <td>(128)</td>
+  <td>159</td>
+  <td>(73)</td>
+  <td>(33)</td>
+  <td>(58)</td>
 <td>
-  <img id="myImg20" src="./images/GM.png" alt = "&emsp; &emsp;&emsp;&emsp; GM     General Motors Company         Current Period HVaR:  (153),    Current Period ES:  (200),    Stress Period HVaR:  (513),    Stress Period ES:  (669),    Worst:  (669)" width = "50" height = "20">
+  <img id="myImg20" src="./images/GM.png" alt = "&emsp; &emsp;&emsp;&emsp; GM     General Motors Company         Current Period HVaR:  (285),    Current Period ES:  (332),    Stress Period HVaR:  (653),    Stress Period ES:  (811),    Worst:  (811)" width = "50" height = "20">
 <!-- The Modal -->
 <div id="myModal20" class="modal">
   <span class="close">&times;</span>
@@ -1584,7 +1593,7 @@ span.onclick = function() {
     modal.style.display = "none";
 }
 </script>
-(153)
+(285)
   </td>
 </tr>
 <tr>
@@ -1594,17 +1603,17 @@ span.onclick = function() {
   <td>Consumer Cyclical</td>
   <td>Specialty Retail</td>
   <td></td>
-  <td>1,622</td>
-  <td>(278)</td>
+  <td>2,049</td>
+  <td>(305)</td>
   <td>2</td>
-  <td>(1,132)</td>
-  <td>(227)</td>
-  <td>(162)</td>
-  <td>194</td>
-  <td>(159)</td>
-  <td>187</td>
+  <td>(1,451)</td>
+  <td>(33)</td>
+  <td>180</td>
+  <td>(32)</td>
+  <td>25</td>
+  <td>(223)</td>
 <td>
-  <img id="myImg21" src="./images/GME.png" alt = "&emsp; &emsp;&emsp;&emsp; GME     GameStop Corp         Current Period HVaR:  (167),    Current Period ES:  (181),    Stress Period HVaR:  (847),    Stress Period ES:  (1,132),    Worst:  (1,132)" width = "50" height = "20">
+  <img id="myImg21" src="./images/GME.png" alt = "&emsp; &emsp;&emsp;&emsp; GME     GameStop Corp         Current Period HVaR:  (251),    Current Period ES:  (267),    Stress Period HVaR:  (1,097),    Stress Period ES:  (1,451),    Worst:  (1,451)" width = "50" height = "20">
 <!-- The Modal -->
 <div id="myModal21" class="modal">
   <span class="close">&times;</span>
@@ -1630,7 +1639,7 @@ span.onclick = function() {
     modal.style.display = "none";
 }
 </script>
-(167)
+(251)
   </td>
 </tr>
 <tr>
@@ -1640,17 +1649,17 @@ span.onclick = function() {
   <td>Technology</td>
   <td>Internet Information Products</td>
   <td></td>
-  <td>8,677</td>
-  <td>(1,113)</td>
+  <td>9,280</td>
+  <td>(961)</td>
   <td>2</td>
-  <td>(926)</td>
-  <td>(765)</td>
-  <td>128</td>
-  <td>(267)</td>
-  <td>(116)</td>
-  <td>460</td>
+  <td>(1,182)</td>
+  <td>(202)</td>
+  <td>60</td>
+  <td>341</td>
+  <td>(472)</td>
+  <td>50</td>
 <td>
-  <img id="myImg22" src="./images/GOOG.png" alt = "&emsp; &emsp;&emsp;&emsp; GOOG     Alphabet Inc.         Current Period HVaR:  (560),    Current Period ES:  (980),    Stress Period HVaR:  (552),    Stress Period ES:  (926),    Worst:  (980)" width = "50" height = "20">
+  <img id="myImg22" src="./images/GOOG.png" alt = "&emsp; &emsp;&emsp;&emsp; GOOG     Alphabet Inc.         Current Period HVaR:  (782),    Current Period ES:  (1,234),    Stress Period HVaR:  (788),    Stress Period ES:  (1,182),    Worst:  (1,234)" width = "50" height = "20">
 <!-- The Modal -->
 <div id="myModal22" class="modal">
   <span class="close">&times;</span>
@@ -1676,7 +1685,7 @@ span.onclick = function() {
     modal.style.display = "none";
 }
 </script>
-(560)
+(782)
   </td>
 </tr>
 <tr>
@@ -1686,17 +1695,17 @@ span.onclick = function() {
   <td>Technology</td>
   <td>Internet Information Products</td>
   <td></td>
-  <td></td>
-  <td></td>
+  <td>(15)</td>
+  <td>(17)</td>
   <td>2</td>
-  <td>(5)</td>
-  <td>(3)</td>
-  <td>3</td>
+  <td>(212)</td>
   <td></td>
   <td></td>
   <td></td>
+  <td></td>
+  <td>(35)</td>
 <td>
-  <img id="myImg23" src="./images/GOOG_CallS.png" alt = "&emsp; &emsp;&emsp;&emsp; GOOG     Alphabet Inc.         Current Period HVaR:  ,    Current Period ES:  ,    Stress Period HVaR:  ,    Stress Period ES:  (5),    Worst:  (5)" width = "50" height = "20">
+  <img id="myImg23" src="./images/GOOG_CallS.png" alt = "&emsp; &emsp;&emsp;&emsp; GOOG     Alphabet Inc.         Current Period HVaR:  (35),    Current Period ES:  (55),    Stress Period HVaR:  (38),    Stress Period ES:  (212),    Worst:  (212)" width = "50" height = "20">
 <!-- The Modal -->
 <div id="myModal23" class="modal">
   <span class="close">&times;</span>
@@ -1722,7 +1731,7 @@ span.onclick = function() {
     modal.style.display = "none";
 }
 </script>
-
+(35)
   </td>
 </tr>
 <tr>
@@ -1732,17 +1741,17 @@ span.onclick = function() {
   <td>Technology</td>
   <td>Internet Information Products</td>
   <td></td>
-  <td>(3,019)</td>
-  <td>(1,057)</td>
+  <td>(2,390)</td>
+  <td>(881)</td>
   <td>2</td>
-  <td>(929)</td>
-  <td>(764)</td>
-  <td>121</td>
-  <td>(261)</td>
-  <td>(89)</td>
-  <td>460</td>
+  <td>(1,208)</td>
+  <td>(199)</td>
+  <td>58</td>
+  <td>341</td>
+  <td>(473)</td>
+  <td>24</td>
 <td>
-  <img id="myImg24" src="./images/GOOG_PutS.png" alt = "&emsp; &emsp;&emsp;&emsp; GOOG     Alphabet Inc.         Current Period HVaR:  (533),    Current Period ES:  (763),    Stress Period HVaR:  (556),    Stress Period ES:  (929),    Worst:  (929)" width = "50" height = "20">
+  <img id="myImg24" src="./images/GOOG_PutS.png" alt = "&emsp; &emsp;&emsp;&emsp; GOOG     Alphabet Inc.         Current Period HVaR:  (782),    Current Period ES:  (1,040),    Stress Period HVaR:  (811),    Stress Period ES:  (1,208),    Worst:  (1,208)" width = "50" height = "20">
 <!-- The Modal -->
 <div id="myModal24" class="modal">
   <span class="close">&times;</span>
@@ -1768,7 +1777,7 @@ span.onclick = function() {
     modal.style.display = "none";
 }
 </script>
-(533)
+(782)
   </td>
 </tr>
 <tr>
@@ -1778,17 +1787,17 @@ span.onclick = function() {
   <td>Financial</td>
   <td>Investment Brokerage - National</td>
   <td></td>
-  <td>34,376</td>
-  <td>(3,043)</td>
+  <td>37,400</td>
+  <td>(2,299)</td>
   <td>2</td>
-  <td>(5,475)</td>
-  <td>(1,624)</td>
-  <td>391</td>
-  <td>(195)</td>
-  <td>(745)</td>
-  <td>1,152</td>
+  <td>(6,539)</td>
+  <td>(632)</td>
+  <td>598</td>
+  <td>358</td>
+  <td>(258)</td>
+  <td>(793)</td>
 <td>
-  <img id="myImg25" src="./images/GS.png" alt = "&emsp; &emsp;&emsp;&emsp; GS     Goldman Sachs Group Inc         Current Period HVaR:  (1,021),    Current Period ES:  (1,338),    Stress Period HVaR:  (4,833),    Stress Period ES:  (5,475),    Worst:  (5,475)" width = "50" height = "20">
+  <img id="myImg25" src="./images/GS.png" alt = "&emsp; &emsp;&emsp;&emsp; GS     Goldman Sachs Group Inc         Current Period HVaR:  (1,747),    Current Period ES:  (2,086),    Stress Period HVaR:  (5,849),    Stress Period ES:  (6,539),    Worst:  (6,539)" width = "50" height = "20">
 <!-- The Modal -->
 <div id="myModal25" class="modal">
   <span class="close">&times;</span>
@@ -1814,7 +1823,7 @@ span.onclick = function() {
     modal.style.display = "none";
 }
 </script>
-(1,021)
+(1,747)
   </td>
 </tr>
 <tr>
@@ -1824,17 +1833,17 @@ span.onclick = function() {
   <td>Technology</td>
   <td>Information Technology Services</td>
   <td></td>
-  <td>14,111</td>
-  <td>(1,085)</td>
+  <td>14,589</td>
+  <td>(725)</td>
   <td>2</td>
-  <td>(1,751)</td>
-  <td>(931)</td>
-  <td>91</td>
-  <td>51</td>
-  <td>(347)</td>
-  <td>562</td>
+  <td>(2,150)</td>
+  <td>(364)</td>
+  <td>542</td>
+  <td>(112)</td>
+  <td>(24)</td>
+  <td>(41)</td>
 <td>
-  <img id="myImg26" src="./images/IBM.png" alt = "&emsp; &emsp;&emsp;&emsp; IBM     International Business Machines Corp.         Current Period HVaR:  (575),    Current Period ES:  (687),    Stress Period HVaR:  (1,257),    Stress Period ES:  (1,751),    Worst:  (1,751)" width = "50" height = "20">
+  <img id="myImg26" src="./images/IBM.png" alt = "&emsp; &emsp;&emsp;&emsp; IBM     International Business Machines Corp.         Current Period HVaR:  (575),    Current Period ES:  (960),    Stress Period HVaR:  (1,648),    Stress Period ES:  (2,150),    Worst:  (2,150)" width = "50" height = "20">
 <!-- The Modal -->
 <div id="myModal26" class="modal">
   <span class="close">&times;</span>
@@ -1870,17 +1879,17 @@ span.onclick = function() {
   <td> Healthcare</td>
   <td>Drug Manufacturers - Major</td>
   <td></td>
-  <td>17,880</td>
-  <td>(736)</td>
+  <td>17,343</td>
+  <td>(515)</td>
   <td>2</td>
-  <td>(1,450)</td>
-  <td>(616)</td>
-  <td>214</td>
-  <td>51</td>
-  <td>(457)</td>
-  <td>388</td>
+  <td>(1,592)</td>
+  <td>(182)</td>
+  <td>(95)</td>
+  <td>12</td>
+  <td>(80)</td>
+  <td>128</td>
 <td>
-  <img id="myImg27" src="./images/JNJ.png" alt = "&emsp; &emsp;&emsp;&emsp; JNJ     Johnson & Johnson         Current Period HVaR:  (421),    Current Period ES:  (520),    Stress Period HVaR:  (703),    Stress Period ES:  (1,450),    Worst:  (1,450)" width = "50" height = "20">
+  <img id="myImg27" src="./images/JNJ.png" alt = "&emsp; &emsp;&emsp;&emsp; JNJ     Johnson & Johnson         Current Period HVaR:  (638),    Current Period ES:  (705),    Stress Period HVaR:  (874),    Stress Period ES:  (1,592),    Worst:  (1,592)" width = "50" height = "20">
 <!-- The Modal -->
 <div id="myModal27" class="modal">
   <span class="close">&times;</span>
@@ -1906,7 +1915,7 @@ span.onclick = function() {
     modal.style.display = "none";
 }
 </script>
-(421)
+(638)
   </td>
 </tr>
 <tr>
@@ -1916,17 +1925,17 @@ span.onclick = function() {
   <td>Consumer Goods</td>
   <td>Food - Major Diversified</td>
   <td></td>
-  <td>4,133</td>
-  <td>(354)</td>
+  <td>4,242</td>
+  <td>(182)</td>
   <td>2</td>
-  <td>(817)</td>
-  <td>(236)</td>
-  <td>10</td>
-  <td>53</td>
-  <td>(52)</td>
-  <td>158</td>
+  <td>(992)</td>
+  <td>(175)</td>
+  <td>16</td>
+  <td>13</td>
+  <td>(50)</td>
+  <td>19</td>
 <td>
-  <img id="myImg28" src="./images/KHC.png" alt = "&emsp; &emsp;&emsp;&emsp; KHC     Kraft Heinz Co         Current Period HVaR:  (67),    Current Period ES:  (142),    Stress Period HVaR:  (278),    Stress Period ES:  (817),    Worst:  (817)" width = "50" height = "20">
+  <img id="myImg28" src="./images/KHC.png" alt = "&emsp; &emsp;&emsp;&emsp; KHC     Kraft Heinz Co         Current Period HVaR:  (244),    Current Period ES:  (319),    Stress Period HVaR:  (454),    Stress Period ES:  (992),    Worst:  (992)" width = "50" height = "20">
 <!-- The Modal -->
 <div id="myModal28" class="modal">
   <span class="close">&times;</span>
@@ -1952,7 +1961,7 @@ span.onclick = function() {
     modal.style.display = "none";
 }
 </script>
-(67)
+(244)
   </td>
 </tr>
 <tr>
@@ -1962,17 +1971,17 @@ span.onclick = function() {
   <td>Basic Materials</td>
   <td>Oil & Gas Pipelines</td>
   <td></td>
-  <td>1,821</td>
-  <td>(142)</td>
+  <td>1,885</td>
+  <td>(90)</td>
   <td>2</td>
-  <td>(417)</td>
-  <td>(115)</td>
-  <td>(9)</td>
-  <td>40</td>
-  <td>(34)</td>
-  <td>53</td>
+  <td>(476)</td>
+  <td>(53)</td>
+  <td>4</td>
+  <td>1</td>
+  <td>9</td>
+  <td>(15)</td>
 <td>
-  <img id="myImg29" src="./images/KMI.png" alt = "&emsp; &emsp;&emsp;&emsp; KMI     Kinder Morgan         Current Period HVaR:  (65),    Current Period ES:  (72),    Stress Period HVaR:  (269),    Stress Period ES:  (417),    Worst:  (417)" width = "50" height = "20">
+  <img id="myImg29" src="./images/KMI.png" alt = "&emsp; &emsp;&emsp;&emsp; KMI     Kinder Morgan         Current Period HVaR:  (118),    Current Period ES:  (125),    Stress Period HVaR:  (326),    Stress Period ES:  (476),    Worst:  (476)" width = "50" height = "20">
 <!-- The Modal -->
 <div id="myModal29" class="modal">
   <span class="close">&times;</span>
@@ -1998,7 +2007,7 @@ span.onclick = function() {
     modal.style.display = "none";
 }
 </script>
-(65)
+(118)
   </td>
 </tr>
 <tr>
@@ -2008,17 +2017,17 @@ span.onclick = function() {
   <td>Consumer Good</td>
   <td>Beverages - Soft Drinks</td>
   <td></td>
-  <td>6,220</td>
-  <td>(416)</td>
+  <td>6,143</td>
+  <td>(239)</td>
   <td>2</td>
-  <td>(599)</td>
-  <td>(227)</td>
-  <td>(91)</td>
-  <td>90</td>
-  <td>(95)</td>
-  <td>268</td>
+  <td>(745)</td>
+  <td>(167)</td>
+  <td>(67)</td>
+  <td>51</td>
+  <td>(93)</td>
+  <td>113</td>
 <td>
-  <img id="myImg30" src="./images/KO.png" alt = "&emsp; &emsp;&emsp;&emsp; KO     The Coca-Cola Co         Current Period HVaR:  (55),    Current Period ES:  (109),    Stress Period HVaR:  (429),    Stress Period ES:  (599),    Worst:  (599)" width = "50" height = "20">
+  <img id="myImg30" src="./images/KO.png" alt = "&emsp; &emsp;&emsp;&emsp; KO     The Coca-Cola Co         Current Period HVaR:  (218),    Current Period ES:  (270),    Stress Period HVaR:  (580),    Stress Period ES:  (745),    Worst:  (745)" width = "50" height = "20">
 <!-- The Modal -->
 <div id="myModal30" class="modal">
   <span class="close">&times;</span>
@@ -2044,7 +2053,7 @@ span.onclick = function() {
     modal.style.display = "none";
 }
 </script>
-(55)
+(218)
   </td>
 </tr>
 <tr>
@@ -2054,17 +2063,17 @@ span.onclick = function() {
   <td>Services</td>
   <td>CATV Systems</td>
   <td></td>
-  <td>2,047</td>
-  <td>(227)</td>
+  <td>2,126</td>
+  <td>(172)</td>
   <td>2</td>
-  <td>(244)</td>
-  <td>(116)</td>
-  <td>120</td>
-  <td>(66)</td>
-  <td>(35)</td>
-  <td>24</td>
+  <td>(306)</td>
+  <td>(56)</td>
+  <td>(11)</td>
+  <td>86</td>
+  <td>(98)</td>
+  <td>21</td>
 <td>
-  <img id="myImg31" src="./images/LBTYA.png" alt = "&emsp; &emsp;&emsp;&emsp; LBTYA     Liberty Global plc - Class A Ordinary Shares         Current Period HVaR:  (73),    Current Period ES:  (78),    Stress Period HVaR:  (157),    Stress Period ES:  (244),    Worst:  (244)" width = "50" height = "20">
+  <img id="myImg31" src="./images/LBTYA.png" alt = "&emsp; &emsp;&emsp;&emsp; LBTYA     Liberty Global plc - Class A Ordinary Shares         Current Period HVaR:  (131),    Current Period ES:  (136),    Stress Period HVaR:  (218),    Stress Period ES:  (306),    Worst:  (306)" width = "50" height = "20">
 <!-- The Modal -->
 <div id="myModal31" class="modal">
   <span class="close">&times;</span>
@@ -2090,7 +2099,7 @@ span.onclick = function() {
     modal.style.display = "none";
 }
 </script>
-(73)
+(131)
   </td>
 </tr>
 <tr>
@@ -2100,17 +2109,17 @@ span.onclick = function() {
   <td></td>
   <td></td>
   <td></td>
-  <td>2,114</td>
-  <td>(230)</td>
+  <td>2,204</td>
+  <td>(174)</td>
   <td>2</td>
-  <td>(227)</td>
-  <td>(119)</td>
-  <td>136</td>
-  <td>(74)</td>
-  <td>(48)</td>
-  <td>30</td>
+  <td>(293)</td>
+  <td>(59)</td>
+  <td>4</td>
+  <td>72</td>
+  <td>(86)</td>
+  <td>7</td>
 <td>
-  <img id="myImg32" src="./images/LBTYK.png" alt = "&emsp; &emsp;&emsp;&emsp; LBTYK     Liberty Global plc - Class C Ordinary Shares         Current Period HVaR:  (75),    Current Period ES:  (85),    Stress Period HVaR:  (149),    Stress Period ES:  (227),    Worst:  (227)" width = "50" height = "20">
+  <img id="myImg32" src="./images/LBTYK.png" alt = "&emsp; &emsp;&emsp;&emsp; LBTYK     Liberty Global plc - Class C Ordinary Shares         Current Period HVaR:  (136),    Current Period ES:  (147),    Stress Period HVaR:  (213),    Stress Period ES:  (293),    Worst:  (293)" width = "50" height = "20">
 <!-- The Modal -->
 <div id="myModal32" class="modal">
   <span class="close">&times;</span>
@@ -2136,7 +2145,7 @@ span.onclick = function() {
     modal.style.display = "none";
 }
 </script>
-(75)
+(136)
   </td>
 </tr>
 <tr>
@@ -2146,17 +2155,17 @@ span.onclick = function() {
   <td>Industrial Goods</td>
   <td>Residential Construction</td>
   <td></td>
-  <td>9,378</td>
-  <td>(1,005)</td>
+  <td>9,882</td>
+  <td>(757)</td>
   <td>2</td>
-  <td>(1,898)</td>
-  <td>(745)</td>
-  <td>197</td>
-  <td>10</td>
+  <td>(2,235)</td>
+  <td>(261)</td>
+  <td>171</td>
+  <td>89</td>
   <td>(207)</td>
-  <td>227</td>
+  <td>(77)</td>
 <td>
-  <img id="myImg33" src="./images/LEN.png" alt = "&emsp; &emsp;&emsp;&emsp; LEN     Lennar Corporation         Current Period HVaR:  (517),    Current Period ES:  (765),    Stress Period HVaR:  (1,401),    Stress Period ES:  (1,898),    Worst:  (1,898)" width = "50" height = "20">
+  <img id="myImg33" src="./images/LEN.png" alt = "&emsp; &emsp;&emsp;&emsp; LEN     Lennar Corporation         Current Period HVaR:  (802),    Current Period ES:  (1,056),    Stress Period HVaR:  (1,722),    Stress Period ES:  (2,235),    Worst:  (2,235)" width = "50" height = "20">
 <!-- The Modal -->
 <div id="myModal33" class="modal">
   <span class="close">&times;</span>
@@ -2182,7 +2191,7 @@ span.onclick = function() {
     modal.style.display = "none";
 }
 </script>
-(517)
+(802)
   </td>
 </tr>
 <tr>
@@ -2192,17 +2201,17 @@ span.onclick = function() {
   <td></td>
   <td></td>
   <td></td>
-  <td>795</td>
-  <td>(141)</td>
+  <td>901</td>
+  <td>(114)</td>
   <td>2</td>
-  <td>(155)</td>
-  <td>(69)</td>
-  <td>40</td>
-  <td>(22)</td>
-  <td>(25)</td>
-  <td>39</td>
+  <td>(211)</td>
+  <td>(39)</td>
+  <td>13</td>
+  <td>(4)</td>
+  <td>14</td>
+  <td>(28)</td>
 <td>
-  <img id="myImg34" src="./images/LILA.png" alt = "&emsp; &emsp;&emsp;&emsp; LILA     Liberty Latin America Ltd         Current Period HVaR:  (38),    Current Period ES:  (82),    Stress Period HVaR:  (36),    Stress Period ES:  (155),    Worst:  (155)" width = "50" height = "20">
+  <img id="myImg34" src="./images/LILA.png" alt = "&emsp; &emsp;&emsp;&emsp; LILA     Liberty Latin America Ltd         Current Period HVaR:  (82),    Current Period ES:  (129),    Stress Period HVaR:  (79),    Stress Period ES:  (211),    Worst:  (211)" width = "50" height = "20">
 <!-- The Modal -->
 <div id="myModal34" class="modal">
   <span class="close">&times;</span>
@@ -2228,7 +2237,7 @@ span.onclick = function() {
     modal.style.display = "none";
 }
 </script>
-(38)
+(82)
   </td>
 </tr>
 <tr>
@@ -2238,17 +2247,17 @@ span.onclick = function() {
   <td>Services</td>
   <td>CATV Systems</td>
   <td></td>
-  <td>800</td>
-  <td>(137)</td>
+  <td>906</td>
+  <td>(113)</td>
   <td>2</td>
-  <td>(155)</td>
-  <td>(69)</td>
-  <td>39</td>
-  <td>(24)</td>
-  <td>(21)</td>
-  <td>35</td>
+  <td>(208)</td>
+  <td>(37)</td>
+  <td>7</td>
+  <td>3</td>
+  <td>21</td>
+  <td>(35)</td>
 <td>
-  <img id="myImg35" src="./images/LILAK.png" alt = "&emsp; &emsp;&emsp;&emsp; LILAK     Liberty Latin America Ltd         Current Period HVaR:  (40),    Current Period ES:  (87),    Stress Period HVaR:  (23),    Stress Period ES:  (155),    Worst:  (155)" width = "50" height = "20">
+  <img id="myImg35" src="./images/LILAK.png" alt = "&emsp; &emsp;&emsp;&emsp; LILAK     Liberty Latin America Ltd         Current Period HVaR:  (81),    Current Period ES:  (132),    Stress Period HVaR:  (63),    Stress Period ES:  (208),    Worst:  (208)" width = "50" height = "20">
 <!-- The Modal -->
 <div id="myModal35" class="modal">
   <span class="close">&times;</span>
@@ -2274,7 +2283,7 @@ span.onclick = function() {
     modal.style.display = "none";
 }
 </script>
-(40)
+(81)
   </td>
 </tr>
 <tr>
@@ -2284,17 +2293,17 @@ span.onclick = function() {
   <td>Services</td>
   <td>Home Improvement Services</td>
   <td></td>
-  <td>20,077</td>
-  <td>(1,289)</td>
+  <td>21,216</td>
+  <td>(1,325)</td>
   <td>2</td>
-  <td>(4,723)</td>
-  <td>(1,406)</td>
-  <td>(24)</td>
-  <td>346</td>
-  <td>(412)</td>
-  <td>117</td>
+  <td>(5,016)</td>
+  <td>(14)</td>
+  <td>267</td>
+  <td>693</td>
+  <td>(789)</td>
+  <td>(256)</td>
 <td>
-  <img id="myImg36" src="./images/LOW.png" alt = "&emsp; &emsp;&emsp;&emsp; LOW     Lowe's Corporation         Current Period HVaR:  (1,379),    Current Period ES:  (1,724),    Stress Period HVaR:  (2,788),    Stress Period ES:  (4,723),    Worst:  (4,723)" width = "50" height = "20">
+  <img id="myImg36" src="./images/LOW.png" alt = "&emsp; &emsp;&emsp;&emsp; LOW     Lowe's Corporation         Current Period HVaR:  (1,479),    Current Period ES:  (1,842),    Stress Period HVaR:  (2,973),    Stress Period ES:  (5,016),    Worst:  (5,016)" width = "50" height = "20">
 <!-- The Modal -->
 <div id="myModal36" class="modal">
   <span class="close">&times;</span>
@@ -2320,7 +2329,7 @@ span.onclick = function() {
     modal.style.display = "none";
 }
 </script>
-(1,379)
+(1,479)
   </td>
 </tr>
 <tr>
@@ -2330,17 +2339,17 @@ span.onclick = function() {
   <td></td>
   <td></td>
   <td></td>
-  <td>4,038</td>
-  <td>(270)</td>
+  <td>4,125</td>
+  <td>(189)</td>
   <td>2</td>
-  <td>(1,066)</td>
-  <td>(194)</td>
-  <td>41</td>
-  <td>43</td>
-  <td>(67)</td>
-  <td>55</td>
+  <td>(1,154)</td>
+  <td>(77)</td>
+  <td>(14)</td>
+  <td>70</td>
+  <td>(71)</td>
+  <td>12</td>
 <td>
-  <img id="myImg37" src="./images/LSXMA.png" alt = "&emsp; &emsp;&emsp;&emsp; LSXMA     Liberty Sirius XM Group         Current Period HVaR:  (122),    Current Period ES:  (143),    Stress Period HVaR:  (570),    Stress Period ES:  (1,066),    Worst:  (1,066)" width = "50" height = "20">
+  <img id="myImg37" src="./images/LSXMA.png" alt = "&emsp; &emsp;&emsp;&emsp; LSXMA     Liberty Sirius XM Group         Current Period HVaR:  (201),    Current Period ES:  (223),    Stress Period HVaR:  (654),    Stress Period ES:  (1,154),    Worst:  (1,154)" width = "50" height = "20">
 <!-- The Modal -->
 <div id="myModal37" class="modal">
   <span class="close">&times;</span>
@@ -2366,7 +2375,7 @@ span.onclick = function() {
     modal.style.display = "none";
 }
 </script>
-(122)
+(201)
   </td>
 </tr>
 <tr>
@@ -2376,17 +2385,17 @@ span.onclick = function() {
   <td>Services</td>
   <td>Regional Airline</td>
   <td></td>
-  <td>3,353</td>
-  <td>(432)</td>
+  <td>3,699</td>
+  <td>(240)</td>
   <td>2</td>
-  <td>(439)</td>
-  <td>(289)</td>
-  <td>(143)</td>
-  <td>287</td>
-  <td>(157)</td>
-  <td>218</td>
+  <td>(694)</td>
+  <td>(223)</td>
+  <td>78</td>
+  <td>(117)</td>
+  <td>167</td>
+  <td>(141)</td>
 <td>
-  <img id="myImg38" src="./images/LUV.png" alt = "&emsp; &emsp;&emsp;&emsp; LUV     Southwest Airlines Co         Current Period HVaR:  (84),    Current Period ES:  (91),    Stress Period HVaR:  (360),    Stress Period ES:  (439),    Worst:  (439)" width = "50" height = "20">
+  <img id="myImg38" src="./images/LUV.png" alt = "&emsp; &emsp;&emsp;&emsp; LUV     Southwest Airlines Co         Current Period HVaR:  (320),    Current Period ES:  (327),    Stress Period HVaR:  (611),    Stress Period ES:  (694),    Worst:  (694)" width = "50" height = "20">
 <!-- The Modal -->
 <div id="myModal38" class="modal">
   <span class="close">&times;</span>
@@ -2412,7 +2421,7 @@ span.onclick = function() {
     modal.style.display = "none";
 }
 </script>
-(84)
+(320)
   </td>
 </tr>
 <tr>
@@ -2422,17 +2431,17 @@ span.onclick = function() {
   <td>Financial</td>
   <td>Credit Services</td>
   <td></td>
-  <td>35,120</td>
-  <td>(4,289)</td>
+  <td>37,552</td>
+  <td>(2,415)</td>
   <td>2</td>
-  <td>(3,393)</td>
-  <td>(1,859)</td>
-  <td>(126)</td>
-  <td>1,270</td>
-  <td>(1,634)</td>
-  <td>2,716</td>
+  <td>(5,844)</td>
+  <td>(2,343)</td>
+  <td>(17)</td>
+  <td>930</td>
+  <td>(698)</td>
+  <td>(252)</td>
 <td>
-  <img id="myImg39" src="./images/MA.png" alt = "&emsp; &emsp;&emsp;&emsp; MA     Mastercard Inc         Current Period HVaR:  367,    Current Period ES:  264,    Stress Period HVaR:  (1,745),    Stress Period ES:  (3,393),    Worst:  (3,393)" width = "50" height = "20">
+  <img id="myImg39" src="./images/MA.png" alt = "&emsp; &emsp;&emsp;&emsp; MA     Mastercard Inc         Current Period HVaR:  (2,014),    Current Period ES:  (2,120),    Stress Period HVaR:  (4,161),    Stress Period ES:  (5,844),    Worst:  (5,844)" width = "50" height = "20">
 <!-- The Modal -->
 <div id="myModal39" class="modal">
   <span class="close">&times;</span>
@@ -2458,7 +2467,7 @@ span.onclick = function() {
     modal.style.display = "none";
 }
 </script>
-367
+(2,014)
   </td>
 </tr>
 <tr>
@@ -2468,17 +2477,17 @@ span.onclick = function() {
   <td>Services</td>
   <td>Business Services</td>
   <td></td>
-  <td>27,669</td>
-  <td>(4,113)</td>
+  <td>31,453</td>
+  <td>(2,492)</td>
   <td>2</td>
-  <td>(3,482)</td>
-  <td>(1,853)</td>
-  <td>(297)</td>
-  <td>1,336</td>
-  <td>(2,076)</td>
-  <td>2,800</td>
+  <td>(5,778)</td>
+  <td>(1,849)</td>
+  <td>854</td>
+  <td>463</td>
+  <td>(770)</td>
+  <td>(724)</td>
 <td>
-  <img id="myImg40" src="./images/MCO.png" alt = "&emsp; &emsp;&emsp;&emsp; MCO     Moody's Corporation         Current Period HVaR:  (89),    Current Period ES:  (299),    Stress Period HVaR:  (2,258),    Stress Period ES:  (3,482),    Worst:  (3,482)" width = "50" height = "20">
+  <img id="myImg40" src="./images/MCO.png" alt = "&emsp; &emsp;&emsp;&emsp; MCO     Moody's Corporation         Current Period HVaR:  (2,114),    Current Period ES:  (2,342),    Stress Period HVaR:  (4,449),    Stress Period ES:  (5,778),    Worst:  (5,778)" width = "50" height = "20">
 <!-- The Modal -->
 <div id="myModal40" class="modal">
   <span class="close">&times;</span>
@@ -2504,7 +2513,7 @@ span.onclick = function() {
     modal.style.display = "none";
 }
 </script>
-(89)
+(2,114)
   </td>
 </tr>
 <tr>
@@ -2514,17 +2523,17 @@ span.onclick = function() {
   <td>Consumer Goods</td>
   <td>Confectioners</td>
   <td></td>
-  <td>6,619</td>
-  <td>(488)</td>
+  <td>6,706</td>
+  <td>(249)</td>
   <td>2</td>
-  <td>(626)</td>
-  <td>(292)</td>
-  <td>(54)</td>
-  <td>123</td>
-  <td>(141)</td>
-  <td>328</td>
+  <td>(872)</td>
+  <td>(255)</td>
+  <td>7</td>
+  <td>26</td>
+  <td>(147)</td>
+  <td>114</td>
 <td>
-  <img id="myImg41" src="./images/MDLZ.png" alt = "&emsp; &emsp;&emsp;&emsp; MDLZ     Mondelez International Inc         Current Period HVaR:  (37),    Current Period ES:  (49),    Stress Period HVaR:  (202),    Stress Period ES:  (626),    Worst:  (626)" width = "50" height = "20">
+  <img id="myImg41" src="./images/MDLZ.png" alt = "&emsp; &emsp;&emsp;&emsp; MDLZ     Mondelez International Inc         Current Period HVaR:  (293),    Current Period ES:  (305),    Stress Period HVaR:  (454),    Stress Period ES:  (872),    Worst:  (872)" width = "50" height = "20">
 <!-- The Modal -->
 <div id="myModal41" class="modal">
   <span class="close">&times;</span>
@@ -2550,7 +2559,7 @@ span.onclick = function() {
     modal.style.display = "none";
 }
 </script>
-(37)
+(293)
   </td>
 </tr>
 <tr>
@@ -2560,17 +2569,17 @@ span.onclick = function() {
   <td>Technology</td>
   <td>Internet Information Products</td>
   <td></td>
-  <td>12,694</td>
-  <td>(1,819)</td>
+  <td>13,698</td>
+  <td>(1,442)</td>
   <td>2</td>
-  <td>(2,365)</td>
-  <td>(1,653)</td>
-  <td>562</td>
-  <td>(282)</td>
-  <td>(426)</td>
-  <td>458</td>
+  <td>(2,931)</td>
+  <td>(424)</td>
+  <td>453</td>
+  <td>(506)</td>
+  <td>505</td>
+  <td>(491)</td>
 <td>
-  <img id="myImg42" src="./images/META.png" alt = "&emsp; &emsp;&emsp;&emsp; META     Meta Platforms, Inc.         Current Period HVaR:  (1,341),    Current Period ES:  (3,932),    Stress Period HVaR:  (979),    Stress Period ES:  (2,365),    Worst:  (3,932)" width = "50" height = "20">
+  <img id="myImg42" src="./images/META.png" alt = "&emsp; &emsp;&emsp;&emsp; META     Meta Platforms, Inc.         Current Period HVaR:  (1,804),    Current Period ES:  (4,557),    Stress Period HVaR:  (1,473),    Stress Period ES:  (2,931),    Worst:  (4,557)" width = "50" height = "20">
 <!-- The Modal -->
 <div id="myModal42" class="modal">
   <span class="close">&times;</span>
@@ -2596,7 +2605,7 @@ span.onclick = function() {
     modal.style.display = "none";
 }
 </script>
-(1,341)
+(1,804)
   </td>
 </tr>
 <tr>
@@ -2606,17 +2615,17 @@ span.onclick = function() {
   <td>Technology</td>
   <td>Business Software & Services</td>
   <td></td>
-  <td>22,231</td>
-  <td>(2,565)</td>
+  <td>23,923</td>
+  <td>(2,329)</td>
   <td>2</td>
-  <td>(3,150)</td>
-  <td>(1,953)</td>
-  <td>(35)</td>
-  <td>(1,358)</td>
-  <td>582</td>
-  <td>1,295</td>
+  <td>(3,744)</td>
+  <td>(392)</td>
+  <td>234</td>
+  <td>681</td>
+  <td>(609)</td>
+  <td>(397)</td>
 <td>
-  <img id="myImg43" src="./images/MSFT.png" alt = "&emsp; &emsp;&emsp;&emsp; MSFT     Microsoft Corporation         Current Period HVaR:  (1,470),    Current Period ES:  (2,075),    Stress Period HVaR:  (1,827),    Stress Period ES:  (3,150),    Worst:  (3,150)" width = "50" height = "20">
+  <img id="myImg43" src="./images/MSFT.png" alt = "&emsp; &emsp;&emsp;&emsp; MSFT     Microsoft Corporation         Current Period HVaR:  (1,953),    Current Period ES:  (2,596),    Stress Period HVaR:  (2,337),    Stress Period ES:  (3,744),    Worst:  (3,744)" width = "50" height = "20">
 <!-- The Modal -->
 <div id="myModal43" class="modal">
   <span class="close">&times;</span>
@@ -2642,7 +2651,7 @@ span.onclick = function() {
     modal.style.display = "none";
 }
 </script>
-(1,470)
+(1,953)
   </td>
 </tr>
 <tr>
@@ -2652,17 +2661,17 @@ span.onclick = function() {
   <td>Financial</td>
   <td>Regional - Northeast Banks</td>
   <td></td>
-  <td>14,624</td>
-  <td>(1,449)</td>
+  <td>14,955</td>
+  <td>(751)</td>
   <td>2</td>
-  <td>(1,636)</td>
-  <td>(1,475)</td>
-  <td>(9)</td>
-  <td>229</td>
-  <td>(271)</td>
-  <td>571</td>
+  <td>(2,171)</td>
+  <td>(539)</td>
+  <td>(74)</td>
+  <td>258</td>
+  <td>(149)</td>
+  <td>(37)</td>
 <td>
-  <img id="myImg44" src="./images/MTB.png" alt = "&emsp; &emsp;&emsp;&emsp; MTB     M&T Bank Corporation         Current Period HVaR:  (956),    Current Period ES:  (2,333),    Stress Period HVaR:  (738),    Stress Period ES:  (1,636),    Worst:  (2,333)" width = "50" height = "20">
+  <img id="myImg44" src="./images/MTB.png" alt = "&emsp; &emsp;&emsp;&emsp; MTB     M&T Bank Corporation         Current Period HVaR:  (1,497),    Current Period ES:  (2,858),    Stress Period HVaR:  (1,291),    Stress Period ES:  (2,171),    Worst:  (2,858)" width = "50" height = "20">
 <!-- The Modal -->
 <div id="myModal44" class="modal">
   <span class="close">&times;</span>
@@ -2688,7 +2697,7 @@ span.onclick = function() {
     modal.style.display = "none";
 }
 </script>
-(956)
+(1,497)
   </td>
 </tr>
 <tr>
@@ -2698,17 +2707,17 @@ span.onclick = function() {
   <td>Technology</td>
   <td>Semiconductor-Memory Chips</td>
   <td></td>
-  <td>5,471</td>
-  <td>(870)</td>
+  <td>5,693</td>
+  <td>(576)</td>
   <td>2</td>
-  <td>(882)</td>
-  <td>(455)</td>
-  <td>51</td>
-  <td>453</td>
-  <td>(473)</td>
-  <td>193</td>
+  <td>(1,176)</td>
+  <td>(286)</td>
+  <td>112</td>
+  <td>(7)</td>
+  <td>(224)</td>
+  <td>116</td>
 <td>
-  <img id="myImg45" src="./images/MU.png" alt = "&emsp; &emsp;&emsp;&emsp; MU     Micron Technology,Inc.         Current Period HVaR:  (231),    Current Period ES:  (294),    Stress Period HVaR:  (583),    Stress Period ES:  (882),    Worst:  (882)" width = "50" height = "20">
+  <img id="myImg45" src="./images/MU.png" alt = "&emsp; &emsp;&emsp;&emsp; MU     Micron Technology,Inc.         Current Period HVaR:  (520),    Current Period ES:  (583),    Stress Period HVaR:  (876),    Stress Period ES:  (1,176),    Worst:  (1,176)" width = "50" height = "20">
 <!-- The Modal -->
 <div id="myModal45" class="modal">
   <span class="close">&times;</span>
@@ -2734,7 +2743,7 @@ span.onclick = function() {
     modal.style.display = "none";
 }
 </script>
-(231)
+(520)
   </td>
 </tr>
 <tr>
@@ -2744,17 +2753,17 @@ span.onclick = function() {
   <td>Services</td>
   <td>CATV Systems</td>
   <td></td>
-  <td>30,970</td>
-  <td>(4,817)</td>
+  <td>33,282</td>
+  <td>(4,167)</td>
   <td>2</td>
-  <td>(9,958)</td>
-  <td>(3,069)</td>
-  <td>5</td>
-  <td>1,891</td>
-  <td>(1,999)</td>
-  <td>722</td>
+  <td>(11,376)</td>
+  <td>(816)</td>
+  <td>1,627</td>
+  <td>(1,778)</td>
+  <td>416</td>
+  <td>(426)</td>
 <td>
-  <img id="myImg46" src="./images/NFLX.png" alt = "&emsp; &emsp;&emsp;&emsp; NFLX     Netflix, Inc.         Current Period HVaR:  (2,451),    Current Period ES:  (2,919),    Stress Period HVaR:  (2,563),    Stress Period ES:  (9,958),    Worst:  (9,958)" width = "50" height = "20">
+  <img id="myImg46" src="./images/NFLX.png" alt = "&emsp; &emsp;&emsp;&emsp; NFLX     Netflix, Inc.         Current Period HVaR:  (3,427),    Current Period ES:  (3,916),    Stress Period HVaR:  (3,560),    Stress Period ES:  (11,376),    Worst:  (11,376)" width = "50" height = "20">
 <!-- The Modal -->
 <div id="myModal46" class="modal">
   <span class="close">&times;</span>
@@ -2780,7 +2789,7 @@ span.onclick = function() {
     modal.style.display = "none";
 }
 </script>
-(2,451)
+(3,427)
   </td>
 </tr>
 <tr>
@@ -2790,17 +2799,17 @@ span.onclick = function() {
   <td>Industrial Goods</td>
   <td>Residential Construction</td>
   <td></td>
-  <td>463,953</td>
-  <td>(60,061)</td>
+  <td>499,224</td>
+  <td>(39,212)</td>
   <td>2</td>
-  <td>(90,145)</td>
-  <td>(28,849)</td>
-  <td>(3,121)</td>
-  <td>14,830</td>
-  <td>(16,628)</td>
-  <td>26,194</td>
+  <td>(116,968)</td>
+  <td>(21,970)</td>
+  <td>8,740</td>
+  <td>2,449</td>
+  <td>(9,478)</td>
+  <td>(3,091)</td>
 <td>
-  <img id="myImg47" src="./images/NVR.png" alt = "&emsp; &emsp;&emsp;&emsp; NVR     NVR, Inc.         Current Period HVaR:  (7,574),    Current Period ES:  (13,159),    Stress Period HVaR:  (55,570),    Stress Period ES:  (90,145),    Worst:  (90,145)" width = "50" height = "20">
+  <img id="myImg47" src="./images/NVR.png" alt = "&emsp; &emsp;&emsp;&emsp; NVR     NVR, Inc.         Current Period HVaR:  (30,923),    Current Period ES:  (36,714),    Stress Period HVaR:  (80,985),    Stress Period ES:  (116,968),    Worst:  (116,968)" width = "50" height = "20">
 <!-- The Modal -->
 <div id="myModal47" class="modal">
   <span class="close">&times;</span>
@@ -2826,7 +2835,7 @@ span.onclick = function() {
     modal.style.display = "none";
 }
 </script>
-(7,574)
+(30,923)
   </td>
 </tr>
 <tr>
@@ -2836,17 +2845,17 @@ span.onclick = function() {
   <td>Consumer Goods</td>
   <td> Personal Products</td>
   <td></td>
-  <td>15,034</td>
-  <td>(1,071)</td>
-  <td>2</td>
-  <td>(1,237)</td>
+  <td>15,088</td>
   <td>(555)</td>
-  <td>3</td>
-  <td>90</td>
-  <td>(352)</td>
-  <td>762</td>
+  <td>2</td>
+  <td>(1,709)</td>
+  <td>(499)</td>
+  <td>(24)</td>
+  <td>(148)</td>
+  <td>58</td>
+  <td>117</td>
 <td>
-  <img id="myImg48" src="./images/PG.png" alt = "&emsp; &emsp;&emsp;&emsp; PG     Procter & Gamble Co         Current Period HVaR:  (53),    Current Period ES:  (666),    Stress Period HVaR:  (912),    Stress Period ES:  (1,237),    Worst:  (1,237)" width = "50" height = "20">
+  <img id="myImg48" src="./images/PG.png" alt = "&emsp; &emsp;&emsp;&emsp; PG     Procter & Gamble Co         Current Period HVaR:  (549),    Current Period ES:  (1,151),    Stress Period HVaR:  (1,390),    Stress Period ES:  (1,709),    Worst:  (1,709)" width = "50" height = "20">
 <!-- The Modal -->
 <div id="myModal48" class="modal">
   <span class="close">&times;</span>
@@ -2872,7 +2881,7 @@ span.onclick = function() {
     modal.style.display = "none";
 }
 </script>
-(53)
+(549)
   </td>
 </tr>
 <tr>
@@ -2882,17 +2891,17 @@ span.onclick = function() {
   <td>Basic Materials</td>
   <td>Oil & Gas Refining & Marketing</td>
   <td></td>
-  <td>10,302</td>
-  <td>(1,291)</td>
+  <td>10,303</td>
+  <td>(887)</td>
   <td>2</td>
-  <td>(1,730)</td>
-  <td>(668)</td>
-  <td>(411)</td>
-  <td>386</td>
-  <td>365</td>
-  <td>33</td>
+  <td>(2,056)</td>
+  <td>(355)</td>
+  <td>(60)</td>
+  <td>40</td>
+  <td>217</td>
+  <td>(203)</td>
 <td>
-  <img id="myImg49" src="./images/PSX.png" alt = "&emsp; &emsp;&emsp;&emsp; PSX     Phillips 66         Current Period HVaR:  (296),    Current Period ES:  (669),    Stress Period HVaR:  (1,423),    Stress Period ES:  (1,730),    Worst:  (1,730)" width = "50" height = "20">
+  <img id="myImg49" src="./images/PSX.png" alt = "&emsp; &emsp;&emsp;&emsp; PSX     Phillips 66         Current Period HVaR:  (657),    Current Period ES:  (1,020),    Stress Period HVaR:  (1,757),    Stress Period ES:  (2,056),    Worst:  (2,056)" width = "50" height = "20">
 <!-- The Modal -->
 <div id="myModal49" class="modal">
   <span class="close">&times;</span>
@@ -2918,7 +2927,7 @@ span.onclick = function() {
     modal.style.display = "none";
 }
 </script>
-(296)
+(657)
   </td>
 </tr>
 <tr>
@@ -2928,17 +2937,17 @@ span.onclick = function() {
   <td>Services</td>
   <td>Restaurants</td>
   <td></td>
-  <td>6,439</td>
-  <td>(763)</td>
+  <td>6,635</td>
+  <td>(585)</td>
   <td>2</td>
-  <td>(1,342)</td>
-  <td>(255)</td>
-  <td>(23)</td>
-  <td>84</td>
-  <td>(134)</td>
-  <td>252</td>
+  <td>(1,538)</td>
+  <td>(179)</td>
+  <td>53</td>
+  <td>(66)</td>
+  <td>(16)</td>
+  <td>26</td>
 <td>
-  <img id="myImg50" src="./images/QSR.png" alt = "&emsp; &emsp;&emsp;&emsp; QSR     Restaurant Brands International Inc         Current Period HVaR:  (77),    Current Period ES:  (137),    Stress Period HVaR:  (733),    Stress Period ES:  (1,342),    Worst:  (1,342)" width = "50" height = "20">
+  <img id="myImg50" src="./images/QSR.png" alt = "&emsp; &emsp;&emsp;&emsp; QSR     Restaurant Brands International Inc         Current Period HVaR:  (257),    Current Period ES:  (318),    Stress Period HVaR:  (922),    Stress Period ES:  (1,538),    Worst:  (1,538)" width = "50" height = "20">
 <!-- The Modal -->
 <div id="myModal50" class="modal">
   <span class="close">&times;</span>
@@ -2964,7 +2973,7 @@ span.onclick = function() {
     modal.style.display = "none";
 }
 </script>
-(77)
+(257)
   </td>
 </tr>
 <tr>
@@ -2974,17 +2983,17 @@ span.onclick = function() {
   <td>Services</td>
   <td>Broadcasting - Radio</td>
   <td></td>
-  <td>583</td>
-  <td>(46)</td>
+  <td>596</td>
+  <td>(24)</td>
   <td>2</td>
-  <td>(80)</td>
+  <td>(102)</td>
   <td>(22)</td>
-  <td>(7)</td>
-  <td>17</td>
-  <td>(14)</td>
-  <td>26</td>
+  <td></td>
+  <td>12</td>
+  <td>(18)</td>
+  <td>6</td>
 <td>
-  <img id="myImg51" src="./images/SIRI.png" alt = "&emsp; &emsp;&emsp;&emsp; SIRI     Sirius XM Holdings Inc.         Current Period HVaR:  ,    Current Period ES:  (8),    Stress Period HVaR:  (43),    Stress Period ES:  (80),    Worst:  (80)" width = "50" height = "20">
+  <img id="myImg51" src="./images/SIRI.png" alt = "&emsp; &emsp;&emsp;&emsp; SIRI     Sirius XM Holdings Inc.         Current Period HVaR:  (23),    Current Period ES:  (31),    Stress Period HVaR:  (65),    Stress Period ES:  (102),    Worst:  (102)" width = "50" height = "20">
 <!-- The Modal -->
 <div id="myModal51" class="modal">
   <span class="close">&times;</span>
@@ -3010,7 +3019,7 @@ span.onclick = function() {
     modal.style.display = "none";
 }
 </script>
-
+(23)
   </td>
 </tr>
 <tr>
@@ -3020,17 +3029,17 @@ span.onclick = function() {
   <td>Healthcare</td>
   <td>Drug Manufacturers - Major</td>
   <td></td>
-  <td>4,775</td>
-  <td>(289)</td>
+  <td>4,927</td>
+  <td>(238)</td>
   <td>2</td>
-  <td>(395)</td>
-  <td>(376)</td>
-  <td>76</td>
-  <td>(114)</td>
-  <td>(95)</td>
-  <td>193</td>
+  <td>(461)</td>
+  <td>(58)</td>
+  <td>42</td>
+  <td>(54)</td>
+  <td>94</td>
+  <td>(85)</td>
 <td>
-  <img id="myImg52" src="./images/SNY.png" alt = "&emsp; &emsp;&emsp;&emsp; SNY     Sanofi SA (ADR)         Current Period HVaR:  (316),    Current Period ES:  (436),    Stress Period HVaR:  (166),    Stress Period ES:  (395),    Worst:  (436)" width = "50" height = "20">
+  <img id="myImg52" src="./images/SNY.png" alt = "&emsp; &emsp;&emsp;&emsp; SNY     Sanofi SA (ADR)         Current Period HVaR:  (378),    Current Period ES:  (499),    Stress Period HVaR:  (226),    Stress Period ES:  (461),    Worst:  (499)" width = "50" height = "20">
 <!-- The Modal -->
 <div id="myModal52" class="modal">
   <span class="close">&times;</span>
@@ -3056,7 +3065,7 @@ span.onclick = function() {
     modal.style.display = "none";
 }
 </script>
-(316)
+(378)
   </td>
 </tr>
 <tr>
@@ -3066,17 +3075,17 @@ span.onclick = function() {
   <td></td>
   <td></td>
   <td></td>
-  <td>3,208</td>
+  <td>3,212</td>
   <td>(120)</td>
   <td>2</td>
-  <td>(1,057)</td>
-  <td>(120)</td>
+  <td>(1,058)</td>
+  <td>2</td>
   <td>4</td>
-  <td>(5)</td>
-  <td>2</td>
-  <td>(1)</td>
+  <td>(3)</td>
+  <td>(4)</td>
+  <td>3</td>
 <td>
-  <img id="myImg53" src="./images/STOR.png" alt = "&emsp; &emsp;&emsp;&emsp; STOR     Store Capital Corp         Current Period HVaR:  (121),    Current Period ES:  (193),    Stress Period HVaR:  (430),    Stress Period ES:  (1,057),    Worst:  (1,057)" width = "50" height = "20">
+  <img id="myImg53" src="./images/STOR.png" alt = "&emsp; &emsp;&emsp;&emsp; STOR     Store Capital Corp         Current Period HVaR:  (118),    Current Period ES:  (190),    Stress Period HVaR:  (429),    Stress Period ES:  (1,058),    Worst:  (1,058)" width = "50" height = "20">
 <!-- The Modal -->
 <div id="myModal53" class="modal">
   <span class="close">&times;</span>
@@ -3102,7 +3111,7 @@ span.onclick = function() {
     modal.style.display = "none";
 }
 </script>
-(121)
+(118)
   </td>
 </tr>
 <tr>
@@ -3112,17 +3121,17 @@ span.onclick = function() {
   <td>Basic Materials</td>
   <td>Major Integrated Oil & Gas</td>
   <td></td>
-  <td>4,113</td>
-  <td>(393)</td>
+  <td>4,342</td>
+  <td>(254)</td>
   <td>2</td>
-  <td>(958)</td>
-  <td>(277)</td>
-  <td>(225)</td>
-  <td>88</td>
-  <td>283</td>
-  <td>4</td>
+  <td>(1,137)</td>
+  <td>(146)</td>
+  <td>(72)</td>
+  <td>139</td>
+  <td>73</td>
+  <td>(147)</td>
 <td>
-  <img id="myImg54" src="./images/SU.TO.png" alt = "&emsp; &emsp;&emsp;&emsp; SU.TO     Suncor Energy, Inc         Current Period HVaR:  (126),    Current Period ES:  (352),    Stress Period HVaR:  (784),    Stress Period ES:  (958),    Worst:  (958)" width = "50" height = "20">
+  <img id="myImg54" src="./images/SU.TO.png" alt = "&emsp; &emsp;&emsp;&emsp; SU.TO     Suncor Energy, Inc         Current Period HVaR:  (279),    Current Period ES:  (510),    Stress Period HVaR:  (957),    Stress Period ES:  (1,137),    Worst:  (1,137)" width = "50" height = "20">
 <!-- The Modal -->
 <div id="myModal54" class="modal">
   <span class="close">&times;</span>
@@ -3148,7 +3157,7 @@ span.onclick = function() {
     modal.style.display = "none";
 }
 </script>
-(126)
+(279)
   </td>
 </tr>
 <tr>
@@ -3158,17 +3167,17 @@ span.onclick = function() {
   <td>Financial</td>
   <td>Credit Services</td>
   <td></td>
-  <td>3,198</td>
-  <td>(394)</td>
+  <td>3,347</td>
+  <td>(284)</td>
   <td>2</td>
-  <td>(845)</td>
-  <td>(267)</td>
-  <td>(62)</td>
-  <td>162</td>
-  <td>(249)</td>
-  <td>268</td>
+  <td>(981)</td>
+  <td>(112)</td>
+  <td>73</td>
+  <td>45</td>
+  <td>(154)</td>
+  <td>26</td>
 <td>
-  <img id="myImg55" src="./images/SYF.png" alt = "&emsp; &emsp;&emsp;&emsp; SYF     Synchrony Financial         Current Period HVaR:  (149),    Current Period ES:  (237),    Stress Period HVaR:  (416),    Stress Period ES:  (845),    Worst:  (845)" width = "50" height = "20">
+  <img id="myImg55" src="./images/SYF.png" alt = "&emsp; &emsp;&emsp;&emsp; SYF     Synchrony Financial         Current Period HVaR:  (270),    Current Period ES:  (360),    Stress Period HVaR:  (543),    Stress Period ES:  (981),    Worst:  (981)" width = "50" height = "20">
 <!-- The Modal -->
 <div id="myModal55" class="modal">
   <span class="close">&times;</span>
@@ -3194,7 +3203,7 @@ span.onclick = function() {
     modal.style.display = "none";
 }
 </script>
-(149)
+(270)
   </td>
 </tr>
 <tr>
@@ -3204,17 +3213,17 @@ span.onclick = function() {
   <td>Healthcare</td>
   <td>Drug Manufacturers - Othe</td>
   <td></td>
-  <td>997</td>
-  <td>(175)</td>
+  <td>1,124</td>
+  <td>(105)</td>
   <td>2</td>
-  <td>(226)</td>
-  <td>(65)</td>
-  <td>55</td>
-  <td>8</td>
-  <td>(76)</td>
-  <td>81</td>
+  <td>(325)</td>
+  <td>(80)</td>
+  <td>13</td>
+  <td>7</td>
+  <td>7</td>
+  <td>(30)</td>
 <td>
-  <img id="myImg56" src="./images/TEVA.png" alt = "&emsp; &emsp;&emsp;&emsp; TEVA     Teva Pharmaceutical Industries Ltd (ADR)         Current Period HVaR:  3,    Current Period ES:  (41),    Stress Period HVaR:  (129),    Stress Period ES:  (226),    Worst:  (226)" width = "50" height = "20">
+  <img id="myImg56" src="./images/TEVA.png" alt = "&emsp; &emsp;&emsp;&emsp; TEVA     Teva Pharmaceutical Industries Ltd (ADR)         Current Period HVaR:  (80),    Current Period ES:  (126),    Stress Period HVaR:  (221),    Stress Period ES:  (325),    Worst:  (325)" width = "50" height = "20">
 <!-- The Modal -->
 <div id="myModal56" class="modal">
   <span class="close">&times;</span>
@@ -3240,7 +3249,7 @@ span.onclick = function() {
     modal.style.display = "none";
 }
 </script>
-3
+(80)
   </td>
 </tr>
 <tr>
@@ -3250,17 +3259,17 @@ span.onclick = function() {
   <td>Consumer Goods</td>
   <td>Auto Manufacturers - Major</td>
   <td></td>
-  <td>11,034</td>
-  <td>(1,716)</td>
+  <td>12,240</td>
+  <td>(1,426)</td>
   <td>2</td>
-  <td>(2,660)</td>
-  <td>(1,587)</td>
-  <td>(1,947)</td>
-  <td>2,520</td>
-  <td>(1,234)</td>
-  <td>806</td>
+  <td>(3,296)</td>
+  <td>(490)</td>
+  <td>(112)</td>
+  <td>674</td>
+  <td>(571)</td>
+  <td>(28)</td>
 <td>
-  <img id="myImg57" src="./images/TSLA.png" alt = "&emsp; &emsp;&emsp;&emsp; TSLA     Tesla, Inc.         Current Period HVaR:  (1,441),    Current Period ES:  (1,598),    Stress Period HVaR:  (1,819),    Stress Period ES:  (2,660),    Worst:  (2,660)" width = "50" height = "20">
+  <img id="myImg57" src="./images/TSLA.png" alt = "&emsp; &emsp;&emsp;&emsp; TSLA     Tesla, Inc.         Current Period HVaR:  (1,968),    Current Period ES:  (2,137),    Stress Period HVaR:  (2,386),    Stress Period ES:  (3,296),    Worst:  (3,296)" width = "50" height = "20">
 <!-- The Modal -->
 <div id="myModal57" class="modal">
   <span class="close">&times;</span>
@@ -3286,7 +3295,7 @@ span.onclick = function() {
     modal.style.display = "none";
 }
 </script>
-(1,441)
+(1,968)
   </td>
 </tr>
 <tr>
@@ -3296,17 +3305,17 @@ span.onclick = function() {
   <td>Services</td>
   <td>Major Airline</td>
   <td></td>
-  <td>4,124</td>
-  <td>(529)</td>
+  <td>5,165</td>
+  <td>(525)</td>
   <td>2</td>
-  <td>(1,396)</td>
-  <td>(350)</td>
-  <td>(64)</td>
-  <td>402</td>
-  <td>(153)</td>
-  <td>(86)</td>
+  <td>(1,880)</td>
+  <td>(152)</td>
+  <td>317</td>
+  <td>(80)</td>
+  <td>315</td>
+  <td>(511)</td>
 <td>
-  <img id="myImg58" src="./images/UAL.png" alt = "&emsp; &emsp;&emsp;&emsp; UAL     United Continental Holdings Inc         Current Period HVaR:  (251),    Current Period ES:  (388),    Stress Period HVaR:  (897),    Stress Period ES:  (1,396),    Worst:  (1,396)" width = "50" height = "20">
+  <img id="myImg58" src="./images/UAL.png" alt = "&emsp; &emsp;&emsp;&emsp; UAL     United Continental Holdings Inc         Current Period HVaR:  (362),    Current Period ES:  (487),    Stress Period HVaR:  (1,270),    Stress Period ES:  (1,880),    Worst:  (1,880)" width = "50" height = "20">
 <!-- The Modal -->
 <div id="myModal58" class="modal">
   <span class="close">&times;</span>
@@ -3332,7 +3341,7 @@ span.onclick = function() {
     modal.style.display = "none";
 }
 </script>
-(251)
+(362)
   </td>
 </tr>
 <tr>
@@ -3342,17 +3351,17 @@ span.onclick = function() {
   <td>Services</td>
   <td> Air Delivery & Freight Services</td>
   <td></td>
-  <td>17,384</td>
-  <td>(1,627)</td>
+  <td>18,215</td>
+  <td>(922)</td>
   <td>2</td>
-  <td>(763)</td>
-  <td>(1,054)</td>
-  <td>196</td>
-  <td>46</td>
-  <td>(699)</td>
-  <td>1,156</td>
+  <td>(1,512)</td>
+  <td>(739)</td>
+  <td>(399)</td>
+  <td>882</td>
+  <td>(391)</td>
+  <td>(97)</td>
 <td>
-  <img id="myImg59" src="./images/UPS.png" alt = "&emsp; &emsp;&emsp;&emsp; UPS     United Parcel Service, Inc.         Current Period HVaR:  (355),    Current Period ES:  (430),    Stress Period HVaR:  162,    Stress Period ES:  (763),    Worst:  (763)" width = "50" height = "20">
+  <img id="myImg59" src="./images/UPS.png" alt = "&emsp; &emsp;&emsp;&emsp; UPS     United Parcel Service, Inc.         Current Period HVaR:  (1,099),    Current Period ES:  (1,176),    Stress Period HVaR:  (571),    Stress Period ES:  (1,512),    Worst:  (1,512)" width = "50" height = "20">
 <!-- The Modal -->
 <div id="myModal59" class="modal">
   <span class="close">&times;</span>
@@ -3378,7 +3387,7 @@ span.onclick = function() {
     modal.style.display = "none";
 }
 </script>
-(355)
+(1,099)
   </td>
 </tr>
 <tr>
@@ -3388,17 +3397,17 @@ span.onclick = function() {
   <td>Financial</td>
   <td>Regional - Midwest Banks</td>
   <td></td>
-  <td>4,567</td>
-  <td>(327)</td>
+  <td>4,733</td>
+  <td>(240)</td>
   <td>2</td>
-  <td>(780)</td>
-  <td>(260)</td>
-  <td>140</td>
-  <td>43</td>
-  <td>(246)</td>
-  <td>136</td>
+  <td>(890)</td>
+  <td>(92)</td>
+  <td>7</td>
+  <td>54</td>
+  <td>2</td>
+  <td>(66)</td>
 <td>
-  <img id="myImg60" src="./images/USB.png" alt = "&emsp; &emsp;&emsp;&emsp; USB     U.S. Bancorp         Current Period HVaR:  (187),    Current Period ES:  (239),    Stress Period HVaR:  (675),    Stress Period ES:  (780),    Worst:  (780)" width = "50" height = "20">
+  <img id="myImg60" src="./images/USB.png" alt = "&emsp; &emsp;&emsp;&emsp; USB     U.S. Bancorp         Current Period HVaR:  (281),    Current Period ES:  (333),    Stress Period HVaR:  (782),    Stress Period ES:  (890),    Worst:  (890)" width = "50" height = "20">
 <!-- The Modal -->
 <div id="myModal60" class="modal">
   <span class="close">&times;</span>
@@ -3424,7 +3433,7 @@ span.onclick = function() {
     modal.style.display = "none";
 }
 </script>
-(187)
+(281)
   </td>
 </tr>
 <tr>
@@ -3434,17 +3443,17 @@ span.onclick = function() {
   <td> Financial</td>
   <td>Credit Services</td>
   <td></td>
-  <td>21,111</td>
-  <td>(2,307)</td>
+  <td>22,306</td>
+  <td>(1,397)</td>
   <td>2</td>
-  <td>(2,112)</td>
-  <td>(970)</td>
-  <td>(50)</td>
-  <td>769</td>
+  <td>(3,126)</td>
   <td>(941)</td>
-  <td>1,118</td>
+  <td>335</td>
+  <td>(212)</td>
+  <td>67</td>
+  <td>(210)</td>
 <td>
-  <img id="myImg61" src="./images/V.png" alt = "&emsp; &emsp;&emsp;&emsp; V     Visa Inc         Current Period HVaR:  (74),    Current Period ES:  (163),    Stress Period HVaR:  (1,311),    Stress Period ES:  (2,112),    Worst:  (2,112)" width = "50" height = "20">
+  <img id="myImg61" src="./images/V.png" alt = "&emsp; &emsp;&emsp;&emsp; V     Visa Inc         Current Period HVaR:  (1,035),    Current Period ES:  (1,125),    Stress Period HVaR:  (2,305),    Stress Period ES:  (3,126),    Worst:  (3,126)" width = "50" height = "20">
 <!-- The Modal -->
 <div id="myModal61" class="modal">
   <span class="close">&times;</span>
@@ -3470,7 +3479,7 @@ span.onclick = function() {
     modal.style.display = "none";
 }
 </script>
-(74)
+(1,035)
   </td>
 </tr>
 <tr>
@@ -3480,17 +3489,17 @@ span.onclick = function() {
   <td>Technology</td>
   <td>Telecom Services - Domestic</td>
   <td></td>
-  <td>4,170</td>
-  <td>(253)</td>
+  <td>4,186</td>
+  <td>(182)</td>
   <td>2</td>
-  <td>(289)</td>
-  <td>(234)</td>
-  <td>98</td>
-  <td>36</td>
-  <td>(66)</td>
-  <td>(15)</td>
+  <td>(345)</td>
+  <td>(64)</td>
+  <td>79</td>
+  <td>(186)</td>
+  <td>197</td>
+  <td>(13)</td>
 <td>
-  <img id="myImg62" src="./images/VZ.png" alt = "&emsp; &emsp;&emsp;&emsp; VZ     Verizon Communications Inc.         Current Period HVaR:  (183),    Current Period ES:  (332),    Stress Period HVaR:  (194),    Stress Period ES:  (289),    Worst:  (332)" width = "50" height = "20">
+  <img id="myImg62" src="./images/VZ.png" alt = "&emsp; &emsp;&emsp;&emsp; VZ     Verizon Communications Inc.         Current Period HVaR:  (170),    Current Period ES:  (249),    Stress Period HVaR:  (261),    Stress Period ES:  (345),    Worst:  (345)" width = "50" height = "20">
 <!-- The Modal -->
 <div id="myModal62" class="modal">
   <span class="close">&times;</span>
@@ -3516,7 +3525,7 @@ span.onclick = function() {
     modal.style.display = "none";
 }
 </script>
-(183)
+(170)
   </td>
 </tr>
 <tr>
@@ -3526,17 +3535,17 @@ span.onclick = function() {
   <td>Financial</td>
   <td>Money Center Banks</td>
   <td></td>
-  <td>4,242</td>
-  <td>(316)</td>
+  <td>4,422</td>
+  <td>(268)</td>
   <td>2</td>
-  <td>(824)</td>
-  <td>(264)</td>
-  <td>68</td>
-  <td>46</td>
-  <td>(152)</td>
-  <td>84</td>
+  <td>(907)</td>
+  <td>(51)</td>
+  <td>(4)</td>
+  <td>56</td>
+  <td>(41)</td>
+  <td>(21)</td>
 <td>
-  <img id="myImg63" src="./images/WFC.png" alt = "&emsp; &emsp;&emsp;&emsp; WFC     Wells Fargo & Co         Current Period HVaR:  (218),    Current Period ES:  (240),    Stress Period HVaR:  (618),    Stress Period ES:  (824),    Worst:  (824)" width = "50" height = "20">
+  <img id="myImg63" src="./images/WFC.png" alt = "&emsp; &emsp;&emsp;&emsp; WFC     Wells Fargo & Co         Current Period HVaR:  (278),    Current Period ES:  (301),    Stress Period HVaR:  (694),    Stress Period ES:  (907),    Worst:  (907)" width = "50" height = "20">
 <!-- The Modal -->
 <div id="myModal63" class="modal">
   <span class="close">&times;</span>
@@ -3562,7 +3571,7 @@ span.onclick = function() {
     modal.style.display = "none";
 }
 </script>
-(218)
+(278)
   </td>
 </tr>
 <tr>
@@ -3572,17 +3581,17 @@ span.onclick = function() {
   <td>Services</td>
   <td>Discount, Variety Stores</td>
   <td></td>
-  <td>14,327</td>
-  <td>(1,435)</td>
+  <td>14,529</td>
+  <td>(925)</td>
   <td>2</td>
-  <td>(1,345)</td>
-  <td>(687)</td>
-  <td>249</td>
-  <td>(233)</td>
-  <td>(89)</td>
-  <td>550</td>
+  <td>(1,820)</td>
+  <td>(486)</td>
+  <td>(14)</td>
+  <td>187</td>
+  <td>(358)</td>
+  <td>185</td>
 <td>
-  <img id="myImg64" src="./images/WMT.png" alt = "&emsp; &emsp;&emsp;&emsp; WMT     Walmart Inc         Current Period HVaR:  (210),    Current Period ES:  (913),    Stress Period HVaR:  (566),    Stress Period ES:  (1,345),    Worst:  (1,345)" width = "50" height = "20">
+  <img id="myImg64" src="./images/WMT.png" alt = "&emsp; &emsp;&emsp;&emsp; WMT     Walmart Inc         Current Period HVaR:  (697),    Current Period ES:  (1,390),    Stress Period HVaR:  (1,051),    Stress Period ES:  (1,820),    Worst:  (1,820)" width = "50" height = "20">
 <!-- The Modal -->
 <div id="myModal64" class="modal">
   <span class="close">&times;</span>
@@ -3608,7 +3617,7 @@ span.onclick = function() {
     modal.style.display = "none";
 }
 </script>
-(210)
+(697)
   </td>
 </tr>
 <tr>
@@ -3618,17 +3627,17 @@ span.onclick = function() {
   <td>Basic Materials</td>
   <td>Major Integrated Oil & Gas</td>
   <td></td>
-  <td>10,921</td>
-  <td>(865)</td>
+  <td>11,315</td>
+  <td>(691)</td>
   <td>2</td>
-  <td>(1,604)</td>
-  <td>(667)</td>
-  <td>(512)</td>
-  <td>579</td>
-  <td>277</td>
-  <td>(158)</td>
+  <td>(1,833)</td>
+  <td>(174)</td>
+  <td>220</td>
+  <td>(56)</td>
+  <td>70</td>
+  <td>(260)</td>
 <td>
-  <img id="myImg65" src="./images/XOM.png" alt = "&emsp; &emsp;&emsp;&emsp; XOM     Exxon Mobile Corporation         Current Period HVaR:  (480),    Current Period ES:  (600),    Stress Period HVaR:  (1,340),    Stress Period ES:  (1,604),    Worst:  (1,604)" width = "50" height = "20">
+  <img id="myImg65" src="./images/XOM.png" alt = "&emsp; &emsp;&emsp;&emsp; XOM     Exxon Mobile Corporation         Current Period HVaR:  (680),    Current Period ES:  (802),    Stress Period HVaR:  (1,563),    Stress Period ES:  (1,833),    Worst:  (1,833)" width = "50" height = "20">
 <!-- The Modal -->
 <div id="myModal65" class="modal">
   <span class="close">&times;</span>
@@ -3654,7 +3663,7 @@ span.onclick = function() {
     modal.style.display = "none";
 }
 </script>
-(480)
+(680)
   </td>
 </tr>
 <tr>
@@ -3664,17 +3673,17 @@ span.onclick = function() {
   <td>S&P 500 index</td>
   <td>500 large NYSE/NASDAQ co.</td>
   <td></td>
-  <td>380,810</td>
-  <td>(29,151)</td>
+  <td>399,909</td>
+  <td>(17,257)</td>
   <td>2</td>
-  <td>(43,321)</td>
-  <td>(18,165)</td>
-  <td>(2,116)</td>
-  <td>6,158</td>
-  <td>(10,169)</td>
-  <td>18,271</td>
+  <td>(57,107)</td>
+  <td>(12,270)</td>
+  <td>3,649</td>
+  <td>3,091</td>
+  <td>(5,232)</td>
+  <td>(1,982)</td>
 <td>
-  <img id="myImg66" src="./images/^GSPC.png" alt = "&emsp; &emsp;&emsp;&emsp; ^GSPC     S&P 500 index         Current Period HVaR:  (6,022),    Current Period ES:  (11,177),    Stress Period HVaR:  (24,764),    Stress Period ES:  (43,321),    Worst:  (43,321)" width = "50" height = "20">
+  <img id="myImg66" src="./images/^GSPC.png" alt = "&emsp; &emsp;&emsp;&emsp; ^GSPC     S&P 500 index         Current Period HVaR:  (18,766),    Current Period ES:  (24,045),    Stress Period HVaR:  (38,054),    Stress Period ES:  (57,107),    Worst:  (57,107)" width = "50" height = "20">
 <!-- The Modal -->
 <div id="myModal66" class="modal">
   <span class="close">&times;</span>
@@ -3700,7 +3709,7 @@ span.onclick = function() {
     modal.style.display = "none";
 }
 </script>
-(6,022)
+(18,766)
   </td>
 </tr>
 <tr>
@@ -3709,18 +3718,18 @@ span.onclick = function() {
   <td>100 Units</td>
   <td>Futures</td>
   <td></td>
-  <td></td>
-  <td>(61,000)</td>
-  <td>(77,597)</td>
+  <td>80.11</td>
+  <td>19,110</td>
+  <td>(3,735)</td>
   <td>1</td>
-  <td>47,500</td>
+  <td>(28,716)</td>
+  <td>(70,054)</td>
   <td></td>
   <td></td>
   <td></td>
-  <td></td>
-  <td>70,054</td>
+  <td>(4,279)</td>
 <td>
-  <img id="myImg67" src="./images/CL.png" alt = "&emsp; &emsp;&emsp;&emsp; CL              Current Period HVaR:  70,054,    Current Period ES:  69,934,    Stress Period HVaR:  59,824,    Stress Period ES:  47,500,    Worst:  47,500" width = "50" height = "20">
+  <img id="myImg67" src="./images/CL.png" alt = "&emsp; &emsp;&emsp;&emsp; CL              Current Period HVaR:  (4,279),    Current Period ES:  (4,408),    Stress Period HVaR:  (15,382),    Stress Period ES:  (28,716),    Worst:  (28,716)" width = "50" height = "20">
 <!-- The Modal -->
 <div id="myModal67" class="modal">
   <span class="close">&times;</span>
@@ -3746,7 +3755,7 @@ span.onclick = function() {
     modal.style.display = "none";
 }
 </script>
-70,054
+(4,279)
   </td>
 </tr>
 <tr>
@@ -3755,18 +3764,18 @@ span.onclick = function() {
   <td>100 Units</td>
   <td>Futures</td>
   <td></td>
-  <td></td>
-  <td>(82,320)</td>
-  <td>(129,557)</td>
+  <td>3.16</td>
+  <td>50,606</td>
+  <td>(7,367)</td>
   <td>1</td>
-  <td>106,431</td>
-  <td>(7,554)</td>
-  <td>(133,650)</td>
-  <td>141,204</td>
+  <td>(17,623)</td>
+  <td>(116,364)</td>
   <td></td>
-  <td>116,364</td>
+  <td></td>
+  <td></td>
+  <td>(6,807)</td>
 <td>
-  <img id="myImg68" src="./images/HO.png" alt = "&emsp; &emsp;&emsp;&emsp; HO              Current Period HVaR:  116,364,    Current Period ES:  115,756,    Stress Period HVaR:  112,744,    Stress Period ES:  106,431,    Worst:  106,431" width = "50" height = "20">
+  <img id="myImg68" src="./images/HO.png" alt = "&emsp; &emsp;&emsp;&emsp; HO              Current Period HVaR:  (6,807),    Current Period ES:  (7,461),    Stress Period HVaR:  (10,784),    Stress Period ES:  (17,623),    Worst:  (17,623)" width = "50" height = "20">
 <!-- The Modal -->
 <div id="myModal68" class="modal">
   <span class="close">&times;</span>
@@ -3792,7 +3801,7 @@ span.onclick = function() {
     modal.style.display = "none";
 }
 </script>
-116,364
+(6,807)
   </td>
 </tr>
 <tr>
@@ -3801,18 +3810,18 @@ span.onclick = function() {
   <td>100 Units</td>
   <td>Futures</td>
   <td></td>
-  <td></td>
-  <td>(81,060)</td>
-  <td>(99,277)</td>
+  <td>2.54</td>
+  <td>25,591</td>
+  <td>(5,300)</td>
   <td>1</td>
-  <td>73,663</td>
-  <td>(6,028)</td>
-  <td>(97,292)</td>
-  <td>103,320</td>
+  <td>(23,571)</td>
+  <td>(89,768)</td>
   <td></td>
-  <td>89,768</td>
+  <td></td>
+  <td></td>
+  <td>(5,391)</td>
 <td>
-  <img id="myImg69" src="./images/RB.png" alt = "&emsp; &emsp;&emsp;&emsp; RB              Current Period HVaR:  89,768,    Current Period ES:  88,405,    Stress Period HVaR:  76,059,    Stress Period ES:  73,663,    Worst:  73,663" width = "50" height = "20">
+  <img id="myImg69" src="./images/RB.png" alt = "&emsp; &emsp;&emsp;&emsp; RB              Current Period HVaR:  (5,391),    Current Period ES:  (6,925),    Stress Period HVaR:  (20,869),    Stress Period ES:  (23,571),    Worst:  (23,571)" width = "50" height = "20">
 <!-- The Modal -->
 <div id="myModal69" class="modal">
   <span class="close">&times;</span>
@@ -3838,7 +3847,7 @@ span.onclick = function() {
     modal.style.display = "none";
 }
 </script>
-89,768
+(5,391)
   </td>
 </tr>
 <tr>
@@ -3847,18 +3856,18 @@ span.onclick = function() {
   <td>100,000</td>
   <td>Foreign Exchange</td>
   <td></td>
-  <td>1.3486</td>
-  <td>(5,011)</td>
-  <td>(1,264)</td>
+  <td>1.3406</td>
+  <td>(4,113)</td>
+  <td>(936)</td>
   <td>1</td>
-  <td>(990)</td>
-  <td>(915)</td>
-  <td>(675)</td>
-  <td>1,487</td>
-  <td>(1,119)</td>
-  <td>718</td>
+  <td>(1,455)</td>
+  <td>(438)</td>
+  <td>(254)</td>
+  <td>228</td>
+  <td>283</td>
+  <td>(249)</td>
 <td>
-  <img id="myImg70" src="./images/CADUSD.png" alt = "&emsp; &emsp;&emsp;&emsp; CADUSD     CAD         Current Period HVaR:  (504),    Current Period ES:  (675),    Stress Period HVaR:  (679),    Stress Period ES:  (990),    Worst:  (990)" width = "50" height = "20">
+  <img id="myImg70" src="./images/CADUSD.png" alt = "&emsp; &emsp;&emsp;&emsp; CADUSD     CAD         Current Period HVaR:  (934),    Current Period ES:  (1,108),    Stress Period HVaR:  (1,095),    Stress Period ES:  (1,455),    Worst:  (1,455)" width = "50" height = "20">
 <!-- The Modal -->
 <div id="myModal70" class="modal">
   <span class="close">&times;</span>
@@ -3884,7 +3893,7 @@ span.onclick = function() {
     modal.style.display = "none";
 }
 </script>
-(504)
+(934)
   </td>
 </tr>
 <tr>
@@ -3893,18 +3902,18 @@ span.onclick = function() {
   <td>125,000</td>
   <td>Foreign Exchange</td>
   <td></td>
-  <td>1.06</td>
-  <td>(20,745)</td>
-  <td>(2,955)</td>
+  <td>1.082</td>
+  <td>(16,929)</td>
+  <td>(2,233)</td>
   <td>1</td>
-  <td>(2,151)</td>
-  <td>(1,704)</td>
-  <td>(1,769)</td>
-  <td>2,333</td>
-  <td>(1,465)</td>
-  <td>1,641</td>
+  <td>(2,982)</td>
+  <td>(795)</td>
+  <td>(65)</td>
+  <td>263</td>
+  <td>644</td>
+  <td>(866)</td>
 <td>
-  <img id="myImg71" src="./images/EURUSD.png" alt = "&emsp; &emsp;&emsp;&emsp; EURUSD     EUR         Current Period HVaR:  (965),    Current Period ES:  (1,021),    Stress Period HVaR:  (1,042),    Stress Period ES:  (2,151),    Worst:  (2,151)" width = "50" height = "20">
+  <img id="myImg71" src="./images/EURUSD.png" alt = "&emsp; &emsp;&emsp;&emsp; EURUSD     EUR         Current Period HVaR:  (1,784),    Current Period ES:  (1,831),    Stress Period HVaR:  (1,850),    Stress Period ES:  (2,982),    Worst:  (2,982)" width = "50" height = "20">
 <!-- The Modal -->
 <div id="myModal71" class="modal">
   <span class="close">&times;</span>
@@ -3930,7 +3939,7 @@ span.onclick = function() {
     modal.style.display = "none";
 }
 </script>
-(965)
+(1,784)
   </td>
 </tr>
 <tr>
@@ -3939,18 +3948,18 @@ span.onclick = function() {
   <td>62,500</td>
   <td>Foreign Exchange</td>
   <td></td>
-  <td>1.2026</td>
-  <td>(11,758)</td>
-  <td>(2,471)</td>
+  <td>1.2205</td>
+  <td>(9,843)</td>
+  <td>(1,833)</td>
   <td>1</td>
-  <td>(2,966)</td>
-  <td>(1,892)</td>
-  <td>(559)</td>
-  <td>993</td>
-  <td>(1,270)</td>
-  <td>1,541</td>
+  <td>(3,692)</td>
+  <td>(719)</td>
+  <td>(225)</td>
+  <td>95</td>
+  <td>490</td>
+  <td>(362)</td>
 <td>
-  <img id="myImg72" src="./images/GBPUSD.png" alt = "&emsp; &emsp;&emsp;&emsp; GBPUSD     GBP         Current Period HVaR:  (1,188),    Current Period ES:  (1,952),    Stress Period HVaR:  (996),    Stress Period ES:  (2,966),    Worst:  (2,966)" width = "50" height = "20">
+  <img id="myImg72" src="./images/GBPUSD.png" alt = "&emsp; &emsp;&emsp;&emsp; GBPUSD     GBP         Current Period HVaR:  (1,910),    Current Period ES:  (2,702),    Stress Period HVaR:  (1,699),    Stress Period ES:  (3,692),    Worst:  (3,692)" width = "50" height = "20">
 <!-- The Modal -->
 <div id="myModal72" class="modal">
   <span class="close">&times;</span>
@@ -3976,7 +3985,7 @@ span.onclick = function() {
     modal.style.display = "none";
 }
 </script>
-(1,188)
+(1,910)
   </td>
 </tr>
 </table>
